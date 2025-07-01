@@ -125,17 +125,13 @@
 
   // Theme Vars
   const userTheme = localStorage.getItem('theme');
-  const systemTheme = window.matchMedia('(prefers-color0scheme: dark)').matches;
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   // Initial Theme Check
-  const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
   const themeCheck = () => {
-    if (userTheme === 'dark' || (!userTheme && systemTheme) || isDarkMode) {
+    if (userTheme === 'dark' || (!userTheme && systemTheme)) {
       document.documentElement.classList.add('dark');
-      return;
     }
-    // document.documentElement.classList.add('dark');
-    // return;
   };
 
   // Manual Theme Switch
