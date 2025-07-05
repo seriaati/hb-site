@@ -1,0 +1,156 @@
+
+meta:
+  title: Hoyo Buddy | 讓你的 Hoyoverse 體驗更上一層樓
+  description: 一款為 Hoyoverse 遊戲玩家量身訂做的 Discord 機器人, 功能豐富、易於使用且設計精美。
+  image_alt: Hoyo Buddy | 讓你的 Hoyoverse 體驗更上一層樓
+
+navbar:
+  home: 首頁
+  features: 功能
+  about: 關於
+  commands: 指令
+  faq: 常見問題
+  team: 團隊
+  get_started: 開始使用
+
+hero:
+  title: 讓你的 Hoyoverse 體驗更上一層樓
+  description: 一款為 Hoyoverse 遊戲玩家量身訂做的 Discord 機器人, 功能豐富、易於使用且設計精美。
+  get_started: 開始使用
+  star_on_github: 在 GitHub 上給我們一個星星
+
+features:
+  title: 功能
+  subtitle: Hoyo Buddy 的主要功能
+  description: 不僅僅是在 Discord 上的 HoYoLAB。
+  show_off:
+    title: 炫耀所有
+    description: 你已經投入了相當多的時間來練好這隻胡桃；何不用一張可自定義的、美觀的卡片來展示她呢？
+  make_life_easier:
+    title: 更加輕鬆
+    description: 每日簽到、樹脂追蹤... 這麼多事情要做! 讓 Hoyo Buddy 通過它的自動任務系統輕鬆地替你完成這些事項。
+  all_in_one:
+    title: 集中管理
+    description: 擁有太多遊戲帳戶需要管理? 別擔心, Hoyo Buddy 能支援多個帳戶, 讓你從此不再煩惱。
+  info_at_fingertips:
+    title: 近在指尖
+    description: 需要向朋友解釋某個角色的技能嗎? 使用Hoyo Buddy 能讓你輕鬆且瞬間的存取各種遊戲資料。
+
+about:
+  title: 強大、美觀、又快
+  description: |
+    Hoyo Buddy 提供了遊玩 Hoyoverse 遊戲所需的各種必要功能, 並以視覺上引人入勝的方式呈現信息。我們精心打造的用戶界面能同時兼顧美觀和實用性。
+    <br />
+    <br />
+    藉由其吸引人的外觀設計和極速的性能, Hoyo Buddy 給人留下了深刻的印象。我們的開發人員投入了無數的時間來優化它, 以確保你能迅速獲取所需的信息。
+  stat:
+    title: 深得
+    value: 9100+
+    description: 個伺服器的喜愛
+
+cta:
+  title: 還無法下定決心嗎?
+  description: 市面上有許多與 Hoyoverse 相關的 Discord 機器人，那麼為什麼要選擇 Hoyo Buddy? Hoyo Buddy 有什麼與眾不同之處, 使其勝過其他你可能已在使用的機器人？
+  button: 查看介紹
+
+testimonials:
+  title: 指令
+  subtitle: Hoyo Buddy 可以做什麼?
+  description: 看看 Hoyo Buddy 的熱門指令吧！
+  accounts:
+    title: /accounts
+    description: 將所有帳戶集中在一個地方輕鬆管理。總共有三種直觀的方法可以幫助你快速的新增帳戶。
+  search:
+    title: /search
+    description: "輕鬆探索與《原神》和《崩壞: 星穹鐵道》有關的任何內容。非常適合用來向新手介紹遊戲觀念。"
+  notes:
+    title: /notes
+    description: 隨時隨地查看你的即時便籤, 並能打開提醒功能, 便於追蹤樹脂、每日任務、洞天寶錢等。
+  characters:
+    title: /characters
+    description: 將你擁有的所有角色總結成一張卡片, 在組隊需要幫助時可以直接分享給他人。
+  farm:
+    title: /farm
+    description: 查看今天的副本中可以刷取的素材, 並設置提醒, 當角色/武器的素材可以刷取時通知你。
+  profile:
+    title: /profile
+    description: 製作視覺上令人驚艷的卡片來展示你的角色面板, 非常適合在社交媒體平台上分享。
+
+faq:
+  title: 常見問題
+  subtitle: 有疑問嗎? 看看這裡
+  description: 如果你有其他問題, 請直接聯繫我們。
+  free:
+    question: Hoyo Buddy 是免費的嗎?
+    answer: |
+      是, Hoyo Buddy 完全免費。如果你喜歡它, 可以考慮
+      <a rel="noopener" href="https://www.buymeacoffee.com/seria" target="_blank" class="text-primary hover:underline">
+        幫我們買杯咖啡
+      </a> 或
+      <a rel="noopener" href="https://github.com/seriaati/hoyo-buddy" target="_blank" class="text-primary hover:underline">
+        給我們的項目一個星星
+      </a>。
+  open_source:
+    question: Hoyo Buddy 是開源的嗎?
+    answer: |
+      是, Hoyo Buddy 是開源的。你可以在
+      <a rel="noopener" href="https://github.com/seriaati/hoyo-buddy" target="_blank" class="text-primary hover:underline">
+        GitHub
+      </a>上查看它的程式碼，請遵守相應的開源協議。
+  safe:
+    question: Hoyo Buddy 在使用上會有安全疑慮嗎?
+    answer: |
+      請詳閱維基上的
+      <a rel="noopener" href="https://hb-docs.seria.moe/zh-Hant/docs/Account-Security" target="_blank"
+        class="text-primary hover:underline">
+        帳戶安全
+      </a> 頁面來獲取更多資訊。資料隱私方面, 請參閱
+      <a rel="noopener" href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank"
+        class="text-primary hover:underline">
+        隱私政策
+      </a>。
+  contact:
+    question: 我該如何聯繫你們?
+    answer: |
+      你可以直接在
+      <a rel="noopener" href="https://discord.com/users/410036441129943050" target="_blank"
+        class="text-primary hover:underline">
+        Discord
+      </a>上私訊我, 或者加入我們的
+      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
+        Discord 伺服器
+      </a>並提及我。
+
+team:
+  title: 團隊介紹
+  subtitle: Hoyo Buddy 團隊
+  description: 哇哦, 這是我們做的。
+  seria:
+    name: '@seria_ati'
+    role: 程式員
+  ayasaku:
+    name: '@ayasaku_'
+    role: 設計師
+  hydrogened:
+    name: '@hydrogened'
+    role: 公關
+
+footer:
+  description: 讓你的 Hoyoverse 體驗更上一層樓。
+  navigation:
+    title: 導覽
+    home: 首頁
+    about: 關於
+    features: 功能
+    faq: 常見問題
+  quick_links:
+    title: 連結
+    github: GitHub 項目頁面
+    wiki: 維基
+    invite: 邀請連結
+  contact:
+    title: 聯繫我們
+    discord_server: Discord 伺服器
+    dev_discord: 開發者的 Discord
+    buy_me_a_coffee: 幫我買一杯咖啡
+  copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
