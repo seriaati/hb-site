@@ -2,8 +2,8 @@ filters:
   - filter_type: file
     file_format: YAML_GENERIC
     source_language: en_US
-    source_file: locales/en.yaml
-    translation_files_expression: "locales/<lang>.yaml"
+    source_file: locales/en.yml
+    translation_files_expression: "locales/<lang>.yml"
 settings:
   language_mapping:
     zh_TW: zh-tw
