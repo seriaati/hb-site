@@ -8,7 +8,8 @@ class LanguageSelector {
     this.languages = [
       { code: 'en', name: 'English', flag: '🇺🇸' },
       { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
-      { code: 'zh-tw', name: '繁體中文', flag: '🇹🇼' }
+      { code: 'zh-tw', name: '繁體中文', flag: '🇹🇼' },
+      { code: 'zh-cn', name: '简体中文', flag: '🇨🇳' },
     ];
     this.isOpen = false;
     this.init();
