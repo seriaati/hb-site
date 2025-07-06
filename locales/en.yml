@@ -1,8 +1,6 @@
-
 meta:
   title: Hoyo Buddy | Elevate Your Hoyoverse Experience
   description: A feature rich, easy to use, beautifully designed Discord bot made for Hoyoverse gamers.
-  image_alt: Hoyo Buddy | Elevate your Hoyoverse experience
 
 navbar:
   home: Home
@@ -126,13 +124,13 @@ team:
   subtitle: The Hoyo Buddy Team
   description: Wow, we made this.
   seria:
-    name: '@seria_ati'
+    name: "@seria_ati"
     role: Programmer
   ayasaku:
-    name: '@ayasaku_'
+    name: "@ayasaku_"
     role: Designer
   hydrogened:
-    name: '@hydrogened'
+    name: "@hydrogened"
     role: PR
 
 footer:

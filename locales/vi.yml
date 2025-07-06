@@ -1,4 +1,3 @@
-
 meta:
   title: Hoyo Buddy | Nâng cao trải nghiệm Hoyoverse của bạn
   description: Là một Discord bot với nhiều tính năng phong phú, dễ sử dụng, được thiết kế đẹp mắt dành cho game thủ Hoyoverse.
@@ -126,13 +125,13 @@ team:
   subtitle: Đội Ngũ Hoyo Buddy
   description: Wow, chúng tôi đã làm sản phẩm này.
   seria:
-    name: '@seria_ati'
+    name: "@seria_ati"
     role: Lập trình viên
   ayasaku:
-    name: '@ayasaku_'
+    name: "@ayasaku_"
     role: Nhà thiết kế
   hydrogened:
-    name: '@hydrogened'
+    name: "@hydrogened"
     role: PR
 
 footer:
