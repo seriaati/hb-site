@@ -4,116 +4,67 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the Hoyo Buddy website - a static landing page for a Discord bot focused on Hoyoverse games. The site is built using modern web technologies including TailwindCSS, i18next for internationalization, and a responsive design.
+This is a multilingual static website for Hoyo Buddy, a Discord bot for Hoyoverse gamers. The site is built with HTML, TailwindCSS, and JavaScript, featuring internationalization support for English, Vietnamese, and Traditional Chinese.
 
 ## Development Commands
 
-### Building CSS
-
+### Build CSS
 ```bash
 npm run build-css
 ```
-
-Builds the Tailwind CSS from `src/tailwind.css` to `assets/css/tailwind.css` with watch mode enabled.
-
-### Local Development Server
-
-```bash
-npm start
-```
-
-Starts an HTTP server on port 8080 for local development.
+This watches for changes and builds TailwindCSS from `src/tailwind.css` to `assets/css/tailwind.css`.
 
 ### Code Formatting
-
 ```bash
 npx prettier --write .
 ```
+Uses Prettier with TailwindCSS plugin for consistent code formatting.
 
-Formats all code using Prettier with TailwindCSS plugin.
+## Architecture
 
-## Architecture & Structure
+### File Structure
+- `index.html` - Main landing page with internationalization attributes
+- `assets/js/` - JavaScript modules for functionality
+  - `main.js` - Core UI interactions (sticky header, navbar, theme switching)
+  - `localization.js` - I18n system with YAML parsing and DOM updates
+  - `language-selector.js` - Floating language selector component
+- `locales/` - Translation files (en.yml, vi.yml, zh-tw.yml)
+- `assets/css/` - Stylesheets including compiled TailwindCSS
+- `assets/images/` - Static assets organized by page sections
 
-### Multi-language Support
-
-- **i18next Integration**: The site uses i18next for internationalization with YAML locale files
-- **Supported Languages**: English (en), Vietnamese (vi), Traditional Chinese (zh-tw)
-- **Locale Files**: Located in `locales/` directory as `.yml` files
-- **Language Detection**: Automatic detection from URL parameters (`?lang=`) or browser settings
-- **Dynamic Language Switching**: Floating language selector component that updates content without page reload
-
-### Styling System
-
-- **TailwindCSS**: Custom configuration with extended color palette and responsive breakpoints
-- **Dark Mode**: Class-based dark mode support with theme switching
-- **Custom Colors**: Brand colors including primary (#4B56C0), secondary (#13C296), and dark theme variants
-- **Responsive Design**: Custom breakpoints from 540px to 1320px
+### Internationalization System
+The site uses a custom i18n system:
+- Translation keys are stored in YAML files under `locales/`
+- DOM elements use `data-i18n` attributes for translation targets
+- Language preference is persisted in localStorage
+- Supports nested translation keys (e.g., `navbar.home`)
 
 ### JavaScript Architecture
+- No build system or bundler - vanilla JavaScript with ES6 classes
+- Modular design with separate concerns (UI, i18n, language selection)
+- Event-driven architecture with DOM event listeners
+- Theme-aware components that respond to dark/light mode changes
 
-- **Modular Components**: Separate files for language selection, theme switching, and main functionality
-- **main.js**: Core initialization, i18next setup, sticky header, and content updates
-- **language-selector.js**: Floating language selector with theme-aware styling
-- **Theme System**: Automatic theme detection and switching with logo changes
+### TailwindCSS Configuration
+- Custom color palette with dark theme support
+- Extended breakpoints and shadows
+- Content scanning includes HTML files and JavaScript assets
+- Uses PostCSS for processing
 
-### Content Management
-
-- **Data-driven**: All text content is managed through YAML locale files
-- **Translation Keys**: Use `data-i18n`, `data-i18n-meta`, and `data-i18n-alt` attributes
-- **SEO-friendly**: Meta tags and titles are dynamically translated
-
-## Key Technical Details
-
-### i18next Configuration
-
-- Uses custom YAML backend loader with js-yaml parsing
-- Fallback language is English
-- Stores language preference in localStorage
-- Custom request handler for YAML file loading
-
-### CSS Build Process
-
-- Source: `src/tailwind.css`
-- Output: `assets/css/tailwind.css`
-- Watch mode enabled during development
-- PostCSS with Tailwind and Autoprefixer
-
-### Theme Implementation
-
-- Uses `documentElement.classList.contains("dark")` for detection
-- Logo switching based on theme and scroll position
-- Language selector adapts styling to current theme
-
-## Development Guidelines
+## Development Notes
 
 ### Adding New Languages
-
 1. Create new YAML file in `locales/` directory
-2. Update language list in `language-selector.js`
-3. Add language code to detection logic in `main.js`
+2. Add language option to `LanguageSelector` class in `language-selector.js`
+3. Update HTML lang attribute switching logic if needed
 
-### Modifying Styles
+### Styling Guidelines
+- Uses TailwindCSS utility classes exclusively
+- Custom colors defined in `tailwind.config.js`
+- Responsive design with custom breakpoints
+- Dark mode support via `dark:` prefixes
 
-- Edit `src/tailwind.css` for custom styles
-- Use existing color tokens from `tailwind.config.js`
-- Run `npm run build-css` after changes
-
-### Content Updates
-
-- Edit appropriate YAML files in `locales/` directory
-- Use existing translation key structure
-- Test language switching functionality
-
-## Dependencies
-
-### Production Dependencies
-
-- **i18next-fs-backend**: For YAML locale file loading
-- **js-yaml**: YAML parsing for translation files
-
-### Development Dependencies
-
-- **tailwindcss**: CSS framework
-- **prettier**: Code formatting
-- **prettier-plugin-tailwindcss**: TailwindCSS class sorting
-- **http-server**: Local development server
+### Image Assets
+- Logo variants for light/dark themes in `assets/images/logo/`
+- Section-specific images organized by purpose
+- Favicon and meta image assets included

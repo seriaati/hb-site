@@ -4,49 +4,27 @@
  */
 
 class LanguageSelector {
-  constructor(options = {}) {
-    this.currentPage = options.currentPage || 'index.html';
+  constructor() {
     this.languages = [
-      { code: 'en', file: 'index.html', name: 'English', flag: '🇺🇸' },
-      { code: 'vi', file: 'index-vi-vn.html', name: 'Tiếng Việt', flag: '🇻🇳' },
-      { code: 'zh-tw', file: 'index-zh-tw.html', name: '繁體中文', flag: '🇹🇼' }
+      { code: 'en', name: 'English', flag: '🇺🇸' },
+      { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
+      { code: 'zh-tw', name: '繁體中文', flag: '🇹🇼' }
     ];
     this.isOpen = false;
     this.init();
-    this.updateTheme();
-  }
-
-  updateTheme() {
-    const isDarkMode = document.documentElement.classList.contains('dark');
-    
-    this.dropdown.style.backgroundColor = isDarkMode ? '#1a202c' : 'white';
-    this.dropdown.style.borderColor = isDarkMode ? '#2d3748' : '#e5e7eb';
-
-    const links = this.dropdown.querySelectorAll('a');
-    links.forEach(link => {
-      link.style.color = isDarkMode ? '#a0aec0' : '#6b7280';
-      link.addEventListener('mouseenter', () => {
-        link.style.color = '#3c82f6';
-        link.style.backgroundColor = isDarkMode ? '#2d3748' : '#f9fafb';
-      });
-      link.addEventListener('mouseleave', () => {
-        link.style.color = isDarkMode ? '#a0aec0' : '#6b7280';
-        link.style.backgroundColor = 'transparent';
-      });
-    });
   }
 
   init() {
     this.createHTML();
     this.attachEventListeners();
-    this.updateTheme();
+    this.updateDropdownTheme();
 
     // Listen for theme changes
     const themeSwitcher = document.getElementById('themeSwitcher');
     if (themeSwitcher) {
       themeSwitcher.addEventListener('click', () => {
         // Delay to allow the theme to switch before updating
-        setTimeout(() => this.updateTheme(), 100);
+        setTimeout(() => this.updateDropdownTheme(), 100);
       });
     }
   }
@@ -118,7 +96,8 @@ class LanguageSelector {
     // Add language options
     this.languages.forEach(lang => {
       const link = document.createElement('a');
-      link.href = lang.file;
+      link.href = "#"; // No longer linking to separate files
+      link.dataset.lang = lang.code; // Store language code
       link.style.cssText = `
         display: flex; 
         align-items: center; 
@@ -132,6 +111,14 @@ class LanguageSelector {
         <span style="margin-right: 8px;">${lang.flag}</span>
         ${lang.name}
       `;
+
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const selectedLang = e.currentTarget.dataset.lang;
+        localStorage.setItem('lang', selectedLang);
+        applyTranslations(selectedLang); // Call the global function from localization.js
+        this.closeDropdown();
+      });
 
       dropdownContent.appendChild(link);
     });
@@ -194,26 +181,28 @@ class LanguageSelector {
     this.dropdown.style.transform = 'translateY(8px)';
   }
 
-  destroy() {
-    if (this.container && this.container.parentNode) {
-      this.container.parentNode.removeChild(this.container);
-    }
+  updateDropdownTheme() {
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    
+    this.dropdown.style.backgroundColor = isDarkMode ? '#1a202c' : 'white';
+    this.dropdown.style.borderColor = isDarkMode ? '#2d3748' : '#e5e7eb';
+
+    const links = this.dropdown.querySelectorAll('a');
+    links.forEach(link => {
+      link.style.color = isDarkMode ? '#a0aec0' : '#6b7280';
+      link.addEventListener('mouseenter', () => {
+        link.style.color = '#3c82f6';
+        link.style.backgroundColor = isDarkMode ? '#2d3748' : '#f9fafb';
+      });
+      link.addEventListener('mouseleave', () => {
+        link.style.color = isDarkMode ? '#a0aec0' : '#6b7280';
+        link.style.backgroundColor = 'transparent';
+      });
+    });
   }
 }
 
 // Auto-initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  // Detect current page from URL
-  const currentPath = window.location.pathname;
-  const currentPage = currentPath.split('/').pop() || 'index.html';
-  
-  // Initialize the language selector
-  window.languageSelector = new LanguageSelector({
-    currentPage: currentPage
-  });
+  new LanguageSelector();
 });
-
-// Export for module usage (if needed)
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = LanguageSelector;
-}
