@@ -111,9 +111,43 @@ async function applyTranslations(lang) {
     });
 }
 
+// Function to detect user's preferred language
+function detectUserLocale() {
+    const supportedLanguages = ['en', 'vi', 'zh-tw', 'zh-cn'];
+    
+    // Get browser languages in order of preference
+    const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
+    
+    for (const browserLang of browserLanguages) {
+        // Check exact match first
+        if (supportedLanguages.includes(browserLang)) {
+            return browserLang;
+        }
+        
+        // Check language code without region (e.g., 'en-US' -> 'en')
+        const langCode = browserLang.split('-')[0];
+        if (supportedLanguages.includes(langCode)) {
+            return langCode;
+        }
+        
+        // Handle Chinese language variants
+        if (browserLang.startsWith('zh')) {
+            // Traditional Chinese regions
+            if (browserLang.includes('TW') || browserLang.includes('HK') || browserLang.includes('MO')) {
+                return 'zh-tw';
+            }
+            // Simplified Chinese (default for other Chinese variants)
+            return 'zh-cn';
+        }
+    }
+    
+    // Default to English if no supported language found
+    return 'en';
+}
+
 // Language switcher logic
 document.addEventListener('DOMContentLoaded', () => {
-    // Set initial language
-    const initialLang = localStorage.getItem('lang') || 'en';
+    // Set initial language: localStorage > browser locale > default English
+    const initialLang = localStorage.getItem('lang') || detectUserLocale();
     applyTranslations(initialLang);
 });
