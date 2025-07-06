@@ -1,7 +1,6 @@
 meta:
   title: Hoyo Buddy | 讓你的 Hoyoverse 體驗更上一層樓
-  description: 一款為 Hoyoverse 遊戲玩家量身訂做的 Discord 機器人, 功能豐富、易於使用且設計精美。
-  image_alt: Hoyo Buddy | 讓你的 Hoyoverse 體驗更上一層樓
+  description: "一款為 Hoyoverse 遊戲玩家量身訂做的 Discord 機器人, 功能豐富、易於使用且設計精美。"
 
 navbar:
   home: 首頁
@@ -14,7 +13,7 @@ navbar:
 
 hero:
   title: 讓你的 Hoyoverse 體驗更上一層樓
-  description: 一款為 Hoyoverse 遊戲玩家量身訂做的 Discord 機器人, 功能豐富、易於使用且設計精美。
+  description: "一款為 Hoyoverse 遊戲玩家量身訂做的 Discord 機器人, 功能豐富、易於使用且設計精美。"
   get_started: 開始使用
   star_on_github: 在 GitHub 上給我們一個星星
 
@@ -30,10 +29,10 @@ features:
     description: 每日簽到、樹脂追蹤... 這麼多事情要做! 讓 Hoyo Buddy 通過它的自動任務系統輕鬆地替你完成這些事項。
   all_in_one:
     title: 集中管理
-    description: 擁有太多遊戲帳戶需要管理? 別擔心, Hoyo Buddy 能支援多個帳戶, 讓你從此不再煩惱。
+    description: "擁有太多遊戲帳戶需要管理? 別擔心, Hoyo Buddy 能支援多個帳戶, 讓你從此不再煩惱。"
   info_at_fingertips:
     title: 近在指尖
-    description: 需要向朋友解釋某個角色的技能嗎? 使用Hoyo Buddy 能讓你輕鬆且瞬間的存取各種遊戲資料。
+    description: "需要向朋友解釋某個角色的技能嗎? 使用Hoyo Buddy 能讓你輕鬆且瞬間的存取各種遊戲資料。"
 
 about:
   title: 強大、美觀、又快
@@ -47,13 +46,13 @@ about:
     description: 個伺服器的喜愛
 
 cta:
-  title: 還無法下定決心嗎?
-  description: 市面上有許多與 Hoyoverse 相關的 Discord 機器人，那麼為什麼要選擇 Hoyo Buddy? Hoyo Buddy 有什麼與眾不同之處, 使其勝過其他你可能已在使用的機器人？
+  title: "還無法下定決心嗎?"
+  description: "市面上有許多與 Hoyoverse 相關的 Discord 機器人，那麼為什麼要選擇 Hoyo Buddy? Hoyo Buddy 有什麼與眾不同之處, 使其勝過其他你可能已在使用的機器人？"
   button: 查看介紹
 
 testimonials:
   title: 指令
-  subtitle: Hoyo Buddy 可以做什麼?
+  subtitle: "Hoyo Buddy 可以做什麼?"
   description: 看看 Hoyo Buddy 的熱門指令吧！
   accounts:
     title: /accounts
@@ -63,23 +62,23 @@ testimonials:
     description: "輕鬆探索與《原神》和《崩壞: 星穹鐵道》有關的任何內容。非常適合用來向新手介紹遊戲觀念。"
   notes:
     title: /notes
-    description: 隨時隨地查看你的即時便籤, 並能打開提醒功能, 便於追蹤樹脂、每日任務、洞天寶錢等。
+    description: "隨時隨地查看你的即時便籤, 並能打開提醒功能, 便於追蹤樹脂、每日任務、洞天寶錢等。"
   characters:
     title: /characters
-    description: 將你擁有的所有角色總結成一張卡片, 在組隊需要幫助時可以直接分享給他人。
+    description: "將你擁有的所有角色總結成一張卡片, 在組隊需要幫助時可以直接分享給他人。"
   farm:
     title: /farm
-    description: 查看今天的副本中可以刷取的素材, 並設置提醒, 當角色/武器的素材可以刷取時通知你。
+    description: "查看今天的副本中可以刷取的素材, 並設置提醒, 當角色/武器的素材可以刷取時通知你。"
   profile:
     title: /profile
-    description: 製作視覺上令人驚艷的卡片來展示你的角色面板, 非常適合在社交媒體平台上分享。
+    description: "製作視覺上令人驚艷的卡片來展示你的角色面板, 非常適合在社交媒體平台上分享。"
 
 faq:
   title: 常見問題
-  subtitle: 有疑問嗎? 看看這裡
-  description: 如果你有其他問題, 請直接聯繫我們。
+  subtitle: "有疑問嗎? 看看這裡"
+  description: "如果你有其他問題, 請直接聯繫我們。"
   free:
-    question: Hoyo Buddy 是免費的嗎?
+    question: "Hoyo Buddy 是免費的嗎?"
     answer: |
       是, Hoyo Buddy 完全免費。如果你喜歡它, 可以考慮
       <a rel="noopener" href="https://www.buymeacoffee.com/seria" target="_blank" class="text-primary hover:underline">
@@ -89,14 +88,14 @@ faq:
         給我們的項目一個星星
       </a>。
   open_source:
-    question: Hoyo Buddy 是開源的嗎?
+    question: "Hoyo Buddy 是開源的嗎?"
     answer: |
       是, Hoyo Buddy 是開源的。你可以在
       <a rel="noopener" href="https://github.com/seriaati/hoyo-buddy" target="_blank" class="text-primary hover:underline">
         GitHub
       </a>上查看它的程式碼，請遵守相應的開源協議。
   safe:
-    question: Hoyo Buddy 在使用上會有安全疑慮嗎?
+    question: "Hoyo Buddy 在使用上會有安全疑慮嗎?"
     answer: |
       請詳閱維基上的
       <a rel="noopener" href="https://hb-docs.seria.moe/zh-Hant/docs/Account-Security" target="_blank"
@@ -108,7 +107,7 @@ faq:
         隱私政策
       </a>。
   contact:
-    question: 我該如何聯繫你們?
+    question: "我該如何聯繫你們?"
     answer: |
       你可以直接在
       <a rel="noopener" href="https://discord.com/users/410036441129943050" target="_blank"
@@ -118,11 +117,10 @@ faq:
       <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
         Discord 伺服器
       </a>並提及我。
-
 team:
   title: 團隊介紹
   subtitle: Hoyo Buddy 團隊
-  description: 哇哦, 這是我們做的。
+  description: "哇哦, 這是我們做的。"
   seria:
     name: "@seria_ati"
     role: 程式員
