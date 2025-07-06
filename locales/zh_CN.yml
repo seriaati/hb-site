@@ -1,0 +1,152 @@
+meta:
+  title: Hoyo Buddy | 让你的 Hoyoverse 体验更上一层楼
+  description: 一个为 Hoyoverse 游戏玩家量身定做的 Discord 机器人，功能丰富、易于使用且设计精美。
+
+navbar:
+  home: 主页
+  features: 功能
+  about: 关于
+  commands: 命令
+  faq: 常见问题
+  team: 团队
+  get_started: 开始
+
+hero:
+  title: 让你的 Hoyoverse 体验更上一层楼
+  description: 一个为 Hoyoverse 游戏玩家量身定做的 Discord 机器人，功能丰富、易于使用且设计精美。
+  get_started: 开始
+  star_on_github: 在 Github 上给我们一颗星星
+
+features:
+  title: 功能
+  subtitle: Hoyo Buddy 的主要功能
+  description: 不仅仅是在 DIscord 上的 HoYoLab。
+  show_off:
+    title: 炫耀所有
+    description: 你已经投入了如此多的时间养好胡桃，为何不用一张可自定义的、美观的卡片展示一下她呢？
+  make_life_easier:
+    title: 更加轻松
+    description: 每日签到、树脂追踪......这么多事情要做！让 Hoyo Buddy 通过它的自动任务系统轻松的替你完成那些事项吧。
+  all_in_one:
+    title: 集中管理
+    description: 太多账号要管理？不用担心，Hoyo Buddy 支持多账号，让你省去此烦恼。
+  info_at_fingertips:
+    title: 信息触手可及
+    description: 需要向朋友解释下某角色技能吗？使用 Hoyo Buddy，可以轻松且即时地访问各个游戏资料。
+
+about:
+  title: 强大、美观、迅速
+  description: |
+    Hoyo Buddy 提供了游玩 Hoyoverse 游戏所需的必要功能，并以引人入胜的视觉方式呈现信息。我们精心设计的用户界面将美观与功能无缝融合。
+    <br />
+    <br />
+    Hoyo Buddy 通过引人入胜的视觉方式及极速的性能，给人留下了深刻印象。我们的开发人员投入了无数时间优化它，确保你能快速访问所需要的信息。
+  stat:
+    title: 深受
+    description: 个服务器的喜爱
+
+cta:
+  title: 还决定不下来吗？
+  description: 市面上有许多和 Hoyoverse 相关的机器人，那为什么要选择 Hoyo Buddy ？是什么让 Hoyo Buddy 从其他机器人中脱颖而出，包括你可能已经在使用的机器人？
+  button: 查看介紹
+
+testimonials:
+  title: 命令
+  subtitle: Hoyo Buddy 可以做什么？
+  description: 看看 Hoyo Buddy 的热门命令吧！
+  accounts:
+    title: /accounts
+    description: 将所有账号集中于一处轻松管理。共有三种直观的无缝快速的添加账号方式供你选择。
+  search:
+    title: /search
+    description: "轻松探索《原神》和《崩坏：星穹铁道》有关的任何内容。非常适合向新手用来介绍游戏观念。"
+  notes:
+    title: /notes
+    description: 随时随地查看你的实时便笺，打开提醒功能，便于追踪树脂、每日任务等。
+  characters:
+    title: /characters
+    description: 将你拥有的全部角色总结成一张卡片，在配队需要帮助时可以直接分享给他人。
+  farm:
+    title: /farm
+    description: 查看今日副本可以刷取的素材，并设置提醒，当角色/武器素材可以刷取时通知你。
+  profile:
+    title: /profile
+    description: 制作视觉上令人惊叹的卡片来展示你的角色面板，非常适合在社交媒体平台上分享。
+
+faq:
+  title: 常见问题
+  subtitle: 还有问题吗？查看这里
+  description: 如果你有其他问题，请直接联系我们。
+  free:
+    question: Hoyo Buddy 是免费的吗？
+    answer: |
+      是，Hoyo Buddy 完全免费。如果你喜欢它，可以考虑
+      <a href="https://www.buymeacoffee.com/seria" target="_blank" rel="noopener" class="text-primary hover:underline">
+      买杯咖啡
+      </a>赞助我或者
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+      给我们的项目一颗星星
+      </a>。
+  open_source:
+    question: Hoyo Buddy 是开源的吗？
+    answer: |
+      Hoyo Buddy 是开源的。你可以在
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+      Github
+      </a>上查看其代码，请遵守相应的开源协议。
+  safe:
+    question: Hoyo Buddy 在使用上有安全风险吗？
+    answer: |
+      请详阅维基上的
+      <a href="https://hb-docs.seria.moe/docs/Account-Security" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+      账户安全
+      </a>页面获取更多信息。有关数据隐私，请参阅
+      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+      隐私政策
+      </a>。
+  contact:
+    question: 我该如何联系你们？
+    answer: |
+      你可以直接在
+      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+      DIscord
+       </a>上私信我，或者加入我们的
+      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline"> 
+      DIscord 服务器
+      </a>那里@我。
+team:
+  title: 团队成员
+  subtitle: Hoyo Buddy 团队
+  description: 哇，这是我们做的！
+  seria:
+    name: "@seria_ati"
+    role: 程序员
+  ayasaku:
+    name: "@ayasaku_"
+    role: 设计师
+  hydrogened:
+    name: "@hydrogened"
+    role: 公关
+
+footer:
+  description: 让你的 Hoyoverse 体验更上一层楼
+  navigation:
+    title: 导览
+    home: 主页
+    about: 关于
+    features: 功能
+    faq: 常见问题
+  quick_links:
+    title: 链接
+    github: Github 项目界面
+    wiki: 维基
+    invite: 邀请链接
+  contact:
+    title: 联系我们
+    discord_server: DIscord 服务器
+    dev_discord: 开发者的 DIscord
+    buy_me_a_coffee: 帮我买杯咖啡
+  copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
