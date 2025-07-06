@@ -1,7 +1,6 @@
 meta:
   title: Hoyo Buddy | Nâng cao trải nghiệm Hoyoverse của bạn
-  description: Là một Discord bot với nhiều tính năng phong phú, dễ sử dụng, được thiết kế đẹp mắt dành cho game thủ Hoyoverse.
-  image_alt: Hoyo Buddy | Nâng cao trải nghiệm Hoyoverse của bạn
+  description: "Là một Discord bot với nhiều tính năng phong phú, dễ sử dụng, được thiết kế đẹp mắt dành cho game thủ Hoyoverse."
 
 navbar:
   home: Trang chủ
@@ -14,7 +13,7 @@ navbar:
 
 hero:
   title: Nâng cao trải nghiệm Hoyoverse của bạn
-  description: Là một Discord bot với nhiều tính năng phong phú, dễ sử dụng, được thiết kế đẹp mắt dành cho game thủ Hoyoverse.
+  description: "Là một Discord bot với nhiều tính năng phong phú, dễ sử dụng, được thiết kế đẹp mắt dành cho game thủ Hoyoverse."
   get_started: Bắt đầu
   star_on_github: Sao trên GitHub
 
@@ -24,19 +23,19 @@ features:
   description: Không chỉ là HoYoLAB trên Discord đâu.
   show_off:
     title: Thể Hiện Những Gì Bạn Có
-    description: Bạn đã đầu tư một khoảng thơi gian để build Hu Tao đó; sao không trưng bày nhân vật ấy trên một thẻ build hoàn toàn có thể tùy chỉnh, đẹp mắt?
+    description: "Bạn đã đầu tư một khoảng thơi gian để build Hu Tao đó; sao không trưng bày nhân vật ấy trên một thẻ build hoàn toàn có thể tùy chỉnh, đẹp mắt?"
   make_life_easier:
     title: Làm Cuộc Sống Bạn Dễ Dàng Hơn
-    description: Điểm Danh Hàng Ngày, Theo Dõi Nhựa... Những tác vụ này làm bạn cảm thấy choáng ngợp! Để Hoyo Buddy hổ trợ bạn dễ dàng qua hệ thống tác vụ tự động của nó.
+    description: "Điểm Danh Hàng Ngày, Theo Dõi Nhựa... Những tác vụ này làm bạn cảm thấy choáng ngợp! Để Hoyo Buddy hổ trợ bạn dễ dàng qua hệ thống tác vụ tự động của nó."
   all_in_one:
     title: Tất Cả Trong Một Nơi
-    description: Có quá nhiều tài khoản game để quản lý hả? Không phải lo, tính năng hỗ trợ nhiều tài khoản của Hoyo Buddy giúp bạn quản lý nhiều tài khoản cùng một nơi.
+    description: "Có quá nhiều tài khoản game để quản lý hả? Không phải lo, tính năng hỗ trợ nhiều tài khoản của Hoyo Buddy giúp bạn quản lý nhiều tài khoản cùng một nơi."
   info_at_fingertips:
     title: Thông Tin Trong Tầm Tay Bạn
-    description: Bạn có bao giờ cần giải thích khả năng của nhân vật cho bạn bè không? Với Hoyo Buddy, bạn có thể truy cập hàng nghìn dữ liệu trò chơi một cách liền mạch và tức thì.
+    description: "Bạn có bao giờ cần giải thích khả năng của nhân vật cho bạn bè không? Với Hoyo Buddy, bạn có thể truy cập hàng nghìn dữ liệu trò chơi một cách liền mạch và tức thì."
 
 about:
-  title: Đa Năng, Thanh Lịch và Nhanh Chóng
+  title: "Đa Năng, Thanh Lịch và Nhanh Chóng"
   description: |
     Hoyo Buddy cung cấp cho bạn những tính năng cần thiết cho hành trình Hoyoverse, trình bầy thông tin theo những cách trực quan hấp dẫn. Giao diện người dùng được chế tạo tỉ mỉ của chúng tôi kết hợp hoàn hảo vẻ đẹp với chức năng.
     <br />
@@ -47,13 +46,13 @@ about:
     description: Máy Chủ
 
 cta:
-  title: Vẫn chửa thể quyết định?
-  description: Có rất nhiều bot Discord liên quan đến Hoyoverse trên thị trường, vậy tại sao lại chọn Hoyo Buddy? Điều gì khiến Hoyo Buddy nổi bật so với những sản phẩm khác, kể cả những sản phẩm bạn có thể đang sử dụng?
+  title: "Vẫn chửa thể quyết định?"
+  description: "Có rất nhiều bot Discord liên quan đến Hoyoverse trên thị trường, vậy tại sao lại chọn Hoyo Buddy? Điều gì khiến Hoyo Buddy nổi bật so với những sản phẩm khác, kể cả những sản phẩm bạn có thể đang sử dụng?"
   button: Đọc thêm tại đây
 
 testimonials:
   title: Các Lệnh
-  subtitle: Hoyo Buddy có thể làm gì được?
+  subtitle: "Hoyo Buddy có thể làm gì được?"
   description: Tận dụng tối đa một số lệnh phổ biến nhất trong Hoyo Buddy!
   accounts:
     title: /accounts
@@ -63,23 +62,23 @@ testimonials:
     description: "Khám phá mọi thứ liên quan đến Genshin Impact và Honkai: Star Rail một cách dễ dàng. Hoàn hảo để giới thiệu các khái niệm trò chơi cho người mới."
   notes:
     title: /notes
-    description: Truy cập các ghi chú theo thời gian thực của bạn với các tính năng nhắc nhở bổ sung, tạo điều kiện thuận lợi cho việc theo dõi Nhựa, nhiệm vụ hàng ngày và các tác vụ khác.
+    description: "Truy cập các ghi chú theo thời gian thực của bạn với các tính năng nhắc nhở bổ sung, tạo điều kiện thuận lợi cho việc theo dõi Nhựa, nhiệm vụ hàng ngày và các tác vụ khác."
   characters:
     title: /characters
-    description: Cô đọng tất cả các nhân vật mà bạn sở hữu vào một thẻ toàn diện, lý tưởng để chia sẻ với những người khác để nhận được lời khuyên xây dựng đội.
+    description: "Cô đọng tất cả các nhân vật mà bạn sở hữu vào một thẻ toàn diện, lý tưởng để chia sẻ với những người khác để nhận được lời khuyên xây dựng đội."
   farm:
     title: /farm
     description: Xem các vật liệu có thể cày được trong các Bi Cảnh ngày nay và thiết lập lời nhắc để thông báo cho bạn khi vật liệu của nhân vật/vũ khí có thể cày được.
   profile:
     title: /profile
-    description: Tạo các thẻ nhân vật ấn tượng giới thiệu cách xây dựng nhân vật của bạn, rất phù hợp để chia sẻ trên các nền tảng mạng xã hội.
+    description: "Tạo các thẻ nhân vật ấn tượng giới thiệu cách xây dựng nhân vật của bạn, rất phù hợp để chia sẻ trên các nền tảng mạng xã hội."
 
 faq:
   title: FAQ
-  subtitle: Có câu hỏi nào không? Nhìn ở đây
-  description: Nếu bạn có câu hỏi khác, vui lòng liên hệ.
+  subtitle: "Có câu hỏi nào không? Nhìn ở đây"
+  description: "Nếu bạn có câu hỏi khác, vui lòng liên hệ."
   free:
-    question: Hoyo Buddy có được sử dụng miễn phí không?
+    question: "Hoyo Buddy có được sử dụng miễn phí không?"
     answer: |
       Có, Hoyo Buddy hoàn toàn miễn phí sử dụng. Nếu bạn thích sử dụng nó, hãy cân nhắc hỗ trợ tôi bằng cách
       <a href="https://www.buymeacoffee.com/seria" target="_blank" rel="noopener" class="text-primary hover:underline">
@@ -89,14 +88,14 @@ faq:
         sao dự án này trên GitHub
       </a>.
   open_source:
-    question: Hoyo Buddy có phải là nguồn mở không??
+    question: "Hoyo Buddy có phải là nguồn mở không??"
     answer: |
       Có, Hoyo Buddy là nguồn mở. Bạn có thể tìm thấy mã nguồn trên
       <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
         GitHub
       </a>, vui lòng tuân thủ giấy phép khi sử dụng mã nguồn.
   safe:
-    question: Hoyo Buddy có an toàn khi sử dụng không?
+    question: "Hoyo Buddy có an toàn khi sử dụng không?"
     answer: |
       Vui lòng đọc trang
       <a href="https://hb-docs.seria.moe/vi/docs/Account-Security" rel="noopener" target="_blank"
@@ -108,7 +107,7 @@ faq:
         Chính Sách Quyền Riêng Tư
       </a>.
   contact:
-    question: Làm cách nào để liên hệ với lập trình viên?
+    question: "Làm cách nào để liên hệ với lập trình viên?"
     answer: |
       Bạn có thể nhắn tin trực tiếp trên
       <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
@@ -118,11 +117,10 @@ faq:
       <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
         máy chủ Discord
       </a> và @ tôi tại đó.
-
 team:
   title: Thành Viên Đội Ngữ
   subtitle: Đội Ngũ Hoyo Buddy
-  description: Wow, chúng tôi đã làm sản phẩm này.
+  description: "Wow, chúng tôi đã làm sản phẩm này."
   seria:
     name: "@seria_ati"
     role: Lập trình viên
