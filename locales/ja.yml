@@ -1,0 +1,151 @@
+meta:
+  title: Hoyo Buddy | あなたのHoyoverseエクスペリエンスを向上させよう
+  description: Hoyoverseゲーマーのために作られた、機能豊富で使いやすく、美しくデザインされたDiscordボット。
+
+navbar:
+  home: ホーム
+  features: 機能
+  about: Hoyo Buddyについて
+  commands: コマンド
+  faq: よくある質問
+  team: チーム
+  get_started: はじめる
+
+hero:
+  title: あなたのHoyoverseエクスペリエンスを向上させよう
+  description: Hoyoverseゲーマーのために作られた、機能豊富で使いやすく、美しくデザインされたDiscordボット。
+  get_started: はじめる
+  star_on_github: GitHubでスター
+
+features:
+  title: 機能
+  subtitle: Hoyo Buddyの主な機能
+  description: Discord上のHoYoLABだけではありません。
+  show_off:
+    title: 持っているものを見せつけよう
+    description: あなたはその胡桃の育成にかなりの時間を投資してきました。なぜ完全にカスタマイズ可能で美しいビルドカードで彼女を紹介しないのですか？
+  make_life_easier:
+    title: あなたの生活をより簡単に
+    description: 毎日のチェックイン、樹脂の追跡...これらすべてのタスクで圧倒的に感じます！Hoyo Buddyの自動タスクシステムを通じて、努力なしでお手伝いさせてください。
+  all_in_one:
+    title: すべてを一箇所で
+    description: 管理するゲームアカウントが多すぎますか？心配いりません、Hoyo Buddyのマルチアカウントサポートがあなたをカバーします。
+  info_at_fingertips:
+    title: 指先で情報を
+    description: 友達にキャラクターの能力を説明する必要がありましたか？Hoyo Buddyなら、何千ものゲームデータへのアクセスがシームレスで瞬時です。
+
+about:
+  title: 多機能、エレガント、そして高速
+  description: |
+    Hoyo Buddyは、あなたのHoyoverseの旅に不可欠な機能を提供し、視覚的に魅力的な方法で情報を提示します。私たちの細心に作られたユーザーインターフェースは、美しさと機能性をシームレスに融合させています。
+    <br />
+    <br />
+    Hoyo Buddyは、視覚的に魅力的なデザインと雷のように速いパフォーマンスの両方で印象を与えます。私たちのプログラマーは、アプリの最適化に無数の時間を投資し、必要な情報への迅速なアクセスを確保しています。
+  stat:
+    title: 使用されている
+    description: サーバー数
+
+cta:
+  title: まだ決められませんか？
+  description: 市場には数多くのHoyoverse関連のDiscordボットがありますが、なぜHoyo Buddyを選ぶのでしょうか？すでに使用している可能性があるものも含めて、他のボットからHoyo Buddyを際立たせるものは何でしょうか？
+  button: 詳しく読む
+
+testimonials:
+  title: コマンド
+  subtitle: Hoyo Buddyは何ができるの？
+  description: Hoyo Buddyで最も人気のあるコマンドをご覧ください！
+  accounts:
+    title: /accounts
+    description: すべてのアカウントを一箇所で楽に集中管理。アカウントを迅速でシームレスに追加するための3つの直感的な方法をお楽しみください。
+  search:
+    title: /search
+    description: "原神と崩壊：スターレイルに関連するあらゆることを簡単に探索。ゲームのコンセプトを新参者に紹介するのに最適。"
+  notes:
+    title: /notes
+    description: リマインダー機能付きのリアルタイムノートにアクセスし、樹脂、デイリーコミッション、その他のタスクの追跡を容易にします。
+  characters:
+    title: /characters
+    description: 所有しているすべてのキャラクターを一枚のカードにまとめ、チーム編成で助けが必要な時に他の人と直接共有できます。
+  farm:
+    title: /farm
+    description: 今日のドメインでファームできる素材を確認し、キャラクター/武器の素材がファーム可能になったときに通知するリマインダーを設定します。
+  profile:
+    title: /profile
+    description: キャラクターのステータスを見せるための視覚的に見事なカードを作成し、ソーシャルメディアプラットフォームでの共有に最適です。
+
+faq:
+  title: よくある質問
+  subtitle: まだ質問がありますか？こちらをご覧ください
+  description: 他に質問がありましたら、直接お気軽にお問い合わせください。
+  free:
+    question: Hoyo Buddyは無料ですか？
+    answer: |
+      はい、Hoyo Buddyは完全に無料です。もし気に入っていただけましたら、
+      <a href="https://www.buymeacoffee.com/seria" target="_blank" rel="noopener" class="text-primary hover:underline">
+        コーヒーを買って
+      </a>サポートしていただくか、
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+        私たちのプロジェクトにスターを付ける
+      </a>ことを検討してください。
+  open_source:
+    question: Hoyo Buddyはオープンソースですか？
+    answer: |
+      はい、Hoyo Buddyはオープンソースです。
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+        GitHub
+      </a>でコードを確認できます。対応するライセンスに従ってください。
+  safe:
+    question: Hoyo Buddyの使用に安全上の懸念はありますか？
+    answer: |
+      詳細については、wikiの
+      <a href="https://hb-docs.seria.moe/ja/docs/Account-Security" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+        アカウントセキュリティ
+      </a>ページをお読みください。データプライバシーについては、
+      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+        プライバシーポリシー
+      </a>をご覧ください。
+  contact:
+    question: 開発者にはどうやって連絡できますか？
+    answer: |
+      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+        Discord
+      </a>で直接メッセージを送っていただくか、
+      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
+        Discordサーバー
+      </a>に参加してそこで私にタグ付けしてください。
+team:
+  title: チームメンバー
+  subtitle: Hoyo Buddyチーム
+  description: うわー、私たちがこれを作りました。
+  seria:
+    name: "@seria_ati"
+    role: プログラマー
+  ayasaku:
+    name: "@ayasaku_"
+    role: デザイナー
+  hydrogened:
+    name: "@hydrogened"
+    role: PR
+
+footer:
+  description: あなたのHoyoverseエクスペリエンスを向上させます。
+  navigation:
+    title: ナビゲーション
+    home: ホーム
+    about: Hoyo Buddyについて
+    features: 機能
+    faq: よくある質問
+  quick_links:
+    title: クイックリンク
+    github: GitHubプロジェクト
+    wiki: Wiki
+    invite: 招待リンク
+  contact:
+    title: お問い合わせ
+    discord_server: Discordサーバー
+    dev_discord: 開発者のDiscord
+    buy_me_a_coffee: コーヒーをおごる
+  copyright: Copyright &copy; 2024 Seria Ati | All rights reserved

@@ -1,0 +1,152 @@
+meta:
+  title: Hoyo Buddy | Eleve Sua Experiência Hoyoverse
+  description: "Um bot do Discord rico em recursos, fácil de usar e com design bonito, feito para jogadores da Hoyoverse."
+
+navbar:
+  home: Início
+  features: Recursos
+  about: Sobre
+  commands: Comandos
+  faq: FAQ
+  team: Equipe
+  get_started: Começar
+
+hero:
+  title: Eleve Sua Experiência Hoyoverse
+  description: "Um bot do Discord rico em recursos, fácil de usar e com design bonito, feito para jogadores da Hoyoverse."
+  get_started: Começar
+  star_on_github: Dar Estrela no GitHub
+
+features:
+  title: Recursos
+  subtitle: Principais Recursos do Hoyo Buddy
+  description: Mais do que apenas HoYoLAB no Discord.
+  show_off:
+    title: Mostre o Que Você Tem
+    description: "Você investiu um tempo considerável construindo essa Hu Tao; por que não mostrá-la em um card de build totalmente personalizável e esteticamente agradável?"
+  make_life_easier:
+    title: Torne Sua Vida Mais Fácil
+    description: "Check-ins diários, rastreamento de resina... É esmagador com todas essas tarefas! Deixe o Hoyo Buddy ajudá-lo sem esforço através de seu sistema de tarefas automáticas."
+  all_in_one:
+    title: Tudo em Um Lugar
+    description: "Tem muitas contas de jogos para gerenciar? Não se preocupe, o suporte multi-conta do Hoyo Buddy tem você coberto."
+  info_at_fingertips:
+    title: Informações na Ponta dos Dedos
+    description: "Já precisou explicar as habilidades de um personagem para um amigo? Com o Hoyo Buddy, acessar milhares de dados do jogo é perfeito e instantâneo."
+
+about:
+  title: "Versátil, Elegante e Rápido"
+  description: |
+    O Hoyo Buddy fornece recursos essenciais para sua jornada na Hoyoverse, apresentando informações de maneiras visualmente cativantes. Nossa interface de usuário meticulosamente elaborada combina perfeitamente beleza com funcionalidade.
+    <br />
+    <br />
+    O Hoyo Buddy impressiona tanto com seu design visualmente atraente quanto com seu desempenho ultrarrápido. Nosso programador investiu incontáveis horas otimizando o aplicativo, garantindo acesso rápido às informações que você precisa.
+  stat:
+    title: Usado por
+    description: Servidores
+
+cta:
+  title: "Ainda não consegue decidir?"
+  description: "Existem numerosos bots do Discord relacionados à Hoyoverse no mercado, então por que escolher o Hoyo Buddy? O que faz o Hoyo Buddy se destacar dos outros, incluindo aqueles que você já pode estar usando?"
+  button: Leia sobre isso
+
+testimonials:
+  title: Comandos
+  subtitle: "O que o Hoyo Buddy pode fazer?"
+  description: Dê uma olhada em alguns dos comandos mais populares do Hoyo Buddy!
+  accounts:
+    title: /accounts
+    description: Centralize todas as suas contas sem esforço em um local. Desfrute de três métodos intuitivos para adicionar contas de forma rápida e perfeita.
+  search:
+    title: /search
+    description: "Explore qualquer coisa relacionada ao Genshin Impact e Honkai Star Rail com facilidade. Perfeito para apresentar conceitos do jogo aos novatos."
+  notes:
+    title: /notes
+    description: "Acesse suas notas em tempo real com recursos de lembrete adicionados, facilitando o rastreamento de resina, comissões diárias e outras tarefas."
+  characters:
+    title: /characters
+    description: "Resuma todos os seus personagens em um card, direto para compartilhar com outros quando precisar de ajuda na composição de equipe."
+  farm:
+    title: /farm
+    description: Veja quais materiais podem ser farmados nos domínios de hoje e defina lembretes para quando materiais de personagens/armas estiverem disponíveis para farm.
+  profile:
+    title: /profile
+    description: "Crie cards visualmente impressionantes para mostrar suas estatísticas de personagem, perfeito para compartilhar em plataformas de mídia social."
+
+faq:
+  title: Perguntas Frequentes
+  subtitle: "Ainda tem dúvidas? Olhe aqui"
+  description: "Se você tem outras perguntas, por favor entre em contato conosco diretamente."
+  free:
+    question: "O Hoyo Buddy é gratuito?"
+    answer: |
+      Sim, o Hoyo Buddy é completamente gratuito. Se você gostar dele, considere
+      <a href="https://www.buymeacoffee.com/seria" target="_blank" rel="noopener" class="text-primary hover:underline">
+        comprar um café
+      </a> para nos apoiar ou
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+        dar uma estrela ao nosso projeto
+      </a>.
+  open_source:
+    question: "O Hoyo Buddy é open source?"
+    answer: |
+      Sim, o Hoyo Buddy é open source. Você pode ver o código no
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+        GitHub
+      </a>, por favor siga a licença correspondente.
+  safe:
+    question: "Há preocupações de segurança ao usar o Hoyo Buddy?"
+    answer: |
+      Por favor leia a página de
+      <a href="https://hb-docs.seria.moe/pt/docs/Account-Security" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+        Segurança da Conta
+      </a> no wiki para mais informações. Para privacidade de dados, por favor veja a
+      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+        Política de Privacidade
+      </a>.
+  contact:
+    question: "Como entro em contato com o desenvolvedor?"
+    answer: |
+      Você pode me enviar uma mensagem diretamente no
+      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+        Discord
+      </a> ou entrar no
+      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
+        servidor do Discord
+      </a> e me marcar lá.
+team:
+  title: Membros da Equipe
+  subtitle: A Equipe Hoyo Buddy
+  description: "Uau, nós fizemos isso."
+  seria:
+    name: "@seria_ati"
+    role: Programador
+  ayasaku:
+    name: "@ayasaku_"
+    role: Designer
+  hydrogened:
+    name: "@hydrogened"
+    role: RP
+
+footer:
+  description: Eleve sua experiência Hoyoverse.
+  navigation:
+    title: Navegação
+    home: Início
+    about: Sobre
+    features: Recursos
+    faq: FAQ
+  quick_links:
+    title: Links Rápidos
+    github: Projeto no GitHub
+    wiki: Wiki
+    invite: Link de Convite
+  contact:
+    title: Contato
+    discord_server: Servidor Discord
+    dev_discord: Discord do Desenvolvedor
+    buy_me_a_coffee: Me Pague Um Café
+  copyright: Copyright &copy; 2024 Seria Ati | Todos os direitos reservados
