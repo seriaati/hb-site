@@ -10,6 +10,8 @@ class LanguageSelector {
       { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
       { code: 'zh-tw', name: '繁體中文', flag: '🇹🇼' },
       { code: 'zh-cn', name: '简体中文', flag: '🇨🇳' },
+      { code: 'ja', name: '日本語', flag: '🇯🇵' },
+      { code: 'pt-br', name: 'Português (Brasil)', flag: '🇧🇷' },
     ];
     this.isOpen = false;
     this.init();
