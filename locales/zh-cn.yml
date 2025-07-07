@@ -55,22 +55,16 @@ testimonials:
   subtitle: Hoyo Buddy 可以做什么？
   description: 看看 Hoyo Buddy 的热门命令吧！
   accounts:
-    title: /accounts
     description: 将所有账号集中于一处轻松管理。共有三种直观的无缝快速的添加账号方式供你选择。
   search:
-    title: /search
     description: "轻松探索《原神》和《崩坏：星穹铁道》有关的任何内容。非常适合向新手用来介绍游戏观念。"
   notes:
-    title: /notes
     description: 随时随地查看你的实时便笺，打开提醒功能，便于追踪树脂、每日任务等。
   characters:
-    title: /characters
     description: 将你拥有的全部角色总结成一张卡片，在配队需要帮助时可以直接分享给他人。
   farm:
-    title: /farm
     description: 查看今日副本可以刷取的素材，并设置提醒，当角色/武器素材可以刷取时通知你。
   profile:
-    title: /profile
     description: 制作视觉上令人惊叹的卡片来展示你的角色面板，非常适合在社交媒体平台上分享。
 
 faq:

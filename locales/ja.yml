@@ -55,22 +55,16 @@ testimonials:
   subtitle: Hoyo Buddyは何ができるの？
   description: Hoyo Buddyで最も人気のあるコマンドをご覧ください！
   accounts:
-    title: /accounts
     description: すべてのアカウントを一箇所で楽に集中管理。アカウントを迅速でシームレスに追加するための3つの直感的な方法をお楽しみください。
   search:
-    title: /search
     description: "原神と崩壊：スターレイルに関連するあらゆることを簡単に探索。ゲームのコンセプトを新参者に紹介するのに最適。"
   notes:
-    title: /notes
     description: リマインダー機能付きのリアルタイムノートにアクセスし、樹脂、デイリーコミッション、その他のタスクの追跡を容易にします。
   characters:
-    title: /characters
     description: 所有しているすべてのキャラクターを一枚のカードにまとめ、チーム編成で助けが必要な時に他の人と直接共有できます。
   farm:
-    title: /farm
     description: 今日のドメインでファームできる素材を確認し、キャラクター/武器の素材がファーム可能になったときに通知するリマインダーを設定します。
   profile:
-    title: /profile
     description: キャラクターのステータスを見せるための視覚的に見事なカードを作成し、ソーシャルメディアプラットフォームでの共有に最適です。
 
 faq:

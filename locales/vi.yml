@@ -55,22 +55,16 @@ testimonials:
   subtitle: "Hoyo Buddy có thể làm gì được?"
   description: Tận dụng tối đa một số lệnh phổ biến nhất trong Hoyo Buddy!
   accounts:
-    title: /accounts
     description: Tập trung tất cả các tài khoản của bạn một cách dễ dàng ở một địa điểm. Tận hưởng ba phương pháp trực quan để thêm tài khoản một cách nhanh chóng và liền mạch.
   search:
-    title: /search
     description: "Khám phá mọi thứ liên quan đến Genshin Impact và Honkai: Star Rail một cách dễ dàng. Hoàn hảo để giới thiệu các khái niệm trò chơi cho người mới."
   notes:
-    title: /notes
     description: "Truy cập các ghi chú theo thời gian thực của bạn với các tính năng nhắc nhở bổ sung, tạo điều kiện thuận lợi cho việc theo dõi Nhựa, nhiệm vụ hàng ngày và các tác vụ khác."
   characters:
-    title: /characters
     description: "Cô đọng tất cả các nhân vật mà bạn sở hữu vào một thẻ toàn diện, lý tưởng để chia sẻ với những người khác để nhận được lời khuyên xây dựng đội."
   farm:
-    title: /farm
     description: Xem các vật liệu có thể cày được trong các Bi Cảnh ngày nay và thiết lập lời nhắc để thông báo cho bạn khi vật liệu của nhân vật/vũ khí có thể cày được.
   profile:
-    title: /profile
     description: "Tạo các thẻ nhân vật ấn tượng giới thiệu cách xây dựng nhân vật của bạn, rất phù hợp để chia sẻ trên các nền tảng mạng xã hội."
 
 faq:
