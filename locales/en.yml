@@ -55,22 +55,16 @@ testimonials:
   subtitle: What can Hoyo Buddy do?
   description: Take a peak at some of the most popular commands in Hoyo Buddy!
   accounts:
-    title: /accounts
     description: Centralize all your accounts effortlessly in one location. Enjoy three intuitive methods for adding accounts quickly and seamlessly.
   search:
-    title: /search
     description: "Explore anything related to Genshin Impact and Honkai: Star Rail with ease. Perfect for introducing game concepts to newcomers."
   notes:
-    title: /notes
     description: Access your real-time notes with added reminder features, facilitating tracking of resin, daily commissions, and other tasks.
   characters:
-    title: /characters
     description: Condense all your owned characters into one comprehensive card, ideal for sharing with others for team-building advice.
   farm:
-    title: /farm
     description: View farmable materials in today's domains, and set up reminders to alert you when a character/weapon's materials are farmable.
   profile:
-    title: /profile
     description: Create visually stunning cards showcasing your character builds, great for sharing on social media platforms.
 
 faq:
