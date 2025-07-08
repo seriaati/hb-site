@@ -117,13 +117,10 @@ team:
   subtitle: The Hoyo Buddy Team
   description: Wow, we made this.
   seria:
-    name: "@seria_ati"
     role: Programmer
   ayasaku:
-    name: "@ayasaku_"
     role: Designer
   hydrogened:
-    name: "@hydrogened"
     role: PR
 
 footer:
