@@ -115,13 +115,10 @@ team:
   subtitle: Hoyo Buddyチーム
   description: うわー、私たちがこれを作りました。
   seria:
-    name: "@seria_ati"
     role: プログラマー
   ayasaku:
-    name: "@ayasaku_"
     role: デザイナー
   hydrogened:
-    name: "@hydrogened"
     role: PR
 
 footer:
