@@ -74,13 +74,13 @@ faq:
   free:
     question: "Hoyo Buddy có được sử dụng miễn phí không?"
     answer: |
-      Có, Hoyo Buddy hoàn toàn miễn phí sử dụng. Nếu bạn thích sử dụng nó, hãy cân nhắc hỗ trợ tôi bằng cách
-      <a href="https://www.buymeacoffee.com/seria" target="_blank" rel="noopener" class="text-primary hover:underline">
-        mua một cóc cà phê
-      </a> hoặc
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-        sao dự án này trên GitHub
-      </a>.
+      Tất nhiên, Hoyo Buddy hoàn toàn miễn phí để sử dụng. Nếu bạn thích sử dụng nó, hãy cân nhắc việc hỗ trợ tôi bằng cách 
+      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
+      ủng hộ 
+      </a> hoặc 
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline"> 
+      Sao dự án này 
+      </a>. 
   open_source:
     question: "Hoyo Buddy có phải là nguồn mở không??"
     answer: |
@@ -139,5 +139,5 @@ footer:
     title: Liên hệ
     discord_server: Máy chủ Discord
     dev_discord: Discord của lập trình viên
-    buy_me_a_coffee: Mua Tôi Một Cóc Cà Phê
+    buy_me_a_coffee: Ủng Hộ
   copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
