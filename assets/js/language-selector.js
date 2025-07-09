@@ -12,6 +12,7 @@ class LanguageSelector {
       { code: 'zh-cn', name: '简体中文', flag: '🇨🇳' },
       { code: 'ja', name: '日本語', flag: '🇯🇵' },
       { code: 'pt-br', name: 'Português (Brasil)', flag: '🇧🇷' },
+      { code: 'es-es', name: 'Español', flag: '🇪🇸' },
     ];
     this.isOpen = false;
     this.init();
