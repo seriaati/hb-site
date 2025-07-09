@@ -116,13 +116,10 @@ team:
   subtitle: Đội Ngũ Hoyo Buddy
   description: "Wow, chúng tôi đã làm sản phẩm này."
   seria:
-    name: "@seria_ati"
     role: Lập trình viên
   ayasaku:
-    name: "@ayasaku_"
     role: Nhà thiết kế
   hydrogened:
-    name: "@hydrogened"
     role: PR
 
 footer:

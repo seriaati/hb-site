@@ -116,13 +116,10 @@ team:
   subtitle: Hoyo Buddy 团队
   description: 哇，这是我们做的！
   seria:
-    name: "@seria_ati"
     role: 程序员
   ayasaku:
-    name: "@ayasaku_"
     role: 设计师
   hydrogened:
-    name: "@hydrogened"
     role: 公关
 
 footer:

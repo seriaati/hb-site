@@ -116,13 +116,10 @@ team:
   subtitle: A Equipe Hoyo Buddy
   description: "Uau, nós fizemos isso."
   seria:
-    name: "@seria_ati"
     role: Programador
   ayasaku:
-    name: "@ayasaku_"
     role: Designer
   hydrogened:
-    name: "@hydrogened"
     role: RP
 
 footer:
