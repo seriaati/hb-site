@@ -75,10 +75,10 @@ faq:
     question: "Hoyo Buddy 是免費的嗎?"
     answer: |
       是, Hoyo Buddy 完全免費。如果你喜歡它, 可以考慮
-      <a rel="noopener" href="https://www.buymeacoffee.com/seria" target="_blank" class="text-primary hover:underline">
-        幫我們買杯咖啡
-      </a> 或
-      <a rel="noopener" href="https://github.com/seriaati/hoyo-buddy" target="_blank" class="text-primary hover:underline">
+      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
+        捐款
+      </a>或
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
         給我們的項目一個星星
       </a>。
   open_source:
@@ -139,5 +139,5 @@ footer:
     title: 聯繫我們
     discord_server: Discord 伺服器
     dev_discord: 開發者的 Discord
-    buy_me_a_coffee: 幫我買一杯咖啡
+    buy_me_a_coffee: 捐款
   copyright: Copyright &copy; 2024 Seria Ati | All rights reserved

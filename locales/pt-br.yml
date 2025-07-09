@@ -74,12 +74,11 @@ faq:
   free:
     question: "O Hoyo Buddy é gratuito?"
     answer: |
-      Sim, o Hoyo Buddy é completamente gratuito. Se você gostar dele, considere
-      <a href="https://www.buymeacoffee.com/seria" target="_blank" rel="noopener" class="text-primary hover:underline">
-        comprar um café
-      </a> para nos apoiar ou
+      Sim, o Hoyo Buddy é completamente gratuito. Se você gosta de usá-lo, considere nos apoiar através de <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
+      doações
+      </a> ou
       <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-        dar uma estrela ao nosso projeto
+      dando uma estrela ao projeto
       </a>.
   open_source:
     question: "O Hoyo Buddy é open source?"
@@ -139,5 +138,5 @@ footer:
     title: Contato
     discord_server: Servidor Discord
     dev_discord: Discord do Desenvolvedor
-    buy_me_a_coffee: Me Pague Um Café
+    buy_me_a_coffee: Doar
   copyright: Copyright &copy; 2024 Seria Ati | Todos os direitos reservados

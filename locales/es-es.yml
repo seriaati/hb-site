@@ -40,7 +40,7 @@ about:
     Hoyo Buddy te ofrece funciones esenciales para tu experiencia en el mundo Hoyoverse, presentando la información de forma visualmente atractiva. Nuestra interfaz ha sido diseñada con cuidado para combinar belleza y funcionalidad de manera fluida.
     <br />
     <br />
-    Hoyo Buddy destaca tanto por su diseño atractivo como por su rendimiento ultra rápido. Nuestro programador dedicó incontables horas a optimizar la aplicación, asegurando un acceso ágil a toda la información que necesitás.
+    Hoyo Buddy destaca tanto por su diseño atractivo como por su rendimiento ultra rápido. Nuestra programadora dedicó incontables horas a optimizar la aplicación, asegurando un acceso ágil a toda la información que necesitás.
   stat:
     title: Utilizado por
     description: Servidores
@@ -74,13 +74,13 @@ faq:
   free:
     question: "¿Usar Hoyo Buddy es gratis?"
     answer: |
-      Si, Hoyo Buddy es completamente gratis. Si te gusta usarlo, considera apoyarme 
-      <a href="https://www.buymeacoffee.com/seria" target="_blank" rel="noopener" class="text-primary hover:underline"> 
-        invitandome un cafe 
+      Si, Hoyo Buddy es completamente gratis. Si lo usas, considera apoyarme 
+      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
+        donando 
       </a> o 
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline"> 
-        dándole una estrella al proyecto 
-      </a>. 
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+        dándole una estrella al proyecto
+      </a>.
   open_source:
     question: "¿Hoyo Buddy es de código abierto?"
     answer: |
@@ -101,7 +101,7 @@ faq:
         Política de privacidad
       </a>. 
   contact:
-    question: "¿Cómo puedo contactar al desarrollador?"
+    question: "¿Cómo puedo contactar a la desarrolladora?"
     answer: |
       Podes enviarme un mensaje directo en 
       <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
@@ -116,7 +116,7 @@ team:
   subtitle: El equipo de Hoyo Buddy
   description: "Wow, nosotros hicimos esto."
   seria:
-    role: Programador
+    role: Programadora
   ayasaku:
     role: Diseñador
   hydrogened:
@@ -139,5 +139,5 @@ footer:
     title: Contacto
     discord_server: Servidor de Discord
     dev_discord: Discord del desarrollador
-    buy_me_a_coffee: "\"Buy Me A Coffe\""
+    buy_me_a_coffee: Donar
   copyright: Derechos de Autor &copy; 2024 Seria Ati | Todos los derechos reservados
