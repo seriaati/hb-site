@@ -75,8 +75,8 @@ faq:
     question: Is Hoyo Buddy Free to Use?
     answer: |
       Yes, Hoyo Buddy is completely free to use. If you enjoy using it, consider supporting me by
-      <a href="https://www.buymeacoffee.com/seria" target="_blank" rel="noopener" class="text-primary hover:underline">
-        buying a coffee
+      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
+        donating
       </a> or
       <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
         starring the project
@@ -140,5 +140,5 @@ footer:
     title: Contact
     discord_server: Discord Server
     dev_discord: Developer's Discord
-    buy_me_a_coffee: Buy Me A Coffee
+    buy_me_a_coffee: Donate
   copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
