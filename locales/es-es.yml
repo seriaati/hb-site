@@ -20,19 +20,19 @@ hero:
 features:
   title: Funciones
   subtitle: Funciones principales de Hoyo Buddy
-  description: Más que solo un HoYoLAB en Discord.
+  description: Mucho más que HoYoLAB en Discord.
   show_off:
     title: Muestra lo que has conseguido
     description: "¿Increíble el tiempo que invertiste en tu Hu Tao, no?; Muestrala con orgullo usando tarjetas de personaje totalmente personalizables y con un diseño estético."
   make_life_easier:
-    title: Hacé tu vida más fácil
-    description: "reclamo de login diarios, seguimiento de resina... ¡Todo eso puede ser agobiante! Hoyo Buddy te da una mano automatizando todas esas tareas por vos."
+    title: Haz tu vida más fácil
+    description: "Reclamo de login diarios, seguimiento de resina... ¡Todo eso puede ser agobiante! Hoyo Buddy te da una mano automatizando todas esas tareas por ti."
   all_in_one:
     title: Todo en un solo lugar
     description: "¿Tienes muchas cuentas de juegos que administrar? Tranquilo, el soporte multicuenta de Hoyo Buddy se encarga de todo."
   info_at_fingertips:
     title: Información al alcance de tu mano
-    description: "¿Necesitás explicarle a un amigo cómo funciona un personaje? Con Hoyo Buddy podés acceder a miles de datos del juego de forma rápida y sin complicaciones."
+    description: "¿Necesitas explicarle a un amigo cómo funciona un personaje? Con Hoyo Buddy puedes acceder a miles de datos del juego de forma rápida y sin complicaciones."
 
 about:
   title: "Versátil, Elegante y Rápido"
@@ -46,7 +46,7 @@ about:
     description: Servidores
 
 cta:
-  title: "¿Todavía no te decidís?"
+  title: "¿Todavía no te decides?"
   description: "Sabemos que hay muchos bots de Discord relacionados con Hoyoverse disponibles. Entonces, ¿por qué elegir Hoyo Buddy?, ¿Qué lo hace destacar frente a los demás, incluso frente a los que ya podrías estar usando?"
   button: Conocer más
 
@@ -55,15 +55,15 @@ testimonials:
   subtitle: "¿Qué puede hacer Hoyo Buddy?"
   description: ¡Echale un vistazo a algunos de los comandos más populares de Hoyo Buddy!
   accounts:
-    description: Centralizá todas tus cuentas fácilmente en un solo lugar. Disfrutá de tres métodos intuitivos para agregarlas de forma rápida y sin complicaciones.
+    description: Centraliza todas tus cuentas fácilmente en un solo lugar. Disfrutá de tres métodos intuitivos para agregarlas de forma rápida y sin complicaciones.
   search:
-    description: "Explorá todo lo relacionado con Genshin Impact y Honkai: Star Rail facilmente. Perfecto para explicar conceptos del juego a quienes recién comienzan."
+    description: "Explora todo lo relacionado con Genshin Impact y Honkai: Star Rail facilmente. Perfecto para explicar conceptos del juego a quienes recién comienzan."
   notes:
-    description: "Accedé a tus notas en tiempo real con funciones de recordatorio integradas. Ideal para llevar el control de la resina, encargos diarios y otras tareas importantes."
+    description: "Accede a tus notas en tiempo real con funciones de recordatorio integradas. Ideal para llevar el control de la resina, encargos diarios y otras tareas importantes."
   characters:
     description: Muestra todos tus personajes en una sola tarjeta completa. Perfecto para compartir con otros y recibir consejos de builds de equipos.
   farm:
-    description: "Consultá qué materiales se pueden farmear hoy en los dominios. Además, configura recordatorios para no olvidar farmear materiales clave para tus personajes o armas."
+    description: "Consulta qué materiales se pueden farmear hoy en los dominios. Además, configura recordatorios para no olvidar farmear materiales clave para tus personajes o armas."
   profile:
     description: Crea tarjetas visualmente impactantes con la build de tus personajes. Ideales para compartir en las diferentes redes sociales.
 
