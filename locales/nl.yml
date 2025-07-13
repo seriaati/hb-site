@@ -1,0 +1,143 @@
+meta:
+  title: Hoyo Buddy | Verbeter je Hoyoverse ervaring
+  description: "Een veelzijdige, gebruiksvriendelijke en prachtig ontworpen Discord-bot, speciaal gemaakt voor Hoyoverse gamers."
+
+navbar:
+  home: Home
+  features: Functies
+  about: Over ons
+  commands: Opdrachten
+  faq: FAQ
+  team: Team
+  get_started: Aan de slag
+
+hero:
+  title: Verbeter je Hoyoverse ervaring
+  description: "Een veelzijdige, gebruiksvriendelijke en prachtig ontworpen Discord-bot, speciaal gemaakt voor Hoyoverse gamers."
+  get_started: Aan de slag
+  star_on_github: Ster op GitHub
+
+features:
+  title: Functies
+  subtitle: Belangrijkste functies van Hoyo Buddy
+  description: Meer dan alleen HoYoLAB op Discord.
+  show_off:
+    title: Laat zien wat je hebt
+    description: "Je hebt veel tijd geïnvesteerd in het bouwen van die Hu Tao; waarom laat je haar niet zien in een volledig aanpasbare, esthetisch aantrekkelijke build kaart?"
+  make_life_easier:
+    title: Maak Je Leven Gemakkelijker
+    description: "Dagelijkse check-ins, resin tracking... Het voelt overweldigend met al deze taken! Laat Hoyo Buddy je moeiteloos helpen via het automatische takensysteem."
+  all_in_one:
+    title: Alles op één plek
+    description: "Heb je te veel game accounts om te beheren? Geen zorgen, de ondersteuning voor meerdere accounts met Hoyo Buddy zorgt ervoor dat u gedekt bent."
+  info_at_fingertips:
+    title: Informatie binnen handbereik
+    description: "Heb je ooit de abilities van een karakter aan een vriend moeten uitleggen? Met Hoyo Buddy is de toegang tot duizenden stukjes game gegevens onmiddellijk en direct."
+
+about:
+  title: "Veelzijdig, elegant en snel"
+  description: |
+    Hoyo Buddy biedt essentiële functies aan voor je Hoyoverse experience en presenteert informatie op visueel boeiende manieren. Onze zorgvuldig ontworpen gebruikersinterface combineert schoonheid naadloos met functionaliteit.
+    <br />
+    <br />
+    Hoyo Buddy maakt indruk met zowel zijn visueel aantrekkelijk ontwerp als bliksemsnelle prestaties. Onze programmeur heeft talloze uren geïnvesteerd in het optimaliseren van de app, zodat u snel toegang heeft tot de informatie die u nodig heeft.
+  stat:
+    title: Gebruikt door
+    description: Servers
+
+cta:
+  title: "Kan je nog steeds niet beslissen?"
+  description: "Er zijn talloze Hoyoverse-gerelateerde Discord-bots op de markt, dus waarom zou je kiezen voor Hoyo Buddy? Wat onderscheidt Hoyo Buddy van de anderen, inclusief degene die je misschien al gebruikt?"
+  button: Lees erover
+
+testimonials:
+  title: Opdrachten
+  subtitle: "Wat kan Hoyo Buddy doen?"
+  description: Neem een kijkje bij enkele van de meest populaire opdrachten in Hoyo Buddy!
+  accounts:
+    description: Centraliseer al je accounts moeiteloos op één locatie. Geniet van drie intuïtieve methoden om snel accounts toe te voegen.
+  search:
+    description: "Ontdek met gemak alles wat met Genshin Impact en Honkai: Star Rail te maken heeft. Perfect om spelconcepten aan nieuwkomers te introduceren."
+  notes:
+    description: "Krijg toegang tot realtime aantekeningen met extra herinneringsfuncties, waardoor het volgen van resin, dagelijkse commissies en andere taken wordt vergemakkelijkt."
+  characters:
+    description: "Verzamel al je karakters in één uitgebreide kaart, ideaal om met anderen te delen voor advies over teambuilding."
+  farm:
+    description: Bekijk farmable materialen in de domeinen van vandaag en stel herinneringen in om je te waarschuwen wanneer de materialen van een karakter/wapen farmable zijn.
+  profile:
+    description: "Maak visueel verbluffende kaarten waarop je karakter builds worden getoond, ideaal om te delen op sociale mediaplatforms."
+
+faq:
+  title: FAQ
+  subtitle: "Heb je vragen? Kijk hier"
+  description: "Als je nog andere vragen hebt, neem dan contact met ons op."
+  free:
+    question: "Is Hoyo Buddy gratis te gebruiken?"
+    answer: |
+      Ja, Hoyo Buddy is volledig gratis te gebruiken. Als je het leuk vindt om het te gebruiken, overweeg dan om mij te steunen
+      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
+        doneren
+      </a> of
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+        geef een ster op Github
+      </a>.
+  open_source:
+    question: "Is Hoyo Buddy open source?"
+    answer: |
+      Ja, Hoyo Buddy is open source. De broncode kun je vinden op
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+        GitHub
+      </a>, houd u bij het gebruik van de code aan de licentie.
+  safe:
+    question: "Is Hoyo Buddy veilig om te gebruiken?"
+    answer: |
+      Lees alstublieft de
+      <a href="https://hb-docs.seria.moe/docs/Account-Security" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+        Accountbeveiliging
+      </a> pagina op de Wiki voor meer informatie. Voor gegevensprivacy leest u de
+      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+        Privacybeleid
+      </a>.
+  contact:
+    question: "Hoe neem ik contact op met de ontwikkelaar?"
+    answer: |
+      U kunt mij rechtstreeks een bericht sturen op
+      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+        Discord
+      </a> of join de
+      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
+        Discord server
+      </a> en ping me daar.
+team:
+  title: Teamleden
+  subtitle: Het Hoyo Buddy Team
+  description: "Wauw, wij hebben dit gemaakt."
+  seria:
+    role: Programmeur
+  ayasaku:
+    role: Ontwerper
+  hydrogened:
+    role: PR
+
+footer:
+  description: Verbeter je Hoyoverse ervaring
+  navigation:
+    title: Navigatie
+    home: Home
+    about: Over ons
+    features: Functies
+    faq: FAQ
+  quick_links:
+    title: Snelle Links
+    github: Project op GitHub
+    wiki: Wiki
+    invite: Uitnodigings Link
+  contact:
+    title: Contact
+    discord_server: Discord Server
+    dev_discord: Ontwikkelaar's Discord
+    buy_me_a_coffee: Doneer
+  copyright: Auteursrecht &kopiëren; Serie Ati 2024 | Alle rechten voorbehouden
