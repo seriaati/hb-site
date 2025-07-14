@@ -113,20 +113,20 @@ async function applyTranslations(lang) {
 
 // Function to detect user's preferred language
 function detectUserLocale() {
-    const supportedLanguages = ['en', 'vi', 'zh-tw', 'zh-cn', 'ja', 'pt-br', 'es-es'];
-    
+    const supportedLocales = ['en', 'vi', 'zh-TW', 'zh-CN', 'ja', 'pt', 'es'];
+
     // Get browser languages in order of preference
     const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
     
     for (const browserLang of browserLanguages) {
         // Check exact match first
-        if (supportedLanguages.includes(browserLang)) {
+        if (supportedLocales.includes(browserLang)) {
             return browserLang;
         }
         
         // Check language code without region (e.g., 'en-US' -> 'en')
         const langCode = browserLang.split('-')[0];
-        if (supportedLanguages.includes(langCode)) {
+        if (supportedLocales.includes(langCode)) {
             return langCode;
         }
         
@@ -134,20 +134,20 @@ function detectUserLocale() {
         if (browserLang.startsWith('zh')) {
             // Traditional Chinese regions
             if (browserLang.includes('TW') || browserLang.includes('HK') || browserLang.includes('MO')) {
-                return 'zh-tw';
+                return 'zh-TW';
             }
             // Simplified Chinese (default for other Chinese variants)
-            return 'zh-cn';
+            return 'zh-CN';
         }
 
         // Handle Portuguese (Brazil)
         if (browserLang.startsWith('pt')) {
-            return 'pt-br';
+            return 'pt';
         }
 
         // Handle Spanish (default to Spain)
         if (browserLang.startsWith('es')) {
-            return 'es-es';
+            return 'es';
         }
     }
     
@@ -158,6 +158,9 @@ function detectUserLocale() {
 // Language switcher logic
 document.addEventListener('DOMContentLoaded', () => {
     // Set initial language: localStorage > browser locale > default English
-    const initialLang = localStorage.getItem('lang') || detectUserLocale();
+    const supportedLocales = ['en', 'vi', 'zh-TW', 'zh-CN', 'ja', 'pt', 'es'];
+    const storedLang = localStorage.getItem('lang');
+    const supportedStoredLang = supportedLocales.includes(storedLang) ? storedLang : 'en';
+    const initialLang = supportedStoredLang || detectUserLocale() || 'en';
     applyTranslations(initialLang);
 });
