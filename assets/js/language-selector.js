@@ -8,11 +8,11 @@ class LanguageSelector {
     this.languages = [
       { code: 'en', name: 'English', flag: '🇺🇸' },
       { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
-      { code: 'zh-TW', name: '繁體中文', flag: '🇹🇼' },
-      { code: 'zh-CN', name: '简体中文', flag: '🇨🇳' },
+      { code: 'zh-tw', name: '繁體中文', flag: '🇹🇼' },
+      { code: 'zh-cn', name: '简体中文', flag: '🇨🇳' },
       { code: 'ja', name: '日本語', flag: '🇯🇵' },
-      { code: 'pt', name: 'Português (Brasil)', flag: '🇧🇷' },
-      { code: 'es', name: 'Español', flag: '🇪🇸' },
+      { code: 'pt-br', name: 'Português (Brasil)', flag: '🇧🇷' },
+      { code: 'es-es', name: 'Español', flag: '🇪🇸' },
     ];
     this.isOpen = false;
     this.init();

@@ -28,7 +28,7 @@ Uses Prettier with TailwindCSS plugin for consistent code formatting.
   - `main.js` - Core UI interactions (sticky header, navbar, theme switching)
   - `localization.js` - I18n system with YAML parsing and DOM updates
   - `language-selector.js` - Floating language selector component
-- `locales/` - Translation files
+- `locales/` - Translation files (en.yml, vi.yml, zh-tw.yml)
 - `assets/css/` - Stylesheets including compiled TailwindCSS
 - `assets/images/` - Static assets organized by page sections
 

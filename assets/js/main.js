@@ -112,28 +112,4 @@
   // invoke theme check on initial load
   themeCheck();
   /* ========  themeSwitcher End ========= */
-
-  // ===== Locale-aware install link handler
-  function getCurrentLocale() {
-    const supportedLocales = ['en', 'vi', 'zh-TW', 'zh-CN', 'ja', 'pt', 'es'];
-    const storedLang = localStorage.getItem('lang');
-    return supportedLocales.includes(storedLang) ? storedLang : 'en';
-  }
-
-  function handleInstallRedirect(event) {
-    event.preventDefault();
-    const currentLocale = getCurrentLocale();
-    const baseUrl = 'https://one.hb.seria.moe';
-    const installUrl = `${baseUrl}/${currentLocale}/install`;
-    window.open(installUrl, '_blank', 'noopener');
-  }
-
-  // Attach event listeners to install buttons
-  document.addEventListener('DOMContentLoaded', () => {
-    const installButtons = document.querySelectorAll('a[href="https://one.hb.seria.moe/install"]');
-    installButtons.forEach(button => {
-      button.addEventListener('click', handleInstallRedirect);
-    });
-  });
-
 })();
