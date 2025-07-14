@@ -113,7 +113,7 @@ async function applyTranslations(lang) {
 
 // Function to detect user's preferred language
 function detectUserLocale() {
-    const supportedLanguages = ['en', 'vi', 'zh-TW', 'zh-CN', 'ja', 'pt-BR', 'es-ES'];
+    const supportedLanguages = ['en', 'vi', 'zh-TW', 'zh-CN', 'ja', 'pt', 'es'];
 
     // Get browser languages in order of preference
     const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
@@ -158,6 +158,9 @@ function detectUserLocale() {
 // Language switcher logic
 document.addEventListener('DOMContentLoaded', () => {
     // Set initial language: localStorage > browser locale > default English
-    const initialLang = localStorage.getItem('lang') || detectUserLocale();
+    const supportedLocales = ['en', 'vi', 'zh-TW', 'zh-CN', 'ja', 'pt', 'es'];
+    const storedLang = localStorage.getItem('lang');
+    const supportedStoredLang = supportedLocales.includes(storedLang) ? storedLang : 'en';
+    const initialLang = supportedStoredLang || detectUserLocale() || 'en';
     applyTranslations(initialLang);
 });
