@@ -113,20 +113,20 @@ async function applyTranslations(lang) {
 
 // Function to detect user's preferred language
 function detectUserLocale() {
-    const supportedLanguages = ['en', 'vi', 'zh-TW', 'zh-CN', 'ja', 'pt', 'es'];
+    const supportedLocales = ['en', 'vi', 'zh-TW', 'zh-CN', 'ja', 'pt', 'es'];
 
     // Get browser languages in order of preference
     const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
     
     for (const browserLang of browserLanguages) {
         // Check exact match first
-        if (supportedLanguages.includes(browserLang)) {
+        if (supportedLocales.includes(browserLang)) {
             return browserLang;
         }
         
         // Check language code without region (e.g., 'en-US' -> 'en')
         const langCode = browserLang.split('-')[0];
-        if (supportedLanguages.includes(langCode)) {
+        if (supportedLocales.includes(langCode)) {
             return langCode;
         }
         
