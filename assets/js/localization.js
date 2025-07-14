@@ -113,8 +113,8 @@ async function applyTranslations(lang) {
 
 // Function to detect user's preferred language
 function detectUserLocale() {
-    const supportedLanguages = ['en', 'vi', 'zh-tw', 'zh-cn', 'ja', 'pt-br', 'es-es'];
-    
+    const supportedLanguages = ['en', 'vi', 'zh-TW', 'zh-CN', 'ja', 'pt-BR', 'es-ES'];
+
     // Get browser languages in order of preference
     const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
     
@@ -134,20 +134,20 @@ function detectUserLocale() {
         if (browserLang.startsWith('zh')) {
             // Traditional Chinese regions
             if (browserLang.includes('TW') || browserLang.includes('HK') || browserLang.includes('MO')) {
-                return 'zh-tw';
+                return 'zh-TW';
             }
             // Simplified Chinese (default for other Chinese variants)
-            return 'zh-cn';
+            return 'zh-CN';
         }
 
         // Handle Portuguese (Brazil)
         if (browserLang.startsWith('pt')) {
-            return 'pt-br';
+            return 'pt';
         }
 
         // Handle Spanish (default to Spain)
         if (browserLang.startsWith('es')) {
-            return 'es-es';
+            return 'es';
         }
     }
     
