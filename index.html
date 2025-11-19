@@ -28,7 +28,9 @@
   <!-- ==== WOW JS ==== -->
   <script src="assets/js/wow.min.js"></script>
   <script>
-    window.location.replace("https://hb.seria.moe");
+    if (window.location.hostname === "seria.is-a.dev") {
+      window.location.replace("https://hb.seria.moe");
+    }
     new WOW().init();
   </script>
 </head>
