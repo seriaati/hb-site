@@ -12,7 +12,7 @@ navbar:
   get_started: Primeros pasos
 
 hero:
-  title: Eleva tu experiencia Hoyoverse
+  title: Hoyo Buddy
   description: "Un bot de Discord con muchas funciones, fácil de usar y bellamente diseñado, hecho para jugadores de Hoyoverse."
   get_started: Primeros pasos
   star_on_github: Estrella en GitHub
