@@ -12,7 +12,6 @@ navbar:
   get_started: 开始
 
 hero:
-  title: Hoyo Buddy
   description: 一个为 Hoyoverse 游戏玩家量身定做的 Discord 机器人，功能丰富、易于使用且设计精美。
   get_started: 开始
   star_on_github: 在 Github 上给我们一颗星星

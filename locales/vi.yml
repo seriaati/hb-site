@@ -12,7 +12,6 @@ navbar:
   get_started: Bắt đầu
 
 hero:
-  title: Hoyo Buddy
   description: "Là một Discord bot với nhiều tính năng phong phú, dễ sử dụng, được thiết kế đẹp mắt dành cho game thủ Hoyoverse."
   get_started: Bắt đầu
   star_on_github: Sao trên GitHub

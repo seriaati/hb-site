@@ -12,7 +12,6 @@ navbar:
   get_started: Aan de slag
 
 hero:
-  title: Hoyo Buddy
   description: "Een veelzijdige, gebruiksvriendelijke en prachtig ontworpen Discord-bot, speciaal gemaakt voor Hoyoverse gamers."
   get_started: Aan de slag
   star_on_github: Ster op GitHub

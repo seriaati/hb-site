@@ -12,7 +12,6 @@ navbar:
   get_started: Começar
 
 hero:
-  title: Hoyo Buddy
   description: "Um bot do Discord rico em recursos, fácil de usar e com design bonito, feito para jogadores da Hoyoverse."
   get_started: Começar
   star_on_github: Dar Estrela no GitHub

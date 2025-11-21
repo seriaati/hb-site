@@ -12,7 +12,6 @@ navbar:
   get_started: はじめる
 
 hero:
-  title: Hoyo Buddy
   description: Hoyoverseゲーマーのために作られた、機能豊富で使いやすく、美しくデザインされたDiscordボット。
   get_started: はじめる
   star_on_github: GitHubでスター
