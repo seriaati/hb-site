@@ -29,9 +29,9 @@ features:
     bullet5: • 使用你的自訂圖片
   make_life_easier:
     title: 自動任務和提醒
-    bullet1: • 自動完成 Traveling Mimo 任務、獲取點數並購買獎勵
+    bullet1: • 自動完成旅行 Mimo 任務、獲取點數並購買獎勵
     bullet2: • 自動領取每日簽到獎勵
-    bullet3: • 自動兌換直播和其他禮品代碼
+    bullet3: • 自動兌換前瞻直播和其他兌換碼
     bullet4: • 樹脂、每日委託及其他更多提醒
   all_in_one:
     title: 集中管理
