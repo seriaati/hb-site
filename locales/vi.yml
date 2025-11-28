@@ -29,10 +29,10 @@ features:
     bullet5: • Sử dụng hình ảnh tùy chỉnh của bạn
   make_life_easier:
     title: Tự Động Hóa Các Tác Vụ và Nhắc Nhở
-    bullet1: • Tự động hoàn thành nhiệm vụ Traveling Mimo, nhận điểm và mua phần thưởng
+    bullet1: "• Tự động hoàn thành nhiệm vụ Traveling Mimo, nhận điểm và mua phần thưởng"
     bullet2: • Tự động nhận phần thưởng điểm danh hàng ngày
     bullet3: • Tự động đổi mã livestream và các mã quà tặng khác
-    bullet4: • Nhắc nhở về nhựa, nhiệm vụ hàng ngày và nhiều hơn nữa
+    bullet4: "• Nhắc nhở về nhựa, nhiệm vụ hàng ngày và nhiều hơn nữa"
   all_in_one:
     title: Tất Cả Trong Một Nơi
     bullet1: • Thêm tài khoản từ các trò chơi khác nhau và tài khoản Hoyoverse
@@ -41,7 +41,7 @@ features:
     title: Miễn Phí và Mã Nguồn Mở
     bullet1: • Hoàn toàn miễn phí để sử dụng
     bullet2: • Mã nguồn mở trên GitHub
-    bullet3: • Không có quảng cáo, không có rào cản thanh toán
+    bullet3: "• Không có quảng cáo, không có rào cản thanh toán"
     bullet4: • Được tạo ra với sự quan tâm đến quyền riêng tư và an toàn
 
 about:

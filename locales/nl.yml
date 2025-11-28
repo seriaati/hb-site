@@ -29,10 +29,10 @@ features:
     bullet5: • Gebruik je eigen afbeeldingen
   make_life_easier:
     title: Automatische Taken en Herinneringen
-    bullet1: • Voltooi automatisch Traveling Mimo-taken, verdien punten en koop beloningen
+    bullet1: "• Voltooi automatisch Traveling Mimo-taken, verdien punten en koop beloningen"
     bullet2: • Claim automatisch dagelijkse inlog beloningen
     bullet3: • Wissel automatisch livestream en andere cadeaucodes in
-    bullet4: • Resin, dagelijkse commissies en andere herinneringen
+    bullet4: "• Resin, dagelijkse commissies en andere herinneringen"
   all_in_one:
     title: Alles op één plek
     bullet1: • Voeg accounts toe van verschillende spellen en Hoyoverse-accounts
@@ -41,7 +41,7 @@ features:
     title: Gratis en Open Source
     bullet1: • Volledig gratis te gebruiken
     bullet2: • Open source op GitHub
-    bullet3: • Geen advertenties, geen paywalls
+    bullet3: "• Geen advertenties, geen paywalls"
     bullet4: • Gemaakt met privacy en veiligheid in gedachten
 
 about:
