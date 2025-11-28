@@ -29,10 +29,10 @@ features:
     bullet5: • Use suas imagens personalizadas
   make_life_easier:
     title: Tarefas Automáticas e Lembretes
-    bullet1: • Complete automaticamente tarefas do Traveling Mimo, ganhe pontos e compre recompensas
+    bullet1: "• Complete automaticamente tarefas do Traveling Mimo, ganhe pontos e compre recompensas"
     bullet2: • Reivindique automaticamente recompensas de check-in diário
     bullet3: • Resgate automaticamente códigos de livestream e outros códigos de presente
-    bullet4: • Resina, comissões diárias e outros lembretes
+    bullet4: "• Resina, comissões diárias e outros lembretes"
   all_in_one:
     title: Tudo em Um Lugar
     bullet1: • Adicione contas de diferentes jogos e contas Hoyoverse
@@ -41,7 +41,7 @@ features:
     title: Grátis e de Código Aberto
     bullet1: • Completamente grátis para usar
     bullet2: • Código aberto no GitHub
-    bullet3: • Sem anúncios, sem paywalls
+    bullet3: "• Sem anúncios, sem paywalls"
     bullet4: • Feito pensando em privacidade e segurança
 
 about:
