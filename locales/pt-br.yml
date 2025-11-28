@@ -21,17 +21,28 @@ features:
   subtitle: Principais Recursos do Hoyo Buddy
   description: Mais do que apenas HoYoLAB no Discord.
   show_off:
-    title: Mostre o Que Você Tem
-    description: "Você investiu um tempo considerável construindo essa Hu Tao; por que não mostrá-la em um card de build totalmente personalizável e esteticamente agradável?"
+    title: Crie Cartões para Seus Personagens
+    bullet1: • Múltiplos modelos para escolher
+    bullet2: • Integração com Enka Network
+    bullet3: • Condense toda a equipe em um cartão
+    bullet4: • Muitas opções de personalização
+    bullet5: • Use suas imagens personalizadas
   make_life_easier:
-    title: Torne Sua Vida Mais Fácil
-    description: "Check-ins diários, rastreamento de resina... É esmagador com todas essas tarefas! Deixe o Hoyo Buddy ajudá-lo sem esforço através de seu sistema de tarefas automáticas."
+    title: Tarefas Automáticas e Lembretes
+    bullet1: • Complete automaticamente tarefas do Traveling Mimo, ganhe pontos e compre recompensas
+    bullet2: • Reivindique automaticamente recompensas de check-in diário
+    bullet3: • Resgate automaticamente códigos de livestream e outros códigos de presente
+    bullet4: • Resina, comissões diárias e outros lembretes
   all_in_one:
     title: Tudo em Um Lugar
-    description: "Tem muitas contas de jogos para gerenciar? Não se preocupe, o suporte multi-conta do Hoyo Buddy tem você coberto."
-  info_at_fingertips:
-    title: Informações na Ponta dos Dedos
-    description: "Já precisou explicar as habilidades de um personagem para um amigo? Com o Hoyo Buddy, acessar milhares de dados do jogo é perfeito e instantâneo."
+    bullet1: • Adicione contas de diferentes jogos e contas Hoyoverse
+    bullet2: • Experiência centralizada com um bot
+  free_and_open_source:
+    title: Grátis e de Código Aberto
+    bullet1: • Completamente grátis para usar
+    bullet2: • Código aberto no GitHub
+    bullet3: • Sem anúncios, sem paywalls
+    bullet4: • Feito pensando em privacidade e segurança
 
 about:
   title: "Versátil, Elegante e Rápido"

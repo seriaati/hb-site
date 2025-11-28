@@ -21,17 +21,28 @@ features:
   subtitle: Tính năng chính của Hoyo Buddy
   description: Không chỉ là HoYoLAB trên Discord đâu.
   show_off:
-    title: Thể Hiện Những Gì Bạn Có
-    description: "Bạn đã đầu tư một khoảng thơi gian để build Hu Tao đó; sao không trưng bày nhân vật ấy trên một thẻ build hoàn toàn có thể tùy chỉnh, đẹp mắt?"
+    title: Tạo Thẻ Cho Nhân Vật Của Bạn
+    bullet1: • Nhiều mẫu để lựa chọn
+    bullet2: • Tích hợp Enka Network
+    bullet3: • Gộp toàn bộ đội hình vào một thẻ
+    bullet4: • Nhiều tùy chọn tùy chỉnh
+    bullet5: • Sử dụng hình ảnh tùy chỉnh của bạn
   make_life_easier:
-    title: Làm Cuộc Sống Bạn Dễ Dàng Hơn
-    description: "Điểm Danh Hàng Ngày, Theo Dõi Nhựa... Những tác vụ này làm bạn cảm thấy choáng ngợp! Để Hoyo Buddy hổ trợ bạn dễ dàng qua hệ thống tác vụ tự động của nó."
+    title: Tự Động Hóa Các Tác Vụ và Nhắc Nhở
+    bullet1: • Tự động hoàn thành nhiệm vụ Traveling Mimo, nhận điểm và mua phần thưởng
+    bullet2: • Tự động nhận phần thưởng điểm danh hàng ngày
+    bullet3: • Tự động đổi mã livestream và các mã quà tặng khác
+    bullet4: • Nhắc nhở về nhựa, nhiệm vụ hàng ngày và nhiều hơn nữa
   all_in_one:
     title: Tất Cả Trong Một Nơi
-    description: "Có quá nhiều tài khoản game để quản lý hả? Không phải lo, tính năng hỗ trợ nhiều tài khoản của Hoyo Buddy giúp bạn quản lý nhiều tài khoản cùng một nơi."
-  info_at_fingertips:
-    title: Thông Tin Trong Tầm Tay Bạn
-    description: "Bạn có bao giờ cần giải thích khả năng của nhân vật cho bạn bè không? Với Hoyo Buddy, bạn có thể truy cập hàng nghìn dữ liệu trò chơi một cách liền mạch và tức thì."
+    bullet1: • Thêm tài khoản từ các trò chơi khác nhau và tài khoản Hoyoverse
+    bullet2: • Trải nghiệm tập trung với một bot duy nhất
+  free_and_open_source:
+    title: Miễn Phí và Mã Nguồn Mở
+    bullet1: • Hoàn toàn miễn phí để sử dụng
+    bullet2: • Mã nguồn mở trên GitHub
+    bullet3: • Không có quảng cáo, không có rào cản thanh toán
+    bullet4: • Được tạo ra với sự quan tâm đến quyền riêng tư và an toàn
 
 about:
   title: "Đa Năng, Thanh Lịch và Nhanh Chóng"

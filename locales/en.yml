@@ -21,17 +21,28 @@ features:
   subtitle: Main Features Of Hoyo Buddy
   description: More than just HoYoLAB on Discord.
   show_off:
-    title: Show Off What You've Got
-    description: You've invested considerable time in building that Hu Tao; why not showcase her in a fully customizable, aesthetically pleasing build card?
+    title: Build Cards for Your Characters
+    bullet1: • Multiple templates to choose from
+    bullet2: • Enka Network integration
+    bullet3: • Condense entire team into one card
+    bullet4: • Many customization options
+    bullet5: • Use your custom images
   make_life_easier:
-    title: Make Your Life Easier
-    description: Daily check-ins, resin tracking... It feels overwhelming with all these tasks! Let Hoyo Buddy assist you effortlessly through its automatic task system.
+    title: Auto Tasks and Reminders
+    bullet1: • Auto complete Traveling Mimo tasks, get points, and buy rewards
+    bullet2: • Auto claim daily check-in rewards
+    bullet3: • Auto redeem livestream and other gift codes
+    bullet4: • Resin, daily commissions, and other more reminders
   all_in_one:
     title: All In One Place
-    description: Got too many game accounts to manage? No worries, Hoyo Buddy's multi-account support has got you covered.
-  info_at_fingertips:
-    title: Information At Your Fingertips
-    description: Ever needed to explain a character's abilities to a friend? With Hoyo Buddy, accessing thousands of pieces of game data is seamless and instant.
+    bullet1: • Add accounts from different games and Hoyoverse accounts
+    bullet2: • Centralized experience with one bot
+  free_and_open_source:
+    title: Free and Open Source
+    bullet1: • Completely free to use
+    bullet2: • Open source on GitHub
+    bullet3: • No ads, no paywalls
+    bullet4: • Made with privacy and safety in mind
 
 about:
   title: Versatile, Elegant, and Fast

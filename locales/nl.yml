@@ -21,17 +21,28 @@ features:
   subtitle: Belangrijkste functies van Hoyo Buddy
   description: Meer dan alleen HoYoLAB op Discord.
   show_off:
-    title: Laat zien wat je hebt
-    description: "Je hebt veel tijd geïnvesteerd in het bouwen van die Hu Tao; waarom laat je haar niet zien in een volledig aanpasbare, esthetisch aantrekkelijke build kaart?"
+    title: Bouw Kaarten voor Je Personages
+    bullet1: • Meerdere sjablonen om uit te kiezen
+    bullet2: • Enka Network integratie
+    bullet3: • Condenseer het hele team in één kaart
+    bullet4: • Veel aanpassingsmogelijkheden
+    bullet5: • Gebruik je eigen afbeeldingen
   make_life_easier:
-    title: Maak Je Leven Gemakkelijker
-    description: "Dagelijkse check-ins, resin tracking... Het voelt overweldigend met al deze taken! Laat Hoyo Buddy je moeiteloos helpen via het automatische takensysteem."
+    title: Automatische Taken en Herinneringen
+    bullet1: • Voltooi automatisch Traveling Mimo-taken, verdien punten en koop beloningen
+    bullet2: • Claim automatisch dagelijkse inlog beloningen
+    bullet3: • Wissel automatisch livestream en andere cadeaucodes in
+    bullet4: • Resin, dagelijkse commissies en andere herinneringen
   all_in_one:
     title: Alles op één plek
-    description: "Heb je te veel game accounts om te beheren? Geen zorgen, de ondersteuning voor meerdere accounts met Hoyo Buddy zorgt ervoor dat u gedekt bent."
-  info_at_fingertips:
-    title: Informatie binnen handbereik
-    description: "Heb je ooit de abilities van een karakter aan een vriend moeten uitleggen? Met Hoyo Buddy is de toegang tot duizenden stukjes game gegevens onmiddellijk en direct."
+    bullet1: • Voeg accounts toe van verschillende spellen en Hoyoverse-accounts
+    bullet2: • Gecentraliseerde ervaring met één bot
+  free_and_open_source:
+    title: Gratis en Open Source
+    bullet1: • Volledig gratis te gebruiken
+    bullet2: • Open source op GitHub
+    bullet3: • Geen advertenties, geen paywalls
+    bullet4: • Gemaakt met privacy en veiligheid in gedachten
 
 about:
   title: "Veelzijdig, elegant en snel"

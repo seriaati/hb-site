@@ -21,17 +21,28 @@ features:
   subtitle: Hoyo Buddyの主な機能
   description: Discord上のHoYoLABだけではありません。
   show_off:
-    title: 持っているものを見せつけよう
-    description: あなたはその胡桃の育成にかなりの時間を投資してきました。なぜ完全にカスタマイズ可能で美しいビルドカードで彼女を紹介しないのですか？
+    title: キャラクターのカードを作成
+    bullet1: • 選べる複数のテンプレート
+    bullet2: • Enka Network 統合
+    bullet3: • チーム全体を1枚のカードにまとめる
+    bullet4: • 多くのカスタマイズオプション
+    bullet5: • カスタム画像を使用
   make_life_easier:
-    title: あなたの生活をより簡単に
-    description: 毎日のチェックイン、樹脂の追跡...これらすべてのタスクで圧倒的に感じます！Hoyo Buddyの自動タスクシステムを通じて、努力なしでお手伝いさせてください。
+    title: 自動タスクとリマインダー
+    bullet1: • Traveling Mimo タスクを自動完了、ポイントを獲得して報酬を購入
+    bullet2: • 毎日のチェックイン報酬を自動受取
+    bullet3: • ライブストリームやその他のギフトコードを自動交換
+    bullet4: • 樹脂、デイリー依頼、その他のリマインダー
   all_in_one:
     title: すべてを一箇所で
-    description: 管理するゲームアカウントが多すぎますか？心配いりません、Hoyo Buddyのマルチアカウントサポートがあなたをカバーします。
-  info_at_fingertips:
-    title: 指先で情報を
-    description: 友達にキャラクターの能力を説明する必要がありましたか？Hoyo Buddyなら、何千ものゲームデータへのアクセスがシームレスで瞬時です。
+    bullet1: • 異なるゲームと Hoyoverse アカウントを追加
+    bullet2: • 1つのボットで集中化された体験
+  free_and_open_source:
+    title: 無料でオープンソース
+    bullet1: • 完全に無料で使用できます
+    bullet2: • GitHub 上でオープンソース
+    bullet3: • 広告なし、ペイウォールなし
+    bullet4: • プライバシーと安全性を考慮して作成
 
 about:
   title: 多機能、エレガント、そして高速

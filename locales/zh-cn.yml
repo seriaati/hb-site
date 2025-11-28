@@ -21,17 +21,28 @@ features:
   subtitle: Hoyo Buddy 的主要功能
   description: 不仅仅是在 DIscord 上的 HoYoLab。
   show_off:
-    title: 炫耀所有
-    description: 你已经投入了如此多的时间养好胡桃，为何不用一张可自定义的、美观的卡片展示一下她呢？
+    title: 为你的角色创建卡片
+    bullet1: • 多种模板可供选择
+    bullet2: • Enka Network 集成
+    bullet3: • 将整个队伍整合到一张卡片中
+    bullet4: • 多种自定义选项
+    bullet5: • 使用你的自定义图片
   make_life_easier:
-    title: 更加轻松
-    description: 每日签到、树脂追踪......这么多事情要做！让 Hoyo Buddy 通过它的自动任务系统轻松的替你完成那些事项吧。
+    title: 自动任务和提醒
+    bullet1: • 自动完成 Traveling Mimo 任务、获取积分并购买奖励
+    bullet2: • 自动领取每日签到奖励
+    bullet3: • 自动兌换直播和其他礼品代码
+    bullet4: • 树脂、每日委托和其他更多提醒
   all_in_one:
     title: 集中管理
-    description: 太多账号要管理？不用担心，Hoyo Buddy 支持多账号，让你省去此烦恼。
-  info_at_fingertips:
-    title: 信息触手可及
-    description: 需要向朋友解释下某角色技能吗？使用 Hoyo Buddy，可以轻松且即时地访问各个游戏资料。
+    bullet1: • 添加来自不同游戏和 Hoyoverse 账户
+    bullet2: • 使用一个机器人的集中化体验
+  free_and_open_source:
+    title: 免费和开源
+    bullet1: • 完全免费使用
+    bullet2: • 在 GitHub 上开源
+    bullet3: • 无广告、无付费墙
+    bullet4: • 考虑隐私和安全的设计
 
 about:
   title: 强大、美观、迅速
