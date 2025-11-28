@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://hb.seria.moe/</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hb.seria.moe/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hb.seria.moe/index-vi-vn.html" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hb.seria.moe/index-zh-tw.html" />
+  </url>
+  <url>
+    <loc>https://hb.seria.moe/index-vi-vn.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hb.seria.moe/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hb.seria.moe/index-vi-vn.html" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hb.seria.moe/index-zh-tw.html" />
+  </url>
+  <url>
+    <loc>https://hb.seria.moe/index-zh-tw.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hb.seria.moe/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hb.seria.moe/index-vi-vn.html" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hb.seria.moe/index-zh-tw.html" />
+  </url>
+</urlset>

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hb.seria.moe/sitemap.xml
+
+# Disallow specific paths if needed
+# Disallow: /assets/
