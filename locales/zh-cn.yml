@@ -58,7 +58,7 @@ about:
 cta:
   title: 还决定不下来吗？
   description: 市面上有许多和 Hoyoverse 相关的机器人，那为什么要选择 Hoyo Buddy ？是什么让 Hoyo Buddy 从其他机器人中脱颖而出，包括你可能已经在使用的机器人？
-  button: 查看介紹
+  button: 查看介绍
 
 testimonials:
   title: 命令
@@ -67,7 +67,7 @@ testimonials:
   accounts:
     description: 将所有账号集中于一处轻松管理。共有三种直观的无缝快速的添加账号方式供你选择。
   search:
-    description: "轻松探索与原神、星穹铁道及绝区零相关的任何内容。非常适合用来向新手介绍游戏观念。"
+    description: "轻松探索与原神、崩坏：星穹铁道及绝区零相关的任何内容。非常适合用来向新手介绍游戏概念。"
   notes:
     description: 随时随地查看你的实时便笺，打开提醒功能，便于追踪树脂、每日任务等。
   characters:
@@ -79,7 +79,7 @@ testimonials:
 
 faq:
   title: 常见问题
-  subtitle: 还有问题吗？查看这里
+  subtitle: 还有问题吗？请看这里
   description: 如果你有其他问题，请直接联系我们。
   free:
     question: Hoyo Buddy 是免费的吗？
@@ -116,10 +116,10 @@ faq:
       你可以直接在
       <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
         class="text-primary hover:underline">
-      DIscord
+      Discord
        </a>上私信我，或者加入我们的
       <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline"> 
-      DIscord 服务器
+      Discord 服务器
       </a>那里@我。
 team:
   title: 团队成员
@@ -147,7 +147,7 @@ footer:
     invite: 邀请链接
   contact:
     title: 联系我们
-    discord_server: DIscord 服务器
-    dev_discord: 开发者的 DIscord
+    discord_server: Discord 服务器
+    dev_discord: 开发者的 Discord
     buy_me_a_coffee: 捐款
   copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
