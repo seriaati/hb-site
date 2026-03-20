@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer  base {
+@layer base {
   body {
     font-family: "Inter", sans-serif;
   }
@@ -24,15 +24,18 @@
   @apply bg-dark dark:bg-white;
 }
 
-.sticky #navbarCollapse li > a {
+.sticky #navbarCollapse li>a {
   @apply text-dark dark:text-white hover:text-primary dark:hover:text-primary hover:opacity-100;
 }
+
 #navbarCollapse li .ud-menu-scroll.active {
   @apply opacity-70;
 }
+
 .sticky #navbarCollapse li .ud-menu-scroll.active {
   @apply text-primary opacity-100;
 }
+
 .sticky .loginBtn {
   @apply text-dark dark:text-white hover:text-primary dark:hover:text-primary hover:opacity-100;
 }
@@ -41,31 +44,72 @@
   @apply bg-primary text-white hover:bg-blue-dark hover:text-white;
 }
 
-.sticky #themeSwitcher ~ span {
+.sticky #themeSwitcher~span {
   @apply text-dark dark:text-white;
 }
 
-.navbarTogglerActive > span:nth-child(1) {
+.navbarTogglerActive>span:nth-child(1) {
   @apply top-[7px] rotate-45 transform;
 }
-.navbarTogglerActive > span:nth-child(2) {
+
+.navbarTogglerActive>span:nth-child(2) {
   @apply opacity-0;
 }
-.navbarTogglerActive > span:nth-child(3) {
+
+.navbarTogglerActive>span:nth-child(3) {
   @apply top-[-8px] rotate-[135deg];
 }
 
-.common-carousel .swiper-button-next:after,
-.common-carousel .swiper-button-prev:after {
-  @apply hidden;
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.common-carousel .swiper-button-next,
-.common-carousel .swiper-button-prev {
-  @apply !static h-12 w-12 rounded-lg bg-white dark:bg-dark shadow-testimonial-btn text-dark dark:text-white m-0 ease-out duration-200 hover:bg-primary hover:text-white hover:shadow-none;
+.reveal.visible {
+  opacity: 1;
+  transform: none;
 }
 
-.common-carousel .swiper-button-next svg,
-.common-carousel .swiper-button-prev svg {
+.commands-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scrollbar-width: none;
+}
+
+.commands-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.commands-carousel>.commands-carousel-item {
+  flex: 0 0 calc(33.333% - 1rem);
+  scroll-snap-align: start;
+  min-width: 280px;
+}
+
+@media (max-width: 640px) {
+  .commands-carousel>.commands-carousel-item {
+    flex: 0 0 85%;
+  }
+}
+
+.carousel-button {
+  @apply !static inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white text-dark shadow-testimonial-btn m-0 ease-out duration-200 hover:bg-primary hover:text-white hover:shadow-none dark:bg-dark dark:text-white;
+}
+
+.carousel-button svg {
   @apply w-auto h-auto;
+}
+
+.carousel-button:disabled,
+.carousel-button[aria-disabled="true"] {
+  @apply cursor-not-allowed bg-gray-2 text-body-color shadow-none dark:bg-dark-3 dark:text-dark-6;
+}
+
+.carousel-button:disabled:hover,
+.carousel-button[aria-disabled="true"]:hover {
+  @apply bg-gray-2 text-body-color shadow-none dark:bg-dark-3 dark:text-dark-6;
 }

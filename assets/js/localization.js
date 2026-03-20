@@ -11,7 +11,7 @@ async function loadLocale(lang) {
     while (i < lines.length) {
         const line = lines[i];
         const trimmedLine = line.trim();
-        
+
         if (trimmedLine === '' || trimmedLine.startsWith('#')) {
             i++;
             continue;
@@ -19,12 +19,12 @@ async function loadLocale(lang) {
 
         const indent = line.search(/\S/);
         const colonIndex = trimmedLine.indexOf(':');
-        
+
         if (colonIndex === -1) {
             i++;
             continue;
         }
-        
+
         const key = trimmedLine.substring(0, colonIndex).trim();
         const value = trimmedLine.substring(colonIndex + 1).trim();
 
@@ -42,37 +42,37 @@ async function loadLocale(lang) {
             // Collect all subsequent lines with greater indentation
             const multilineContent = [];
             i++; // Move to next line
-            
+
             while (i < lines.length) {
                 const nextLine = lines[i];
                 const nextTrimmed = nextLine.trim();
-                
+
                 if (nextTrimmed === '' || nextTrimmed.startsWith('#')) {
                     i++;
                     continue;
                 }
-                
+
                 const nextIndent = nextLine.search(/\S/);
                 if (nextIndent <= indent) {
                     break; // End of multiline content
                 }
-                
+
                 multilineContent.push(nextLine.substring(indent + 2)); // Remove base indentation
                 i++;
             }
-            
+
             parent[key] = multilineContent.join('\n').trim();
             continue; // Don't increment i again
         } else { // This is a key-value pair
             // Remove surrounding quotes if present
             let finalValue = value;
-            if ((finalValue.startsWith('"') && finalValue.endsWith('"')) || 
+            if ((finalValue.startsWith('"') && finalValue.endsWith('"')) ||
                 (finalValue.startsWith("'") && finalValue.endsWith("'"))) {
                 finalValue = finalValue.slice(1, -1);
             }
             parent[key] = finalValue;
         }
-        
+
         i++;
     }
     return translations;
@@ -80,14 +80,42 @@ async function loadLocale(lang) {
 
 // Function to apply translations
 async function applyTranslations(lang) {
-    const translations = await loadLocale(lang);
+    const fallbackLang = 'en';
+    let translations;
+
+    try {
+        translations = await loadLocale(lang);
+    } catch (error) {
+        console.error(`Failed to load locale: ${lang}`, error);
+        if (lang !== fallbackLang) {
+            translations = await loadLocale(fallbackLang);
+            lang = fallbackLang;
+        } else {
+            throw error;
+        }
+    }
+
+    document.documentElement.setAttribute('lang', lang);
 
     // Update meta tags
     if (translations.meta) {
-        document.querySelector('title').innerHTML = translations.meta.title;
-        document.querySelector('meta[property="og:title"]').setAttribute('content', translations.meta.title);
-        document.querySelector('meta[property="og:description"]').setAttribute('content', translations.meta.description);
-        document.querySelector('meta[property="og:image:alt"]').setAttribute('content', translations.meta.title);
+        const titleTag = document.querySelector('title');
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const ogDescription = document.querySelector('meta[property="og:description"]');
+        const ogImageAlt = document.querySelector('meta[property="og:image:alt"]');
+
+        if (titleTag) {
+            titleTag.innerHTML = translations.meta.title;
+        }
+        if (ogTitle) {
+            ogTitle.setAttribute('content', translations.meta.title);
+        }
+        if (ogDescription) {
+            ogDescription.setAttribute('content', translations.meta.description);
+        }
+        if (ogImageAlt) {
+            ogImageAlt.setAttribute('content', translations.meta.title);
+        }
     }
 
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -114,22 +142,22 @@ async function applyTranslations(lang) {
 // Function to detect user's preferred language
 function detectUserLocale() {
     const supportedLanguages = ['en', 'vi', 'zh-tw', 'zh-cn', 'ja', 'pt-br', 'es-es'];
-    
+
     // Get browser languages in order of preference
     const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
-    
+
     for (const browserLang of browserLanguages) {
         // Check exact match first
         if (supportedLanguages.includes(browserLang)) {
             return browserLang;
         }
-        
+
         // Check language code without region (e.g., 'en-US' -> 'en')
         const langCode = browserLang.split('-')[0];
         if (supportedLanguages.includes(langCode)) {
             return langCode;
         }
-        
+
         // Handle Chinese language variants
         if (browserLang.startsWith('zh')) {
             // Traditional Chinese regions
@@ -150,14 +178,18 @@ function detectUserLocale() {
             return 'es-es';
         }
     }
-    
+
     // Default to English if no supported language found
     return 'en';
 }
 
 // Language switcher logic
-document.addEventListener('DOMContentLoaded', () => {
-    // Set initial language: localStorage > browser locale > default English
-    const initialLang = localStorage.getItem('lang') || detectUserLocale();
-    applyTranslations(initialLang);
-});
+const initialLang = window.__HB_INITIAL_LANG__ || localStorage.getItem('lang') || detectUserLocale();
+
+applyTranslations(initialLang)
+    .catch((error) => {
+        console.error('Failed to apply translations:', error);
+    })
+    .finally(() => {
+        document.documentElement.style.visibility = 'visible';
+    });

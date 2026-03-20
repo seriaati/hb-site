@@ -5,37 +5,92 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+  <script>
+    (function () {
+      document.documentElement.style.visibility = "hidden";
+
+      const supportedLanguages = ["en", "vi", "zh-tw", "zh-cn", "ja", "pt-br", "es-es"];
+
+      function detectUserLocale() {
+        const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
+
+        for (const browserLang of browserLanguages) {
+          if (supportedLanguages.includes(browserLang)) {
+            return browserLang;
+          }
+
+          const langCode = browserLang.split("-")[0];
+          if (supportedLanguages.includes(langCode)) {
+            return langCode;
+          }
+
+          if (browserLang.startsWith("zh")) {
+            if (browserLang.includes("TW") || browserLang.includes("HK") || browserLang.includes("MO")) {
+              return "zh-tw";
+            }
+            return "zh-cn";
+          }
+
+          if (browserLang.startsWith("pt")) {
+            return "pt-br";
+          }
+
+          if (browserLang.startsWith("es")) {
+            return "es-es";
+          }
+        }
+
+        return "en";
+      }
+
+      const initialLang = localStorage.getItem("lang") || detectUserLocale();
+      window.__HB_INITIAL_LANG__ = initialLang;
+      document.documentElement.setAttribute("lang", initialLang);
+    })();
+  </script>
+  <noscript>
+    <style>
+      html {
+        visibility: visible !important;
+      }
+    </style>
+  </noscript>
+
   <!-- Primary Meta Tags -->
   <meta name="title" content="Hoyo Buddy - Discord Bot for Genshin Impact, HSR, ZZZ & Hoyoverse Games">
   <meta name="description"
     content="HoyoBuddy is the ultimate Discord bot for Hoyoverse gamers. Track your Genshin Impact, Honkai Star Rail, and Zenless Zone Zero progress. Features include build cards, daily check-in, wish tracking, code redemption, and more. Free and easy to use.">
-  <meta name="keywords" content="hoyobuddy, hoyo buddy, hoyo buddy bot, hoyoverse discord bot, genshin impact discord bot, honkai star rail discord bot, zenless zone zero discord bot, zzz discord bot, genshin build card, hsr build card, zzz build card, hoyolab checkin, genshin wish tracker, hsr wish tracker, code redeem bot, daily rewards bot, hoyoverse tools, genshin impact tools, hsr tools, zzz tools">
+  <meta name="keywords"
+    content="hoyobuddy, hoyo buddy, hoyo buddy bot, hoyoverse discord bot, genshin impact discord bot, honkai star rail discord bot, zenless zone zero discord bot, zzz discord bot, genshin build card, hsr build card, zzz build card, hoyolab checkin, genshin wish tracker, hsr wish tracker, code redeem bot, daily rewards bot, hoyoverse tools, genshin impact tools, hsr tools, zzz tools">
   <meta name="author" content="Hoyo Buddy">
   <meta name="publisher" content="Hoyo Buddy">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
   <meta name="theme-color" content="#4B56C0">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Hoyo Buddy" />
   <meta property="og:title" content="Hoyo Buddy - Discord Bot for Genshin Impact, HSR, ZZZ & Hoyoverse Games" />
-  <meta property="og:description" content="HoyoBuddy is the ultimate Discord bot for Hoyoverse gamers. Track your Genshin Impact, Honkai Star Rail, and Zenless Zone Zero progress with build cards, daily check-in, wish tracking, and more." />
+  <meta property="og:description"
+    content="HoyoBuddy is the ultimate Discord bot for Hoyoverse gamers. Track your Genshin Impact, Honkai Star Rail, and Zenless Zone Zero progress with build cards, daily check-in, wish tracking, and more." />
   <meta property="og:url" content="https://hb.seria.moe" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/seriaati/hoyo-buddy/refs/heads/assets/app-directory/nav-1.png" />
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/seriaati/hoyo-buddy/refs/heads/assets/app-directory/nav-1.png" />
   <meta property="og:image:alt" content="Hoyo Buddy Discord Bot Preview" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_US" />
-  
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hoyo Buddy - Discord Bot for Genshin Impact, HSR, ZZZ & Hoyoverse Games" />
-  <meta name="twitter:description" content="HoyoBuddy is the ultimate Discord bot for Hoyoverse gamers. Track your Genshin Impact, Honkai Star Rail, and Zenless Zone Zero progress." />
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/seriaati/hoyo-buddy/refs/heads/assets/app-directory/nav-1.png" />
+  <meta name="twitter:description"
+    content="HoyoBuddy is the ultimate Discord bot for Hoyoverse gamers. Track your Genshin Impact, Honkai Star Rail, and Zenless Zone Zero progress." />
+  <meta name="twitter:image"
+    content="https://raw.githubusercontent.com/seriaati/hoyo-buddy/refs/heads/assets/app-directory/nav-1.png" />
   <meta name="twitter:image:alt" content="Hoyo Buddy Discord Bot Preview" />
-  
+
   <!-- Alternate Language Versions -->
   <link rel="alternate" hreflang="en" href="https://hb.seria.moe/" />
   <link rel="alternate" hreflang="vi" href="https://hb.seria.moe/index-vi-vn.html" />
@@ -46,16 +101,8 @@
     Hoyo Buddy | Elevate Your Hoyoverse Experience
   </title>
   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="assets/css/animate.css" />
   <link rel="stylesheet" href="assets/css/tailwind.css" />
   <link rel="canonical" href="https://hb.seria.moe/" />
-
-  <!-- ==== WOW JS ==== -->
-  <script src="assets/js/wow.min.js"></script>
-  <script>
-    new WOW().init();
-  </script>
   <script type="application/ld+json">
    {
      "@context": "https://schema.org",
@@ -216,7 +263,7 @@
     <div class="container">
       <div class="-mx-4 flex flex-wrap items-center">
         <div class="w-full px-4">
-          <div class="hero-content wow fadeInUp mx-auto max-w-[780px] text-center" data-wow-delay=".2s">
+          <div class="hero-content reveal mx-auto max-w-[780px] text-center" style="transition-delay: 0.2s;">
             <h1
               class="mb-6 text-3xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
               Hoyo Buddy
@@ -256,7 +303,7 @@
         </div>
 
         <div class="w-full px-4">
-          <div class="wow fadeInUp relative z-10 mx-auto max-w-[845px]" data-wow-delay=".25s">
+          <div class="reveal relative z-10 mx-auto max-w-[845px]" style="transition-delay: 0.25s;">
             <div class="mt-16">
               <img src="assets/images/hero/hero-image.png" alt="hero"
                 class="mx-auto max-w-full rounded-t-xl rounded-tr-xl" />
@@ -457,7 +504,7 @@
       </div>
       <div class="-mx-4 flex flex-wrap">
         <div class="w-full px-4 md:w-1/2 lg:w-1/4">
-          <div class="wow fadeInUp group mb-12" data-wow-delay=".1s">
+          <div class="reveal group mb-12" style="transition-delay: 0.1s;">
             <div
               class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
               <span
@@ -500,7 +547,7 @@
           </div>
         </div>
         <div class="w-full px-4 md:w-1/2 lg:w-1/4">
-          <div class="wow fadeInUp group mb-12" data-wow-delay=".15s">
+          <div class="reveal group mb-12" style="transition-delay: 0.15s;">
             <div
               class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
               <span
@@ -517,7 +564,8 @@
             <ul class="mb-8 space-y-2 text-body-color dark:text-dark-6 lg:mb-9">
               <li class="flex items-start">
                 <span class="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary"></span>
-                <span data-i18n="features.make_life_easier.bullet1">• Auto complete Traveling Mimo tasks, get points, and buy rewards</span>
+                <span data-i18n="features.make_life_easier.bullet1">• Auto complete Traveling Mimo tasks, get points,
+                  and buy rewards</span>
               </li>
               <li class="flex items-start">
                 <span class="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary"></span>
@@ -529,7 +577,8 @@
               </li>
               <li class="flex items-start">
                 <span class="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary"></span>
-                <span data-i18n="features.make_life_easier.bullet4">• Resin, daily commissions, and other more reminders</span>
+                <span data-i18n="features.make_life_easier.bullet4">• Resin, daily commissions, and other more
+                  reminders</span>
               </li>
             </ul>
             <!-- <a href="javascript:void(0)"
@@ -539,7 +588,7 @@
           </div>
         </div>
         <div class="w-full px-4 md:w-1/2 lg:w-1/4">
-          <div class="wow fadeInUp group mb-12" data-wow-delay=".2s">
+          <div class="reveal group mb-12" style="transition-delay: 0.2s;">
             <div
               class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
               <span
@@ -580,7 +629,8 @@
             <ul class="mb-8 space-y-2 text-body-color dark:text-dark-6 lg:mb-9">
               <li class="flex items-start">
                 <span class="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary"></span>
-                <span data-i18n="features.all_in_one.bullet1">• Add accounts from different games and Hoyoverse accounts</span>
+                <span data-i18n="features.all_in_one.bullet1">• Add accounts from different games and Hoyoverse
+                  accounts</span>
               </li>
               <li class="flex items-start">
                 <span class="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary"></span>
@@ -594,7 +644,7 @@
           </div>
         </div>
         <div class="w-full px-4 md:w-1/2 lg:w-1/4">
-          <div class="wow fadeInUp group mb-12" data-wow-delay=".25s">
+          <div class="reveal group mb-12" style="transition-delay: 0.25s;">
             <div
               class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
               <span
@@ -614,7 +664,8 @@
                   fill="white" />
               </svg>
             </div>
-            <h4 class="mb-3 text-xl font-bold text-dark dark:text-white" data-i18n="features.free_and_open_source.title">
+            <h4 class="mb-3 text-xl font-bold text-dark dark:text-white"
+              data-i18n="features.free_and_open_source.title">
               Free and Open Source
             </h4>
             <ul class="mb-8 space-y-2 text-body-color dark:text-dark-6 lg:mb-9">
@@ -649,7 +700,7 @@
   <!-- ====== About Section Start -->
   <section id="about" class="bg-gray-1 pb-8 pt-20 dark:bg-dark-2 lg:pb-[70px] lg:pt-[120px]">
     <div class="container">
-      <div class="wow fadeInUp" data-wow-delay=".2s">
+      <div class="reveal" style="transition-delay: 0.2s;">
         <div class="-mx-4 flex flex-wrap items-center">
           <div class="w-full px-4 lg:w-1/2">
             <div class="mb-12 max-w-[540px] lg:mb-0">
@@ -697,7 +748,7 @@
                       Used by
                     </span>
                     <span class="block text-5xl font-extrabold text-white">
-                      12000+
+                      14000+ <!-- UPDATE THIS NUMBER PERIODICALLY -->
                     </span>
 
                     <span class="block text-base font-medium text-white text-opacity-70"
@@ -825,136 +876,134 @@
       </div>
 
       <div class="-m-5">
-        <div class="swiper testimonial-carousel common-carousel p-5">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
+        <div id="commandsCarousel" class="commands-carousel common-carousel p-5">
+          <div class="commands-carousel-item">
+            <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
 
 
-                <p class="mb-6 text-base text-body-color dark:text-dark-6"
-                  data-i18n="testimonials.accounts.description">
-                  Centralize all your accounts effortlessly in one location. Enjoy three intuitive methods for adding
-                  accounts quickly and seamlessly.
-                </p>
+              <p class="mb-6 text-base text-body-color dark:text-dark-6" data-i18n="testimonials.accounts.description">
+                Centralize all your accounts effortlessly in one location. Enjoy three intuitive methods for adding
+                accounts quickly and seamlessly.
+              </p>
 
-                <div>
-                  <h3 class="text-sm font-semibold text-dark dark:text-white">
-                    /accounts
-                  </h3>
-                  <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-
-
-                <p class="mb-6 text-base text-body-color dark:text-dark-6" data-i18n="testimonials.search.description">
-                  Explore anything related to Genshin Impact and Honkai: Star Rail with ease. Perfect for introducing
-                  game concepts to newcomers.
-                </p>
-
-                <div>
-                  <h3 class="text-sm font-semibold text-dark dark:text-white">
-                    /search
-                  </h3>
-                  <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-
-
-                <p class="mb-6 text-base text-body-color dark:text-dark-6" data-i18n="testimonials.notes.description">
-                  Access your real-time notes with added reminder features, facilitating tracking of resin, daily
-                  commissions, and other tasks.
-                </p>
-
-                <div>
-                  <h3 class="text-sm font-semibold text-dark dark:text-white">
-                    /notes
-                  </h3>
-                  <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-
-
-                <p class="mb-6 text-base text-body-color dark:text-dark-6"
-                  data-i18n="testimonials.characters.description">
-                  Condense all your owned characters into one comprehensive card, ideal for sharing with others for
-                  team-building advice.
-                </p>
-
-                <div>
-                  <h3 class="text-sm font-semibold text-dark dark:text-white">
-                    /characters
-                  </h3>
-                  <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-
-
-                <p class="mb-6 text-base text-body-color dark:text-dark-6" data-i18n="testimonials.farm.description">
-                  View farmable materials in today's domains, and set up reminders to alert you when a
-                  character/weapon's materials are farmable.
-                </p>
-
-                <div>
-                  <h3 class="text-sm font-semibold text-dark dark:text-white">
-                    /farm
-                  </h3>
-                  <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-
-
-                <p class="mb-6 text-base text-body-color dark:text-dark-6" data-i18n="testimonials.profile.description">
-                  Create visually stunning cards showcasing your character builds, great for sharing on social media
-                  platforms.
-                </p>
-
-                <div>
-                  <h3 class="text-sm font-semibold text-dark dark:text-white">
-                    /profile
-                  </h3>
-                  <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
-                </div>
+              <div>
+                <h3 class="text-sm font-semibold text-dark dark:text-white">
+                  /accounts
+                </h3>
+                <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
               </div>
             </div>
           </div>
 
-          <div class="mt-[60px] flex items-center justify-center gap-1">
-            <div class="swiper-button-prev">
-              <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.25 10.2437H4.57187L10.4156 4.29687C10.725 3.9875 10.725 3.50625 10.4156 3.19687C10.1062 2.8875 9.625 2.8875 9.31562 3.19687L2.2 10.4156C1.89062 10.725 1.89062 11.2063 2.2 11.5156L9.31562 18.7344C9.45312 18.8719 9.65937 18.975 9.86562 18.975C10.0719 18.975 10.2437 18.9062 10.4156 18.7687C10.725 18.4594 10.725 17.9781 10.4156 17.6688L4.60625 11.7906H19.25C19.6625 11.7906 20.0063 11.4469 20.0063 11.0344C20.0063 10.5875 19.6625 10.2437 19.25 10.2437Z" />
-              </svg>
-            </div>
+          <div class="commands-carousel-item">
+            <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
 
-            <div class="swiper-button-next">
-              <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.8 10.45L12.6844 3.2313C12.375 2.92192 11.8938 2.92192 11.5844 3.2313C11.275 3.54067 11.275 4.02192 11.5844 4.3313L17.3594 10.2094H2.75C2.3375 10.2094 1.99375 10.5532 1.99375 10.9657C1.99375 11.3782 2.3375 11.7563 2.75 11.7563H17.4281L11.5844 17.7032C11.275 18.0126 11.275 18.4938 11.5844 18.8032C11.7219 18.9407 11.9281 19.0094 12.1344 19.0094C12.3406 19.0094 12.5469 18.9407 12.6844 18.7688L19.8 11.55C20.1094 11.2407 20.1094 10.7594 19.8 10.45Z" />
-              </svg>
+
+              <p class="mb-6 text-base text-body-color dark:text-dark-6" data-i18n="testimonials.search.description">
+                Explore anything related to Genshin Impact and Honkai: Star Rail with ease. Perfect for introducing
+                game concepts to newcomers.
+              </p>
+
+              <div>
+                <h3 class="text-sm font-semibold text-dark dark:text-white">
+                  /search
+                </h3>
+                <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
+              </div>
             </div>
           </div>
+
+          <div class="commands-carousel-item">
+            <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
+
+
+              <p class="mb-6 text-base text-body-color dark:text-dark-6" data-i18n="testimonials.notes.description">
+                Access your real-time notes with added reminder features, facilitating tracking of resin, daily
+                commissions, and other tasks.
+              </p>
+
+              <div>
+                <h3 class="text-sm font-semibold text-dark dark:text-white">
+                  /notes
+                </h3>
+                <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="commands-carousel-item">
+            <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
+
+
+              <p class="mb-6 text-base text-body-color dark:text-dark-6"
+                data-i18n="testimonials.characters.description">
+                Condense all your owned characters into one comprehensive card, ideal for sharing with others for
+                team-building advice.
+              </p>
+
+              <div>
+                <h3 class="text-sm font-semibold text-dark dark:text-white">
+                  /characters
+                </h3>
+                <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="commands-carousel-item">
+            <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
+
+
+              <p class="mb-6 text-base text-body-color dark:text-dark-6" data-i18n="testimonials.farm.description">
+                View farmable materials in today's domains, and set up reminders to alert you when a
+                character/weapon's materials are farmable.
+              </p>
+
+              <div>
+                <h3 class="text-sm font-semibold text-dark dark:text-white">
+                  /farm
+                </h3>
+                <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="commands-carousel-item">
+            <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
+
+
+              <p class="mb-6 text-base text-body-color dark:text-dark-6" data-i18n="testimonials.profile.description">
+                Create visually stunning cards showcasing your character builds, great for sharing on social media
+                platforms.
+              </p>
+
+              <div>
+                <h3 class="text-sm font-semibold text-dark dark:text-white">
+                  /profile
+                </h3>
+                <!-- <p class="text-xs text-body-secondary">Founder @ Rolex</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-[60px] flex items-center justify-center gap-1">
+          <button id="commandsCarouselPrev" type="button" class="carousel-button" aria-label="Previous commands"
+            disabled aria-disabled="true">
+            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19.25 10.2437H4.57187L10.4156 4.29687C10.725 3.9875 10.725 3.50625 10.4156 3.19687C10.1062 2.8875 9.625 2.8875 9.31562 3.19687L2.2 10.4156C1.89062 10.725 1.89062 11.2063 2.2 11.5156L9.31562 18.7344C9.45312 18.8719 9.65937 18.975 9.86562 18.975C10.0719 18.975 10.2437 18.9062 10.4156 18.7687C10.725 18.4594 10.725 17.9781 10.4156 17.6688L4.60625 11.7906H19.25C19.6625 11.7906 20.0063 11.4469 20.0063 11.0344C20.0063 10.5875 19.6625 10.2437 19.25 10.2437Z" />
+            </svg>
+          </button>
+
+          <button id="commandsCarouselNext" type="button" class="carousel-button" aria-label="Next commands">
+            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19.8 10.45L12.6844 3.2313C12.375 2.92192 11.8938 2.92192 11.5844 3.2313C11.275 3.54067 11.275 4.02192 11.5844 4.3313L17.3594 10.2094H2.75C2.3375 10.2094 1.99375 10.5532 1.99375 10.9657C1.99375 11.3782 2.3375 11.7563 2.75 11.7563H17.4281L11.5844 17.7032C11.275 18.0126 11.275 18.4938 11.5844 18.8032C11.7219 18.9407 11.9281 19.0094 12.1344 19.0094C12.3406 19.0094 12.5469 18.9407 12.6844 18.7688L19.8 11.55C20.1094 11.2407 20.1094 10.7594 19.8 10.45Z" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1263,7 +1312,7 @@
 
 
   <!-- ====== Footer Section Start -->
-  <footer class="wow fadeInUp relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]" data-wow-delay=".15s">
+  <footer class="reveal relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]" style="transition-delay: 0.15s;">
     <div class="container">
       <div class="-mx-4 flex flex-wrap">
         <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
@@ -1572,7 +1621,6 @@
 
   <!-- ====== All Scripts -->
 
-  <script src="assets/js/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
     // ==== for menu scroll
@@ -1617,32 +1665,6 @@
 
     window.document.addEventListener("scroll", onScroll);
 
-    // Testimonial
-    const testimonialSwiper = new Swiper(".testimonial-carousel", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-
-      // Navigation arrows
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-        1280: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-    });
   </script>
 
   <!-- Language Selector Component -->
