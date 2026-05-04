@@ -28,21 +28,21 @@ features:
     bullet4: • 자유로운 커스터마이징
     bullet5: • 나만의 이미지로 꾸미기
   make_life_easier:
-    title: 자동 작업 및 알림
+    title: • 자동 작업 및 알림
     bullet1: •  Mimo의 여행 미션을 자동으로 완료하고 보상까지 챙기기
     bullet2: • 일일 출석체크 보상 자동 획득
-    bullet3: 특별 방송 리딤코드 및 각종 리딤코드 자동 교환
-    bullet4: "레진, 일일퀘스트및 다양한 알림"
+    bullet3: • 특별 방송 리딤코드 및 각종 리딤코드 자동 교환
+    bullet4: "• 레진, 일일퀘스트및 다양한 알림"
   all_in_one:
     title: "번거로운 계정 전환 없이, Hoyo Buddy 하나로 완벽하게"
-    bullet1: "원신, 붕괴: 스타레일, 붕괴3rd, 젠레스 존 제로 등 호요버스의 모든 게임 계정을 지원!"
-    bullet2: 하나의 봇으로 통합된 경험 제공
+    bullet1: "• 원신, 붕괴: 스타레일, 붕괴3rd, 젠레스 존 제로 등 호요버스의 모든 게임 계정을 지원!"
+    bullet2: • 하나의 봇으로 통합된 경험 제공
   free_and_open_source:
     title: 완전 무료 기반의 오픈 소스 프로젝트
-    bullet1: 완전 무료 이용 가능
-    bullet2: GitHub에서 오픈 소스로 제공
-    bullet3: 광고 및 유료 기능 제한 없음
-    bullet4: 개인정보 보호 및 보안 중심 설계
+    bullet1: • 완전 무료 이용 가능
+    bullet2: • GitHub에서 오픈 소스로 제공
+    bullet3: • 광고 및 유료 기능 제한 없음
+    bullet4: • 개인정보 보호 및 보안 중심 설계
 
 about:
   title: "다양한 기능과 깔끔한 디자인, 압도적인 반응 속도"
