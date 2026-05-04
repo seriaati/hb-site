@@ -1,0 +1,151 @@
+meta:
+  title: Hoyo Buddy | 당신의 HoYoverse 게임 플레이를 편리하게
+  description: HoYoverse 게임을 즐기는 유저분들을 위한 쉽고 편리하며 다양한 기능을 가진 디스코드 봇입니다.
+
+navbar:
+  home: 홈
+  features: 기능
+  about: 소개
+  commands: 명령어
+  faq: FAQ
+  team: 팀
+  get_started: 시작하기
+
+hero:
+  description: HoYoverse 게임을 즐기는 유저분들을 위한 쉽고 편리하며 다양한 기능을 가진 디스코드 봇입니다.
+  get_started: 시작하기
+  star_on_github: GitHub에서 별표(Star)로 응원하기
+
+features:
+  title: 기능
+  subtitle: Hoyo Buddy의 주요 기능
+  description: "단순한 호요랩 연동을 넘어선, 디스코드 최강의 호요버스 봇"
+  show_off:
+    title: 한눈에 확인하는 내 캐릭터 카드 제작
+    bullet1: • 다양한 템플릿 제공
+    bullet2: • Enka Network 연동
+    bullet3: • 파티 전체를 한눈에
+    bullet4: • 자유로운 커스터마이징
+    bullet5: • 나만의 이미지로 꾸미기
+  make_life_easier:
+    title: 자동 작업 및 알림
+    bullet1: •  Mimo의 여행 미션을 자동으로 완료하고 보상까지 챙기기
+    bullet2: • 일일 출석체크 보상 자동 획득
+    bullet3: 특별 방송 리딤코드 및 각종 리딤코드 자동 교환
+    bullet4: "레진, 일일퀘스트및 다양한 알림"
+  all_in_one:
+    title: "번거로운 계정 전환 없이, Hoyo Buddy 하나로 완벽하게"
+    bullet1: "원신, 붕괴: 스타레일, 붕괴3rd, 젠레스 존 제로 등 호요버스의 모든 게임 계정을 지원!"
+    bullet2: 하나의 봇으로 통합된 경험 제공
+  free_and_open_source:
+    title: 완전 무료 기반의 오픈 소스 프로젝트
+    bullet1: 완전 무료 이용 가능
+    bullet2: GitHub에서 오픈 소스로 제공
+    bullet3: 광고 및 유료 기능 제한 없음
+    bullet4: 개인정보 보호 및 보안 중심 설계
+
+about:
+  title: "다양한 기능과 깔끔한 디자인, 압도적인 반응 속도"
+  description: |
+    Hoyo Buddy는 호요버스 여정에 필요한 핵심 기능을 가장 아름다운 방식으로 전달합니다. 정교하게 다듬어진 UI는 시각적 만족감을 넘어 최상의 편의성을 제공합니다.
+    <br />
+    <br />
+    아름다운 디자인에 더해진 비약적인 속도. 끊임없는 최적화 노력을 통해 Hoyo Buddy는 당신이 필요한 정보를 가장 빠르게 찾아낼 준비가 되어 있습니다.
+  stat:
+    title: 이용 중인
+    description: 총 서버
+
+cta:
+  title: "아직도 결정을 못하셨나요?"
+  description: "이미 수많은 호요버스 봇이 존재합니다. 그럼에도 Hoyo Buddy를 선택해야 하는 이유는 무엇일까요? 기존에 사용하던 봇들과는 차원이 다른, Hoyo Buddy만의 압도적인 차별점을 지금 확인해 보세요."
+  button: Hoyo Buddy만의 특별함 확인하기
+
+testimonials:
+  title: 명령어
+  subtitle: "Hoyo Buddy가 뭘 할 수 있나요?"
+  description: Hoyo Buddy에서 가장 인기 있는 명령어들을 살짝 구경해 보세요!
+  accounts:
+    description: "복잡한 계정 관리, 이제 한곳에서 끝내세요! 누구나 바로 적응할 수 있는 세 가지 연동 방식을 통해 가장 편리한 환경을 선사합니다."
+  search:
+    description: "원신, 붕괴: 스타레일, 젠레스 존 제로와 관련된 모든 정보를 간편하게 탐색하세요. 게임 개념을 처음 접하는 사람들에게 완벽한 앱입니다."
+  notes:
+    description: "레진과 일일퀘스트를 자꾸 까먹는다구요?, 이제 Hoyo Buddy에게 맡기세요! 실시간 정보 확인은 물론 맞춤형 알림 기능을 통해 효율적인 게임 라이프를 지원합니다."
+  characters:
+    description: "복잡한 캐릭터 목록, 이제 한 장의 카드로 끝내세요! 동료들과 팀 구성 전략을 나누고 조언을 구하기에 가장 완벽한 방법입니다."
+  farm:
+    description: "재료 파밍 날짜, 일일이 확인하기 번거로우셨나요? 이제 오늘의 비경 정보를 한눈에 보고, 맞춤형 알림 설정으로 육성 재료를 완벽하게 관리해 보세요!"
+  profile:
+    description: 당신이 빚어낸 동료들의 빛나는 순간을 한 장의 예술 작품으로 담아내세요. 당신의 특별한 기록을 온 세상의 다른 여행자들과 나누기에 완벽한 방법입니다
+
+faq:
+  title: FAQ
+  subtitle: "질문이 있으신가요? Hoyo Buddy 사용법부터 문제 해결까지, 모든 답변을 여기서 찾아보세요!"
+  description: "도움이 더 필요하신가요? 고민하지 말고 편하게 말씀해 주세요. Hoyo Buddy가 기다리고 있을게요!"
+  free:
+    question: "Hoyo Buddy는 무료로 사용할 수 있나요?"
+    answer: |
+      네, Hoyo Buddy는 완전히 무료로 사용할 수 있어요. 만약 만족하며 사용하고 계신다면, <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
+       후원
+      </a>하시거나
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+       프로젝트에 별표를 눌러서
+      </a> 지원해 주세요.
+  open_source:
+    question: "Hoyo Buddy는 오픈소스인가요?"
+    answer: |
+      네, Hoyo Buddy는 오픈 소스입니다. 
+      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
+      GitHub
+      </a>에서 소스 코드를 확인하실 수 있으며, 코드를 사용하실 때는 라이선스를 준수해 주시기 바랍니다.
+  safe:
+    question: " Hoyo Buddy는 사용하기에 안전한가요?"
+    answer: |
+      더 자세한 정보는 위키의
+       <a href="https://hb-docs.seria.moe/docs/Account-Security" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+      계정 보안
+      </a> 페이지를 읽어주세요. 개인정보 보호에 대해서는
+      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+       개인정보 처리방침
+      </a>을 읽어주시기 바랍니다.
+  contact:
+    question: "어떻게 개발자에게 연락할 수 있나요?"
+    answer: |
+      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
+        class="text-primary hover:underline">
+      디스코드
+      </a>에서 저에게 DM을 보내시거나
+      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
+      디스코드 서버
+      </a>에 들어와 저를 멘션 하실 수 있어요.
+team:
+  title: 팀 멤버
+  subtitle: Hoyo Buddy 팀
+  description: "와, 우리가 이걸 만들었네."
+  seria:
+    role: 개발자
+  ayasaku:
+    role: 디자이너
+  hydrogened:
+    role: 홍보
+
+footer:
+  description: 당신의 HoYoverse 게임 플레이를 편리하게.
+  navigation:
+    title: 탐색
+    home: 홈
+    about: 소개
+    features: 기능
+    faq: FAQ
+  quick_links:
+    title: 바로가기
+    github: GitHub에서 프로젝트 보기
+    wiki: 위키
+    invite: 초대 링크
+  contact:
+    title: 지원
+    discord_server: 디스코드 서버
+    dev_discord: 개발자의 디스코드 계정
+    buy_me_a_coffee: 후원하기
+  copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
