@@ -13,7 +13,7 @@ const { locale, t, up = false } = Astro.props;
 <details class="lang-picker relative">
   <summary
     class="flex cursor-pointer list-none items-center gap-2 rounded-full px-3 py-2 text-sm text-mute transition-colors hover:text-fg [&::-webkit-details-marker]:hidden"
-    aria-label={t("nav.language")}
+    aria-label={`${t("nav.language")}: ${locale.label}`}
   >
     <svg
       class="size-4"

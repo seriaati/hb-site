@@ -146,7 +146,7 @@ const icons = [
                     class="text-[13px] font-semibold text-[#f2f3f5]"
                     data-dm-title
                   ></p>
-                  <p class="text-[11px] text-[#dbdee1]/75">
+                  <p class="text-[11px] text-[#dbdee1]">
                     {t("bot.reminder.footer")}
                   </p>
                 </div>
@@ -209,25 +209,31 @@ const icons = [
     opacity: 0.5;
     border-radius: 2px;
   }
+  /* A 24px hit area (WCAG target size) around the 12px dot drawn by ::before. */
   :global(.pin) {
     position: absolute;
-    top: 7px;
-    width: 12px;
-    height: 12px;
-    margin-left: -6px;
+    top: 1px;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    cursor: pointer;
+  }
+  :global(.pin)::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
     border-radius: 50%;
     background: var(--bg);
     box-shadow: inset 0 0 0 2px var(--fg);
-    cursor: pointer;
     transition:
       background-color 0.2s,
       transform 0.2s,
       box-shadow 0.6s;
   }
-  :global(.pin.past) {
+  :global(.pin.past)::before {
     background: var(--fg);
   }
-  :global(.pin.on) {
+  :global(.pin.on)::before {
     transform: scale(1.35);
     background: var(--accent);
     box-shadow: inset 0 0 0 2px var(--accent);

@@ -8,7 +8,7 @@
 :root {
   --bg: #f1f2f6;
   --fg: #13141b;
-  --mute: #6f7387;
+  --mute: #686c7f;
   --accent: #6574f8; /* the bot's default embed color */
   --surface: #ffffff;
   --line: color-mix(in srgb, var(--fg) 13%, transparent);
