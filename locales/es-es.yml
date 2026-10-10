@@ -1,153 +1,224 @@
 meta:
-  title: Hoyo Buddy | Eleva tu experiencia Hoyoverse
-  description: "Un bot de Discord con muchas funciones, fácil de usar y bellamente diseñado, hecho para jugadores de Hoyoverse."
+  title: Hoyo Buddy | El bot de Discord para jugadores de HoYoverse
+  description: Recordatorios de resina y energía, registro diario automático, canje instantáneo de códigos y elegantes tarjetas de personajes. Gestiona todos tus juegos y cuentas de HoYoverse desde Discord.
 
-navbar:
-  home: Inicio
-  features: Funciones
-  about: Acerca de
+nav:
+  label: Principal
   commands: Comandos
-  faq: FAQ
-  team: Equipo
-  get_started: Primeros pasos
+  reminders: Recordatorios
+  auto_tasks: Tareas automáticas
+  faq: Preguntas frecuentes
+  docs: Documentación
+  language: Idioma
 
 hero:
-  description: "Un bot de Discord con muchas funciones, fácil de usar y bellamente diseñado, hecho para jugadores de Hoyoverse."
-  get_started: Primeros pasos
-  star_on_github: Estrella en GitHub
+  pre: Un compañero para
+  all: cada juego de HoYoverse
+  summary: "Alertas de resina, registro diario automático, canje de códigos y tarjetas de personajes. Compatible con Genshin, Star Rail, ZZZ y todas tus cuentas directamente en Discord."
+  cta: Añadir a Discord
+  cta_note: Funciona en cualquier servidor y mensaje directo (DM).
+  overview: Ver todos los juegos
+  games:
+    genshin: No vuelvas a acumular resina al máximo, genera tarjetas de personajes de tu expositor, revisa resultados del Abismo y Teatro Fantasía, y consulta tu historial de gachapón.
+    hsr: Alertas de poder trazacaminos, tarjetas de personajes, estadísticas de Evocación del Caos y Pura Ficción, y registro completo de saltos.
+    zzz: Avisos de carga de batería, recordatorios de rasca y gana y videoclub, resultados de Defensa Shiyu y Asalto Letal, y registro de sintonías.
+    honkai: Recordatorios de resistencia, registro diario automático, seguimiento de puntuaciones en Dimensión Superstring y Arena Memorial, y lista completa de valquirias.
+    tot: Registro diario automatizado para no perder ni un solo S-Chip ni recompensa de inicio de sesión en ninguna de tus cuentas vinculadas.
 
-features:
-  title: Funciones
-  subtitle: Funciones principales de Hoyo Buddy
-  description: Mucho más que HoYoLAB en Discord.
-  show_off:
-    title: Crea Tarjetas para tus Personajes
-    bullet1: • Múltiples plantillas para elegir
-    bullet2: • Integración con Enka Network
-    bullet3: • Condensa todo el equipo en una tarjeta
-    bullet4: • Muchas opciones de personalización
-    bullet5: • Usa tus imágenes personalizadas
-  make_life_easier:
-    title: Tareas Automáticas y Recordatorios
-    bullet1: "• Completa automáticamente tareas de Traveling Mimo, obtén puntos y compra recompensas"
-    bullet2: • Reclama automáticamente recompensas de inicio de sesión diario
-    bullet3: • Canjea automáticamente códigos de transmisiones en vivo y otros códigos de regalo
-    bullet4: "• Resina, comisiones diarias y otros recordatorios"
-  all_in_one:
-    title: Todo en un solo lugar
-    bullet1: • Agrega cuentas de diferentes juegos y cuentas de Hoyoverse
-    bullet2: • Experiencia centralizada con un solo bot
-  free_and_open_source:
-    title: Gratuito y de Código Abierto
-    bullet1: • Completamente gratis para usar
-    bullet2: • Código abierto en GitHub
-    bullet3: "• Sin anuncios, sin muros de pago"
-    bullet4: • Hecho pensando en la privacidad y seguridad
+worlds:
+  genshin:
+    name: Genshin Impact
+    short: Genshin
+    place: Teyvat
+  hsr:
+    name: "Honkai: Star Rail"
+    short: Star Rail
+    place: el Expreso Astral
+  zzz:
+    name: Zenless Zone Zero
+    short: ZZZ
+    place: Nueva Eridu
+  honkai:
+    name: Honkai Impact 3rd
+    short: HI3
+    place: Hyperion
+  tot:
+    name: Tears of Themis
+    short: Themis
+    place: Stellis
 
-about:
-  title: "Versátil, Elegante y Rápido"
-  description: |
-    Hoyo Buddy te ofrece funciones esenciales para tu experiencia en el mundo Hoyoverse, presentando la información de forma visualmente atractiva. Nuestra interfaz ha sido diseñada con cuidado para combinar belleza y funcionalidad de manera fluida.
-    <br />
-    <br />
-    Hoyo Buddy destaca tanto por su diseño atractivo como por su rendimiento ultra rápido. Nuestra programadora dedicó incontables horas a optimizar la aplicación, asegurando un acceso ágil a toda la información que necesitás.
-  stat:
-    title: Utilizado por
-    description: Servidores
+commands:
+  eyebrow: Comandos
+  title: Los mismos comandos en cada juego.
+  description: Olvídate de aprender sintaxis distintas para cada bot. Elige un juego y un comando a continuación para previsualizar la respuesta real generada por el bot.
+  game: Juego
+  list:
+    notes: Consulta de un vistazo la resina, energía y expediciones, con recordatorios personalizables por DM antes de que se llenen.
+    check_in: Reclama las recompensas diarias de HoYoLAB directamente en Discord con un solo clic y consulta tu racha del mes.
+    redeem: Canjea códigos de directos y promociones en todas tus cuentas vinculadas a la vez, sin tener que abrir la web.
+    profile: Genera tarjetas de estadísticas limpias y listas para compartir a partir de tu expositor de personajes del juego.
 
-cta:
-  title: "¿Todavía no te decides?"
-  description: "Sabemos que hay muchos bots de Discord relacionados con Hoyoverse disponibles. Entonces, ¿por qué elegir Hoyo Buddy?, ¿Qué lo hace destacar frente a los demás, incluso frente a los que ya podrías estar usando?"
-  button: Conocer más
+reminders:
+  eyebrow: Recordatorios
+  title: Entérate antes de que tu energía se llene.
+  description: Hoyo Buddy consulta tus notas en tiempo real en segundo plano y te envía un mensaje directo por Discord antes de que tu resina se desborde, finalicen tus expediciones o llegue el reinicio diario. Desplaza la barra temporal para ver cuándo se activan las alertas en 24 horas.
+  caps: "{resource} se llenará a las {time}"
+  now: ahora
+  tomorrow: mañana
+  dm: Mensaje directo
+  stamina: Energía
+  upcoming: llega en {time}
+  timeline: Tus próximas 24 horas
 
-testimonials:
-  title: Comandos
-  subtitle: "¿Qué puede hacer Hoyo Buddy?"
-  description: ¡Echale un vistazo a algunos de los comandos más populares de Hoyo Buddy!
-  accounts:
-    description: Centraliza todas tus cuentas fácilmente en un solo lugar. Disfrutá de tres métodos intuitivos para agregarlas de forma rápida y sin complicaciones.
-  search:
-    description: "Explora todo lo relacionado con Genshin Impact, HSR, y ZZZ facilmente. Perfecto para explicar conceptos del juego a quienes recién comienzan."
+auto:
+  eyebrow: Tareas automáticas
+  title: Tus rutinas diarias en piloto automático.
+  description: "Activa las tareas que prefieras: registros diarios, canje automático de nuevos códigos de regalo y misiones de Traveling Mimo. Cada mañana recibirás un resumen por DM con todo lo gestionado en tus cuentas."
+
+open:
+  eyebrow: Gratuito y de código abierto
+  title: Cada función es gratuita y cada línea de código es pública.
+  free:
+    value: Gratis
+    label: Sin anuncios, sin muros de pago y sin ventajas de pago.
+  source:
+    value: AGPL-3.0
+    label: Código abierto. Inspecciona todo el repositorio en GitHub.
+  languages:
+    value: "14"
+    label: Idiomas disponibles, traducidos por la comunidad.
+  servers:
+    value: 17,000+
+    label: Comunidades de Discord confían en Hoyo Buddy.
+  privacy: Descubre cómo protegemos tus datos en la {privacy} y la {security}.
+  privacy_link: Política de privacidad
+  security_link: Guía de seguridad de cuentas
+
+bot:
+  today_at: Hoy a las {time}
+  used: "{user} ha usado {command}"
+  app: APP
   notes:
-    description: "Accede a tus notas en tiempo real con funciones de recordatorio integradas. Ideal para llevar el control de la resina, encargos diarios y otras tareas importantes."
-  characters:
-    description: Muestra todos tus personajes en una sola tarjeta completa. Perfecto para compartir con otros y recibir consejos de builds de equipos.
-  farm:
-    description: "Consulta qué materiales se pueden farmear hoy en los dominios. Además, configura recordatorios para no olvidar farmear materiales clave para tus personajes o armas."
-  profile:
-    description: Crea tarjetas visualmente impactantes con la build de tus personajes. Ideales para compartir en las diferentes redes sociales.
+    title: Notas en tiempo real
+    resin: Resina original
+    full_in: Se llena en {time}
+    trailblaze_power: Poder trazacaminos
+    sticky_notes: Notas en tiempo real
+    battery: Carga de batería
+    stamina: "Resistencia: {cur}/{max}, se llena en {time}"
+    daily_bp: "PB diario: {cur}/{max}"
+    superstring: Dimensión Superstring
+    current_score: "Puntuación actual: {score}"
+    memorial_arena: Arena Memorial
+    arena_rewards: "Recompensas de desafío: {cur}/{max}"
+    arena_sss: "Recompensas de rango SSS: {cur}/{max}"
+    elysian_realm: Reino Elysiano
+    elysian_score: "Puntuación actual: {cur}/{max}"
+  check_in:
+    title: Registro diario
+    summary: Registrado {day} día(s) este mes
+    missed: Registro perdido durante {missed} día(s)
+    button: Registrarse
+    make_up: Compensar registro
+    claimed: Recompensa de registro diario reclamada
+    claimed_footer: Usa /settings para configurar las notificaciones
+  redeem:
+    title: Resultados del canje de códigos
+    success: Canjeado con éxito
+    claimed: El código de regalo ya ha sido reclamado
+    auto_footer: Desactiva el canje automático de códigos con /settings
+  mimo:
+    title: "Traveling Mimo: Tareas automáticas y reclamo de puntos"
+    summary: Hoyo Buddy ha completado {finish} tareas y ha reclamado {points} puntos para ti
+    footer: Usa /settings para configurar tareas automáticas y canjear recompensas
+    tasks:
+      log_in: Iniciar sesión en el juego
+      check_in: Completar el registro diario
+      community: Explorar la comunidad
+  reminder:
+    footer: Usa /notes para configurar recordatorios
+    threshold: Se ha alcanzado el límite ({value})
+    resin: Recordatorio de resina
+    realm: Recordatorio de intramora
+    expedition: Recordatorio de expedición
+    expedition_body: Una (o más) expediciones han terminado
+    transformer: Recordatorio del transmutador paramétrico
+    transformer_body: ¡Transmutador paramétrico está listo para ser utilizado!
+    daily: Recordatorio de encargos diarios
+    daily_body: Los encargos diarios o encuentros de aventura aún no se han completado
+    tb_power: Poder trazacaminos
+    daily_training: Entrenamientos diarios
+    daily_training_body: Los entrenamientos diarios aún no se han completado
+    weekly: Recordatorio de descuento de jefes semanales
+    weekly_body: Los descuentos de jefes semanales aún no se han utilizado
+    battery: Carga de batería
+    video_store: Gestión del videoclub
+    video_store_body: Los ingresos de la tienda del videoclub aún no han sido reclamados
+    scratch: Rasca y gana
+    scratch_body: Rasca y gana aún sin completar
+    engagement: Actividades del día
+    engagement_body: Las actividades de hoy aún no se han completado
+    stamina: Recordatorio de resistencia
 
 faq:
   title: FAQ
-  subtitle: "¿Tienes alguna pregunta? Mira aquí"
-  description: "Si tienes otras preguntas, ponte en contacto con nosotros."
+  heading: Preguntas frecuentes
+  description: ¿Tienes dudas que no aparecen aquí? Entra a nuestro servidor de Discord o consulta la documentación.
   free:
-    question: "¿Usar Hoyo Buddy es gratis?"
+    question: ¿Hoyo Buddy es gratuito?
     answer: |
-      Si, Hoyo Buddy es completamente gratis. Si lo usas, considera apoyarme 
-      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
-        donando 
-      </a> o 
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-        dándole una estrella al proyecto
-      </a>.
-  open_source:
-    question: "¿Hoyo Buddy es de código abierto?"
+      Sí. Todas las funciones son completamente gratuitas, sin anuncios, sin muros de pago y sin niveles de suscripción de pago.
+      Si el bot te resulta útil, puedes <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">patrocinar el proyecto</a> para ayudar a cubrir los costes de los servidores y el desarrollo continuo.
+  games:
+    question: ¿Con qué juegos y cuentas es compatible?
     answer: |
-      Si, Hoyo Buddy es de código abierto. Puedes encontrar en código en 
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline"> 
-      GitHub 
-      </a>, por favor, asegurate de cumplir con la licencia al utilizar el código. 
-  safe:
-    question: "¿Es seguro usar Hoyo Buddy?"
+      Hoyo Buddy es compatible con Genshin Impact, Honkai: Star Rail, Zenless Zone Zero, Honkai Impact 3rd y Tears of Themis, tanto en servidores globales (HoYoLAB) como de China continental (Miyoushe). Puedes vincular todas las cuentas que desees y alternar entre ellas con total comodidad.
+      Las funciones disponibles pueden variar según la API de cada juego; consulta la <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">documentación</a> para ver la lista completa.
+  where:
+    question: ¿Es obligatorio invitarlo a un servidor para usarlo?
     answer: |
-      Por favor, lee la sección
-      <a href="https://hb-docs.seria.moe/docs/Account-Security" rel="noopener" target="_blank"
-        class="text-primary hover:underline"> 
-        Seguridad de la cuenta 
-      </a> en la Wiki para mas información. Para conocer como se maneja tus datos personales, consulta la 
-      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
-        class="text-primary hover:underline"> 
-        Política de privacidad
-      </a>. 
-  contact:
-    question: "¿Cómo puedo contactar a la desarrolladora?"
+      No es necesario. Hoyo Buddy es compatible con las aplicaciones instalables de usuario (User Apps) de Discord, lo que significa que puedes instalarlo directamente en tu cuenta personal de Discord.
+      Una vez instalado, los comandos de barra funcionan dondequiera que hables: en mensajes directos privados, grupos de chat o servidores donde el bot no esté presente. Además, los administradores de servidores pueden invitarlo al servidor para que toda la comunidad lo disfrute.
+  add_account:
+    question: ¿Cómo vinculo mi cuenta del juego?
     answer: |
-      Podes enviarme un mensaje directo en 
-      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
-        class="text-primary hover:underline"> 
-      Discord 
-      </a> o unirte al 
-      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline"> 
-      servidor de Discord 
-      </a> y etiquetame ahí. 
+      Ejecuta <code>/accounts</code> y selecciona «Añadir cuenta». La forma más rápida para cuentas globales es iniciar sesión con tu correo y contraseña de HoYoverse (los inicios de sesión de terceros como Google o Apple ID no son compatibles con la API web de HoYoLAB), lo que también permite el canje automático de códigos de regalo. También puedes iniciar sesión pegando las cookies de tu navegador.
+      Las cuentas del servidor de China (Miyoushe) pueden iniciar sesión con código SMS o escaneando un código QR desde la app de Miyoushe.
+  account_safe:
+    question: ¿Es segura mi cuenta?
+    answer: |
+      Tu contraseña nunca se guarda ni se almacena en nuestra base de datos. Al iniciar sesión con correo y contraseña, Hoyo Buddy solicita a HoYoLAB las cookies de autenticación de sesión e inmediatamente descarta tu contraseña de la memoria. Todas las cookies guardadas se cifran en reposo con el cifrado Fernet.
+      Asimismo, las cookies web de HoYoLAB solo tienen permisos para leer datos públicos de la comunidad y notas diarias; no pueden entrar al cliente del juego, cambiar tu contraseña ni ver información sensible como tu correo o número de teléfono completos. Puedes desvincular tu cuenta y borrar todos tus datos en cualquier momento con <code>/accounts</code>. Lee más en la <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">guía de seguridad de cuentas</a> y la <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank" rel="noopener">política de privacidad</a>.
+  ban:
+    question: ¿Me pueden sancionar (banear) en el juego por usarlo?
+    answer: |
+      No se ha reportado ni un solo caso de sanción en el juego por usar Hoyo Buddy. El bot interactúa exclusivamente con las API web públicas de HoYoLAB y Miyoushe, exactamente las mismas que visitas al consultar tus notas diarias en un navegador web o app móvil. En ningún momento modifica archivos del juego, no se inyecta en el proceso del juego ni lee la memoria de tu dispositivo.
+      Aunque automatizar solicitudes web entra técnicamente en una zona gris de los términos de servicio de la web de HoYoLAB, cualquier hipotética sanción solo afectaría al acceso a la comunidad web de HoYoLAB, nunca a tus cuentas, personajes ni progreso dentro del juego. <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">Lee más en nuestro análisis de seguridad</a>.
+  help:
+    question: ¿Dónde puedo conseguir ayuda?
+    answer: |
+      Consulta las guías de configuración y listas de comandos en la <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">documentación oficial</a>, o únete a nuestro <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">servidor de Discord</a> para resolver dudas con la comunidad y el desarrollador.
+
 team:
-  title: Miembros del equipo
-  subtitle: El equipo de Hoyo Buddy
-  description: "Wow, nosotros hicimos esto."
+  title: Equipo principal
   seria:
-    role: Programadora
+    role: Desarrollador principal
   ayasaku:
-    role: Diseñador
+    role: Diseñador UI/UX
   hydrogened:
-    role: RP
+    role: Relaciones públicas
 
 footer:
-  description: Eleva tu experiencia Hoyoverse
-  navigation:
-    title: Navegación
-    home: Inicio
-    about: Acerca de
-    features: Funciones
-    faq: FAQ
+  description: Todos tus juegos de HoYoverse, reunidos en Discord.
   quick_links:
     title: Enlaces rápidos
     github: Proyecto en GitHub
-    wiki: Wiki
+    wiki: Wiki oficial
     invite: Enlace de invitación
   contact:
     title: Contacto
     discord_server: Servidor de Discord
     dev_discord: Discord del desarrollador
-    buy_me_a_coffee: Donar
-  copyright: Derechos de Autor &copy; 2024 Seria Ati | Todos los derechos reservados
+    buy_me_a_coffee: Donar al proyecto
+  sponsor: Patrocinar
+  rights: © {year} Seria Ati. Todos los derechos reservados.

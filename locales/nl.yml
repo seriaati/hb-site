@@ -1,153 +1,224 @@
 meta:
-  title: Hoyo Buddy | Verbeter je Hoyoverse-ervaring
-  description: "Een veelzijdige, gebruiksvriendelijke en prachtig ontworpen Discord-bot, speciaal gemaakt voor Hoyoverse-gamers."
+  title: Hoyo Buddy | De Discord-bot voor HoYoverse-gamers
+  description: Meldingen voor volle stamina en resin, automatische dagelijkse check-ins, direct codes inwisselen en overzichtelijke build-kaarten. Beheer al je HoYoverse-games en accounts rechtstreeks in Discord.
 
-navbar:
-  home: Home
-  features: Functies
-  about: Over ons
+nav:
+  label: Hoofdmenu
   commands: Commando's
-  faq: FAQ
-  team: Team
-  get_started: Aan de slag
+  reminders: Meldingen
+  auto_tasks: Automatisering
+  faq: Veelgestelde vragen
+  docs: Documentatie
+  language: Taal
 
 hero:
-  description: "Een veelzijdige, gebruiksvriendelijke en prachtig ontworpen Discord-bot, speciaal gemaakt voor Hoyoverse-gamers."
-  get_started: Aan de slag
-  star_on_github: Ster op GitHub
+  pre: Eén buddy voor
+  all: elke HoYoverse-game
+  summary: "Staminameldingen, automatische check-ins, cadeaucodes inwisselen en build-kaarten. Ondersteunt Genshin, Star Rail, ZZZ en al je accounts in Discord."
+  cta: Toevoegen aan Discord
+  cta_note: Werkt in elke server en in privégroepen of DM's.
+  overview: Bekijk alle games
+  games:
+    genshin: Laat je resin nooit meer overstromen, maak strakke build-kaarten van je showcase, bekijk Spiral Abyss- & Imaginarium Theater-resultaten en bewaar je complete wish-geschiedenis.
+    hsr: Meldingen wanneer je Trailblaze Power vol is, karakter-buildkaarten, overzichten van Memory of Chaos & Pure Fiction en je volledige warp-historie.
+    zzz: Meldingen voor Battery Charge, herinneringen voor je kraskaart en videowinkel, resultaten van Shiyu Defense & Deadly Assault en inzicht in je signaalzoekgeschiedenis.
+    honkai: Meldingen voor volle stamina, automatische dagelijkse check-in, score-overzichten voor Superstring Dimension & Memorial Arena en je complete Valkyrie-rooster.
+    tot: Automatische dagelijkse check-ins zodat je nooit meer S-Chips of inlogbeloningen mist, direct geregeld voor al je gekoppelde accounts.
 
-features:
-  title: Functies
-  subtitle: Belangrijkste functies van Hoyo Buddy
-  description: Meer dan alleen HoYoLAB op Discord.
-  show_off:
-    title: Bouwkaarten voor je Karakters
-    bullet1: • Meerdere sjablonen om uit te kiezen
-    bullet2: • Enka Network-integratie
-    bullet3: • Vat het hele team samen in één kaart
-    bullet4: • Veel aanpassingsmogelijkheden
-    bullet5: • Gebruik je eigen afbeeldingen
-  make_life_easier:
-    title: Automatische Taken en Herinneringen
-    bullet1: "• Voltooi automatisch Traveling Mimo-taken, verdien punten en koop beloningen"
-    bullet2: • Claim automatisch dagelijkse incheckbeloningen
-    bullet3: • Wissel automatisch livestream- en andere cadeaucodes in
-    bullet4: "• Resin-, dagelijkse commissie- en andere herinneringen"
-  all_in_one:
-    title: Alles op één plek
-    bullet1: • Voeg accounts toe van verschillende spellen en Hoyoverse-accounts
-    bullet2: • Gecentraliseerde ervaring met één bot
-  free_and_open_source:
-    title: Gratis en Open Source
-    bullet1: • Volledig gratis te gebruiken
-    bullet2: • Open source op GitHub
-    bullet3: "• Geen advertenties, geen paywalls"
-    bullet4: • Gemaakt met privacy en veiligheid in gedachten
+worlds:
+  genshin:
+    name: Genshin Impact
+    short: Genshin
+    place: Teyvat
+  hsr:
+    name: "Honkai: Star Rail"
+    short: Star Rail
+    place: the Astral Express
+  zzz:
+    name: Zenless Zone Zero
+    short: ZZZ
+    place: New Eridu
+  honkai:
+    name: Honkai Impact 3rd
+    short: HI3
+    place: Hyperion
+  tot:
+    name: Tears of Themis
+    short: Themis
+    place: Stellis
 
-about:
-  title: "Veelzijdig, elegant en snel"
-  description: |
-    Hoyo Buddy biedt essentiële functies voor je Hoyoverse-ervaring en presenteert informatie op visueel aantrekkelijke manieren. Onze zorgvuldig ontworpen gebruikersinterface combineert schoonheid naadloos met functionaliteit.
-    <br />
-    <br />
-    Hoyo Buddy maakt indruk met zowel zijn visueel aantrekkelijke ontwerp als bliksemsnelle prestaties. Onze programmeur heeft talloze uren geïnvesteerd in het optimaliseren van de bot, zodat je snel toegang hebt tot de informatie die je nodig hebt.
-  stat:
-    title: Gebruikt door
-    description: Servers
+commands:
+  eyebrow: Commando's
+  title: Dezelfde commando's in elke game.
+  description: Je hoeft niet langer voor elke game andere bots of syntaxis te onthouden. Kies hieronder een game en commando om het daadwerkelijke bot-antwoord te bekijken.
+  game: Game
+  list:
+    notes: Zie in één oogopslag je resin, stamina en expedities, met instelbare DM-meldingen voordat ze vol raken.
+    check_in: Claim je dagelijkse HoYoLAB-beloningen met één klik in Discord en bekijk je maandelijkse inlogreeks.
+    redeem: Wissel livestream- en updatecodes direct in voor al je gekoppelde accounts tegelijk, zonder browser.
+    profile: Genereer overzichtelijke, deelbare build-kaarten rechtstreeks uit de in-game showcase van je personages.
 
-cta:
-  title: "Kun je nog steeds niet beslissen?"
-  description: "Er zijn talloze Hoyoverse-gerelateerde Discord-bots beschikbaar, dus waarom zou je kiezen voor Hoyo Buddy? Wat onderscheidt Hoyo Buddy van de anderen, inclusief de bots die je misschien al gebruikt?"
-  button: Lees er meer over
+reminders:
+  eyebrow: Meldingen
+  title: Krijg op tijd bericht voordat je stamina vol zit.
+  description: Hoyo Buddy controleert je realtime-notities op de achtergrond en stuurt je een Discord-DM voordat je stamina overstroomt, expedities terugkeren of de dagelijkse reset plaatsvindt. Versleep de tijdlijn om te zien wanneer meldingen in 24 uur triggeren.
+  caps: "{resource} is vol om {time}"
+  now: nu
+  tomorrow: morgen
+  dm: Privébericht
+  stamina: Stamina
+  upcoming: arriveert over {time}
+  timeline: Jouw komende 24 uur
 
-testimonials:
-  title: Commando's
-  subtitle: "Wat kan Hoyo Buddy doen?"
-  description: Bekijk enkele van de populairste commando's in Hoyo Buddy!
-  accounts:
-    description: Centraliseer al je accounts moeiteloos op één locatie. Geniet van drie intuïtieve methoden om snel accounts toe te voegen.
-  search:
-    description: "Ontdek met gemak alles wat met Genshin Impact, HSR en ZZZ te maken heeft. Perfect om spelconcepten aan nieuwkomers te introduceren."
+auto:
+  eyebrow: Automatisering
+  title: Je dagelijkse taken op de automatische piloot.
+  description: Schakel de taken in die je wilt uitbesteden, zoals dagelijkse check-ins, automatisch inwisselen van nieuwe cadeaucodes en Traveling Mimo-missies. Elke ochtend zie je via een DM precies wat er 's nachts voor elk account is gedaan.
+
+open:
+  eyebrow: Gratis & open source
+  title: Elke functie is gratis en elke regel code is openbaar.
+  free:
+    value: Gratis
+    label: Geen advertenties, geen betaalmuren, geen premium tier.
+  source:
+    value: AGPL-3.0
+    label: Open source. Bekijk elke regel code op GitHub.
+  languages:
+    value: "14"
+    label: Beschikbare talen, vertaald door de community.
+  servers:
+    value: 17.000+
+    label: Discord-servers vertrouwen op Hoyo Buddy.
+  privacy: Lees hoe we met je gegevens omgaan in ons {privacy} en de {security}.
+  privacy_link: Privacybeleid
+  security_link: Accountbeveiligingsgids
+
+bot:
+  today_at: Vandaag om {time}
+  used: "{user} heeft {command} gebruikt"
+  app: APP
   notes:
-    description: "Bekijk real-time notities met extra herinneringsfuncties, waardoor het bijhouden van resin, dagelijkse commissies en andere taken makkelijker wordt."
-  characters:
-    description: "Verzamel al je karakters in één uitgebreide kaart, ideaal om met anderen te delen voor advies over teambuilding."
-  farm:
-    description: Bekijk te farmen materialen in de domeinen van vandaag en stel herinneringen in om je te waarschuwen wanneer de materialen van een karakter of wapen te farmen zijn.
-  profile:
-    description: "Maak visueel verbluffende kaarten waarop je karakterbouws worden getoond, ideaal om te delen op sociale mediaplatforms."
+    title: Realtime-notities
+    resin: Resin
+    full_in: Vol over {time}
+    trailblaze_power: Trailblaze Power
+    sticky_notes: Realtime-notities
+    battery: Battery Charge
+    stamina: "Stamina: {cur}/{max}, vol over {time}"
+    daily_bp: "Dagelijkse BP: {cur}/{max}"
+    superstring: Superstring Dimension
+    current_score: "Huidige score: {score}"
+    memorial_arena: Memorial Arena
+    arena_rewards: "Uitdagingsbeloningen: {cur}/{max}"
+    arena_sss: "SSS-rangbeloningen: {cur}/{max}"
+    elysian_realm: Elysian Realm
+    elysian_score: "Huidige score: {cur}/{max}"
+  check_in:
+    title: Dagelijkse check-in
+    summary: Ingecheckt op {day} dag(en) deze maand
+    missed: Check-in gemist op {missed} dag(en)
+    button: Inchecken
+    make_up: Gemiste check-in inhalen
+    claimed: Dagelijkse check-inbeloning geclaimd
+    claimed_footer: Gebruik /settings om meldingen te configureren
+  redeem:
+    title: Resultaten code-inwisseling
+    success: Succesvol ingewisseld
+    claimed: Cadeaucode is al geclaimd
+    auto_footer: Schakel automatisch inwisselen uit via /settings
+  mimo:
+    title: "Traveling Mimo: Automatisch taken afronden & punten claimen"
+    summary: Hoyo Buddy heeft {finish} taken voltooid en {points} punten voor je geclaimd
+    footer: Gebruik /settings om automatische taken in te stellen en beloningen te beheren
+    tasks:
+      log_in: Inloggen in de game
+      check_in: Dagelijkse check-in voltooien
+      community: Door de community bladeren
+  reminder:
+    footer: Gebruik /notes om meldingen in te stellen
+    threshold: Drempel ({value}) is bereikt
+    resin: Resin-melding
+    realm: Melding voor Realm-munten
+    expedition: Expeditiemelding
+    expedition_body: Eén (of meer) expedities zijn voltooid
+    transformer: Melding voor Parametric Transformer
+    transformer_body: Parametric Transformer is klaar voor gebruik!
+    daily: Melding voor dagelijkse opdrachten
+    daily_body: Dagelijkse opdrachten of avonturenontmoetingen zijn nog niet voltooid
+    tb_power: Trailblaze Power
+    daily_training: Dagelijkse training
+    daily_training_body: Dagelijkse trainingen zijn nog niet afgerond
+    weekly: Melding voor wekelijkse baaskorting
+    weekly_body: Wekelijkse kortingen voor bazen zijn nog niet opgebruikt
+    battery: Battery Charge
+    video_store: Videowinkelbeheer
+    video_store_body: Videowinkelinkomsten nog niet opgeëist
+    scratch: Krasloten
+    scratch_body: Kraskaart nog niet gekrast
+    engagement: Betrokkenheid
+    engagement_body: De betrokkenheid van vandaag is nog niet voltooid
+    stamina: Staminamelding
 
 faq:
   title: FAQ
-  subtitle: "Heb je vragen? Kijk hier"
-  description: "Als je nog andere vragen hebt, neem dan contact met ons op."
+  heading: Veelgestelde vragen
+  description: Heb je een vraag die hier niet tussen staat? Kom gerust langs in onze Discord-server of bekijk de documentatie.
   free:
-    question: "Is Hoyo Buddy gratis te gebruiken?"
+    question: Is Hoyo Buddy gratis?
     answer: |
-      Ja, Hoyo Buddy is volledig gratis te gebruiken. Als je het graag gebruikt, overweeg dan om mij te steunen door
-      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
-        te doneren
-      </a> of
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-        een ster te geven op GitHub
-      </a>.
-  open_source:
-    question: "Is Hoyo Buddy open source?"
+      Ja. Elke functie is volledig gratis, zonder advertenties, zonder betaalmuren en zonder premium-abonnementen.
+      Als je de bot met plezier gebruikt, kun je <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">het project sponsoren</a> om serverkosten en verdere ontwikkeling te steunen.
+  games:
+    question: Welke games en accounts worden ondersteund?
     answer: |
-      Ja, Hoyo Buddy is open source. De broncode is te vinden op
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-        GitHub
-      </a>. Houd je bij het gebruik van de code aan de licentie.
-  safe:
-    question: "Is Hoyo Buddy veilig om te gebruiken?"
+      Genshin Impact, Honkai: Star Rail, Zenless Zone Zero, Honkai Impact 3rd en Tears of Themis, op zowel globale (HoYoLAB) als Chinese (Miyoushe) servers. Je kunt zoveel accounts koppelen als je wilt en eenvoudig wisselen.
+      Sommige functies verschillen per game afhankelijk van de officiële API-ondersteuning; bekijk het volledige overzicht in de <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">documentatie</a>.
+  where:
+    question: Moet ik de bot toevoegen aan een Discord-server?
     answer: |
-      Lees de
-      <a href="https://hb-docs.seria.moe/docs/Account-Security" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-        Accountbeveiliging
-      </a>-pagina op de wiki voor meer informatie. Voor gegevensprivacy, lees het
-      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-        Privacybeleid
-      </a>.
-  contact:
-    question: "Hoe neem ik contact op met de ontwikkelaar?"
+      Nee, dat is niet verplicht. Hoyo Buddy ondersteunt de User App-standaard van Discord, waardoor je de bot direct aan je persoonlijke Discord-account kunt koppelen.
+      Zodra de bot is geïnstalleerd, werken de slash-commando's overal waar je chat: in privégesprekken (DM's), groepsgesprekken en servers waar de bot zelf niet is uitgenodigd. Serverbeheerders kunnen de bot uiteraard nog steeds aan hun server toevoegen voor de hele community.
+  add_account:
+    question: Hoe koppel ik mijn game-account?
     answer: |
-      Je kunt mij rechtstreeks een bericht sturen op
-      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-        Discord
-      </a> of sluit je aan bij de
-      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
-        Discord-server
-      </a> en ping me daar.
+      Voer <code>/accounts</code> uit en kies "Account toevoegen". Voor globale accounts is inloggen met je HoYoverse-e-mailadres en wachtwoord de snelste methode (inloggen via externe diensten zoals Google of Apple ID wordt niet ondersteund door de HoYoLAB-web-API). Dit maakt ook het automatisch inwisselen van codes mogelijk. Je kunt ook inloggen door je browser-cookies te plakken.
+      Accounts op de Chinese server (Miyoushe) kunnen inloggen via een sms-verificatiecode of door een QR-code te scannen via de Miyoushe-app.
+  account_safe:
+    question: Is mijn account veilig?
+    answer: |
+      Je wachtwoord wordt nooit opgeslagen. Wanneer je inlogt met e-mailadres en wachtwoord, wisselt Hoyo Buddy deze direct uit bij HoYoLAB voor authenticatiecookies en wordt je wachtwoord onmiddellijk uit het geheugen gewist. Opgeslagen cookies worden versleuteld met Fernet-encryptie.
+      Bovendien hebben HoYoLAB-webcookies uitsluitend leesrechten voor openbare community- en realtime-notities; ze kunnen niet inloggen op de gameclient zelf, kunnen je wachtwoord niet wijzigen en kunnen geen privégegevens zoals je volledige e-mailadres of telefoonnummer inzien. Je kunt een account en alle opgeslagen gegevens op elk gewenst moment wissen via <code>/accounts</code>. Lees meer in onze <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">accountbeveiligingsgids</a> en het <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank" rel="noopener">privacybeleid</a>.
+  ban:
+    question: Kan ik verbannen worden (in-game ban) door het gebruik van de bot?
+    answer: |
+      Er zijn nog nooit bans gemeld als gevolg van het gebruik van Hoyo Buddy. De bot communiceert uitsluitend met de officiële, openbare web-API's van HoYoLAB en Miyoushe, dezelfde webinterface die je gebruikt wanneer je notities bekijkt in een browser of de officiële app. De bot past geen gamebestanden aan, injecteert niet in gameprocessen en leest geen apparaatgeheugen uit.
+      Hoewel het automatiseren van webrequests formeel onder de gebruiksvoorwaarden van de HoYoLAB-website valt, zou een eventuele sanctie zich beperken tot de HoYoLAB-website zelf en heeft dit nooit invloed op je in-game accounts, voortgang of personages. <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">Lees meer in onze beveiligingsanalyse</a>.
+  help:
+    question: Waar kan ik terecht voor hulp?
+    answer: |
+      Bekijk de handleidingen en commandolijsten op de <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">documentatiesite</a>, of kom gezellig langs in onze <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">Discord-server</a> om vragen te stellen aan de community en het team.
+
 team:
-  title: Teamleden
-  subtitle: Het Hoyo Buddy-team
-  description: "Wauw, wij hebben dit gemaakt."
+  title: Kernteam
   seria:
-    role: Programmeur
+    role: Hoofdontwikkelaar
   ayasaku:
-    role: Ontwerper
+    role: UI/UX-ontwerper
   hydrogened:
-    role: PR
+    role: Community & PR
 
 footer:
-  description: Verbeter je Hoyoverse-ervaring
-  navigation:
-    title: Navigatie
-    home: Home
-    about: Over ons
-    features: Functies
-    faq: FAQ
+  description: Al je HoYoverse-games, overzichtelijk verenigd in Discord.
   quick_links:
-    title: Snelle links
+    title: Handige links
     github: Project op GitHub
-    wiki: Wiki
-    invite: Uitnodigingslink
+    wiki: Officiële Wiki
+    invite: Bot uitnodigen
   contact:
     title: Contact
     discord_server: Discord-server
     dev_discord: Discord van de ontwikkelaar
-    buy_me_a_coffee: Doneer
-  copyright: Auteursrecht &copy; Seria Ati 2024 | Alle rechten voorbehouden
+    buy_me_a_coffee: Project steunen
+  sponsor: Sponsoren
+  rights: © {year} Seria Ati. Alle rechten voorbehouden.

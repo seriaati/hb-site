@@ -1,153 +1,224 @@
 meta:
-  title: Hoyo Buddy | Nâng cao trải nghiệm Hoyoverse của bạn
-  description: "Là một Discord bot với nhiều tính năng phong phú, dễ sử dụng, được thiết kế đẹp mắt dành cho game thủ Hoyoverse."
+  title: Hoyo Buddy | Bot Discord dành cho game thủ HoYoverse
+  description: Nhắc nhở hồi thể lực, tự động điểm danh hàng ngày, đổi giftcode tức thì và tạo thẻ thông tin nhân vật tuyệt đẹp. Quản lý toàn bộ game và tài khoản HoYoverse ngay trong Discord.
 
-navbar:
-  home: Trang chủ
-  features: Tính năng
-  about: Về Hoyo Buddy
-  commands: Các lệnh
-  faq: FAQ
-  team: Đội Ngũ
-  get_started: Bắt đầu
+nav:
+  label: Điều hướng chính
+  commands: Lệnh
+  reminders: Nhắc nhở
+  auto_tasks: Tự động hóa
+  faq: Câu hỏi thường gặp
+  docs: Tài liệu
+  language: Ngôn ngữ
 
 hero:
-  description: "Là một Discord bot với nhiều tính năng phong phú, dễ sử dụng, được thiết kế đẹp mắt dành cho game thủ Hoyoverse."
-  get_started: Bắt đầu
-  star_on_github: Sao trên GitHub
+  pre: Người bạn đồng hành tại
+  all: mọi tựa game HoYoverse
+  summary: "Cảnh báo tràn thể lực, tự động điểm danh, nhận giftcode và tạo thẻ build nhân vật. Hỗ trợ Genshin, Star Rail, ZZZ cùng mọi tài khoản của bạn trên Discord."
+  cta: Thêm vào Discord
+  cta_note: Hoạt động trong mọi máy chủ và tin nhắn riêng (DM).
+  overview: Xem tất cả game
+  games:
+    genshin: Không bao giờ lo tràn Nhựa, tạo thẻ build nhân vật từ tủ trưng bày, thống kê kết quả La Hoàn Thâm Cảnh & Nhà Hát Giả Tưởng, lưu trữ toàn bộ lịch sử Cầu Nguyện.
+    hsr: Nhắc nhở khi Sức Mạnh Khai Phá chạm mốc tối đa, tạo thẻ nhân vật, phân tích kết quả Hồi Ức Hỗn Độn & Kể Chuyện Hư Cấu, theo dõi lịch sử Bước Nhảy.
+    zzz: Cảnh báo hồi phục Điện Lượng, nhắc cào thẻ và nhận doanh thu Tiệm Băng Hình, kết quả Phòng Thủ Shiyu & Công Kích Nguy Hiểm, theo dõi lịch sử Dò Tín Hiệu.
+    honkai: Thông báo hồi đầy Thể Lực, tự động điểm danh hàng ngày, cập nhật điểm Không Gian Siêu Huyền & Chiến Trường Ký Ức, quản lý toàn bộ Valkyrie của bạn.
+    tot: Tự động điểm danh hàng ngày giúp bạn không bao giờ bỏ lỡ Chip S và phần thưởng, nhận quà cùng lúc cho tất cả tài khoản đã liên kết.
 
-features:
-  title: Tính năng
-  subtitle: Tính năng chính của Hoyo Buddy
-  description: Không chỉ là HoYoLAB trên Discord đâu.
-  show_off:
-    title: Tạo Thẻ Cho Nhân Vật Của Bạn
-    bullet1: • Nhiều mẫu để lựa chọn
-    bullet2: • Tích hợp Enka Network
-    bullet3: • Gộp toàn bộ đội hình vào một thẻ
-    bullet4: • Nhiều tùy chọn tùy chỉnh
-    bullet5: • Sử dụng hình ảnh tùy chỉnh của bạn
-  make_life_easier:
-    title: Tự Động Hóa Các Tác Vụ và Nhắc Nhở
-    bullet1: "• Tự động hoàn thành nhiệm vụ Traveling Mimo, nhận điểm và mua phần thưởng"
-    bullet2: • Tự động nhận phần thưởng điểm danh hàng ngày
-    bullet3: • Tự động đổi mã livestream và các mã quà tặng khác
-    bullet4: "• Nhắc nhở về nhựa, nhiệm vụ hàng ngày và nhiều hơn nữa"
-  all_in_one:
-    title: Tất Cả Trong Một Nơi
-    bullet1: • Thêm tài khoản từ các trò chơi khác nhau và tài khoản Hoyoverse
-    bullet2: • Trải nghiệm tập trung với một bot duy nhất
-  free_and_open_source:
-    title: Miễn Phí và Mã Nguồn Mở
-    bullet1: • Hoàn toàn miễn phí để sử dụng
-    bullet2: • Mã nguồn mở trên GitHub
-    bullet3: "• Không có quảng cáo, không có rào cản thanh toán"
-    bullet4: • Được tạo ra với sự quan tâm đến quyền riêng tư và an toàn
+worlds:
+  genshin:
+    name: Genshin Impact
+    short: Genshin
+    place: Teyvat
+  hsr:
+    name: "Honkai: Star Rail"
+    short: Star Rail
+    place: Tàu Astral Express
+  zzz:
+    name: Zenless Zone Zero
+    short: ZZZ
+    place: New Eridu
+  honkai:
+    name: Honkai Impact 3rd
+    short: HI3
+    place: Hyperion
+  tot:
+    name: Tears of Themis
+    short: Themis
+    place: Stellis
 
-about:
-  title: "Đa Năng, Thanh Lịch và Nhanh Chóng"
-  description: |
-    Hoyo Buddy cung cấp cho bạn những tính năng cần thiết cho hành trình Hoyoverse, trình bầy thông tin theo những cách trực quan hấp dẫn. Giao diện người dùng được chế tạo tỉ mỉ của chúng tôi kết hợp hoàn hảo vẻ đẹp với chức năng.
-    <br />
-    <br />
-    Hoyo Buddy gây ấn tượng với cả thiết kế bắt mắt và hiệu năng nhanh như chớp. Lập trình viên của chúng tôi đã đầu tư vô số thời gian để tối ưu hóa ứng dụng, đảm bảo khả năng truy cập nhanh chóng vào thông tin bạn cần.
-  stat:
-    title: Được sử dụng trong
-    description: Máy Chủ
+commands:
+  eyebrow: Lệnh
+  title: Bộ lệnh thống nhất cho mọi tựa game.
+  description: Không cần phải ghi nhớ cú pháp riêng biệt cho từng bot khác nhau. Chọn game và lệnh bên dưới để xem phản hồi thực tế từ Hoyo Buddy.
+  game: Game
+  list:
+    notes: Theo dõi thời gian hồi Nhựa, thể lực và thám hiểm trong nháy mắt, cài đặt thông báo gửi qua DM trước khi chạm mốc.
+    check_in: Nhận quà điểm danh HoYoLAB mỗi ngày ngay trên Discord chỉ bằng một nút bấm, xem chuỗi ngày điểm danh trong tháng.
+    redeem: Nhập mã quà tặng từ buổi phát sóng trực tiếp hoặc bản cập nhật cho tất cả tài khoản cùng lúc, không cần mở trình duyệt.
+    profile: Tạo thẻ chỉ số nhân vật đẹp mắt và tiện chia sẻ trực tiếp từ tủ trưng bày trong game của bạn.
 
-cta:
-  title: "Vẫn chửa thể quyết định?"
-  description: "Có rất nhiều bot Discord liên quan đến Hoyoverse trên thị trường, vậy tại sao lại chọn Hoyo Buddy? Điều gì khiến Hoyo Buddy nổi bật so với những sản phẩm khác, kể cả những sản phẩm bạn có thể đang sử dụng?"
-  button: Đọc thêm tại đây
+reminders:
+  eyebrow: Nhắc nhở
+  title: Nhắc bạn kịp thời trước khi thể lực bị tràn.
+  description: Hoyo Buddy liên tục theo dõi ghi chú thời gian thực trong nền và gửi tin nhắn DM trên Discord trước khi thể lực chạm trần, thám hiểm hoàn thành hoặc trước giờ làm mới ngày. Kéo thanh thời gian để xem các mốc thông báo trong 24 giờ.
+  caps: "{resource} sẽ đầy vào lúc {time}"
+  now: Bây giờ
+  tomorrow: Ngày mai
+  dm: Tin nhắn riêng
+  stamina: Thể lực
+  upcoming: Gửi sau {time}
+  timeline: 24 giờ tới của bạn
 
-testimonials:
-  title: Các Lệnh
-  subtitle: "Hoyo Buddy có thể làm gì được?"
-  description: Tận dụng tối đa một số lệnh phổ biến nhất trong Hoyo Buddy!
-  accounts:
-    description: Tập trung tất cả các tài khoản của bạn một cách dễ dàng ở một địa điểm. Tận hưởng ba phương pháp trực quan để thêm tài khoản một cách nhanh chóng và liền mạch.
-  search:
-    description: "Khám phá đủ điều về Genshin Impact, HSR và ZZZ một cách thuận tiện. Giúp người mới tìm hiểu về các khái niệm game dễ dàng hơn."
+auto:
+  eyebrow: Tự động hóa
+  title: Tự động xử lý công việc hàng ngày.
+  description: "Bật những tác vụ bạn muốn: điểm danh mỗi ngày, tự đổi mã quà tặng mới ra mắt và làm nhiệm vụ Traveling Mimo. Mỗi buổi sáng, bot sẽ gửi tin nhắn DM tổng hợp kết quả của tất cả tài khoản."
+
+open:
+  eyebrow: Miễn phí & Mã nguồn mở
+  title: Mọi tính năng đều miễn phí, từng dòng mã đều minh bạch.
+  free:
+    value: Miễn phí
+    label: Không quảng cáo, không tường thu phí, không gói thành viên VIP.
+  source:
+    value: AGPL-3.0
+    label: Mã nguồn mở. Xem toàn bộ mã nguồn trên GitHub.
+  languages:
+    value: "14"
+    label: Ngôn ngữ được hỗ trợ, dịch bởi cộng đồng game thủ.
+  servers:
+    value: 17,000+
+    label: Máy chủ Discord đang tin tưởng sử dụng.
+  privacy: Tìm hiểu cách bảo vệ thông tin của bạn trong {privacy} và {security}.
+  privacy_link: Chính sách quyền riêng tư
+  security_link: Hướng dẫn an toàn tài khoản
+
+bot:
+  today_at: Hôm nay lúc {time}
+  used: "{user} đã sử dụng lệnh {command}"
+  app: ỨNG DỤNG
   notes:
-    description: "Truy cập các ghi chú theo thời gian thực của bạn với các tính năng nhắc nhở bổ sung, tạo điều kiện thuận lợi cho việc theo dõi Nhựa, nhiệm vụ hàng ngày và các tác vụ khác."
-  characters:
-    description: "Cô đọng tất cả các nhân vật mà bạn sở hữu vào một thẻ toàn diện, lý tưởng để chia sẻ với những người khác để nhận được lời khuyên xây dựng đội."
-  farm:
-    description: Xem các vật liệu có thể cày được trong các Bi Cảnh ngày nay và thiết lập lời nhắc để thông báo cho bạn khi vật liệu của nhân vật/vũ khí có thể cày được.
-  profile:
-    description: "Tạo các thẻ nhân vật ấn tượng giới thiệu cách xây dựng nhân vật của bạn, rất phù hợp để chia sẻ trên các nền tảng mạng xã hội."
+    title: Ghi chú thời gian thực
+    resin: Nhựa Nguyên Chất
+    full_in: Đầy sau {time}
+    trailblaze_power: Sức Mạnh Khai Phá
+    sticky_notes: Ghi chú thời gian thực
+    battery: Điện Lượng
+    stamina: "Thể Lực: {cur}/{max}, đầy sau {time}"
+    daily_bp: "Nhiệm Vụ Hàng Ngày: {cur}/{max}"
+    superstring: Không Gian Siêu Huyền
+    current_score: "Điểm hiện tại: {score}"
+    memorial_arena: Chiến Trường Ký Ức
+    arena_rewards: "Thưởng khiêu chiến: {cur}/{max}"
+    arena_sss: "Thưởng hạng SSS: {cur}/{max}"
+    elysian_realm: Vùng Đất Xưa Cũ
+    elysian_score: "Điểm hiện tại: {cur}/{max}"
+  check_in:
+    title: Điểm danh hàng ngày
+    summary: Đã điểm danh {day} ngày trong tháng này
+    missed: Bỏ lỡ điểm danh {missed} ngày
+    button: Điểm danh
+    make_up: Điểm danh bù
+    claimed: Đã nhận thưởng điểm danh hàng ngày
+    claimed_footer: Dùng /settings để tùy chỉnh thông báo
+  redeem:
+    title: Kết quả đổi mã quà
+    success: Đã đổi thành công
+    claimed: Mã quà này đã được sử dụng rồi
+    auto_footer: Tắt tự động đổi mã bằng lệnh /settings
+  mimo:
+    title: "Traveling Mimo: Tự động làm nhiệm vụ & nhận điểm"
+    summary: Hoyo Buddy đã hoàn thành {finish} nhiệm vụ và tích lũy {points} điểm cho bạn
+    footer: Dùng /settings để cài đặt tự động hóa và đổi thưởng
+    tasks:
+      log_in: Đăng nhập vào game
+      check_in: Hoàn thành điểm danh hàng ngày
+      community: Dạo xem cộng đồng
+  reminder:
+    footer: Dùng /notes để cài đặt nhắc nhở
+    threshold: Đã đạt ngưỡng ({value})
+    resin: Nhắc nhở Nhựa
+    realm: Nhắc nhở Tiền Động Tiên
+    expedition: Nhắc nhở thám hiểm
+    expedition_body: Một (hoặc nhiều) thám hiểm đã hoàn thành
+    transformer: Nhắc nhở Máy Biến Đổi Tham Số
+    transformer_body: Máy Biến Đổi Tham Số đã sẵn sàng!
+    daily: Nhắc nhở ủy thác
+    daily_body: Chưa hoàn thành ủy thác hàng ngày hoặc điểm rèn luyện
+    tb_power: Sức Mạnh Khai Phá
+    daily_training: Huấn Luyện Hàng Ngày
+    daily_training_body: Huấn Luyện Hàng Ngày chưa hoàn thành
+    weekly: Nhắc nhở giảm giá Boss tuần
+    weekly_body: Lượt giảm nhựa tiêu hao chưa dùng tới
+    battery: Điện Lượng
+    video_store: Quản lý Tiệm Băng Hình
+    video_store_body: Doanh thu Tiệm Băng Hình chưa nhận
+    scratch: Thẻ cào may mắn
+    scratch_body: Chưa cào thẻ
+    engagement: Nhiệm vụ Năng Động
+    engagement_body: Chưa hoàn thành Nhiệm vụ Năng Động.
+    stamina: Nhắc nhở Thể Lực
 
 faq:
   title: FAQ
-  subtitle: "Có câu hỏi nào không? Nhìn ở đây"
-  description: "Nếu bạn có câu hỏi khác, vui lòng liên hệ."
+  heading: Câu hỏi thường gặp
+  description: Bạn có thắc mắc khác chưa được giải đáp? Hãy tham gia máy chủ Discord hoặc đọc tài liệu hướng dẫn.
   free:
-    question: "Hoyo Buddy có được sử dụng miễn phí không?"
+    question: Hoyo Buddy có miễn phí không?
     answer: |
-      Tất nhiên, Hoyo Buddy hoàn toàn miễn phí để sử dụng. Nếu bạn thích sử dụng nó, hãy cân nhắc việc hỗ trợ tôi bằng cách 
-      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
-      ủng hộ 
-      </a> hoặc 
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline"> 
-      Sao dự án này 
-      </a>. 
-  open_source:
-    question: "Hoyo Buddy có phải là nguồn mở không??"
+      Có. Toàn bộ tính năng đều hoàn toàn miễn phí, không có quảng cáo, không tính phí và không có gói thành viên cao cấp.
+      Nếu bạn yêu thích dự án, bạn có thể <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">tài trợ dự án</a> để hỗ trợ chi phí máy chủ và duy trì phát triển.
+  games:
+    question: Bot hỗ trợ những tựa game và tài khoản nào?
     answer: |
-      Có, Hoyo Buddy là nguồn mở. Bạn có thể tìm thấy mã nguồn trên
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-        GitHub
-      </a>, vui lòng tuân thủ giấy phép khi sử dụng mã nguồn.
-  safe:
-    question: "Hoyo Buddy có an toàn khi sử dụng không?"
+      Hoyo Buddy hỗ trợ Genshin Impact, Honkai: Star Rail, Zenless Zone Zero, Honkai Impact 3rd và Tears of Themis trên cả máy chủ quốc tế (HoYoLAB) và máy chủ Trung Quốc (Miyoushe). Bạn có thể thêm bao nhiêu tài khoản tùy thích.
+      Một số tính năng có thể khác nhau tùy theo API của từng game; vui lòng xem danh sách chi tiết tại <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">Tài liệu hướng dẫn</a>.
+  where:
+    question: Tôi có bắt buộc phải mời bot vào máy chủ không?
     answer: |
-      Vui lòng đọc trang
-      <a href="https://hb-docs.seria.moe/vi/docs/Account-Security" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-        Bảo Mật Tài Khoản
-      </a> trên Wiki để biết thêm thông tin. Để bảo mật dữ liệu, vui lòng đọc
-      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-        Chính Sách Quyền Riêng Tư
-      </a>.
-  contact:
-    question: "Làm cách nào để liên hệ với lập trình viên?"
+      Không cần thiết. Hoyo Buddy hỗ trợ tiêu chuẩn ứng dụng người dùng (User App) của Discord, cho phép bạn cài đặt bot trực tiếp vào tài khoản Discord cá nhân.
+      Sau khi cài đặt, bạn có thể sử dụng các lệnh gạch chéo ở bất kỳ đâu: trong tin nhắn riêng (DM), nhóm chat hoặc các máy chủ chưa thêm bot. Tất nhiên, quản trị viên máy chủ vẫn có thể mời bot vào máy chủ để toàn bộ thành viên cùng sử dụng.
+  add_account:
+    question: Làm thế nào để thêm tài khoản game của tôi?
     answer: |
-      Bạn có thể nhắn tin trực tiếp trên
-      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-        Discord
-      </a> hoặc tham gia vào
-      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
-        máy chủ Discord
-      </a> và @ tôi tại đó.
+      Chạy lệnh <code>/accounts</code> và chọn "Thêm tài khoản". Cách nhanh nhất cho tài khoản quốc tế là đăng nhập bằng email và mật khẩu tài khoản HoYoverse (đăng nhập bên thứ ba như Google hay Apple không được API HoYoLAB hỗ trợ), phương thức này cũng giúp bot tự động đổi giftcode cho bạn. Ngoài ra, bạn cũng có thể đăng nhập bằng cách dán Cookie trình duyệt.
+      Tài khoản máy chủ Trung Quốc (Miyoushe) có thể đăng nhập bằng mã xác nhận gửi qua SMS hoặc quét mã QR từ ứng dụng Miyoushe.
+  account_safe:
+    question: Tài khoản của tôi có an toàn không?
+    answer: |
+      Mật khẩu của bạn không bao giờ được lưu trữ. Khi bạn đăng nhập bằng email và mật khẩu, Hoyo Buddy sẽ gửi thông tin đến HoYoLAB để nhận Cookie phiên đăng nhập và xóa mật khẩu khỏi bộ nhớ ngay lập tức. Cookie được lưu trữ luôn được mã hóa an toàn bằng thuật toán Fernet.
+      Quan trọng hơn, Cookie web của HoYoLAB chỉ có quyền truy cập dữ liệu trang web công khai; nó hoàn toàn không thể đăng nhập vào game, không thể đổi mật khẩu và không thể xem thông tin nhạy cảm như email hay số điện thoại đầy đủ của bạn. Bạn có thể gỡ bỏ tài khoản và xóa sạch dữ liệu bất kỳ lúc nào bằng lệnh <code>/accounts</code>. Tìm hiểu thêm tại <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">An toàn tài khoản</a> và <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank" rel="noopener">Chính sách quyền riêng tư</a>.
+  ban:
+    question: Sử dụng bot có bị cấm (ban) tài khoản game không?
+    answer: |
+      Chưa từng có bất kỳ trường hợp nào bị cấm chơi game do sử dụng Hoyo Buddy. Bot chỉ tương tác trực tiếp với API web công khai của HoYoLAB và Miyoushe, tương tự như khi bạn xem ghi chú hàng ngày trên trình duyệt web. Bot hoàn toàn không can thiệp vào tệp cài đặt game, không đính kèm vào tiến trình và không đọc bộ nhớ của game.
+      Dù việc gửi yêu cầu web tự động về mặt lý thuyết có thể không nằm trong điều khoản sử dụng web của HoYoLAB, nhưng nếu có bất kỳ biện pháp xử lý nào xảy ra thì nó cũng chỉ ảnh hưởng đến quyền truy cập diễn đàn HoYoLAB, tuyệt đối không ảnh hưởng đến tiến trình hay nhân vật trong game của bạn. <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">Đọc thêm phân tích an toàn</a>.
+  help:
+    question: Tôi có thể tìm sự trợ giúp ở đâu?
+    answer: |
+      Hãy xem hướng dẫn cài đặt và bảng lệnh chi tiết tại trang <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">Tài liệu</a>, hoặc tham gia <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">Máy chủ Discord</a> của chúng tôi để đặt câu hỏi và trao đổi cùng cộng đồng.
+
 team:
-  title: Thành Viên Đội Ngữ
-  subtitle: Đội Ngũ Hoyo Buddy
-  description: "Wow, chúng tôi đã làm sản phẩm này."
+  title: Đội ngũ phát triển
   seria:
-    role: Lập trình viên
+    role: Lập trình viên chính
   ayasaku:
-    role: Nhà thiết kế
+    role: Thiết kế giao diện
   hydrogened:
-    role: PR
+    role: Truyền thông & Cộng đồng
 
 footer:
-  description: Nâng cao trải nghiệm Hoyoverse của bạn
-  navigation:
-    title: Điều hướng
-    home: Trang Chủ
-    about: Về Hoyo Buddy
-    features: Tính Năng
-    faq: FAQ
+  description: Tất cả tựa game HoYoverse của bạn, hội tụ ngay trên Discord.
   quick_links:
-    title: Quick Links
+    title: Liên kết nhanh
     github: Dự án trên GitHub
-    wiki: Wiki
-    invite: Link mời
+    wiki: Wiki hướng dẫn
+    invite: Mời bot
   contact:
     title: Liên hệ
     discord_server: Máy chủ Discord
     dev_discord: Discord của lập trình viên
-    buy_me_a_coffee: Ủng Hộ
-  copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
+    buy_me_a_coffee: Ủng hộ dự án
+  sponsor: Tài trợ
+  rights: © {year} Seria Ati. Đã đăng ký bản quyền.

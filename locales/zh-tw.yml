@@ -1,153 +1,224 @@
 meta:
-  title: Hoyo Buddy | 讓你的 Hoyoverse 體驗更上一層樓
-  description: "一款為 Hoyoverse 遊戲玩家量身訂做的 Discord 機器人, 功能豐富、易於使用且設計精美。"
+  title: Hoyo Buddy | 專為米哈遊玩家打造的 Discord 機器人
+  description: 即時體力提醒、自動每日簽到、一鍵兌換碼領取，以及精美角色展示卡片。在 Discord 輕鬆管理你所有的米哈遊遊戲與帳號。
 
-navbar:
-  home: 首頁
-  features: 功能
-  about: 關於
+nav:
+  label: 主要導航
   commands: 指令
+  reminders: 提醒
+  auto_tasks: 自動任務
   faq: 常見問題
-  team: 團隊
-  get_started: 開始使用
+  docs: 說明文件
+  language: 語言
 
 hero:
-  description: "一款為 Hoyoverse 遊戲玩家量身訂做的 Discord 機器人, 功能豐富、易於使用且設計精美。"
-  get_started: 開始使用
-  star_on_github: 在 GitHub 上給我們一個星星
+  pre: 陪伴你在
+  all: 每一款米哈遊遊戲
+  summary: "體力溢出提醒、自動簽到、兌換碼領取與角色展示卡片。支援原神、星穹鐵道、絕區零等多款遊戲，集中管理所有帳號。"
+  cta: 新增至 Discord
+  cta_note: 支援所有伺服器與私訊 (DM)。
+  overview: 查看所有遊戲
+  games:
+    genshin: 告別樹脂溢出，生成精美角色展示卡片，回顧深境螺旋與幻想真境劇詩戰績，並完整記錄祈願歷史。
+    hsr: 開拓力上限提醒、專屬角色展示卡、混沌回憶與虛構敘事通關統計，以及完整的躍遷紀錄追蹤。
+    zzz: 電量溢出提醒、每日刮刮樂與錄影帶收益通知、式輿防衛戰與危局強襲結算，以及調頻歷史統計。
+    honkai: 體力上限提醒、自動每日簽到、超弦空間與記憶戰場結算追蹤，以及全女武神陣容一覽。
+    tot: 自動每日簽到，每天定時為你領取未名晶片與補給獎勵，綁定多帳號也能一次搞定。
 
-features:
-  title: 功能
-  subtitle: Hoyo Buddy 的主要功能
-  description: 不僅僅是在 Discord 上的 HoYoLAB。
-  show_off:
-    title: 為你的角色建立卡片
-    bullet1: • 多種模板可供選擇
-    bullet2: • Enka Network 整合
-    bullet3: • 將整個隊伍整合到一張卡片中
-    bullet4: • 多種自訂選項
-    bullet5: • 使用你的自訂圖片
-  make_life_easier:
-    title: 自動任務和提醒
-    bullet1: • 自動完成旅行 Mimo 任務、獲取點數並購買獎勵
-    bullet2: • 自動領取每日簽到獎勵
-    bullet3: • 自動兌換前瞻直播和其他兌換碼
-    bullet4: • 樹脂、每日委託及其他更多提醒
-  all_in_one:
-    title: 集中管理
-    bullet1: • 添加來自不同遊戲和 Hoyoverse 帳戶
-    bullet2: • 使用一個機器人的集中化體驗
-  free_and_open_source:
-    title: 免費和開源
-    bullet1: • 完全免費使用
-    bullet2: • 在 GitHub 上開源
-    bullet3: • 無廣告、無付費牆
-    bullet4: • 考慮隱私和安全的設計
+worlds:
+  genshin:
+    name: 原神
+    short: 原神
+    place: 提瓦特
+  hsr:
+    name: "崩壞：星穹鐵道"
+    short: 星穹鐵道
+    place: 星穹列車
+  zzz:
+    name: 絕區零
+    short: 絕區零
+    place: 新艾利都
+  honkai:
+    name: 崩壞3rd
+    short: 崩壞3rd
+    place: 休伯利安
+  tot:
+    name: 未定事件簿
+    short: 未定事件簿
+    place: 未名市
 
-about:
-  title: 強大、美觀、又快
-  description: |
-    Hoyo Buddy 提供了遊玩 Hoyoverse 遊戲所需的各種必要功能, 並以視覺上引人入勝的方式呈現信息。我們精心打造的用戶界面能同時兼顧美觀和實用性。
-    <br />
-    <br />
-    藉由其吸引人的外觀設計和極速的性能, Hoyo Buddy 給人留下了深刻的印象。我們的開發人員投入了無數的時間來優化它, 以確保你能迅速獲取所需的信息。
-  stat:
-    title: 深得
-    description: 個伺服器的喜愛
+commands:
+  eyebrow: 指令
+  title: 跨遊戲統一的指令體驗。
+  description: 無需記憶不同機器人的繁瑣語法。選擇遊戲與指令，立即預覽真實回覆效果。
+  game: 遊戲
+  list:
+    notes: 一覽樹脂、體力與派遣剩餘時間，並可自訂溢出前的私訊提醒。
+    check_in: 在 Discord 內一鍵領取每日簽到獎勵，或查看本月簽到天數與進度。
+    redeem: 一次為名下所有帳號兌換最新直播與活動兌換碼，不必反覆開啟網頁。
+    profile: 根據你的遊戲內角色展櫃，即時生成精美且易於分享的角色數值卡片。
 
-cta:
-  title: "還無法下定決心嗎?"
-  description: "市面上有許多與 Hoyoverse 相關的 Discord 機器人，那麼為什麼要選擇 Hoyo Buddy? Hoyo Buddy 有什麼與眾不同之處, 使其勝過其他你可能已在使用的機器人？"
-  button: 查看介紹
+reminders:
+  eyebrow: 提醒
+  title: 在體力溢出前精準提醒。
+  description: Hoyo Buddy 全天候關注你的即時便籤，在體力即將回滿、派遣完成或即將換日重置時主動傳送私訊。滑動時間軸查看 24 小時提醒節奏。
+  caps: "{resource} 將於 {time} 回滿"
+  now: 現在
+  tomorrow: 明天
+  dm: 私訊
+  stamina: 體力
+  upcoming: 倒數 {time} 送達
+  timeline: 未來 24 小時
 
-testimonials:
-  title: 指令
-  subtitle: "Hoyo Buddy 可以做什麼?"
-  description: 看看 Hoyo Buddy 的熱門指令吧！
-  accounts:
-    description: 將所有帳戶集中在一個地方輕鬆管理。總共有三種直觀的方法可以幫助你快速的新增帳戶。
-  search:
-    description: "輕鬆探索與原神、星穹鐵道及絕區零相關的任何內容。非常適合用來向新手介紹遊戲觀念。"
+auto:
+  eyebrow: 自動任務
+  title: 讓繁瑣日常全自動執行。
+  description: 自由開啟所需任務：每日簽到、自動兌換新釋出的禮物碼，以及自動完成旅行 Mimo 任務。每天早晨透過私訊回報所有帳號的執行結果。
+
+open:
+  eyebrow: 免費且開源
+  title: 所有功能完全免費，每一行代碼公開透明。
+  free:
+    value: 免費
+    label: 無廣告、無付費牆、無高級會員限制。
+  source:
+    value: AGPL-3.0
+    label: 開源專案。歡迎在 GitHub 檢視完整源碼。
+  languages:
+    value: "14"
+    label: 支援多種語言，由社群貢獻者在地化翻譯。
+  servers:
+    value: 17,000+
+    label: 個活躍的 Discord 伺服器信賴採用。
+  privacy: 請參閱我們的{privacy}與{security}，了解資料如何受到保護。
+  privacy_link: 隱私權政策
+  security_link: 帳號安全指南
+
+bot:
+  today_at: 今天 {time}
+  used: "{user} 使用了 {command}"
+  app: 應用程式
   notes:
-    description: "隨時隨地查看你的即時便籤, 並能打開提醒功能, 便於追蹤樹脂、每日任務、洞天寶錢等。"
-  characters:
-    description: "將你擁有的所有角色總結成一張卡片, 在組隊需要幫助時可以直接分享給他人。"
-  farm:
-    description: "查看今天的副本中可以刷取的素材, 並設置提醒, 當角色/武器的素材可以刷取時通知你。"
-  profile:
-    description: "製作視覺上令人驚艷的卡片來展示你的角色面板, 非常適合在社交媒體平台上分享。"
+    title: 即時便籤
+    resin: 樹脂
+    full_in: "{time} 後回滿"
+    trailblaze_power: 開拓力
+    sticky_notes: 即時便籤
+    battery: 電量
+    stamina: "體力: {cur}/{max}，{time} 後回滿"
+    daily_bp: "每日使命: {cur}/{max}"
+    superstring: 超弦空間
+    current_score: "目前積分: {score}"
+    memorial_arena: 記憶戰場
+    arena_rewards: "挑戰獎勵: {cur}/{max}"
+    arena_sss: "SSS級獎勵: {cur}/{max}"
+    elysian_realm: 往世樂土
+    elysian_score: "目前積分: {cur}/{max}"
+  check_in:
+    title: 每日簽到
+    summary: 本月已簽到 {day} 天
+    missed: 錯過簽到 {missed} 天
+    button: 簽到
+    make_up: 補簽
+    claimed: 已領取每日簽到獎勵
+    claimed_footer: 使用 /settings 設定通知
+  redeem:
+    title: 兌換碼兌換結果
+    success: 兌換成功
+    claimed: 禮物碼已被兌換過
+    auto_footer: 使用 /settings 關閉自動兌換
+  mimo:
+    title: "旅行 Mimo: 自動完成任務並領取點數"
+    summary: Hoyo Buddy 已為你完成 {finish} 個任務並領取 {points} 點數
+    footer: 使用 /settings 設定自動任務與兌換獎勵
+    tasks:
+      log_in: 登入遊戲
+      check_in: 完成每日簽到
+      community: 瀏覽社群
+  reminder:
+    footer: 使用 /notes 設定提醒
+    threshold: 已達閥值 ({value})
+    resin: 樹脂提醒
+    realm: 洞天寶錢提醒
+    expedition: 探索派遣提醒
+    expedition_body: 一或多個探索派遣已經完成了
+    transformer: 參量質變儀提醒
+    transformer_body: 參量質變儀可以使用了!
+    daily: 每日委託提醒
+    daily_body: 每日委託或冒險歷練尚未全部完成
+    tb_power: 開拓力
+    daily_training: 每日實訓
+    daily_training_body: 每日實訓尚未全部完成
+    weekly: 每週首領折扣提醒
+    weekly_body: 每週首領折扣尚未全部使用完畢
+    battery: 電量
+    video_store: 錄影帶店經營
+    video_store_body: 錄影帶的收益尚未領取
+    scratch: 刮刮樂大作戰
+    scratch_body: 還沒刮刮刮樂
+    engagement: 活躍度
+    engagement_body: 今日的活躍度尚未完成
+    stamina: 體力提醒
 
 faq:
-  title: 常見問題
-  subtitle: "有疑問嗎? 看看這裡"
-  description: "如果你有其他問題, 請直接聯繫我們。"
+  title: FAQ
+  heading: 常見問題
+  description: 還有其他疑問？歡迎加入我們的 Discord 伺服器或查閱官方文件。
   free:
-    question: "Hoyo Buddy 是免費的嗎?"
+    question: Hoyo Buddy 是免費的嗎？
     answer: |
-      是, Hoyo Buddy 完全免費。如果你喜歡它, 可以考慮
-      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
-        捐款
-      </a>或
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-        給我們的項目一個星星
-      </a>。
-  open_source:
-    question: "Hoyo Buddy 是開源的嗎?"
+      是的。所有功能皆完全免費，沒有廣告、沒有付費牆，也沒有任何會員特權制度。
+      如果你覺得 Hoyo Buddy 對你有幫助，歡迎<a href="https://link.seria.moe/donate" target="_blank" rel="noopener">贊助本專案</a>，協助我們分擔伺服器租用與營運成本。
+  games:
+    question: 支援哪些遊戲與帳號？
     answer: |
-      是, Hoyo Buddy 是開源的。你可以在
-      <a rel="noopener" href="https://github.com/seriaati/hoyo-buddy" target="_blank" class="text-primary hover:underline">
-        GitHub
-      </a>上查看它的程式碼，請遵守相應的開源協議。
-  safe:
-    question: "Hoyo Buddy 在使用上會有安全疑慮嗎?"
+      支援《原神》、《崩壞：星穹鐵道》、《絕區零》、《崩壞3rd》與《未定事件簿》，同時涵蓋國際服 (HoYoLAB) 與陸服 (米游社) 帳號。你可以無限制新增多個帳號並隨時切換。
+      各遊戲支援的功能因官方 API 開放程度略有差異，詳情請參閱<a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">說明文件</a>。
+  where:
+    question: 我必須把它加入伺服器才能使用嗎？
     answer: |
-      請詳閱維基上的
-      <a rel="noopener" href="https://hb-docs.seria.moe/zh-Hant/docs/Account-Security" target="_blank"
-        class="text-primary hover:underline">
-        帳戶安全
-      </a> 頁面來獲取更多資訊。資料隱私方面, 請參閱
-      <a rel="noopener" href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank"
-        class="text-primary hover:underline">
-        隱私政策
-      </a>。
-  contact:
-    question: "我該如何聯繫你們?"
+      完全不需要。Hoyo Buddy 支援 Discord 使用者安裝應用程式 (User App) 標準，你可以直接將它安裝至你的個人 Discord 帳號。
+      安裝後，無論是在私人私訊、群組通話，或是任何尚未加入該機器人的伺服器中，都能隨時隨地使用斜線指令。當然，伺服器管理員也能將它邀請至伺服器中供所有成員使用。
+  add_account:
+    question: 如何新增我的遊戲帳號？
     answer: |
-      你可以直接在
-      <a rel="noopener" href="https://discord.com/users/410036441129943050" target="_blank"
-        class="text-primary hover:underline">
-        Discord
-      </a>上私訊我, 或者加入我們的
-      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
-        Discord 伺服器
-      </a>並提及我。
+      輸入 <code>/accounts</code> 並選擇「新增帳號」。國際服帳號最簡便的方式是使用 HoYoverse 信箱與密碼登入（HoYoLAB 網頁介面不支援 Google 或 Apple 等第三方登入授權），此方式亦能支援自動兌換禮物碼。此外，你也可以透過貼上瀏覽器 Cookie 完成登入。
+      陸服（米游社）帳號則支援手機簡訊驗證碼或米游社 App 掃碼登入。
+  account_safe:
+    question: 我的帳號安全嗎？
+    answer: |
+      我們絕不會保存你的密碼。當你透過帳號密碼登入時，Hoyo Buddy 會直接向 HoYoLAB 換取驗證 Cookie，並在完成後立即捨棄密碼。所有儲存的 Cookie 皆經過 Fernet 演算法加密存儲。
+      更重要的是，HoYoLAB Cookie 僅具有存取公開社群與便籤資料的權限，完全無法登入遊戲本體、修改帳號密碼，亦無法讀取完整的信箱或手機號碼等敏感個資。你隨時可以透過 <code>/accounts</code> 刪除帳號並清除所有相關資料。詳情請參閱<a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">帳號安全說明</a>與<a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank" rel="noopener">隱私權政策</a>。
+  ban:
+    question: 使用 Hoyo Buddy 會導致遊戲被封號嗎？
+    answer: |
+      至今從未有任何因使用 Hoyo Buddy 而被遊戲封號的案例。機器人僅透過 HoYoLAB 與米游社的公開網頁 API 進行查詢，這與你在瀏覽器或手機 App 查看即時便籤的行為完全相同。它絕不修改遊戲檔案、不注入遊戲客戶端進程，也不會讀取遊戲記憶體。
+      雖然自動化網頁請求在嚴格定義下可能違反 HoYoLAB 網頁服務條款，但任何潛在風險僅侷限於 HoYoLAB 社群網頁存取，絕不會影響你的遊戲客戶端進度與角色資產。<a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">閱讀完整的安全解析</a>。
+  help:
+    question: 遇到問題時該去哪裡尋求協助？
+    answer: |
+      請查閱<a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">官方說明文件</a>中的設定教學，或加入我們的 <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">Discord 伺服器</a>向社群成員與開發者尋求協助。
+
 team:
-  title: 團隊介紹
-  subtitle: Hoyo Buddy 團隊
-  description: "哇哦, 這是我們做的。"
+  title: 核心團隊
   seria:
-    role: 程式員
+    role: 主程式開發
   ayasaku:
-    role: 設計師
+    role: 視覺設計
   hydrogened:
-    role: 公關
+    role: 公關推廣
 
 footer:
-  description: 讓你的 Hoyoverse 體驗更上一層樓。
-  navigation:
-    title: 導覽
-    home: 首頁
-    about: 關於
-    features: 功能
-    faq: 常見問題
+  description: 讓你的所有米哈遊遊戲，在 Discord 融會貫通。
   quick_links:
-    title: 連結
-    github: GitHub 項目頁面
-    wiki: 維基
+    title: 相關連結
+    github: GitHub 專案庫
+    wiki: 維基指南
     invite: 邀請連結
   contact:
-    title: 聯繫我們
+    title: 聯絡我們
     discord_server: Discord 伺服器
-    dev_discord: 開發者的 Discord
-    buy_me_a_coffee: 捐款
-  copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
+    dev_discord: 開發者 Discord
+    buy_me_a_coffee: 贊助支持
+  sponsor: 贊助
+  rights: © {year} Seria Ati. 保留所有權利。

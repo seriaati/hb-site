@@ -1,152 +1,224 @@
 meta:
-  title: Hoyo Buddy | あなたのHoyoverseエクスペリエンスを向上させよう
-  description: Hoyoverseゲーマーのために作られた、機能豊富で使いやすく、美しくデザインされたDiscordボット。
+  title: Hoyo Buddy | HoYoverseプレイヤーのためのDiscordボット
+  description: スタミナ溢れ防止リマインダー、毎日の自動チェックイン、コード一括交換、美麗なビルドカード生成。Discord上でHoYoverseの全ゲームとアカウントをスマートに管理。
 
-navbar:
-  home: ホーム
-  features: 機能
-  about: Hoyo Buddyについて
+nav:
+  label: メインナビゲーション
   commands: コマンド
+  reminders: リマインダー
+  auto_tasks: 自動タスク
   faq: よくある質問
-  team: チーム
-  get_started: はじめる
+  docs: ドキュメント
+  language: 言語
 
 hero:
-  description: Hoyoverseゲーマーのために作られた、機能豊富で使いやすく、美しくデザインされたDiscordボット。
-  get_started: はじめる
-  star_on_github: GitHubでスター
+  pre: いつもあなたの傍に、
+  all: すべてのHoYoverseゲームで
+  summary: "スタミナ上限通知、自動チェックイン、コード交換、ビルドカード生成。原神・スタレ・ゼンゼロなど、複数アカウントもDiscordひとつでまとめて管理。"
+  cta: Discordに追加
+  cta_note: すべてのサーバーと個人DMで使えます。
+  overview: すべてのゲームを表示
+  games:
+    genshin: 天然樹脂の溢れを防ぎ、洗練されたビルドカードを生成。深境螺旋や幻想シアターの戦績確認、祈願履歴の管理まで幅広くサポート。
+    hsr: 開拓力の上限アラート、キャラクター育成カードの作成、混沌の記憶・虚構叙事のクリア記録、跳躍履歴の追跡に対応。
+    zzz: バッテリー回復アラート、スクラッチ＆ビデオストアの受取忘れ防止、式輿防衛戦・要撃急襲の戦績確認、変調履歴の追跡。
+    honkai: スタミナ満タン通知、毎日の自動チェックイン、超弦空間・記憶戦場のスコア集計、全戦乙女リストの一括確認。
+    tot: 毎日の自動チェックイン機能で、ステラ水晶の受取忘れを防止。複数アカウントもスムーズに一括管理。
 
-features:
-  title: 機能
-  subtitle: Hoyo Buddyの主な機能
-  description: Discord上のHoYoLABだけではありません。
-  show_off:
-    title: キャラクターのカードを作成
-    bullet1: • 選べる複数のテンプレート
-    bullet2: • Enka Network 統合
-    bullet3: • チーム全体を1枚のカードにまとめる
-    bullet4: • 多くのカスタマイズオプション
-    bullet5: • カスタム画像を使用
-  make_life_easier:
-    title: 自動タスクとリマインダー
-    bullet1: • Traveling Mimo タスクを自動完了、ポイントを獲得して報酬を購入
-    bullet2: • 毎日のチェックイン報酬を自動受取
-    bullet3: • ライブストリームやその他のギフトコードを自動交換
-    bullet4: • 樹脂、デイリー依頼、その他のリマインダー
-  all_in_one:
-    title: すべてを一箇所で
-    bullet1: • 異なるゲームと Hoyoverse アカウントを追加
-    bullet2: • 1つのボットで集中化された体験
-  free_and_open_source:
-    title: 無料でオープンソース
-    bullet1: • 完全に無料で使用できます
-    bullet2: • GitHub 上でオープンソース
-    bullet3: • 広告なし、ペイウォールなし
-    bullet4: • プライバシーと安全性を考慮して作成
+worlds:
+  genshin:
+    name: 原神
+    short: 原神
+    place: テイワット
+  hsr:
+    name: "崩壊：スターレイル"
+    short: スタレ
+    place: 星穹列車
+  zzz:
+    name: ゼンレスゾーンゼロ
+    short: ゼンゼロ
+    place: 新エリー都
+  honkai:
+    name: 崩壊3rd
+    short: 崩壊3rd
+    place: ハイペリオン
+  tot:
+    name: 未定事件簿
+    short: 未定事件簿
+    place: ステリス
 
-about:
-  title: 多機能、エレガント、そして高速
-  description: |
-    Hoyo Buddyは、あなたのHoyoverseの旅に不可欠な機能を提供し、視覚的に魅力的な方法で情報を提示します。私たちの細心に作られたユーザーインターフェースは、美しさと機能性をシームレスに融合させています。
-    <br />
-    <br />
-    Hoyo Buddyは、視覚的に魅力的なデザインと雷のように速いパフォーマンスの両方で印象を与えます。私たちのプログラマーは、アプリの最適化に無数の時間を投資し、必要な情報への迅速なアクセスを確保しています。
-  stat:
-    title: 使用されている
-    description: サーバー数
+commands:
+  eyebrow: コマンド
+  title: 全ゲーム共通の統一コマンド。
+  description: ゲームごとに別々のボットを使い分ける必要はありません。ゲームとコマンドを選んで、実際の返信をプレビューしてみましょう。
+  game: ゲーム
+  list:
+    notes: 樹脂やスタミナ、派遣の残り時間をひと目で確認。溢れる前に個人DMで通知を受け取れます。
+    check_in: HoYoverseのデイリーチェックインをDiscordからワンクリックで受け取り。連続日数も確認可能。
+    redeem: 最新の公式生放送やアプデで配られたギフトコードを、連携中の全アカウントへ一括適用。
+    profile: ゲーム内のキャラクター展示枠から、見やすく美しいステータスカードを即座に生成。
 
-cta:
-  title: まだ決められませんか？
-  description: 市場には数多くのHoyoverse関連のDiscordボットがありますが、なぜHoyo Buddyを選ぶのでしょうか？すでに使用している可能性があるものも含めて、他のボットからHoyo Buddyを際立たせるものは何でしょうか？
-  button: 詳しく読む
+reminders:
+  eyebrow: リマインダー
+  title: スタミナが溢れる前にしっかり通知。
+  description: Hoyo Buddyがあなたのリアルタイムノートをバックグラウンドで確認し、スタミナが満タンになる前や探索派遣の完了、日課のリセット前にDiscord DMでお知らせします。タイムラインを動かして通知タイミングを確認できます。
+  caps: "{resource} は {time} に満タンになります"
+  now: 現在
+  tomorrow: 明日
+  dm: ダイレクトメッセージ
+  stamina: スタミナ
+  upcoming: あと {time} で通知
+  timeline: 今後24時間のタイムライン
 
-testimonials:
-  title: コマンド
-  subtitle: Hoyo Buddyは何ができるの？
-  description: Hoyo Buddyで最も人気のあるコマンドをご覧ください！
-  accounts:
-    description: すべてのアカウントを一箇所で楽に集中管理。アカウントを迅速でシームレスに追加するための3つの直感的な方法をお楽しみください。
-  search:
-    description: "原神、スタレ、ゼンゼロに関することを簡単に探索。初心者にゲームの概念を紹介するのに最適。"
+auto:
+  eyebrow: 自動タスク
+  title: 毎日の日課を完全自動化。
+  description: 毎日のチェックイン、新着コードの自動交換、Traveling Mimoのポイント回収など、任せたいタスクをオンにするだけ。毎朝のDMで、全アカウントの完了状況をお届けします。
+
+open:
+  eyebrow: 無料＆オープンソース
+  title: すべての機能が完全無料。コードは1行残らず公開されています。
+  free:
+    value: 完全無料
+    label: 広告なし、有料課金なし、プレミアム機能の制限なし。
+  source:
+    value: AGPL-3.0
+    label: オープンソース。GitHubで全ソースコードを確認可能。
+  languages:
+    value: "14"
+    label: コミュニティ有志によって多言語にローカライズ。
+  servers:
+    value: 17,000+
+    label: 以上のDiscordコミュニティで愛用されています。
+  privacy: データの取り扱いについては{privacy}および{security}をご覧ください。
+  privacy_link: プライバシーポリシー
+  security_link: アカウントセキュリティガイド
+
+bot:
+  today_at: 今日 {time}
+  used: "{user} が {command} を実行しました"
+  app: アプリ
   notes:
-    description: リマインダー機能付きのリアルタイムノートにアクセスし、樹脂、デイリーコミッション、その他のタスクの追跡を容易にします。
-  characters:
-    description: 所有しているすべてのキャラクターを一枚のカードにまとめ、チーム編成で助けが必要な時に他の人と直接共有できます。
-  farm:
-    description: 今日のドメインでファームできる素材を確認し、キャラクター/武器の素材がファーム可能になったときに通知するリマインダーを設定します。
-  profile:
-    description: キャラクターのステータスを見せるための視覚的に見事なカードを作成し、ソーシャルメディアプラットフォームでの共有に最適です。
+    title: リアルタイムノート
+    resin: 天然樹脂
+    full_in: "{time} で満タン"
+    trailblaze_power: 開拓力
+    sticky_notes: リアルタイムノート
+    battery: バッテリー
+    stamina: "スタミナ: {cur}/{max}、{time} で満タン"
+    daily_bp: "デイリー任務: {cur}/{max}"
+    superstring: 超弦空間
+    current_score: "現在のスコア: {score}"
+    memorial_arena: 記憶戦場
+    arena_rewards: "挑戦報酬: {cur}/{max}"
+    arena_sss: "SSS級報酬: {cur}/{max}"
+    elysian_realm: 古の楽園
+    elysian_score: "現在のスコア: {cur}/{max}"
+  check_in:
+    title: デイリーチェックイン
+    summary: 今月は {day} 日チェックイン済み
+    missed: 未チェックイン {missed} 日
+    button: チェックイン
+    make_up: 補填
+    claimed: デイリーチェックイン報酬受取完了
+    claimed_footer: /settings で通知を設定
+  redeem:
+    title: シリアルコード交換結果
+    success: 交換成功
+    claimed: ギフトコードは既に使用済みです
+    auto_footer: /settings で自動コード交換をオフに設定
+  mimo:
+    title: "Traveling Mimo: タスク自動完了＆ポイント受取"
+    summary: Hoyo Buddy が {finish} 個のタスクを完了し、{points} ポイントを獲得しました
+    footer: /settings で自動タスクの設定や報酬交換を管理
+    tasks:
+      log_in: ゲームにログイン
+      check_in: デイリーチェックインを完了
+      community: コミュニティを閲覧
+  reminder:
+    footer: /notes でリマインダーを設定
+    threshold: しきい値（{value}）に到達しました
+    resin: 天然樹脂リマインダー
+    realm: 洞天宝銭リマインダー
+    expedition: 探索派遣リマインダー
+    expedition_body: 1つ以上の探索派遣が完了しました
+    transformer: 参量物質変化器リマインダー
+    transformer_body: 参量物質変化器は使えるようになりました！
+    daily: デイリー依頼リマインダー
+    daily_body: デイリー依頼または修練ポイントがまだ完了していません
+    tb_power: 開拓力
+    daily_training: デイリー訓練
+    daily_training_body: デイリー訓練がまだ完了していません
+    weekly: 週ボス報酬減額リマインダー
+    weekly_body: 週ボス報酬減額がまだ使用されていません
+    battery: バッテリー
+    video_store: ビデオストア経営
+    video_store_body: ビデオストアの収益はまだ受け取られていません
+    scratch: ラッキースクラッチ
+    scratch_body: スクラッチカードはまだ削られていません
+    engagement: エンゲージメント
+    engagement_body: 今日のエンゲージメントはまだ完了していません
+    stamina: スタミナリマインダー
 
 faq:
-  title: よくある質問
-  subtitle: まだ質問がありますか？こちらをご覧ください
-  description: 他に質問がありましたら、直接お気軽にお問い合わせください。
+  title: FAQ
+  heading: よくある質問
+  description: 疑問や気になる点があれば、公式Discordサーバーやドキュメントもぜひご覧ください。
   free:
-    question: Hoyo Buddyは無料ですか？
+    question: Hoyo Buddy は本当に無料ですか？
     answer: |
-      はい、Hoyo Buddyは完全に無料で使用できます。もし気に入っていただけましたら、
-      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
-      寄付
-      </a>や
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-      プロジェクトへのスター
-      </a>で私たちをサポートすることをご検討ください。
-  open_source:
-    question: Hoyo Buddyはオープンソースですか？
+      はい、すべての機能を完全無料でご利用いただけます。広告や有料プラン、機能制限などは一切ありません。
+      もし気に入っていただけましたら、サーバー維持費や開発継続のための<a href="https://link.seria.moe/donate" target="_blank" rel="noopener">プロジェクト支援（寄付）</a>をご検討いただけると励みになります。
+  games:
+    question: どのゲームやアカウントに対応していますか？
     answer: |
-      はい、Hoyo Buddyはオープンソースです。
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-        GitHub
-      </a>でコードを確認できます。対応するライセンスに従ってください。
-  safe:
-    question: Hoyo Buddyの使用に安全上の懸念はありますか？
+      『原神』『崩壊：スターレイル』『ゼンレスゾーンゼロ』『崩壊3rd』『未定事件簿』に対応しており、グローバルサーバー（HoYoLAB）と中国本土サーバー（米游社）のどちらのアカウントも登録可能です。アカウント数に上限はなく、自由に追加・切り替えができます。
+      ゲームごとに利用できる機能の詳細は、<a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">公式ドキュメント</a>をご確認ください。
+  where:
+    question: サーバーにボットを追加する必要がありますか？
     answer: |
-      詳細については、wikiの
-      <a href="https://hb-docs.seria.moe/ja/docs/Account-Security" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-        アカウントセキュリティ
-      </a>ページをお読みください。データプライバシーについては、
-      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-        プライバシーポリシー
-      </a>をご覧ください。
-  contact:
-    question: 開発者にはどうやって連絡できますか？
+      サーバーへの導入は必須ではありません。Hoyo BuddyはDiscordの「ユーザーインストール型アプリ（User App）」に対応しているため、個人のDiscordアカウントに直接追加できます。
+      追加後は、個人のDMやグループチャット、ボットが導入されていない外部サーバーでも、そのままスラッシュコマンドを使用できます。もちろん、サーバー管理者がコミュニティ全体のためにサーバーへ導入することも可能です。
+  add_account:
+    question: ゲームアカウントはどのように登録しますか？
     answer: |
-      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-        Discord
-      </a>で直接メッセージを送っていただくか、
-      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
-        Discordサーバー
-      </a>に参加してそこで私にタグ付けしてください。
+      <code>/accounts</code> を実行し、「アカウントを追加」を選択してください。グローバルアカウントの場合、HoYoverseのメールアドレスとパスワードでサインインするのが最も簡単です（GoogleやAppleなどのサードパーティ連携ログインはHoYoLABのWeb APIに対応していません）。このログイン方法を使うと、ギフトコードの自動交換も利用可能になります。また、ブラウザのCookieを貼り付けて登録することもできます。
+      中国サーバー（米游社）の場合は、SMS認証コードまたは米游社アプリのQRコード読み取りに対応しています。
+  account_safe:
+    question: アカウントの安全性は確保されていますか？
+    answer: |
+      パスワードがサーバーに保存されることは一切ありません。メールアドレスとパスワードでサインインした際、Hoyo BuddyはHoYoLABとの認証を行ってセッションCookieを取得し、パスワードは即座にメモリ上から破棄されます。保存されるCookieもFernet方式によって暗号化されています。
+      また、HoYoLABのWeb Cookieでアクセスできるのは公開されているコミュニティやWeb便箋データのみであり、ゲーム本体へのログイン、パスワードの変更、メールアドレスや電話番号といった個人情報の閲覧を行う権限は持ちません。登録したアカウント情報は <code>/accounts</code> からいつでも削除・完全消去できます。詳細は<a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">セキュリティガイド</a>および<a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank" rel="noopener">プライバシーポリシー</a>をご覧ください。
+  ban:
+    question: ボットの使用によってゲームがBANされる心配はありますか？
+    answer: |
+      これまで、Hoyo Buddyの利用を原因とするゲームBANの報告は1件もありません。本ボットはHoYoLABおよび米游社が提供している公式Web APIのみを利用しており、ブラウザや公式スマホアプリでリアルタイムノートを見るのとまったく同じ仕組みで通信しています。ゲームクライアントのファイルを改変したり、メモリを読み取るような動作は一切行いません。
+      Webリクエストの自動化は厳密にはHoYoLABのWeb利用規約上グレーゾーンですが、万一何か制限が生じたとしても対象はHoYoLABコミュニティのアクセス権に限られ、ゲーム本編の進行度やキャラクターデータに影響が及ぶことはありません。<a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">セキュリティに関する詳しい解説はこちら</a>。
+  help:
+    question: 使い方がわからない時はどうすればいいですか？
+    answer: |
+      <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">公式ドキュメント</a>に詳しい導入手順とコマンド一覧を掲載しています。解決しない場合は、公式<a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">Discordサーバー</a>にてお気軽にご質問ください。
+
 team:
-  title: チームメンバー
-  subtitle: Hoyo Buddyチーム
-  description: うわー、私たちがこれを作りました。
+  title: コアチーム
   seria:
-    role: プログラマー
+    role: リード開発者
   ayasaku:
-    role: デザイナー
+    role: UI/UXデザイナー
   hydrogened:
-    role: PR
+    role: 広報・コミュニティ
 
 footer:
-  description: あなたのHoyoverseエクスペリエンスを向上させます。
-  navigation:
-    title: ナビゲーション
-    home: ホーム
-    about: Hoyo Buddyについて
-    features: 機能
-    faq: よくある質問
+  description: すべてのHoYoverseゲームを、Discord上でひとつに。
   quick_links:
-    title: クイックリンク
-    github: GitHubプロジェクト
-    wiki: Wiki
-    invite: 招待リンク
+    title: リンク
+    github: GitHubリポジトリ
+    wiki: 公式Wiki
+    invite: ボットの招待
   contact:
     title: お問い合わせ
-    discord_server: Discordサーバー
-    dev_discord: 開発者のDiscord
-    buy_me_a_coffee: 寄付する
-  copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
+    discord_server: 公式Discordサーバー
+    dev_discord: 開発者Discord
+    buy_me_a_coffee: 開発者を支援
+  sponsor: スポンサー
+  rights: © {year} Seria Ati. All rights reserved.

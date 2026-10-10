@@ -1,151 +1,224 @@
 meta:
-  title: Hoyo Buddy | 당신의 HoYoverse 게임 플레이를 편리하게
-  description: HoYoverse 게임을 즐기는 유저분들을 위한 쉽고 편리하며 다양한 기능을 가진 디스코드 봇입니다.
+  title: Hoyo Buddy | 호요버스 게이머를 위한 디스코드 봇
+  description: 레진 및 개척력 알림, 일일 출석체크 자동화, 리딤코드 즉시 교환, 한눈에 보는 캐릭터 빌드 카드까지. 디스코드에서 호요버스의 모든 게임과 계정을 손쉽게 관리하세요.
 
-navbar:
-  home: 홈
-  features: 기능
-  about: 소개
+nav:
+  label: 탐색
   commands: 명령어
-  faq: FAQ
-  team: 팀
-  get_started: 시작하기
+  reminders: 알림
+  auto_tasks: 자동 작업
+  faq: 자주 묻는 질문
+  docs: 가이드 문서
+  language: 언어
 
 hero:
-  description: HoYoverse 게임을 즐기는 유저분들을 위한 쉽고 편리하며 다양한 기능을 가진 디스코드 봇입니다.
-  get_started: 시작하기
-  star_on_github: GitHub에서 별표(Star)로 응원하기
+  pre: 모든 여정을 함께할
+  all: 호요버스의 모든 게임
+  summary: "스태미나 초과 알림, 자동 출석체크, 리딤코드 교환, 캐릭터 쇼케이스 빌드 카드까지. 원신, 스타레일, 젠레스 존 제로 등 모든 계정을 디스코드 하나로 연결하세요."
+  cta: 디스코드에 추가하기
+  cta_note: 모든 서버와 개인 DM에서 바로 사용할 수 있습니다.
+  overview: 전체 게임 보기
+  games:
+    genshin: 레진 낭비 걱정 없는 타이머 알림, 프로필 빌드 카드 제작, 나선 비경 및 현실 속 환상극 통계, 전체 기원 기록 열람.
+    hsr: 개척력 최대치 알림, 캐릭터 빌드 카드, 혼돈의 기억 및 허구 이야기 클리어 기록 분석, 전체 워프 기록 추적.
+    zzz: 배터리 충전 완료 알림, 매일 잊기 쉬운 복권과 비디오 상점 수익 알림, 시유 방위전 및 강습 방위전 결과, 변조 기록 추적.
+    honkai: 체력 회복 완료 알림, 일일 출석체크 자동 수령, 초끈 공간과 기억 전장 점수 집계, 보유 발키리 목록 한눈에 보기.
+    tot: 매일 정해진 시간에 미림 칩과 보상을 자동으로 수령하여, 바쁜 일상 속에서도 출석 보상을 놓치지 않도록 지원.
 
-features:
-  title: 기능
-  subtitle: Hoyo Buddy의 주요 기능
-  description: "단순한 호요랩 연동을 넘어선, 디스코드 최강의 호요버스 봇"
-  show_off:
-    title: 한눈에 확인하는 내 캐릭터 카드 제작
-    bullet1: • 다양한 템플릿 제공
-    bullet2: • Enka Network 연동
-    bullet3: • 파티 전체를 한눈에
-    bullet4: • 자유로운 커스터마이징
-    bullet5: • 나만의 이미지로 꾸미기
-  make_life_easier:
-    title: • 자동 작업 및 알림
-    bullet1: •  Mimo의 여행 미션을 자동으로 완료하고 보상까지 챙기기
-    bullet2: • 일일 출석체크 보상 자동 획득
-    bullet3: • 특별 방송 리딤코드 및 각종 리딤코드 자동 교환
-    bullet4: "• 레진, 일일퀘스트및 다양한 알림"
-  all_in_one:
-    title: "번거로운 계정 전환 없이, Hoyo Buddy 하나로 완벽하게"
-    bullet1: "• 원신, 붕괴: 스타레일, 붕괴3rd, 젠레스 존 제로 등 호요버스의 모든 게임 계정을 지원!"
-    bullet2: • 하나의 봇으로 통합된 경험 제공
-  free_and_open_source:
-    title: 완전 무료 기반의 오픈 소스 프로젝트
-    bullet1: • 완전 무료 이용 가능
-    bullet2: • GitHub에서 오픈 소스로 제공
-    bullet3: • 광고 및 유료 기능 제한 없음
-    bullet4: • 개인정보 보호 및 보안 중심 설계
+worlds:
+  genshin:
+    name: 원신
+    short: 원신
+    place: 티바트
+  hsr:
+    name: "붕괴: 스타레일"
+    short: 스타레일
+    place: 은하열차
+  zzz:
+    name: 젠레스 존 제로
+    short: 젠존제
+    place: 뉴에리두
+  honkai:
+    name: 붕괴3rd
+    short: 붕괴3rd
+    place: 히페리온
+  tot:
+    name: 미결사건부
+    short: 미결사건부
+    place: 스텔리스
 
-about:
-  title: "다양한 기능과 깔끔한 디자인, 압도적인 반응 속도"
-  description: |
-    Hoyo Buddy는 호요버스 여정에 필요한 핵심 기능을 가장 아름다운 방식으로 전달합니다. 정교하게 다듬어진 UI는 시각적 만족감을 넘어 최상의 편의성을 제공합니다.
-    <br />
-    <br />
-    아름다운 디자인에 더해진 비약적인 속도. 끊임없는 최적화 노력을 통해 Hoyo Buddy는 당신이 필요한 정보를 가장 빠르게 찾아낼 준비가 되어 있습니다.
-  stat:
-    title: 이용 중인
-    description: 총 서버
+commands:
+  eyebrow: 명령어
+  title: 모든 게임에서 동일하게 이어지는 명령어.
+  description: 게임마다 서로 다른 봇과 명령어를 외울 필요가 없습니다. 아래에서 게임과 명령어를 선택해 실제 응답 화면을 미리 살펴보세요.
+  game: 게임
+  list:
+    notes: 레진, 개척력, 배터리 충전량과 파견 잔여 시간을 확인하고, 가득 차기 전 DM 알림을 설정하세요.
+    check_in: 번거로운 브라우저 접속 없이 디스코드에서 원클릭으로 출석 보상을 수령하고 연속 출석 현황을 확인하세요.
+    redeem: 최신 방송 리딤코드나 이벤트 쿠폰을 연동된 모든 계정에 한 번에 일괄 등록하세요.
+    profile: 인게임 캐릭터 진열장 데이터를 바탕으로 깔끔하고 공유하기 좋은 스펙 카드를 제작하세요.
 
-cta:
-  title: "아직도 결정을 못하셨나요?"
-  description: "이미 수많은 호요버스 봇이 존재합니다. 그럼에도 Hoyo Buddy를 선택해야 하는 이유는 무엇일까요? 기존에 사용하던 봇들과는 차원이 다른, Hoyo Buddy만의 압도적인 차별점을 지금 확인해 보세요."
-  button: Hoyo Buddy만의 특별함 확인하기
+reminders:
+  eyebrow: 알림
+  title: 스태미나가 가득 차기 전에 스마트한 알림.
+  description: Hoyo Buddy가 백그라운드에서 실시간 메모를 확인하여 레진이나 배터리가 가득 차기 전, 파견이 완료되었을 때, 혹은 일일 초기화 전 디스코드 DM으로 알려드립니다. 타임라인을 드래그해 24시간 동안의 알림 주기를 확인해보세요.
+  caps: "{resource} 최대 충전 예상 시각: {time}"
+  now: 지금
+  tomorrow: 내일
+  dm: 다이렉트 메시지
+  stamina: 스태미나
+  upcoming: "{time} 후 도착 예정"
+  timeline: 앞으로 24시간 타임라인
 
-testimonials:
-  title: 명령어
-  subtitle: "Hoyo Buddy가 뭘 할 수 있나요?"
-  description: Hoyo Buddy에서 가장 인기 있는 명령어들을 살짝 구경해 보세요!
-  accounts:
-    description: "복잡한 계정 관리, 이제 한곳에서 끝내세요! 누구나 바로 적응할 수 있는 세 가지 연동 방식을 통해 가장 편리한 환경을 선사합니다."
-  search:
-    description: "원신, 붕괴: 스타레일, 젠레스 존 제로와 관련된 모든 정보를 간편하게 탐색하세요. 게임 개념을 처음 접하는 사람들에게 완벽한 앱입니다."
+auto:
+  eyebrow: 자동 작업
+  title: 매일 반복되는 루틴을 자동으로.
+  description: 매일 출석체크, 새로 공개된 리딤코드 자동 입력, Traveling Mimo 미션 수행까지 원하는 기능을 켜두기만 하세요. 매일 아침 전 계정의 처리 내역이 DM으로 깔끔하게 전달됩니다.
+
+open:
+  eyebrow: 무료 & 오픈소스
+  title: 모든 기능은 완전 무료이며, 모든 코드는 투명하게 공개되어 있습니다.
+  free:
+    value: 완전 무료
+    label: 광고 없음, 유료 구독 없음, 기능 잠금 없음.
+  source:
+    value: AGPL-3.0
+    label: 오픈소스. GitHub에서 모든 코드를 직접 확인하세요.
+  languages:
+    value: "14"
+    label: 글로벌 커뮤니티 기여자들이 직접 번역한 다국어 지원.
+  servers:
+    value: 17,000+
+    label: 이상의 활발한 디스코드 커뮤니티에서 사용 중입니다.
+  privacy: 계정 정보 보호에 대한 자세한 내용은 {privacy} 및 {security}에서 확인할 수 있습니다.
+  privacy_link: 개인정보 처리방침
+  security_link: 계정 보안 안내
+
+bot:
+  today_at: 오늘 {time}
+  used: "{user} 님이 {command} 명령어를 사용했습니다"
+  app: 앱
   notes:
-    description: "레진과 일일퀘스트를 자꾸 까먹는다구요?, 이제 Hoyo Buddy에게 맡기세요! 실시간 정보 확인은 물론 맞춤형 알림 기능을 통해 효율적인 게임 라이프를 지원합니다."
-  characters:
-    description: "복잡한 캐릭터 목록, 이제 한 장의 카드로 끝내세요! 동료들과 팀 구성 전략을 나누고 조언을 구하기에 가장 완벽한 방법입니다."
-  farm:
-    description: "재료 파밍 날짜, 일일이 확인하기 번거로우셨나요? 이제 오늘의 비경 정보를 한눈에 보고, 맞춤형 알림 설정으로 육성 재료를 완벽하게 관리해 보세요!"
-  profile:
-    description: 당신이 빚어낸 동료들의 빛나는 순간을 한 장의 예술 작품으로 담아내세요. 당신의 특별한 기록을 온 세상의 다른 여행자들과 나누기에 완벽한 방법입니다
+    title: 실시간 메모
+    resin: 퓨어 레진
+    full_in: "{time} 후 회복"
+    trailblaze_power: 개척력
+    sticky_notes: 실시간 메모
+    battery: 배터리
+    stamina: "체력: {cur}/{max}, {time} 후 회복"
+    daily_bp: "일일 미션: {cur}/{max}"
+    superstring: 초끈 공간
+    current_score: "현재 점수: {score}"
+    memorial_arena: 기억 전장
+    arena_rewards: "도전 보상: {cur}/{max}"
+    arena_sss: "SSS급 보상: {cur}/{max}"
+    elysian_realm: 과거의 낙원
+    elysian_score: "현재 점수: {cur}/{max}"
+  check_in:
+    title: 일일 출석체크
+    summary: 이번 달 총 {day}일 출석 완료
+    missed: 결석 {missed}일
+    button: 출석체크
+    make_up: 보충 출석
+    claimed: 일일 출석체크 보상 수령 완료
+    claimed_footer: /settings 에서 알림을 설정하세요
+  redeem:
+    title: 리딤코드 교환 결과
+    success: 교환 성공
+    claimed: 리딤코드가 이미 사용되었습니다.
+    auto_footer: /settings 에서 자동 코드 교환을 비활성화할 수 있습니다
+  mimo:
+    title: "Traveling Mimo: 미션 자동 완료 및 포인트 수령"
+    summary: Hoyo Buddy가 {finish}개의 미션을 완료하고 {points} 포인트를 적립했습니다
+    footer: /settings 에서 자동 작업 및 보상 구매를 관리하세요
+    tasks:
+      log_in: 게임 로그인
+      check_in: 일일 출석체크 완료
+      community: 커뮤니티 둘러보기
+  reminder:
+    footer: /notes 에서 알림 설정을 변경할 수 있습니다
+    threshold: 최대치({value})에 도달했습니다
+    resin: 레진 알림
+    realm: 선계 화폐 알림
+    expedition: 탐사 파견 알림
+    expedition_body: 탐사가 완료된 캐릭터가 있습니다.
+    transformer: 매개 변수 변환기 알림
+    transformer_body: 매개 변수 변환기를 사용할 수 있습니다!
+    daily: 일일 의뢰 알림
+    daily_body: 일일 의뢰 또는 수련 포인트를 아직 완료하지 않았습니다
+    tb_power: 개척력
+    daily_training: 일일 훈련
+    daily_training_body: 일일 훈련이 아직 완료되지 않았어요.
+    weekly: 주간 보스 할인 알림
+    weekly_body: 주간 보스 할인 횟수를 아직 모두 사용하지 않았습니다.
+    battery: 배터리
+    video_store: 비디오 상점 운영
+    video_store_body: 비디오 상점 수익을 아직 수령하지 않았습니다
+    scratch: 행운의 스크래치
+    scratch_body: 아직 스크래치 카드를 긁지 않았습니다
+    engagement: 참여도
+    engagement_body: 오늘의 참여도가 아직 완료되지 않았습니다
+    stamina: 체력 알림
 
 faq:
   title: FAQ
-  subtitle: "질문이 있으신가요? Hoyo Buddy 사용법부터 문제 해결까지, 모든 답변을 여기서 찾아보세요!"
-  description: "도움이 더 필요하신가요? 고민하지 말고 편하게 말씀해 주세요. Hoyo Buddy가 기다리고 있을게요!"
+  heading: 자주 묻는 질문
+  description: 궁금한 점이 더 있으신가요? 공식 디스코드 서버에 방문하거나 가이드 문서를 확인해 보세요.
   free:
-    question: "Hoyo Buddy는 무료로 사용할 수 있나요?"
+    question: Hoyo Buddy는 무료인가요?
     answer: |
-      네, Hoyo Buddy는 완전히 무료로 사용할 수 있어요. 만약 만족하며 사용하고 계신다면, <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
-       후원
-      </a>하시거나
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-       프로젝트에 별표를 눌러서
-      </a> 지원해 주세요.
-  open_source:
-    question: "Hoyo Buddy는 오픈소스인가요?"
+      네, 모든 기능은 100% 무료입니다. 광고나 유료 결제 유도, 프리미엄 전용 기능 제한이 전혀 없습니다.
+      봇이 마음에 드셨다면 서버 호스팅과 지속적인 개발을 지원하기 위해 <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">프로젝트 후원</a>에 동참하실 수 있습니다.
+  games:
+    question: 지원하는 게임과 서버 계정은 무엇인가요?
     answer: |
-      네, Hoyo Buddy는 오픈 소스입니다. 
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-      GitHub
-      </a>에서 소스 코드를 확인하실 수 있으며, 코드를 사용하실 때는 라이선스를 준수해 주시기 바랍니다.
-  safe:
-    question: " Hoyo Buddy는 사용하기에 안전한가요?"
+      원신, 붕괴: 스타레일, 젠레스 존 제로, 붕괴3rd, 미결사건부를 지원하며, 글로벌 서버(HoYoLAB)와 중국 본토 서버(미요우서) 계정을 모두 등록할 수 있습니다. 계정 개수 제한 없이 여러 계정을 자유롭게 추가하고 전환할 수 있습니다.
+      게임별 지원 기능은 API 제공 범위에 따라 다를 수 있으며, 자세한 내용은 <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">공식 가이드 문서</a>를 참고하세요.
+  where:
+    question: 디스코드 서버에 봇을 꼭 초대해야 하나요?
     answer: |
-      더 자세한 정보는 위키의
-       <a href="https://hb-docs.seria.moe/docs/Account-Security" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-      계정 보안
-      </a> 페이지를 읽어주세요. 개인정보 보호에 대해서는
-      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-       개인정보 처리방침
-      </a>을 읽어주시기 바랍니다.
-  contact:
-    question: "어떻게 개발자에게 연락할 수 있나요?"
+      서버 초대가 필수가 아닙니다! Hoyo Buddy는 디스코드 유저 앱(User App) 규격을 지원하므로 개인 디스코드 계정에 직접 설치할 수 있습니다.
+      설치 후에는 개인 DM, 그룹 채팅방, 봇이 없는 외부 서버 등 어디서든 슬래시 명령어를 자유롭게 사용할 수 있습니다. 물론 서버 관리자가 커뮤니티 멤버들을 위해 서버에 직접 봇을 초대하는 것도 가능합니다.
+  add_account:
+    question: 게임 계정은 어떻게 연동하나요?
     answer: |
-      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-      디스코드
-      </a>에서 저에게 DM을 보내시거나
-      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline">
-      디스코드 서버
-      </a>에 들어와 저를 멘션 하실 수 있어요.
+      <code>/accounts</code> 명령어를 실행한 뒤 <strong>계정 추가</strong>를 선택하세요. 글로벌 계정은 HoYoverse 이메일과 비밀번호로 로그인하는 방법이 가장 간편하며(Google, Apple 등의 소셜 로그인은 HoYoLAB 웹 API에서 지원하지 않음), 이 방식을 사용하면 리딤코드 자동 교환도 함께 활성화됩니다. 또는 웹 브라우저의 쿠키를 복사해 등록할 수도 있습니다.
+      중국 서버(미요우서) 계정은 휴대폰 SMS 인증번호나 미요우서 앱 QR 코드 스캔으로 로그인할 수 있습니다.
+  account_safe:
+    question: 내 계정 정보는 안전하게 보호되나요?
+    answer: |
+      비밀번호는 데이터베이스에 절대 저장되지 않습니다. 이메일과 비밀번호로 로그인하면 Hoyo Buddy는 HoYoLAB과 통신하여 세션 인증 쿠키만을 발급받고 비밀번호는 즉시 메모리에서 영구 파기합니다. 보관되는 쿠키 또한 Fernet 알고리즘으로 강력하게 암호화되어 보관됩니다.
+      또한 웹 쿠키로는 공개 커뮤니티 데이터와 실시간 메모 데이터만 조회할 수 있으며, 게임 클라이언트에 직접 접속하거나 비밀번호를 변경하거나 이메일·전화번호 전체를 열람하는 등의 행위가 원천적으로 불가능합니다. <code>/accounts</code> 명령어로 언제든 계정을 삭제하고 저장된 데이터를 즉시 초기화할 수 있습니다. 자세한 내용은 <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">계정 보안 가이드</a> 및 <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank" rel="noopener">개인정보 처리방침</a>을 확인하세요.
+  ban:
+    question: 봇 사용으로 인해 게임 계정이 제재(BAN)될 위험은 없나요?
+    answer: |
+      Hoyo Buddy 사용으로 인해 게임 정지를 당한 사례는 지금까지 단 한 건도 보고되지 않았습니다. 본 봇은 웹 브라우저나 공식 모바일 앱에서 실시간 메모를 열람할 때와 동일한 공식 웹 API만을 사용하며, 게임 파일을 변조하거나 게임 프로세스에 인젝션하거나 메모리를 조작하지 않습니다.
+      웹 요청 자동화는 엄밀히 따지면 HoYoLAB 웹 이용약관상 주의 대상일 수 있으나, 만에 하나 제재가 발생하더라도 HoYoLAB 웹 커뮤니티 접근에 국한될 뿐 게임 내 캐릭터나 플레이 진행도에는 어떠한 영향도 미치지 않습니다. <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">보안 분석 내용 자세히 보기</a>.
+  help:
+    question: 사용 중 문제가 생기면 어디에 문의해야 하나요?
+    answer: |
+      <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">공식 가이드 문서</a>에서 설정 방법과 명령어 안내를 확인하시거나, 공식 <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">디스코드 서버</a>에 참여하여 커뮤니티 멤버 및 개발자에게 편하게 질문해 주세요.
+
 team:
-  title: 팀 멤버
-  subtitle: Hoyo Buddy 팀
-  description: "와, 우리가 이걸 만들었네."
+  title: 개발팀
   seria:
-    role: 개발자
+    role: 리드 개발자
   ayasaku:
-    role: 디자이너
+    role: UI/UX 디자이너
   hydrogened:
-    role: 홍보
+    role: 홍보 & 커뮤니티
 
 footer:
-  description: 당신의 HoYoverse 게임 플레이를 편리하게.
-  navigation:
-    title: 탐색
-    home: 홈
-    about: 소개
-    features: 기능
-    faq: FAQ
+  description: 호요버스의 모든 게임을 디스코드에서 완벽하게.
   quick_links:
     title: 바로가기
-    github: GitHub에서 프로젝트 보기
-    wiki: 위키
-    invite: 초대 링크
+    github: GitHub 저장소
+    wiki: 공식 Wiki
+    invite: 봇 초대 링크
   contact:
-    title: 지원
+    title: 문의하기
     discord_server: 디스코드 서버
-    dev_discord: 개발자의 디스코드 계정
+    dev_discord: 개발자 디스코드
     buy_me_a_coffee: 후원하기
-  copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
+  sponsor: 프로젝트 후원
+  rights: © {year} Seria Ati. All rights reserved.

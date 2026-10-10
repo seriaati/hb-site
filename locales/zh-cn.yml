@@ -1,153 +1,224 @@
 meta:
-  title: Hoyo Buddy | 让你的 Hoyoverse 体验更上一层楼
-  description: 一个为 Hoyoverse 游戏玩家量身定做的 Discord 机器人，功能丰富、易于使用且设计精美。
+  title: Hoyo Buddy | 专为米哈游玩家打造的 Discord 机器人
+  description: 实时体力提醒、自动每日签到、一键兑换礼包码与精美角色展示卡。在 Discord 中轻松管理你所有的米哈游游戏与账号。
 
-navbar:
-  home: 主页
-  features: 功能
-  about: 关于
-  commands: 命令
+nav:
+  label: 主导航
+  commands: 指令
+  reminders: 提醒
+  auto_tasks: 自动任务
   faq: 常见问题
-  team: 团队
-  get_started: 开始
+  docs: 文档
+  language: 语言
 
 hero:
-  description: 一个为 Hoyoverse 游戏玩家量身定做的 Discord 机器人，功能丰富、易于使用且设计精美。
-  get_started: 开始
-  star_on_github: 在 Github 上给我们一颗星星
+  pre: 陪伴你在
+  all: 每一款米哈游游戏
+  summary: "体力溢出提醒、自动签到、兑换码领取与角色展示卡。支持原神、崩铁、绝区零等多款游戏，轻松连接所有账号。"
+  cta: 添加至 Discord
+  cta_note: 支持所有服务器与私信 (DM)。
+  overview: 查看所有游戏
+  games:
+    genshin: 告别树脂溢出，生成精美角色展示卡，回顾深境螺旋与幻想真境剧诗战绩，并完整记录祈愿历史。
+    hsr: 开拓力上限提醒、专属角色展示卡、混沌回忆与虚构叙事通关统计，以及完整的跃迁记录追踪。
+    zzz: 电量溢出提醒、每日刮刮卡与录像店收益通知、式舆防卫战与危局强袭结算，以及调频历史统计。
+    honkai: 体力上限提醒、自动每日签到、超弦空间与记忆战场结算追踪，以及全女武神阵容一览。
+    tot: 自动每日签到，每天定时为你领取未名晶片与补给奖励，绑定多账号也能一次搞定。
 
-features:
-  title: 功能
-  subtitle: Hoyo Buddy 的主要功能
-  description: 不仅仅是在 DIscord 上的 HoYoLab。
-  show_off:
-    title: 为你的角色创建卡片
-    bullet1: • 多种模板可供选择
-    bullet2: • Enka Network 集成
-    bullet3: • 将整个队伍整合到一张卡片中
-    bullet4: • 多种自定义选项
-    bullet5: • 使用你的自定义图片
-  make_life_easier:
-    title: 自动任务和提醒
-    bullet1: • 自动完成旅行 Mimo 任务、获取积分并购买奖励
-    bullet2: • 自动领取每日签到奖励
-    bullet3: • 自动兑换前瞻直播和其他兑换码
-    bullet4: • 树脂、每日委托和其他更多提醒
-  all_in_one:
-    title: 集中管理
-    bullet1: • 添加来自不同游戏和 Hoyoverse 账户
-    bullet2: • 使用一个机器人的集中化体验
-  free_and_open_source:
-    title: 免费和开源
-    bullet1: • 完全免费使用
-    bullet2: • 在 GitHub 上开源
-    bullet3: • 无广告、无付费墙
-    bullet4: • 考虑隐私和安全的设计
+worlds:
+  genshin:
+    name: 原神
+    short: 原神
+    place: 提瓦特
+  hsr:
+    name: "崩坏：星穹铁道"
+    short: 星铁
+    place: 星穹列车
+  zzz:
+    name: 绝区零
+    short: 绝区零
+    place: 新艾利都
+  honkai:
+    name: 崩坏3
+    short: 崩坏3
+    place: 休伯利安
+  tot:
+    name: 未定事件簿
+    short: 未定事件簿
+    place: 未名市
 
-about:
-  title: 强大、美观、迅速
-  description: |
-    Hoyo Buddy 提供了游玩 Hoyoverse 游戏所需的必要功能，并以引人入胜的视觉方式呈现信息。我们精心设计的用户界面将美观与功能无缝融合。
-    <br />
-    <br />
-    Hoyo Buddy 通过引人入胜的视觉方式及极速的性能，给人留下了深刻印象。我们的开发人员投入了无数时间优化它，确保你能快速访问所需要的信息。
-  stat:
-    title: 深受
-    description: 个服务器的喜爱
+commands:
+  eyebrow: 指令
+  title: 跨游戏统一的指令体验。
+  description: 无需记忆不同机器人的繁琐指令。选择游戏与指令，立即预览真实回复效果。
+  game: 游戏
+  list:
+    notes: 一览树脂、体力与派遣剩余时间，并可自定义溢出前的私信提醒。
+    check_in: 在 Discord 内一键领取每日签到奖励，或查看本月签到天数与进度。
+    redeem: 一次为名下所有账号兑换最新前瞻直播与活动兑换码，不必反复打开网页。
+    profile: 根据你的游戏内角色展柜，即时生成精美且易于分享的角色数值卡片。
 
-cta:
-  title: 还决定不下来吗？
-  description: 市面上有许多和 Hoyoverse 相关的机器人，那为什么要选择 Hoyo Buddy ？是什么让 Hoyo Buddy 从其他机器人中脱颖而出，包括你可能已经在使用的机器人？
-  button: 查看介绍
+reminders:
+  eyebrow: 提醒
+  title: 在体力溢出前精准提醒。
+  description: Hoyo Buddy 全天候关注你的实时便笺，在体力即将回满、派遣完成或即将迎来每日刷新时主动发送私信。滑动时间轴查看 24 小时提醒节奏。
+  caps: "{resource} 将于 {time} 回满"
+  now: 现在
+  tomorrow: 明天
+  dm: 私信
+  stamina: 体力
+  upcoming: 倒计时 {time} 送达
+  timeline: 未来 24 小时
 
-testimonials:
-  title: 命令
-  subtitle: Hoyo Buddy 可以做什么？
-  description: 看看 Hoyo Buddy 的热门命令吧！
-  accounts:
-    description: 将所有账号集中于一处轻松管理。共有三种直观的无缝快速的添加账号方式供你选择。
-  search:
-    description: "轻松探索与原神、崩坏：星穹铁道及绝区零相关的任何内容。非常适合用来向新手介绍游戏概念。"
+auto:
+  eyebrow: 自动任务
+  title: 让日常琐事全自动执行。
+  description: 自由开启所需任务：每日签到、自动兑换新发布的兑换码，以及自动完成旅行 Mimo 任务。每天早晨通过私信汇报所有账号的执行结果。
+
+open:
+  eyebrow: 免费且开源
+  title: 所有功能完全免费，每一行代码公开透明。
+  free:
+    value: 免费
+    label: 无广告、无付费墙、无高级会员限制。
+  source:
+    value: AGPL-3.0
+    label: 开源项目。欢迎在 GitHub 查看全部源码。
+  languages:
+    value: "14"
+    label: 支持多种语言，由社区贡献者本地化翻译。
+  servers:
+    value: 17,000+
+    label: 个活跃的 Discord 服务器信赖使用。
+  privacy: 请参阅我们的{privacy}与{security}，了解数据如何受到保护。
+  privacy_link: 隐私政策
+  security_link: 账号安全指南
+
+bot:
+  today_at: 今天 {time}
+  used: "{user} 使用了 {command}"
+  app: 应用
   notes:
-    description: 随时随地查看你的实时便笺，打开提醒功能，便于追踪树脂、每日任务等。
-  characters:
-    description: 将你拥有的全部角色总结成一张卡片，在配队需要帮助时可以直接分享给他人。
-  farm:
-    description: 查看今日副本可以刷取的素材，并设置提醒，当角色/武器素材可以刷取时通知你。
-  profile:
-    description: 制作视觉上令人惊叹的卡片来展示你的角色面板，非常适合在社交媒体平台上分享。
+    title: 实时便笺
+    resin: 树脂
+    full_in: "{time} 后回满"
+    trailblaze_power: 开拓力
+    sticky_notes: 实时便笺
+    battery: 电量
+    stamina: "体力: {cur}/{max}，{time} 后回满"
+    daily_bp: "每日使命: {cur}/{max}"
+    superstring: 超弦空间
+    current_score: "当前积分: {score}"
+    memorial_arena: 记忆战场
+    arena_rewards: "挑战奖励: {cur}/{max}"
+    arena_sss: "SSS级奖励: {cur}/{max}"
+    elysian_realm: 往世乐土
+    elysian_score: "当前积分: {cur}/{max}"
+  check_in:
+    title: 每日签到
+    summary: 本月已签到 {day} 天
+    missed: 漏签 {missed} 天
+    button: 签到
+    make_up: 补签
+    claimed: 已领取每日签到奖励
+    claimed_footer: 使用 /settings 设置通知
+  redeem:
+    title: 兑换结果
+    success: 兑换成功
+    claimed: 兑换码已被使用
+    auto_footer: 使用 /settings 关闭自动兑换
+  mimo:
+    title: "旅行 Mimo: 自动完成任务并领取积分"
+    summary: Hoyo Buddy 已为你完成 {finish} 个任务并领取 {points} 积分
+    footer: 使用 /settings 设置自动任务与兑换奖励
+    tasks:
+      log_in: 登录游戏
+      check_in: 完成每日签到
+      community: 浏览社区
+  reminder:
+    footer: 使用 /notes 设置提醒
+    threshold: 已达阈值（{value}）
+    resin: 树脂提醒
+    realm: 洞天宝钱提醒
+    expedition: 探索派遣提醒
+    expedition_body: 一个或者多个派遣已经完成了
+    transformer: 参量质变仪提醒
+    transformer_body: 参量质变仪可以使用了！
+    daily: 每日委托提醒
+    daily_body: 每日委托或冒险历练尚未全部完成
+    tb_power: 开拓力
+    daily_training: 每日实训
+    daily_training_body: 每日实训尚未全部完成
+    weekly: 周本消耗折扣提醒
+    weekly_body: 周本消耗折扣尚未使用完毕
+    battery: 电量
+    video_store: 录像店经营
+    video_store_body: 录像店的收益尚未领取
+    scratch: 刮刮卡大作战
+    scratch_body: 还没刮刮刮卡
+    engagement: 活跃度
+    engagement_body: 今日的活跃度尚未完成
+    stamina: 体力提醒
 
 faq:
-  title: 常见问题
-  subtitle: 还有问题吗？请看这里
-  description: 如果你有其他问题，请直接联系我们。
+  title: FAQ
+  heading: 常见问题
+  description: 还有其他疑问？欢迎加入我们的 Discord 服务器或查阅官方文档。
   free:
     question: Hoyo Buddy 是免费的吗？
     answer: |
-      是，Hoyo Buddy 完全免费。如果你喜欢它，可以考虑
-      <a href="https://link.seria.moe/donate" target="_blank" rel="noopener" class="text-primary hover:underline">
-      捐款
-      </a>或者
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-      给我们的项目一颗星星
-      </a>。
-  open_source:
-    question: Hoyo Buddy 是开源的吗？
+      是的。所有功能完全免费，没有广告、没有付费墙，也没有任何会员特权制度。
+      如果你觉得 Hoyo Buddy 对你有帮助，欢迎<a href="https://link.seria.moe/donate" target="_blank" rel="noopener">赞助本项目</a>，协助我们分担服务器托管与运维成本。
+  games:
+    question: 支持哪些游戏与账号？
     answer: |
-      Hoyo Buddy 是开源的。你可以在
-      <a href="https://github.com/seriaati/hoyo-buddy" rel="noopener" target="_blank" class="text-primary hover:underline">
-      Github
-      </a>上查看其代码，请遵守相应的开源协议。
-  safe:
-    question: Hoyo Buddy 在使用上有安全风险吗？
+      支持《原神》、《崩坏：星穹铁道》、《绝区零》、《崩坏3》与《未定事件簿》，同时兼容国际服 (HoYoLAB) 与国服 (米游社) 账号。你可以随意添加多个账号并随时切换。
+      各游戏支持的功能因官方 API 开放程度略有差异，详情请参阅<a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">官方文档</a>。
+  where:
+    question: 我必须把它添加到服务器才能使用吗？
     answer: |
-      请详阅维基上的
-      <a href="https://hb-docs.seria.moe/docs/Account-Security" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-      账户安全
-      </a>页面获取更多信息。有关数据隐私，请参阅
-      <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-      隐私政策
-      </a>。
-  contact:
-    question: 我该如何联系你们？
+      完全不需要。Hoyo Buddy 支持 Discord 用户安装应用 (User App) 标准，你可以直接将其安装到个人 Discord 账号。
+      安装后，无论是在私信、群聊，还是在任何尚未添加该机器人的服务器中，都能随时随地使用斜杠指令。当然，服务器管理员也可以将其邀请到服务器中供全员使用。
+  add_account:
+    question: 如何添加我的游戏账号？
     answer: |
-      你可以直接在
-      <a href="https://discord.com/users/410036441129943050" rel="noopener" target="_blank"
-        class="text-primary hover:underline">
-      Discord
-       </a>上私信我，或者加入我们的
-      <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener" class="text-primary hover:underline"> 
-      Discord 服务器
-      </a>那里@我。
+      输入 <code>/accounts</code> 并选择“添加账号”。国际服账号最简便的方法是使用 HoYoverse 邮箱与密码登录（HoYoLAB 网页接口不支持 Google 或 Apple 等第三方登录授权），该方式还能自动兑换礼包码。此外，你也可以通过粘贴浏览器 Cookie 完成登录。
+      国服（米游社）账号支持手机短信验证码或米游社 App 扫码登录。
+  account_safe:
+    question: 我的账号安全吗？
+    answer: |
+      我们绝不会保存你的密码。当你使用账号密码登录时，Hoyo Buddy 会直接向 HoYoLAB 换取会话 Cookie，并在完成后立即丢弃密码。所有存储的 Cookie 均经过 Fernet 算法加密保存。
+      更重要的是，HoYoLAB Cookie 仅具有读取公开社区与便笺数据的权限，完全无法登录游戏本体、无法修改账号密码，也无法获取完整的邮箱或手机号等隐私信息。你随时可以通过 <code>/accounts</code> 删除账号并彻底抹除所有存储数据。详情请阅读<a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">账号安全指南</a>与<a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank" rel="noopener">隐私政策</a>。
+  ban:
+    question: 使用 Hoyo Buddy 会导致游戏封号吗？
+    answer: |
+      至今从未有任何因使用 Hoyo Buddy 而被游戏封号的案例。机器人仅调用 HoYoLAB 与米游社的公开网页 API，这与你在浏览器或手机 App 中查看实时便笺的行为完全一致。它绝不修改游戏文件、不注入游戏进程，也不会读取游戏内存。
+      虽然自动化网页请求在严格定义下可能不符合 HoYoLAB 网页服务条款，但任何潜在限制仅局限于 HoYoLAB 社区网页访问，绝不会波及你的游戏账号与游戏内进度。<a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">阅读完整的安全解析</a>。
+  help:
+    question: 遇到问题去哪里获取帮助？
+    answer: |
+      请查看<a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">官方文档</a>中的配置教程与指令说明，或加入我们的 <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">Discord 服务器</a>向社区玩家与开发者寻求帮助。
+
 team:
-  title: 团队成员
-  subtitle: Hoyo Buddy 团队
-  description: 哇，这是我们做的！
+  title: 核心团队
   seria:
-    role: 程序员
+    role: 主程序开发
   ayasaku:
-    role: 设计师
+    role: 视觉设计
   hydrogened:
-    role: 公关
+    role: 公关宣传
 
 footer:
-  description: 让你的 Hoyoverse 体验更上一层楼
-  navigation:
-    title: 导览
-    home: 主页
-    about: 关于
-    features: 功能
-    faq: 常见问题
+  description: 让你所有的米哈游游戏，在 Discord 融会贯通。
   quick_links:
-    title: 链接
-    github: Github 项目界面
-    wiki: 维基
+    title: 快捷链接
+    github: GitHub 项目库
+    wiki: Wiki 指南
     invite: 邀请链接
   contact:
     title: 联系我们
     discord_server: Discord 服务器
-    dev_discord: 开发者的 Discord
-    buy_me_a_coffee: 捐款
-  copyright: Copyright &copy; 2024 Seria Ati | All rights reserved
+    dev_discord: 开发者 Discord
+    buy_me_a_coffee: 赞助支持
+  sponsor: 赞助
+  rights: © {year} Seria Ati. 保留所有权利。
