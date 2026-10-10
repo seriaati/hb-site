@@ -78,6 +78,9 @@ const placeStyle = (w: (typeof WORLDS)[number]) => {
             <span class="face">
               <GameIcon game={w.game} size={52} eager />
             </span>
+            <span class="tag" aria-hidden="true">
+              {t(`worlds.${w.game}.short`)}
+            </span>
           </button>
         ))}
       </div>
@@ -200,6 +203,39 @@ const placeStyle = (w: (typeof WORLDS)[number]) => {
       transform: scale(1.12);
       outline-color: var(--emb-ring);
     }
+  }
+  /* The game's name, shown only while the emblem is hovered or focused. */
+  .tag {
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 12px);
+    translate: -50% -4px;
+    padding: 2px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--fg);
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition:
+      opacity 0.2s,
+      translate 0.2s;
+  }
+  @media (hover: hover) {
+    .emb:hover {
+      z-index: 2;
+    }
+    .emb:hover .tag {
+      opacity: 1;
+      translate: -50% 0;
+    }
+  }
+  .emb:focus-visible .tag {
+    opacity: 1;
+    translate: -50% 0;
   }
   .emb:focus-visible {
     outline: none;
