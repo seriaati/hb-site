@@ -1,7 +1,6 @@
 ---
 import Mark from "./Mark.astro";
 import LanguagePicker from "./LanguagePicker.astro";
-import ThemeToggle from "./ThemeToggle.astro";
 import { LINKS } from "../data/links";
 import type { Locale, T } from "../i18n";
 
@@ -60,7 +59,6 @@ const anchors = [
         </a>
       </li>
     </ul>
-    <ThemeToggle t={t} />
     <LanguagePicker locale={locale} t={t} />
   </nav>
 </header>

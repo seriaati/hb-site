@@ -17,34 +17,14 @@
   color-scheme: light;
 }
 
-/* Dark follows the system unless the theme toggle has set data-theme on <html>. */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root {
     --bg: #0f1016;
     --fg: #ecedf3;
     --mute: #9196a9;
     --accent: #8d97ff;
     --surface: #171922;
     color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0f1016;
-  --fg: #ecedf3;
-  --mute: #9196a9;
-  --accent: #8d97ff;
-  --surface: #171922;
-  color-scheme: dark;
-}
-
-@custom-variant dark {
-  @media (prefers-color-scheme: dark) {
-    &:where(:root:not([data-theme="light"]) *) {
-      @slot;
-    }
-  }
-  &:where([data-theme="dark"] *) {
-    @slot;
   }
 }
 
