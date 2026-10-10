@@ -1,0 +1,5 @@
+/* Hero place-name typefaces for ja pages (see Base.astro). */
+@import "@fontsource/shippori-mincho/500.css";
+@import "@fontsource/dela-gothic-one/400.css";
+@import "@fontsource/stick/400.css";
+@import "@fontsource/hina-mincho/400.css";

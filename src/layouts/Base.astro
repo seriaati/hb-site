@@ -16,17 +16,12 @@ import "@fontsource/michroma/400.css";
 import "@fontsource/anton/400.css";
 import "@fontsource/chakra-petch/600.css";
 import "@fontsource/cormorant-garamond/500-italic.css";
-import "@fontsource/zcool-qingke-huangyou/400.css";
-import "@fontsource/dela-gothic-one/400.css";
-import "@fontsource/black-han-sans/400.css";
-import "@fontsource/orbit/400.css";
-import "@fontsource/noto-serif-sc/500.css";
-import "@fontsource/shippori-mincho/500.css";
-import "@fontsource/gowun-batang/400.css";
-import "@fontsource/stick/400.css";
-import "@fontsource/gugi/400.css";
-import "@fontsource/hina-mincho/400.css";
-import "@fontsource/nanum-myeongjo/400.css";
+// CJK place-name typefaces have hundreds of @font-face rules each, so every
+// script gets its own stylesheet, linked only on its pages and loaded off the
+// critical path.
+import zhFonts from "../styles/fonts-zh.css?url";
+import jaFonts from "../styles/fonts-ja.css?url";
+import koFonts from "../styles/fonts-ko.css?url";
 import "../styles/global.css";
 import { LOCALES, pathFor, useTranslations, type Locale } from "../i18n";
 
@@ -41,6 +36,12 @@ const canonical = new URL(pathFor(locale.code), site).href;
 const title = t("meta.title");
 const description = t("meta.description");
 const image = new URL("/og.png", site).href;
+const cjkFonts = (
+  { "zh-tw": zhFonts, "zh-cn": zhFonts, ja: jaFonts, ko: koFonts } as Record<
+    string,
+    string
+  >
+)[locale.code];
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -96,6 +97,19 @@ const jsonLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {cjkFonts && (
+      <>
+        <link
+          rel="stylesheet"
+          href={cjkFonts}
+          media="print"
+          onload="this.media='all'"
+        />
+        <noscript>
+          <link rel="stylesheet" href={cjkFonts} />
+        </noscript>
+      </>
+    )}
   </head>
   <body>
     <slot />
