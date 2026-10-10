@@ -492,6 +492,7 @@ const icons = [
     title: string;
     body: string;
   }[] = [];
+  let pinW = 0; // track width the pins were grouped for
 
   function nextLocal([h, m]: [number, number]) {
     const d = new Date();
@@ -551,17 +552,29 @@ const icons = [
         body: e.body,
       })),
     ];
-    for (const ev of events) {
+    // Reminders closer than one 24px tap target share a pin, which jumps to the first.
+    pinW = pinsEl.clientWidth;
+    let last: { el: HTMLButtonElement; t: number; labels: string[] } | null =
+      null;
+    for (const ev of events.sort((a, b) => a.t - b.t)) {
       if (ev.t < from || ev.t > from + SPAN) continue;
+      const label = `${hm(new Date(ev.t))}: ${ev.title}`;
+      if (last && ((ev.t - last.t) / SPAN) * pinW < 24) {
+        last.labels.push(label);
+        last.el.setAttribute("aria-label", last.labels.join(", "));
+        pins.push({ el: last.el, ...ev });
+        continue;
+      }
       const p = document.createElement("button");
       p.type = "button";
       p.className = "pin";
       p.style.left = ((ev.t - from) / SPAN) * 100 + "%";
-      p.setAttribute("aria-label", `${hm(new Date(ev.t))}: ${ev.title}`);
+      p.setAttribute("aria-label", label);
       p.addEventListener("pointerdown", (e) => e.stopPropagation());
       p.addEventListener("click", () => goTo((ev.t - from) / SPAN + 0.0001));
       pinsEl.append(p);
       pins.push({ el: p, ...ev });
+      last = { el: p, t: ev.t, labels: [label] };
     }
   }
 
@@ -754,6 +767,14 @@ const icons = [
       set(f);
     }, 1000);
   }).observe(root);
+
+  // Pin grouping depends on the track width (e.g. a phone rotating).
+  new ResizeObserver(() => {
+    if (pinW && $("[data-pins]").clientWidth !== pinW) {
+      build();
+      set(f);
+    }
+  }).observe($("[data-pins]"));
 
   // Reminders don't exist for Tears of Themis; keep showing the current game.
   onGame((game) => {
