@@ -29,6 +29,8 @@ const cards: Partial<
   zzz: { author: "Proxy (15xxxxx90)", full: "1:06:00", src: zzzNotes },
 };
 const card = cards[game];
+// Rendered width: the embed's width, or less when max-h-[400px] caps a tall image.
+const cap = card && Math.round((400 * card.src.width) / card.src.height);
 ---
 
 <Message t={t} command="/notes">
@@ -42,7 +44,7 @@ const card = cards[game];
         src={card.src}
         alt={n(game === "zzz" ? "sticky_notes" : "title")}
         widths={[520, 1040]}
-        sizes="(min-width: 720px) 520px, 85vw"
+        sizes={`(min-width: 640px) min(480px, calc(100vw - 264px), ${cap}px), min(calc(100vw - 184px), ${cap}px)`}
         class="mt-1 h-auto max-h-[400px] w-auto max-w-full rounded-lg"
         loading="lazy"
       />
