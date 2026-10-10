@@ -6,26 +6,15 @@
   Neutral tokens below; world tokens are set inline on the element that hosts a world.
 */
 :root {
-  --bg: #f1f2f6;
-  --fg: #13141b;
-  --mute: #686c7f;
-  --accent: #6574f8; /* the bot's default embed color */
-  --surface: #ffffff;
+  --bg: #0f1016;
+  --fg: #ecedf3;
+  --mute: #9196a9;
+  --accent: #8d97ff;
+  --surface: #171922;
   --line: color-mix(in srgb, var(--fg) 13%, transparent);
   --font-text: "Funnel Sans", ui-sans-serif, system-ui, sans-serif;
   --font-head: "Funnel Display", ui-sans-serif, system-ui, sans-serif;
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f1016;
-    --fg: #ecedf3;
-    --mute: #9196a9;
-    --accent: #8d97ff;
-    --surface: #171922;
-    color-scheme: dark;
-  }
+  color-scheme: dark;
 }
 
 /* Funnel has no Vietnamese or CJK glyphs; swap whole stacks instead of mixing fallbacks per glyph. */

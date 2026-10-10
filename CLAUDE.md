@@ -18,7 +18,7 @@ bun run format    # prettier (astro + tailwind plugins)
 
 ## Design language ("Converge")
 
-- The neutral page is light (or dark via `prefers-color-scheme`) and uses Funnel Display, Funnel Sans and Geist Mono. Tokens live in `src/styles/global.css` (`--bg`, `--fg`, `--mute`, `--accent`, `--line`, `--surface`). Tailwind exposes them as `bg-bg`, `text-mute`, and so on.
+- The site is dark-only. The neutral page uses Funnel Display, Funnel Sans and Geist Mono. Tokens live in `src/styles/global.css` (`--bg`, `--fg`, `--mute`, `--accent`, `--line`, `--surface`). Tailwind exposes them as `bg-bg`, `text-mute`, and so on.
 - Each game has a **world** (`src/data/worlds.ts`): a palette, a typeface, a place name, and an ambient canvas motif (`src/scripts/scenes.ts`). An element becomes a world through `applyVars(el, worldVars(world))`.
 - The selected game is shared page-wide (`src/scripts/game.ts`: `setGame`/`onGame`). The hero emblems and every `GamePicker` stay in sync.
 - Interactions are click-driven. Hover only previews.

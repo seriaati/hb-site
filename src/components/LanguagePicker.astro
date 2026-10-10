@@ -30,7 +30,7 @@ const { locale, t, up = false } = Astro.props;
   </summary>
   <ul
     class:list={[
-      "absolute right-0 z-30 grid min-w-48 gap-0.5 rounded-2xl bg-surface p-1.5 text-sm text-[#13141b] shadow-[0_20px_50px_-20px_rgba(0,0,0,.35)] ring-1 ring-black/5 dark:text-[#ecedf3]",
+      "absolute right-0 z-30 grid min-w-48 gap-0.5 rounded-2xl bg-surface p-1.5 text-sm text-[#ecedf3] shadow-[0_20px_50px_-20px_rgba(0,0,0,.35)] ring-1 ring-black/5",
       up ? "bottom-full mb-2" : "top-full mt-2",
     ]}
   >
@@ -41,7 +41,7 @@ const { locale, t, up = false } = Astro.props;
           hreflang={l.lang}
           lang={l.lang}
           aria-current={l.code === locale.code ? "page" : undefined}
-          class="block rounded-xl px-3 py-2 transition-colors hover:bg-black/5 aria-[current=page]:font-semibold dark:hover:bg-white/8"
+          class="block rounded-xl px-3 py-2 transition-colors hover:bg-white/8 aria-[current=page]:font-semibold"
         >
           {l.label}
         </a>
