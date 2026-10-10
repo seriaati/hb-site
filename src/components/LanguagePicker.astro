@@ -1,0 +1,68 @@
+---
+import { LOCALES, pathFor, type Locale, type T } from "../i18n";
+
+interface Props {
+  locale: Locale;
+  t: T;
+  up?: boolean;
+}
+
+const { locale, t, up = false } = Astro.props;
+---
+
+<details class="lang-picker relative">
+  <summary
+    class="flex cursor-pointer list-none items-center gap-2 rounded-full px-3 py-2 text-sm text-mute transition-colors hover:text-fg [&::-webkit-details-marker]:hidden"
+    aria-label={t("nav.language")}
+  >
+    <svg
+      class="size-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path>
+    </svg>
+    {locale.label}
+  </summary>
+  <ul
+    class:list={[
+      "absolute right-0 z-30 grid min-w-48 gap-0.5 rounded-2xl bg-surface p-1.5 text-sm text-[#13141b] shadow-[0_20px_50px_-20px_rgba(0,0,0,.35)] ring-1 ring-black/5 dark:text-[#ecedf3]",
+      up ? "bottom-full mb-2" : "top-full mt-2",
+    ]}
+  >
+    {LOCALES.map((l) => (
+      <li>
+        <a
+          href={pathFor(l.code)}
+          hreflang={l.lang}
+          lang={l.lang}
+          aria-current={l.code === locale.code ? "page" : undefined}
+          class="block rounded-xl px-3 py-2 transition-colors hover:bg-black/5 aria-[current=page]:font-semibold dark:hover:bg-white/8"
+        >
+          {l.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</details>
+
+<script>
+  // Close any open picker on an outside click or Escape.
+  document.addEventListener("click", (e) => {
+    document
+      .querySelectorAll<HTMLDetailsElement>(".lang-picker[open]")
+      .forEach((d) => {
+        if (!d.contains(e.target as Node)) d.open = false;
+      });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape")
+      document
+        .querySelectorAll<HTMLDetailsElement>(".lang-picker[open]")
+        .forEach((d) => (d.open = false));
+  });
+</script>

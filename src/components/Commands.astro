@@ -1,0 +1,209 @@
+---
+import GamePicker from "./GamePicker.astro";
+import Notes from "./replies/Notes.astro";
+import CheckIn from "./replies/CheckIn.astro";
+import Redeem from "./replies/Redeem.astro";
+import Profile from "./replies/Profile.astro";
+import { WORLD, worldVars, type GameKey } from "../data/worlds";
+import type { T } from "../i18n";
+
+interface Props {
+  t: T;
+}
+
+const { t } = Astro.props;
+
+// Which games each showcased command supports (hoyo_buddy/commands/configs.py).
+const COMMANDS = [
+  { key: "notes", slash: "notes", games: ["genshin", "hsr", "zzz", "honkai"] },
+  {
+    key: "check_in",
+    slash: "check-in",
+    games: ["genshin", "hsr", "zzz", "honkai", "tot"],
+  },
+  { key: "redeem", slash: "redeem", games: ["genshin", "hsr", "zzz"] },
+  { key: "profile", slash: "profile", games: ["genshin", "hsr", "zzz"] },
+] as const;
+const replies = COMMANDS.flatMap((c) =>
+  c.games.map((g) => ({ cmd: c.key, game: g as GameKey })),
+);
+const style = Object.entries(worldVars(WORLD.genshin))
+  .map(([k, v]) => `${k}:${v}`)
+  .join(";");
+---
+
+<section id="commands" class="scroll-mt-6 py-24 sm:py-32">
+  <div class="section-wrap flex flex-col items-center gap-4 text-center">
+    <p class="eyebrow">{t("commands.eyebrow")}</p>
+    <h2 class="section-title max-w-[18ch]">{t("commands.title")}</h2>
+    <p class="lede max-w-[46ch]">{t("commands.description")}</p>
+  </div>
+
+  <div class="section-wrap mt-12">
+    <div
+      class="world relative isolate overflow-hidden rounded-[32px] px-4 pt-10 pb-8 sm:px-10"
+      style={style}
+      data-commands
+      data-cmds={JSON.stringify(COMMANDS)}
+    >
+      <canvas
+        class="pointer-events-none absolute inset-0 -z-10 size-full"
+        aria-hidden="true"
+      ></canvas>
+      <div class="flex flex-col items-center gap-5 text-center">
+        <p
+          class="font-display text-[clamp(44px,7vw,96px)] leading-none font-medium tracking-[-0.045em] whitespace-nowrap"
+          aria-hidden="true"
+        >
+          <span class="text-accent transition-colors duration-700">/</span>
+          <span data-typed>notes</span>
+          <span class="caret"></span>
+        </p>
+        <GamePicker source="commands" label={t("commands.game")} t={t} />
+
+        <div
+          class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-mono text-sm"
+          role="tablist"
+          aria-label={t("commands.eyebrow")}
+        >
+          {COMMANDS.map((c, i) => (
+            <button
+              type="button"
+              role="tab"
+              data-cmd={c.key}
+              data-slash={c.slash}
+              aria-selected={i === 0 ? "true" : "false"}
+              class="border-b border-transparent py-1 text-mute transition-[color,border-color,opacity] duration-300 hover:text-fg disabled:cursor-not-allowed disabled:opacity-30 aria-selected:border-fg aria-selected:text-fg"
+            >
+              /{c.slash}
+            </button>
+          ))}
+        </div>
+
+        <p
+          class="stack lede min-h-[1.6em] place-items-center"
+          data-variants
+          data-desc
+        >
+          {COMMANDS.map((c, i) => (
+            <span
+              data-v={c.key}
+              class:list={[i === 0 && "on"]}
+              aria-hidden={i === 0 ? undefined : "true"}
+            >
+              {t(`commands.list.${c.key}`)}
+            </span>
+          ))}
+        </p>
+
+        <div class="mt-2 grid w-full max-w-[600px] gap-2">
+          <div class="stack" data-variants data-replies>
+            {replies.map((r) => {
+              const first = r.cmd === "notes" && r.game === "genshin";
+              const props = { t, game: r.game };
+              return (
+                <div
+                  data-v={`${r.game}:${r.cmd}`}
+                  class:list={[first && "on"]}
+                  aria-hidden={first ? undefined : "true"}
+                >
+                  {r.cmd === "notes" && <Notes {...props} />}
+                  {r.cmd === "check_in" && <CheckIn {...props} />}
+                  {r.cmd === "redeem" && <Redeem {...props} />}
+                  {r.cmd === "profile" && <Profile {...props} />}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .caret {
+    display: inline-block;
+    width: 0.05em;
+    height: 0.72em;
+    margin-left: 0.03em;
+    vertical-align: -0.02em;
+    background: var(--accent);
+    animation: blink 1.05s steps(1) infinite;
+    transition: background-color 0.7s;
+  }
+  [data-commands].typing .caret {
+    animation: none;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  import { Painter, reducedMotion } from "../scripts/scenes";
+  import { WORLD, worldVars, type GameKey } from "../data/worlds";
+  import { onGame } from "../scripts/game";
+  import { applyVars, showVariant } from "../scripts/variants";
+
+  const root = document.querySelector<HTMLElement>("[data-commands]")!;
+  const commands: { key: string; slash: string; games: GameKey[] }[] =
+    JSON.parse(root.dataset.cmds!);
+  const typed = root.querySelector<HTMLElement>("[data-typed]")!;
+  const tabs = [...root.querySelectorAll<HTMLButtonElement>("[data-cmd]")];
+  const stacks = [...root.querySelectorAll<HTMLElement>("[data-variants]")];
+  const [desc, replies] = stacks;
+  const painter = new Painter(root.querySelector("canvas")!, root);
+  let game: GameKey = "genshin";
+  let cmd = "notes";
+  let tok = 0;
+
+  async function retype(text: string) {
+    const my = ++tok;
+    if (reducedMotion()) return void (typed.textContent = text);
+    root.classList.add("typing");
+    const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    while (
+      my === tok &&
+      typed.textContent &&
+      !text.startsWith(typed.textContent)
+    ) {
+      typed.textContent = typed.textContent.slice(0, -1);
+      await wait(24);
+    }
+    while (my === tok && typed.textContent !== text) {
+      typed.textContent = text.slice(0, typed.textContent!.length + 1);
+      await wait(45 + Math.random() * 40);
+    }
+    if (my === tok) root.classList.remove("typing");
+  }
+
+  function render() {
+    const supported = (c: string) =>
+      commands.find((x) => x.key === c)!.games.includes(game);
+    if (!supported(cmd)) cmd = "check_in";
+    tabs.forEach((b) => {
+      b.disabled = !supported(b.dataset.cmd!);
+      b.setAttribute("aria-selected", String(b.dataset.cmd === cmd));
+    });
+    applyVars(root, worldVars(WORLD[game]));
+    painter.set(game);
+    showVariant(desc, cmd);
+    showVariant(replies, `${game}:${cmd}`);
+    retype(commands.find((x) => x.key === cmd)!.slash);
+  }
+
+  tabs.forEach((b) =>
+    b.addEventListener("click", () => {
+      cmd = b.dataset.cmd!;
+      render();
+    }),
+  );
+  onGame((g) => {
+    game = g ?? "genshin";
+    render();
+  });
+  painter.set(game);
+</script>

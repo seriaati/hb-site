@@ -1,0 +1,758 @@
+---
+import GamePicker from "./GamePicker.astro";
+import Mark from "./Mark.astro";
+import { Image } from "astro:assets";
+import resin from "../assets/items/resin.png";
+import tbPower from "../assets/items/tb_power.png";
+import battery from "../assets/items/battery.png";
+import type { T } from "../i18n";
+
+interface Props {
+  t: T;
+}
+
+const { t } = Astro.props;
+const keys = [
+  "bot.notes.resin",
+  "bot.notes.trailblaze_power",
+  "bot.notes.battery",
+  "reminders.stamina",
+  "bot.notes.stamina",
+  "bot.reminder.footer",
+  "bot.reminder.threshold",
+  "bot.reminder.resin",
+  "bot.reminder.realm",
+  "bot.reminder.expedition",
+  "bot.reminder.expedition_body",
+  "bot.reminder.transformer",
+  "bot.reminder.transformer_body",
+  "bot.reminder.daily",
+  "bot.reminder.daily_body",
+  "bot.reminder.tb_power",
+  "bot.reminder.daily_training",
+  "bot.reminder.daily_training_body",
+  "bot.reminder.weekly",
+  "bot.reminder.weekly_body",
+  "bot.reminder.battery",
+  "bot.reminder.video_store",
+  "bot.reminder.video_store_body",
+  "bot.reminder.scratch",
+  "bot.reminder.scratch_body",
+  "bot.reminder.engagement",
+  "bot.reminder.engagement_body",
+  "bot.reminder.stamina",
+  "reminders.caps",
+  "reminders.now",
+  "reminders.dm",
+  "reminders.tomorrow",
+  "reminders.upcoming",
+];
+const strings = Object.fromEntries(keys.map((k) => [k, t(k)]));
+// Stamina icons from the bot (hoyo_buddy/icons.py). HI3 has none.
+const icons = [
+  ["genshin", resin],
+  ["hsr", tbPower],
+  ["zzz", battery],
+] as const;
+---
+
+<section id="reminders" class="scroll-mt-6 py-24 sm:py-32">
+  <div class="section-wrap flex flex-col items-center gap-4 text-center">
+    <p class="eyebrow">{t("reminders.eyebrow")}</p>
+    <h2 class="section-title max-w-[20ch]">{t("reminders.title")}</h2>
+    <p class="lede max-w-[52ch]">{t("reminders.description")}</p>
+  </div>
+
+  <div class="section-wrap mt-12">
+    <div
+      class="clock relative isolate overflow-hidden rounded-[32px] px-5 pt-8 pb-10 sm:px-12"
+      data-reminders
+      data-s={JSON.stringify(strings)}
+    >
+      <canvas
+        class="pointer-events-none absolute inset-0 -z-10 size-full transition-opacity duration-700"
+        aria-hidden="true"
+      ></canvas>
+      <GamePicker
+        source="reminders"
+        games={["genshin", "hsr", "zzz", "honkai"]}
+        label={t("commands.game")}
+        t={t}
+      />
+
+      <div class="relative mt-10">
+        <div class="flex flex-col items-center text-center" data-body>
+          <p class="pointer-events-none flex h-[clamp(82px,13.6vw,170px)] items-center leading-[0.85] select-none">
+            <span
+              class="stack mr-[0.3em] text-[clamp(40px,6vw,76px)]"
+              data-icons
+            >
+              {icons.map(([g, src]) => (
+                <Image
+                  data-v={g}
+                  class:list={[
+                    "size-[1em] object-contain",
+                    g === "genshin" && "on",
+                  ]}
+                  src={src}
+                  alt=""
+                  width={76}
+                  height={76}
+                  densities={[1, 2]}
+                />
+              ))}
+              <span data-v="honkai"></span>
+            </span>
+            <span class="world-type num flex" data-cur>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span
+              class="world-type ml-2 self-end text-[clamp(24px,3.4vw,44px)] text-mute"
+              data-max
+            >
+              /0
+            </span>
+          </p>
+          <p
+            class="mt-6 font-display text-[clamp(22px,2.6vw,32px)] font-medium tracking-[-0.02em]"
+            data-caps
+          ></p>
+        </div>
+
+        <div
+          class="tl relative mt-6 cursor-ew-resize touch-none pt-[150px] select-none"
+          tabindex="0"
+          aria-label={t("reminders.timeline")}
+          data-tl
+        >
+          <div class="dm" role="status" data-dm>
+            <div class="flex gap-2.5">
+              <span class="grid size-8 shrink-0 place-items-center rounded-full bg-[#eef1ff]">
+                <Mark class="h-auto w-[60%]" />
+              </span>
+              <div class="min-w-0">
+                <p class="text-[12px] text-[#949ba4]">
+                  <span class="font-medium text-[#f2f3f5]">Hoyo Buddy</span> ·{" "}
+                  <span data-dm-when>{t("reminders.dm")}</span>
+                </p>
+                <p
+                  class="text-[13.5px] whitespace-pre-line text-[#dbdee1]"
+                  data-dm-body
+                ></p>
+                <div class="mt-1.5 rounded-[3px] border-l-4 border-[#6574f8] bg-[#2b2d31] px-2.5 py-1.5">
+                  <p
+                    class="text-[13px] font-semibold text-[#f2f3f5]"
+                    data-dm-title
+                  ></p>
+                  <p class="text-[11px] text-[#dbdee1]/75">
+                    {t("bot.reminder.footer")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative h-[26px]" data-track>
+            <div class="absolute inset-x-0 top-3 h-0.5 bg-line"></div>
+            <div data-nights></div>
+            <div data-ticks></div>
+            <div data-pins></div>
+            <div class="cursor" data-cursor>
+              <span class="when" data-when></span>
+              <span class="knob"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .clock {
+    --bg: #eceef1;
+    --fg: #171a24;
+    --mute: rgba(23, 26, 36, 0.55);
+    --accent: #5361e8;
+    --line: rgba(23, 26, 36, 0.16);
+    background: linear-gradient(var(--sky, var(--bg)), var(--bg));
+    color: var(--fg);
+  }
+  /* Each digit sits in a cell as wide as the typeface's widest digit, so the count, the icon
+     and the max never move as the number changes. */
+  .num,
+  [data-max] {
+    font-family: var(--nf, var(--wf));
+  }
+  .num {
+    font-size: calc(var(--ns, 1) * clamp(96px, 16vw, 200px));
+  }
+  .num > span {
+    width: var(--dw, 0.6em);
+    text-align: center;
+  }
+  :global(.tick) {
+    position: absolute;
+    top: 30px;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--mute);
+    white-space: nowrap;
+  }
+  :global(.night) {
+    position: absolute;
+    top: 12px;
+    height: 2px;
+    background: var(--fg);
+    opacity: 0.5;
+    border-radius: 2px;
+  }
+  :global(.pin) {
+    position: absolute;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    border-radius: 50%;
+    background: var(--bg);
+    box-shadow: inset 0 0 0 2px var(--fg);
+    cursor: pointer;
+    transition:
+      background-color 0.2s,
+      transform 0.2s,
+      box-shadow 0.6s;
+  }
+  :global(.pin.past) {
+    background: var(--fg);
+  }
+  :global(.pin.on) {
+    transform: scale(1.35);
+    background: var(--accent);
+    box-shadow: inset 0 0 0 2px var(--accent);
+  }
+  .cursor {
+    position: absolute;
+    top: -40px;
+    bottom: 0;
+    width: 0;
+  }
+  .cursor::before {
+    content: "";
+    position: absolute;
+    left: -0.5px;
+    top: 20px;
+    bottom: 14px;
+    width: 1px;
+    background: var(--accent);
+  }
+  .knob {
+    position: absolute;
+    left: -9px;
+    top: 44px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+  .when {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    white-space: nowrap;
+    color: var(--accent);
+  }
+  .dm {
+    position: absolute;
+    top: 0;
+    width: min(340px, 100%);
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: #313338;
+    box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.55);
+    text-align: left;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+    transition:
+      opacity 0.3s,
+      transform 0.3s;
+    z-index: 2;
+  }
+  .dm.on {
+    opacity: 1;
+    transform: none;
+  }
+  .dm.on.upcoming {
+    opacity: 0.82;
+  }
+  @media (max-width: 600px) {
+    :global(.tick.odd) {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import { onGame } from "../scripts/game";
+  import { WORLD, worldVars, type GameKey } from "../data/worlds";
+  import { Painter, reducedMotion } from "../scripts/scenes";
+  import { applyVars, showVariant } from "../scripts/variants";
+
+  const root = document.querySelector<HTMLElement>("[data-reminders]")!;
+  const S: Record<string, string> = JSON.parse(root.dataset.s!);
+  const $ = <E extends HTMLElement>(s: string) => root.querySelector<E>(s)!;
+  const tl = $("[data-tl]"),
+    track = $("[data-track]"),
+    cursor = $("[data-cursor]");
+  const dm = $("[data-dm]");
+  const digits = [...$("[data-cur]").children] as HTMLElement[];
+  const fill = (s: string, v: Record<string, string | number>) =>
+    Object.entries(v).reduce(
+      (a, [k, x]) => a.replaceAll(`{${k}}`, String(x)),
+      s,
+    );
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const hm = (d: Date) => `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  const dur = (ms: number) => {
+    const m = Math.round(ms / 60000);
+    return `${Math.floor(m / 60)}:${pad(m % 60)}:00`;
+  };
+  const MIN = 60000,
+    SPAN = 24 * 3600000;
+
+  interface Event {
+    in?: number; // minutes from now
+    local?: [number, number]; // next local hh:mm
+    title: string;
+    body: string;
+  }
+  interface Game {
+    resource: string;
+    max: number;
+    rate: number; // minutes per point
+    start: number;
+    threshold: number;
+    title: string;
+    extra?: boolean; // HI3 adds a stamina line to the threshold DM
+    events: Event[];
+  }
+  const r = (k: string) => S[`bot.reminder.${k}`];
+  const GAMES: Partial<Record<GameKey, Game>> = {
+    genshin: {
+      resource: S["bot.notes.resin"],
+      max: 200,
+      rate: 8,
+      start: 132,
+      threshold: 180,
+      title: r("resin"),
+      events: [
+        { in: 134, title: r("expedition"), body: r("expedition_body") },
+        {
+          in: 610,
+          title: r("realm"),
+          body: fill(r("threshold"), { value: 2000 }),
+        },
+        { in: 1060, title: r("transformer"), body: r("transformer_body") },
+        { local: [21, 30], title: r("daily"), body: r("daily_body") },
+      ],
+    },
+    hsr: {
+      resource: S["bot.notes.trailblaze_power"],
+      max: 300,
+      rate: 6,
+      start: 186,
+      threshold: 280,
+      title: r("tb_power"),
+      events: [
+        {
+          local: [21, 30],
+          title: r("daily_training"),
+          body: r("daily_training_body"),
+        },
+        { in: 930, title: r("weekly"), body: r("weekly_body") },
+      ],
+    },
+    zzz: {
+      resource: S["bot.notes.battery"],
+      max: 240,
+      rate: 6,
+      start: 151,
+      threshold: 220,
+      title: r("battery"),
+      events: [
+        { in: 200, title: r("video_store"), body: r("video_store_body") },
+        { local: [20, 0], title: r("scratch"), body: r("scratch_body") },
+        { local: [21, 30], title: r("engagement"), body: r("engagement_body") },
+      ],
+    },
+    honkai: {
+      resource: S["reminders.stamina"],
+      max: 168,
+      rate: 6,
+      start: 104,
+      threshold: 150,
+      title: r("stamina"),
+      extra: true,
+      events: [],
+    },
+  };
+
+  // Each world's sky through the day, [hour, top, bottom]; the panel follows the hour under the cursor.
+  type Sky = [number, string, string][];
+  const day = (
+    night: [string, string],
+    dawn: [string, string],
+    noon: [string, string],
+    dusk: [string, string],
+  ): Sky => [
+    [0, ...night],
+    [4.8, ...night],
+    [6.2, ...dawn],
+    [8.5, ...noon],
+    [16.5, ...noon],
+    [18.4, ...dusk],
+    [20, ...night],
+    [24, ...night],
+  ];
+  const SKY: Record<Exclude<GameKey, "tot">, Sky> = {
+    // Teyvat: teal night, golden morning, clear sky over parchment.
+    genshin: day(
+      ["#0A141B", "#0E1A1F"],
+      ["#3C3A5A", "#D79A62"],
+      ["#B9D6E4", "#F0E7CF"],
+      ["#4B3F66", "#E39A6A"],
+    ),
+    // The Astral Express never sees daylight: the cabin lights warm and dim instead.
+    hsr: day(
+      ["#05061A", "#0B0D1E"],
+      ["#141634", "#2D2440"],
+      ["#1A2048", "#3A2F4C"],
+      ["#160F2E", "#40283E"],
+    ),
+    // New Eridu: sodium-lit night, hazy concrete day.
+    zzz: day(
+      ["#0B0C0E", "#1C1812"],
+      ["#2C3038", "#8D8C86"],
+      ["#C9CBC6", "#E6E4DB"],
+      ["#2A2326", "#C9873F"],
+    ),
+    // Hyperion: deep orbit at night, pale steel by day.
+    honkai: day(
+      ["#060C1A", "#101A30"],
+      ["#22305A", "#8DA4D4"],
+      ["#A9C0E4", "#E1E9F5"],
+      ["#2C3A6E", "#D8A592"],
+    ),
+  };
+  const hex = (h: string) =>
+    [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const mix = (a: string, b: string, k: number) => {
+    const x = hex(a),
+      y = hex(b);
+    return x.map((v, j) => Math.round(v + (y[j] - v) * k));
+  };
+  function skyAt(game: keyof typeof SKY, hour: number) {
+    const S = SKY[game];
+    let i = 0;
+    while (i < S.length - 2 && hour > S[i + 1][0]) i++;
+    const [h1, t1, b1] = S[i],
+      [h2, t2, b2] = S[i + 1],
+      k = Math.max(0, Math.min(1, (hour - h1) / (h2 - h1)));
+    return [mix(t1, t2, k), mix(b1, b2, k)];
+  }
+
+  const canvas = root.querySelector("canvas")!;
+  const painter = new Painter(canvas, root);
+  let key: keyof typeof SKY = "genshin";
+  let g: Game | undefined,
+    t0 = Date.now(),
+    from = t0,
+    f = 0,
+    dragging = false,
+    timer = 0;
+  const INTO = 78000; // seconds already ticked toward the next point
+  const valueAt = (T: number) =>
+    Math.min(g!.max, g!.start + Math.floor((T - t0 + INTO) / (g!.rate * MIN)));
+  const timeOf = (n: number) => t0 + (n - g!.start) * g!.rate * MIN - INTO;
+  const pins: {
+    el: HTMLButtonElement;
+    t: number;
+    title: string;
+    body: string;
+  }[] = [];
+
+  function nextLocal([h, m]: [number, number]) {
+    const d = new Date();
+    d.setHours(h, m, 0, 0);
+    if (+d <= Date.now()) d.setDate(d.getDate() + 1);
+    return +d;
+  }
+
+  function build() {
+    from = Date.now();
+    const ticks = $("[data-ticks]"),
+      nights = $("[data-nights]"),
+      pinsEl = $("[data-pins]");
+    ticks.innerHTML = nights.innerHTML = pinsEl.innerHTML = "";
+    pins.length = 0;
+    const first = new Date(from);
+    first.setMinutes(0, 0, 0);
+    first.setHours(first.getHours() + 1);
+    for (let t = +first; t < from + SPAN; t += 3600000) {
+      const d = new Date(t);
+      if (d.getHours() % 3) continue;
+      const s = document.createElement("span");
+      s.className = "tick" + (d.getHours() % 6 ? " odd" : "");
+      s.style.left = ((t - from) / SPAN) * 100 + "%";
+      s.textContent = `${pad(d.getHours())}:00`;
+      ticks.append(s);
+    }
+    for (let day = -1; day <= 1; day++) {
+      const s = new Date(from);
+      s.setHours(21, 0, 0, 0);
+      s.setDate(s.getDate() + day);
+      const a = Math.max(+s, from),
+        b = Math.min(+s + 9 * 3600000, from + SPAN);
+      if (b <= a) continue;
+      const n = document.createElement("i");
+      n.className = "night";
+      n.style.left = ((a - from) / SPAN) * 100 + "%";
+      n.style.width = ((b - a) / SPAN) * 100 + "%";
+      nights.append(n);
+    }
+    if (!g) return;
+    const thresholdBody =
+      fill(S["bot.reminder.threshold"], { value: g.threshold }) +
+      (g.extra
+        ? "\n" +
+          fill(S["bot.notes.stamina"], {
+            cur: g.threshold,
+            max: g.max,
+            time: dur((g.max - g.threshold) * g.rate * MIN),
+          })
+        : "");
+    const events = [
+      { t: timeOf(g.threshold), title: g.title, body: thresholdBody },
+      ...g.events.map((e) => ({
+        t: e.local ? nextLocal(e.local) : t0 + e.in! * MIN,
+        title: e.title,
+        body: e.body,
+      })),
+    ];
+    for (const ev of events) {
+      if (ev.t < from || ev.t > from + SPAN) continue;
+      const p = document.createElement("button");
+      p.type = "button";
+      p.className = "pin";
+      p.style.left = ((ev.t - from) / SPAN) * 100 + "%";
+      p.setAttribute("aria-label", `${hm(new Date(ev.t))}: ${ev.title}`);
+      p.addEventListener("pointerdown", (e) => e.stopPropagation());
+      p.addEventListener("click", () => goTo((ev.t - from) / SPAN + 0.0001));
+      pinsEl.append(p);
+      pins.push({ el: p, ...ev });
+    }
+  }
+
+  function set(nf: number) {
+    f = Math.max(0, Math.min(1, nf));
+    const isNow = f < 0.002,
+      T = isNow ? Date.now() : from + f * SPAN,
+      d = new Date(T);
+    cursor.style.left = f * 100 + "%";
+    // Keep the time label inside the panel at both ends of the day.
+    $("[data-when]").style.transform = `translateX(${-f * 100}%)`;
+    const at = isNow
+      ? S["reminders.now"]
+      : hm(d) +
+        (d.getDate() !== new Date().getDate()
+          ? ` ${S["reminders.tomorrow"]}`
+          : "");
+    $("[data-when]").textContent = at;
+    const [top, rgb] = skyAt(key, d.getHours() + d.getMinutes() / 60);
+    const lum = (c: number[]) =>
+      (0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]) / 255;
+    const dark = (lum(top) + lum(rgb)) / 2 < 0.5,
+      s = root.style;
+    s.setProperty("--sky", `rgb(${top})`);
+    s.setProperty("--bg", `rgb(${rgb})`);
+    canvas.style.opacity = dark ? "1" : "0.3";
+    s.setProperty("--fg", dark ? "#ECEEF6" : "#171A24");
+    s.setProperty(
+      "--mute",
+      dark ? "rgba(236,238,246,.58)" : "rgba(23,26,36,.55)",
+    );
+    s.setProperty(
+      "--line",
+      dark ? "rgba(236,238,246,.18)" : "rgba(23,26,36,.16)",
+    );
+    const accent = WORLD[key].accent;
+    s.setProperty(
+      "--accent",
+      dark ? accent : `color-mix(in srgb, ${accent} 62%, #000)`,
+    );
+    if (!g) return;
+    const v = String(valueAt(T)).padStart(digits.length, " ");
+    digits.forEach((el, i) => (el.textContent = v[i].trim()));
+    $("[data-max]").textContent = `/${g.max}`;
+    let active: (typeof pins)[number] | null = null;
+    pins.forEach((p) => {
+      const past = p.t <= T;
+      p.el.classList.toggle("past", past);
+      p.el.classList.remove("on");
+      if (past && T - p.t < 100 * MIN) active = p;
+    });
+    // Nothing just fired: preview the next DM instead of leaving the space empty.
+    const next = active
+      ? null
+      : pins.filter((p) => p.t > T).sort((a, b) => a.t - b.t)[0];
+    dm.classList.toggle("upcoming", !!next);
+    $("[data-dm-when]").textContent = next
+      ? fill(S["reminders.upcoming"], { time: dur(next.t - T).slice(0, -3) })
+      : S["reminders.dm"];
+    if (active || next) {
+      const a = (active ?? next)!;
+      if (active) a.el.classList.add("on");
+      $("[data-dm-title]").textContent = a.title;
+      $("[data-dm-body]").textContent = a.body;
+      const w = tl.clientWidth,
+        x = ((a.t - from) / SPAN) * w;
+      dm.style.left = Math.max(0, Math.min(w - dm.offsetWidth, x - 24)) + "px";
+      dm.classList.add("on");
+    } else dm.classList.remove("on");
+  }
+
+  function caps() {
+    if (g)
+      $("[data-caps]").textContent = fill(S["reminders.caps"], {
+        resource: g.resource,
+        time: hm(new Date(timeOf(g.max))),
+      });
+  }
+
+  const pos = (e: PointerEvent) => {
+    const rc = track.getBoundingClientRect();
+    return (e.clientX - rc.left) / rc.width;
+  };
+  // Glide the cursor to a point in time, easing in and out.
+  let glideId = 0;
+  function glide(to: number, ms: number, done?: () => void) {
+    cancelAnimationFrame(glideId);
+    if (reducedMotion()) return (set(to), done?.());
+    const a = f,
+      start = performance.now();
+    const step = (now: number) => {
+      const k = Math.min(1, (now - start) / ms),
+        e = k < 0.5 ? 4 * k ** 3 : 1 - (-2 * k + 2) ** 3 / 2;
+      set(a + (to - a) * e);
+      if (k < 1) glideId = requestAnimationFrame(step);
+      else done?.();
+    };
+    glideId = requestAnimationFrame(step);
+  }
+  const glideTo = (to: number) => glide(to, 500 + 900 * Math.abs(to - f));
+  function goTo(to: number) {
+    touched = true;
+    glideTo(to);
+  }
+
+  // Click a point to glide there; drag to scrub directly.
+  let downX = 0;
+  tl.addEventListener("pointerdown", (e) => {
+    touched = true;
+    downX = e.clientX;
+    tl.setPointerCapture(e.pointerId);
+  });
+  tl.addEventListener("pointermove", (e) => {
+    if (!tl.hasPointerCapture(e.pointerId)) return;
+    if (!dragging && Math.abs(e.clientX - downX) < 5) return;
+    dragging = true;
+    cancelAnimationFrame(glideId);
+    set(pos(e));
+  });
+  tl.addEventListener("pointerup", (e) => {
+    if (!dragging) glideTo(pos(e));
+    dragging = false;
+  });
+  tl.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    e.preventDefault();
+    touched = true;
+    cancelAnimationFrame(glideId);
+    set(f + (e.key === "ArrowRight" ? 1 : -1) / 96);
+  });
+
+  // The first time a game's timeline comes into view, the cursor runs ahead (the counter
+  // climbs and DMs fire), then glides back to now, showing that the timeline can be moved.
+  let touched = false,
+    inView = false;
+  const demoed = new Set<GameKey>();
+  function playDemo() {
+    if (touched || !inView || demoed.has(key) || reducedMotion()) return;
+    demoed.add(key);
+    glide(0.62, 3000, () => setTimeout(() => !touched && glide(0, 1800), 600));
+  }
+  new IntersectionObserver(
+    ([e]) => {
+      inView = e.isIntersecting;
+      playDemo();
+    },
+    { rootMargin: "-25% 0px -25% 0px" },
+  ).observe(root);
+
+  // Size the digit cells to the widest digit of the count's typeface.
+  async function fitDigits() {
+    const cs = getComputedStyle($("[data-cur]")),
+      font = `${cs.fontStyle} ${cs.fontWeight} 100px ${cs.fontFamily}`;
+    await document.fonts.load(font, "0123456789");
+    const ctx = document.createElement("canvas").getContext("2d")!;
+    ctx.font = font;
+    const w = Math.max(
+      ..."0123456789".split("").map((d) => ctx.measureText(d).width),
+    );
+    $("[data-cur]").style.setProperty("--dw", `${w / 100}em`);
+  }
+
+  function use(game: keyof typeof SKY) {
+    key = game;
+    g = GAMES[game];
+    applyVars(root, worldVars(WORLD[game]));
+    painter.set(game);
+    showVariant($("[data-icons]"), game);
+    // Michroma's digits are much wider than the other worlds' typefaces.
+    root.style.setProperty("--ns", game === "hsr" ? "0.7" : "1");
+    // Marcellus's digits vary too much in width (its 0 is almost three times its 1);
+    // Cinzel has the same carved Roman look with near-even digits.
+    root.style.setProperty("--nf", game === "genshin" ? '"Cinzel", serif' : "");
+    fitDigits();
+    t0 = Date.now();
+    build();
+    caps();
+    set(f);
+    playDemo();
+  }
+
+  // Tick only while the section is on screen.
+  new IntersectionObserver(([e]) => {
+    clearInterval(timer);
+    if (!e.isIntersecting) return;
+    if (Date.now() - from > 60000) build();
+    set(f);
+    timer = window.setInterval(() => {
+      if (f < 0.002 && !dragging && Date.now() - from > 60000) build();
+      set(f);
+    }, 1000);
+  }).observe(root);
+
+  // Reminders don't exist for Tears of Themis; keep showing the current game.
+  onGame((game) => {
+    const k = game ?? "genshin";
+    if (k !== "tot") use(k);
+  });
+  use("genshin");
+</script>

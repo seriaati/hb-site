@@ -1,0 +1,83 @@
+---
+import Mark from "./Mark.astro";
+import LanguagePicker from "./LanguagePicker.astro";
+import { LINKS } from "../data/links";
+import type { Locale, T } from "../i18n";
+
+interface Props {
+  locale: Locale;
+  t: T;
+}
+
+const { locale, t } = Astro.props;
+const links = [
+  [LINKS.docs, t("nav.docs")],
+  [LINKS.github, "GitHub"],
+  [LINKS.discord, t("footer.contact.discord_server")],
+  [LINKS.donate, t("footer.sponsor")],
+];
+const team = [
+  ["/team/seria.webp", "@seria_ati", t("team.seria.role")],
+  ["/team/ayasaku.webp", "@ayasaku_", t("team.ayasaku.role")],
+  ["/team/hydrogened.png", "@hydrogened", t("team.hydrogened.role")],
+];
+---
+
+<footer class="border-t border-line pt-20 pb-10">
+  <div class="section-wrap flex flex-col items-center gap-6 text-center">
+    <Mark class="h-auto w-12" />
+    <p class="font-display text-[clamp(26px,3vw,38px)] font-semibold tracking-[-0.03em]">
+      {t("footer.description")}
+    </p>
+    <a class="btn" href={LINKS.install} target="_blank" rel="noopener">
+      {t("hero.cta")}
+    </a>
+  </div>
+
+  <div class="section-wrap mt-20 grid gap-12 md:grid-cols-[1fr_auto] md:items-end">
+    <nav aria-label={t("footer.quick_links.title")}>
+      <ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm md:justify-start">
+        {links.map(([href, label]) => (
+          <li>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener"
+              class="text-mute transition-colors hover:text-fg"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <div class="flex flex-col items-center gap-3 md:items-end">
+      <p class="eyebrow">{t("team.title")}</p>
+      <ul class="flex gap-5">
+        {team.map(([src, handle, role]) => (
+          <li class="flex items-center gap-2.5 text-left">
+            <img
+              src={src}
+              alt=""
+              width="32"
+              height="32"
+              loading="lazy"
+              class="size-8 rounded-full object-cover"
+            />
+            <span class="grid text-xs leading-tight">
+              <span class="text-fg">{handle}</span>
+              <span class="text-mute">{role}</span>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-wrap mt-12">
+    <div class="flex flex-col-reverse items-center justify-between gap-4 border-t border-line pt-6 text-xs text-mute sm:flex-row">
+      <p>{t("footer.rights", { year: new Date().getFullYear() })}</p>
+      <LanguagePicker locale={locale} t={t} up />
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,32 @@
+---
+// The game icons Hoyo Buddy itself uses (hb-app/public/images, the bot's embed author icons).
+import { Image } from "astro:assets";
+import genshin from "../assets/games/genshin.png";
+import hsr from "../assets/games/hsr.png";
+import zzz from "../assets/games/zzz.png";
+import honkai from "../assets/games/honkai.png";
+import tot from "../assets/games/tot.png";
+import type { GameKey } from "../data/worlds";
+
+interface Props {
+  game: GameKey;
+  size: number; // rendered CSS pixels
+  class?: string;
+  eager?: boolean;
+}
+
+const ICONS = { genshin, hsr, zzz, honkai, tot };
+const { game, size, class: className, eager } = Astro.props;
+---
+
+<Image
+  src={ICONS[game]}
+  alt=""
+  width={size}
+  height={size}
+  widths={[size * 3, size * 6]}
+  sizes={`${size}px`}
+  loading={eager ? "eager" : "lazy"}
+  class:list={["shrink-0 rounded-full object-cover", className]}
+  style={`width:${size}px;height:${size}px`}
+/>

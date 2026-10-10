@@ -1,0 +1,72 @@
+---
+// /notes: the bot's own note images (GI, HSR, ZZZ) under the embed it sends with them
+// (hoyo_buddy/ui/hoyo/notes/view.py). HI3 has no image, only embed fields.
+import { Image } from "astro:assets";
+import Message from "../discord/Message.astro";
+import Embed from "../discord/Embed.astro";
+import giNotes from "../../assets/notes/genshin.png";
+import hsrNotes from "../../assets/notes/hsr.png";
+import zzzNotes from "../../assets/notes/zzz.png";
+import type { GameKey } from "../../data/worlds";
+import type { T } from "../../i18n";
+
+interface Props {
+  t: T;
+  game: GameKey;
+}
+
+const { t, game } = Astro.props;
+const n = (k: string, v?: Record<string, string | number>) =>
+  t(`bot.notes.${k}`, v);
+
+// The embed lists only what isn't full yet, so the times match the images:
+// Resin 189/200, Trailblaze Power 229/300, Battery Charge 229/240.
+const cards: Partial<
+  Record<GameKey, { author: string; full: string; src: ImageMetadata }>
+> = {
+  genshin: { author: "Traveler (81xxxxx78)", full: "1:28:00", src: giNotes },
+  hsr: { author: "Trailblazer (80xxxxx12)", full: "7:06:00", src: hsrNotes },
+  zzz: { author: "Proxy (15xxxxx90)", full: "1:06:00", src: zzzNotes },
+};
+const card = cards[game];
+---
+
+<Message t={t} command="/notes">
+  {card && (
+    <Embed
+      author={card.author}
+      game={game}
+      description={n("full_in", { time: card.full })}
+    >
+      <Image
+        src={card.src}
+        alt={n(game === "zzz" ? "sticky_notes" : "title")}
+        widths={[520, 1040]}
+        sizes="(min-width: 720px) 520px, 85vw"
+        class="mt-1 h-auto max-h-[400px] w-auto max-w-full rounded-lg"
+        loading="lazy"
+      />
+    </Embed>
+  )}
+  {game === "honkai" && (
+    <Embed
+      author="Captain (10xxxxx45)"
+      game="honkai"
+      description={`${n("stamina", { cur: 96, max: 168, time: "7:12:00" })}\n${n("daily_bp", { cur: 600, max: 600 })}`}
+      fields={[
+        {
+          name: n("superstring"),
+          value: n("current_score", { score: "18,450" }),
+        },
+        {
+          name: n("memorial_arena"),
+          value: `${n("arena_rewards", { cur: 1, max: 3 })}\n${n("arena_sss", { cur: 0, max: 3 })}`,
+        },
+        {
+          name: n("elysian_realm"),
+          value: n("elysian_score", { cur: 300, max: 700 }),
+        },
+      ]}
+    />
+  )}
+</Message>

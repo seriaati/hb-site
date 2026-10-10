@@ -1,0 +1,64 @@
+---
+import Mark from "./Mark.astro";
+import LanguagePicker from "./LanguagePicker.astro";
+import { LINKS } from "../data/links";
+import type { Locale, T } from "../i18n";
+
+interface Props {
+  locale: Locale;
+  t: T;
+}
+
+const { locale, t } = Astro.props;
+const anchors = [
+  ["#commands", t("nav.commands")],
+  ["#reminders", t("nav.reminders")],
+  ["#auto-tasks", t("nav.auto_tasks")],
+  ["#faq", t("nav.faq")],
+];
+---
+
+<header class="relative z-20 flex items-center justify-between gap-4">
+  <a
+    href="#top"
+    class="flex items-center gap-2.5 font-display text-[15px] font-semibold tracking-[-0.01em]"
+  >
+    <Mark />
+    Hoyo Buddy
+  </a>
+  <nav class="flex items-center gap-1 text-sm" aria-label={t("nav.label")}>
+    <ul class="hidden items-center gap-1 lg:flex">
+      {anchors.map(([href, label]) => (
+        <li>
+          <a
+            href={href}
+            class="rounded-full px-3 py-2 text-mute transition-colors hover:text-fg"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          href={LINKS.docs}
+          target="_blank"
+          rel="noopener"
+          class="rounded-full px-3 py-2 text-mute transition-colors hover:text-fg"
+        >
+          {t("nav.docs")}
+        </a>
+      </li>
+      <li>
+        <a
+          href={LINKS.github}
+          target="_blank"
+          rel="noopener"
+          class="rounded-full px-3 py-2 text-mute transition-colors hover:text-fg"
+        >
+          GitHub
+        </a>
+      </li>
+    </ul>
+    <LanguagePicker locale={locale} t={t} />
+  </nav>
+</header>

@@ -1,0 +1,69 @@
+---
+// Game switch shared by every section. All pickers stay in sync through scripts/game.ts.
+import GameIcon from "./GameIcon.astro";
+import { WORLDS, type GameKey } from "../data/worlds";
+import type { T } from "../i18n";
+
+interface Props {
+  source: string;
+  selected?: GameKey;
+  games?: GameKey[]; // limit the picker to these games
+  label: string;
+  class?: string;
+  t: T;
+}
+
+const {
+  source,
+  selected = "genshin",
+  games,
+  label,
+  class: className,
+  t,
+} = Astro.props;
+---
+
+<div
+  class:list={["flex flex-wrap justify-center gap-1.5", className]}
+  role="group"
+  aria-label={label}
+  data-game-picker={source}
+>
+  {WORLDS.filter((w) => !games || games.includes(w.game)).map((w) => (
+    <button
+      type="button"
+      data-game={w.game}
+      aria-pressed={w.game === selected ? "true" : "false"}
+      class="flex items-center gap-2 rounded-full border border-line py-1.5 pr-3.5 pl-1.5 text-[13px] text-mute transition-[color,border-color,background-color] duration-300 hover:border-[color-mix(in_srgb,var(--fg)_40%,transparent)] hover:text-fg aria-pressed:border-accent aria-pressed:bg-[color-mix(in_srgb,var(--accent)_14%,transparent)] aria-pressed:text-fg"
+    >
+      <GameIcon game={w.game} size={20} />
+      {t(`worlds.${w.game}.name`)}
+    </button>
+  ))}
+</div>
+
+<script>
+  import { setGame, onGame, type Selection } from "../scripts/game";
+
+  const pickers = document.querySelectorAll<HTMLElement>("[data-game-picker]");
+  // A picker without the selected game (e.g. Reminders has no Tears of Themis) keeps its choice.
+  const mark = (game: Selection) =>
+    pickers.forEach((p) => {
+      const buttons = p.querySelectorAll<HTMLButtonElement>("[data-game]");
+      const key = game ?? "genshin";
+      if (![...buttons].some((b) => b.dataset.game === key)) return;
+      buttons.forEach((b) =>
+        b.setAttribute("aria-pressed", String(b.dataset.game === key)),
+      );
+    });
+  pickers.forEach((p) =>
+    p
+      .querySelectorAll<HTMLButtonElement>("[data-game]")
+      .forEach((b) =>
+        b.addEventListener("click", () =>
+          setGame(b.dataset.game as Selection, p.dataset.gamePicker!),
+        ),
+      ),
+  );
+  onGame(mark);
+</script>

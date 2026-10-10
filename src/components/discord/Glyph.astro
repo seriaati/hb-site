@@ -1,0 +1,30 @@
+---
+// Small line glyphs standing in for the icons baked into the bot's card art.
+export type GlyphName = "gem" | "coin" | "ore" | "book";
+
+interface Props {
+  name: GlyphName;
+  class?: string;
+}
+
+const { name, class: className = "size-5" } = Astro.props;
+const paths: Record<GlyphName, string> = {
+  gem: "M6 4h12l3 5-9 11L3 9zM3 9h18M12 20L9 9l3-5 3 5z",
+  coin: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v10M9 9.5h4.5a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3H15",
+  ore: "M7 4h10l4 7-9 9-9-9zM3 11h18M12 20V11",
+  book: "M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h11",
+};
+---
+
+<svg
+  class={className}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <path d={paths[name]}></path>
+</svg>

@@ -1,0 +1,12 @@
+---
+import Home from "../../components/Home.astro";
+import { DEFAULT_LOCALE, LOCALES } from "../../i18n";
+
+export function getStaticPaths() {
+  return LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l) => ({
+    params: { lang: l.code },
+  }));
+}
+---
+
+<Home code={Astro.params.lang} />

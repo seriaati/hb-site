@@ -1,0 +1,70 @@
+---
+// A Discord embed. Color defaults to the bot's DefaultEmbed (#6574F8).
+import GameIcon from "../GameIcon.astro";
+import type { GameKey } from "../../data/worlds";
+
+interface Field {
+  name: string;
+  value: string;
+  inline?: boolean;
+}
+
+interface Props {
+  color?: string;
+  author?: string;
+  game?: GameKey;
+  title?: string;
+  description?: string;
+  fields?: Field[];
+  footer?: string;
+}
+
+const {
+  color = "#6574f8",
+  author,
+  game,
+  title,
+  description,
+  fields = [],
+  footer,
+} = Astro.props;
+const lines = (s: string) => s.split("\n");
+---
+
+<div
+  class="max-w-[520px] min-w-0 overflow-hidden rounded-[4px] border-l-4 bg-[#2b2d31]"
+  style={`border-left-color:${color}`}
+>
+  <div class="grid gap-2 px-4 pt-2 pb-4">
+    {author && (
+      <p class="mt-1 flex items-center gap-2 text-[13px] font-medium text-[#f2f3f5]">
+        {game && <GameIcon game={game} size={24} />}
+        {author}
+      </p>
+    )}
+    <div class="flex gap-4">
+      <div class="grid min-w-0 flex-1 gap-2">
+        {title && <p class="mt-1 font-semibold text-[#f2f3f5]">{title}</p>}
+        {description && (
+          <p class="text-[14px]">
+            {lines(description).map((l, i) => (i ? [<br />, l] : l))}
+          </p>
+        )}
+        <slot name="description" />
+        {fields.length > 0 && (
+          <dl class="grid grid-cols-2 gap-x-4 gap-y-2 text-[14px]">
+            {fields.map((f) => (
+              <div class:list={[!f.inline && "col-span-2"]}>
+                <dt class="font-semibold text-[#f2f3f5]">{f.name}</dt>
+                <dd>{lines(f.value).map((l, i) => (i ? [<br />, l] : l))}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </div>
+      <slot name="thumbnail" />
+    </div>
+    <slot />
+    {footer && <p class="mt-1 text-xs text-[#dbdee1]/80">{footer}</p>}
+  </div>
+</div>

@@ -1,0 +1,40 @@
+---
+// /redeem result, recreated from hoyo_buddy/hoyo/clients/gpy.py (Code Redemption Results).
+import Message from "../discord/Message.astro";
+import Embed from "../discord/Embed.astro";
+import type { GameKey } from "../../data/worlds";
+import type { T } from "../../i18n";
+
+interface Props {
+  t: T;
+  game: GameKey;
+  auto?: boolean; // the auto-redeem DM instead of the command reply
+}
+
+const { t, game, auto = false } = Astro.props;
+const accounts: Partial<Record<GameKey, [string, string, string]>> = {
+  genshin: ["Traveler (81xxxxx78)", "GENSHINGIFT", "XK3BRT9WQM7V"],
+  hsr: ["Trailblazer (80xxxxx12)", "STARRAILGIFT", "HB8QN4ZT2KSE"],
+  zzz: ["Proxy (15xxxxx90)", "ZENLESSGIFT", "ZZ7VM2QKBX4R"],
+};
+const [blurred, ok, used] = accounts[game] ?? accounts.genshin!;
+// Auto-task DMs show the full UID; command replies blur it.
+const author = auto ? blurred.replace(/x{5}/, "23456") : blurred;
+---
+
+<Message
+  t={t}
+  command={auto ? undefined : "/redeem"}
+  time={auto ? "03:20" : undefined}
+>
+  <Embed
+    author={author}
+    game={game}
+    title={t("bot.redeem.title")}
+    fields={[
+      { name: `✅ ${ok}`, value: t("bot.redeem.success") },
+      { name: `❌ ${used}`, value: t("bot.redeem.claimed") },
+    ]}
+    footer={auto ? t("bot.redeem.auto_footer") : undefined}
+  />
+</Message>

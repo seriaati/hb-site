@@ -1,0 +1,34 @@
+---
+// /profile: the bot's own default-template previews (GI hb1, HSR hb1, ZZZ hb2).
+import { Image } from "astro:assets";
+import Message from "../discord/Message.astro";
+import gi from "../../assets/cards/gi-hb1.png";
+import hsr from "../../assets/cards/hsr-hb1.png";
+import zzz from "../../assets/cards/zzz-hb2.png";
+import type { GameKey } from "../../data/worlds";
+import type { T } from "../../i18n";
+
+interface Props {
+  t: T;
+  game: GameKey;
+}
+
+const { t, game } = Astro.props;
+const cards: Partial<Record<GameKey, [ImageMetadata, string]>> = {
+  genshin: [gi, "Yelan build card, Hoyo Buddy template 1"],
+  hsr: [hsr, "Silver Wolf build card, Hoyo Buddy template 1"],
+  zzz: [zzz, "Yanagi build card, Hoyo Buddy template 2"],
+};
+const [src, alt] = cards[game] ?? cards.genshin!;
+---
+
+<Message t={t} command="/profile">
+  <Image
+    src={src}
+    alt={alt}
+    widths={[560, 960, 1280]}
+    sizes="(min-width: 720px) 560px, 92vw"
+    class="h-auto w-full max-w-[560px] rounded-lg"
+    loading="lazy"
+  />
+</Message>

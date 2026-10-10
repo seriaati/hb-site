@@ -1,0 +1,103 @@
+---
+import "@fontsource/funnel-display/400.css";
+import "@fontsource/funnel-display/500.css";
+import "@fontsource/funnel-display/600.css";
+import "@fontsource/funnel-sans/400.css";
+import "@fontsource/funnel-sans/500.css";
+import "@fontsource/funnel-sans/600.css";
+import "@fontsource/geist-mono/400.css";
+import "@fontsource/be-vietnam-pro/400.css";
+import "@fontsource/be-vietnam-pro/500.css";
+import "@fontsource/be-vietnam-pro/600.css";
+// World typefaces: only downloaded once a world is shown.
+import "@fontsource/marcellus/400.css";
+import "@fontsource/cinzel/400.css";
+import "@fontsource/michroma/400.css";
+import "@fontsource/anton/400.css";
+import "@fontsource/chakra-petch/600.css";
+import "@fontsource/cormorant-garamond/500-italic.css";
+import "@fontsource/zcool-qingke-huangyou/400.css";
+import "@fontsource/dela-gothic-one/400.css";
+import "@fontsource/black-han-sans/400.css";
+import "@fontsource/orbit/400.css";
+import "@fontsource/noto-serif-sc/500.css";
+import "@fontsource/shippori-mincho/500.css";
+import "@fontsource/gowun-batang/400.css";
+import "@fontsource/stick/400.css";
+import "@fontsource/gugi/400.css";
+import "@fontsource/hina-mincho/400.css";
+import "@fontsource/nanum-myeongjo/400.css";
+import "../styles/global.css";
+import { LOCALES, pathFor, useTranslations, type Locale } from "../i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale.code);
+const site = Astro.site!;
+const canonical = new URL(pathFor(locale.code), site).href;
+const title = t("meta.title");
+const description = t("meta.description");
+const image = new URL("/og.png", site).href;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Hoyo Buddy",
+  applicationCategory: "GameApplication",
+  operatingSystem: "Discord",
+  description,
+  url: canonical,
+  image,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+};
+---
+
+<!doctype html>
+<html lang={locale.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {LOCALES.map((l) => (
+      <link
+        rel="alternate"
+        hreflang={l.lang}
+        href={new URL(pathFor(l.code), site).href}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL("/", site).href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta
+      name="theme-color"
+      content="#f1f2f6"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0f1016"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hoyo Buddy" />
+    <meta property="og:locale" content={locale.og} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

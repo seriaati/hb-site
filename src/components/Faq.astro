@@ -1,0 +1,99 @@
+---
+import type { T } from "../i18n";
+
+interface Props {
+  t: T;
+}
+
+const { t } = Astro.props;
+const items = [
+  "free",
+  "games",
+  "where",
+  "add_account",
+  "account_safe",
+  "ban",
+  "help",
+];
+---
+
+<section id="faq" class="scroll-mt-6 py-24 sm:py-32">
+  <div class="section-wrap flex flex-col items-center gap-4 text-center">
+    <p class="eyebrow">{t("faq.title")}</p>
+    <h2 class="section-title">{t("faq.heading")}</h2>
+    <p class="lede">{t("faq.description")}</p>
+  </div>
+  <div class="section-wrap mt-12 max-w-3xl" data-faq>
+    {items.map((k) => (
+      <details class="group border-b border-line first:border-t">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-6 font-display text-[clamp(18px,1.8vw,22px)] font-medium tracking-[-0.015em] [&::-webkit-details-marker]:hidden">
+          {t(`faq.${k}.question`)}
+          <span class="relative size-4 shrink-0 text-mute" aria-hidden="true">
+            <span class="absolute top-1/2 left-0 h-px w-4 bg-current" />
+            <span class="bar absolute top-0 left-1/2 h-4 w-px bg-current transition-transform duration-300 group-open:rotate-90" />
+          </span>
+        </summary>
+        <div class="body overflow-hidden">
+          <p
+            class="prose-links max-w-[62ch] pb-7 leading-relaxed text-mute"
+            set:html={t(`faq.${k}.answer`)}
+          />
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  details.closing .bar {
+    transform: none;
+  }
+  .body :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--fg);
+  }
+</style>
+
+<script>
+  import { reducedMotion } from "../scripts/scenes";
+
+  // Answers slide open and shut instead of snapping.
+  for (const d of document.querySelectorAll<HTMLDetailsElement>(
+    "[data-faq] details",
+  )) {
+    const body = d.querySelector<HTMLElement>(".body")!;
+    let anim: Animation | null = null;
+    d.querySelector("summary")!.addEventListener("click", (e) => {
+      if (reducedMotion()) return;
+      e.preventDefault();
+      const opening = !d.open || d.classList.contains("closing");
+      const from = d.open ? body.getBoundingClientRect().height : 0;
+      anim?.cancel();
+      if (opening) {
+        d.classList.remove("closing");
+        d.open = true;
+        anim = body.animate(
+          [
+            { height: `${from}px`, opacity: from ? 1 : 0 },
+            { height: `${body.scrollHeight}px`, opacity: 1 },
+          ],
+          { duration: 420, easing: "cubic-bezier(.2,.8,.2,1)" },
+        );
+      } else {
+        d.classList.add("closing");
+        anim = body.animate(
+          [
+            { height: `${from}px`, opacity: 1 },
+            { height: "0px", opacity: 0 },
+          ],
+          { duration: 300, easing: "cubic-bezier(.4,0,.2,1)" },
+        );
+        anim.onfinish = () => {
+          d.open = false;
+          d.classList.remove("closing");
+        };
+      }
+    });
+  }
+</script>

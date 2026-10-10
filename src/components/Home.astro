@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "./Hero.astro";
+import Commands from "./Commands.astro";
+import Reminders from "./Reminders.astro";
+import AutoTasks from "./AutoTasks.astro";
+import OpenSource from "./OpenSource.astro";
+import Faq from "./Faq.astro";
+import Footer from "./Footer.astro";
+import { localeOf, useTranslations } from "../i18n";
+
+interface Props {
+  code: string;
+}
+
+const locale = localeOf(Astro.props.code);
+const t = useTranslations(locale.code);
+---
+
+<Base locale={locale}>
+  <Hero locale={locale} t={t} />
+  <main id="main">
+    <Commands t={t} />
+    <Reminders t={t} />
+    <AutoTasks t={t} />
+    <OpenSource t={t} />
+    <Faq t={t} />
+  </main>
+  <Footer locale={locale} t={t} />
+</Base>

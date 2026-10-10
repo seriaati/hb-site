@@ -1,0 +1,4 @@
+# Old per-language entry points (pre-Astro site)
+/index.html          /        301
+/index-vi-vn.html    /vi/     301
+/index-zh-tw.html    /zh-tw/  301

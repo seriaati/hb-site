@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+/*
+  Design language ("Converge"): a quiet neutral page in Funnel type, where each game
+  world (palette + typeface + ambient motif) takes over only where a game is chosen.
+  Neutral tokens below; world tokens are set inline on the element that hosts a world.
+*/
+:root {
+  --bg: #f1f2f6;
+  --fg: #13141b;
+  --mute: #6f7387;
+  --accent: #6574f8; /* the bot's default embed color */
+  --surface: #ffffff;
+  --line: color-mix(in srgb, var(--fg) 13%, transparent);
+  --font-text: "Funnel Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-head: "Funnel Display", ui-sans-serif, system-ui, sans-serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1016;
+    --fg: #ecedf3;
+    --mute: #9196a9;
+    --accent: #8d97ff;
+    --surface: #171922;
+    color-scheme: dark;
+  }
+}
+
+/* Funnel has no Vietnamese or CJK glyphs; swap whole stacks instead of mixing fallbacks per glyph. */
+:root:lang(vi) {
+  --font-text: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-head: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+}
+:root:lang(zh-Hant) {
+  --font-text:
+    "Funnel Sans", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei",
+    sans-serif;
+  --font-head:
+    "Funnel Display", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei",
+    sans-serif;
+}
+:root:lang(zh-Hans) {
+  --font-text:
+    "Funnel Sans", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-head:
+    "Funnel Display", "PingFang SC", "Noto Sans SC", "Microsoft YaHei",
+    sans-serif;
+}
+:root:lang(ja) {
+  --font-text:
+    "Funnel Sans", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+  --font-head:
+    "Funnel Display", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+}
+:root:lang(ko) {
+  --font-text:
+    "Funnel Sans", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    sans-serif;
+  --font-head:
+    "Funnel Display", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    sans-serif;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-mute: var(--mute);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --font-sans: var(--font-text);
+  --font-display: var(--font-head);
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  button:not(:disabled),
+  [role="button"],
+  summary {
+    cursor: pointer;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+@layer components {
+  /* An element hosting a game world; applyWorld() sets its tokens inline. */
+  .world {
+    --line: color-mix(in srgb, var(--fg) 13%, transparent);
+    background: var(--bg);
+    color: var(--fg);
+    transition:
+      background-color 0.7s ease,
+      color 0.7s ease;
+  }
+  /* The world's place name / game title, in the world's own typeface. */
+  .world-type {
+    font-family: var(--wf, var(--font-head));
+    font-weight: var(--ww, 600);
+    text-transform: var(--wc, none);
+    letter-spacing: var(--wt, -0.035em);
+    font-style: var(--wi, normal);
+  }
+  /* Variants of one slot, stacked; only .on is visible. */
+  .stack {
+    display: grid;
+  }
+  .stack > [data-v] {
+    grid-area: 1 / 1;
+    transition:
+      opacity 0.45s ease,
+      transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+      filter 0.45s ease,
+      visibility 0s;
+  }
+  .stack > [data-v]:not(.on) {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.14em);
+    filter: blur(4px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      filter 0.2s ease,
+      visibility 0s 0.2s;
+  }
+  .section-wrap {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-8 lg:px-12;
+  }
+  .eyebrow {
+    @apply text-mute font-mono text-xs tracking-[0.08em] uppercase;
+  }
+  .section-title {
+    @apply font-display text-[clamp(32px,4.6vw,60px)] leading-[1.04] font-semibold tracking-[-0.035em];
+  }
+  .lede {
+    @apply text-mute text-[clamp(16px,1.4vw,18px)] leading-relaxed;
+  }
+  .btn {
+    @apply bg-fg text-bg inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-medium transition-[background-color,color,transform] duration-200 hover:-translate-y-px;
+  }
+  .btn-ghost {
+    @apply text-mute hover:text-fg inline-flex items-center gap-2 rounded-full px-4 py-3 text-[15px] transition-colors;
+  }
+  .prose-links a {
+    @apply text-fg decoration-line hover:decoration-fg underline underline-offset-4 transition-colors;
+  }
+}

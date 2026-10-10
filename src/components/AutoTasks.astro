@@ -1,0 +1,214 @@
+---
+import GamePicker from "./GamePicker.astro";
+import Message from "./discord/Message.astro";
+import Embed from "./discord/Embed.astro";
+import Glyph from "./discord/Glyph.astro";
+import Redeem from "./replies/Redeem.astro";
+import { Image } from "astro:assets";
+import primogem from "../assets/items/primogem.png";
+import jade from "../assets/items/jade.png";
+import polychrome from "../assets/items/polychrome.png";
+import { WORLDS, WORLD, worldVars, type GameKey } from "../data/worlds";
+import type { T } from "../i18n";
+
+interface Props {
+  t: T;
+}
+
+const { t } = Astro.props;
+
+// Auto tasks and the games they run for (auto_tasks/*, HoYoLAB-only for redeem and Mimo).
+const TASKS = [
+  { key: "check_in", games: ["genshin", "hsr", "zzz", "honkai", "tot"] },
+  { key: "redeem", games: ["genshin", "hsr", "zzz"] },
+  { key: "mimo", games: ["genshin", "hsr", "zzz"] },
+] as const;
+const supports = (task: (typeof TASKS)[number], g: GameKey) =>
+  (task.games as readonly string[]).includes(g);
+
+const reward: Record<GameKey, string> = {
+  genshin: "Primogem x20",
+  hsr: "Stellar Jade x20",
+  zzz: "Polychrome x20",
+  honkai: "Crystal x20",
+  tot: "S-Chip x30",
+};
+const author: Record<GameKey, string> = {
+  genshin: "Traveler (812345678)",
+  hsr: "Trailblazer (802345612)",
+  zzz: "Proxy (152345690)",
+  honkai: "Captain (102345645)",
+  tot: "Attorney (502345627)",
+};
+const mimoTasks = [
+  [t("bot.mimo.tasks.log_in"), 20],
+  [t("bot.mimo.tasks.check_in"), 20],
+  [t("bot.mimo.tasks.community"), 20],
+] as const;
+// The check-in reward's own icon, as the bot shows it. No icon source for HI3 and ToT.
+const rewardIcon: Partial<Record<GameKey, ImageMetadata>> = {
+  genshin: primogem,
+  hsr: jade,
+  zzz: polychrome,
+};
+const style = Object.entries(worldVars(WORLD.genshin))
+  .map(([k, v]) => `${k}:${v}`)
+  .join(";");
+---
+
+<section id="auto-tasks" class="scroll-mt-6 py-24 sm:py-32">
+  <div class="section-wrap flex flex-col items-center gap-4 text-center">
+    <p class="eyebrow">{t("auto.eyebrow")}</p>
+    <h2 class="section-title max-w-[18ch]">{t("auto.title")}</h2>
+    <p class="lede max-w-[50ch]">{t("auto.description")}</p>
+  </div>
+
+  <div class="section-wrap mt-12">
+    <div
+      class="world relative isolate overflow-hidden rounded-[32px] px-4 pt-8 pb-10 sm:px-10"
+      style={style}
+      data-auto
+      data-tasks={JSON.stringify(TASKS)}
+    >
+      <canvas
+        class="pointer-events-none absolute inset-0 -z-10 size-full"
+        aria-hidden="true"
+      ></canvas>
+      <GamePicker source="auto" label={t("commands.game")} t={t} />
+
+      <div class="mx-auto mt-10 max-w-[600px]">
+        <div class="grid gap-3" data-feed>
+          {TASKS.map((task) => (
+            <div class="item grid" data-item={task.key}>
+              <div class="min-h-0 overflow-hidden">
+                <div class="stack" data-variants>
+                  {WORLDS.filter((w) => supports(task, w.game)).map((w) => (
+                    <div
+                      data-v={w.game}
+                      class:list={[w.game === "genshin" && "on"]}
+                      aria-hidden={w.game === "genshin" ? undefined : "true"}
+                    >
+                      {task.key === "check_in" && (
+                        <Message t={t} time="00:04">
+                          <Embed
+                            author={author[w.game]}
+                            game={w.game}
+                            title={t("bot.check_in.claimed")}
+                            description={reward[w.game]}
+                            footer={t("bot.check_in.claimed_footer")}
+                          >
+                            {rewardIcon[w.game] ? (
+                              <Image
+                                slot="thumbnail"
+                                src={rewardIcon[w.game]!}
+                                alt=""
+                                width={64}
+                                height={64}
+                                class="size-16 shrink-0 object-contain"
+                              />
+                            ) : (
+                              <span
+                                slot="thumbnail"
+                                class="grid size-16 shrink-0 place-items-center rounded-lg bg-white/5 text-[#e8d9a8]"
+                              >
+                                <Glyph name="gem" class="size-8" />
+                              </span>
+                            )}
+                          </Embed>
+                        </Message>
+                      )}
+                      {task.key === "redeem" && (
+                        <Redeem t={t} game={w.game} auto />
+                      )}
+                      {task.key === "mimo" && (
+                        <Message t={t} time="06:12">
+                          <Embed
+                            author={author[w.game]}
+                            game={w.game}
+                            title={t("bot.mimo.title")}
+                            footer={t("bot.mimo.footer")}
+                          >
+                            <div
+                              slot="description"
+                              class="grid gap-1 text-[14px]"
+                            >
+                              <p>
+                                {t("bot.mimo.summary", {
+                                  finish: 3,
+                                  points: 60,
+                                })}
+                              </p>
+                              <ul class="list-disc pl-5">
+                                {mimoTasks.map(([name, pts]) => (
+                                  <li>
+                                    <span class="text-[#00a8fc]">{name}</span> -{" "}
+                                    {pts}
+                                    <Glyph
+                                      name="coin"
+                                      class="inline size-3.5 align-[-2px] text-[#e8d9a8]"
+                                    />
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </Embed>
+                        </Message>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .item {
+    grid-template-rows: 1fr;
+    transition:
+      grid-template-rows 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+      opacity 0.3s;
+  }
+  .item.hide {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+  [data-feed] {
+    transition: gap 0.45s;
+  }
+</style>
+
+<script>
+  import { onGame } from "../scripts/game";
+  import { WORLD, worldVars, type GameKey } from "../data/worlds";
+  import { Painter } from "../scripts/scenes";
+  import { applyVars, showVariant } from "../scripts/variants";
+
+  const root = document.querySelector<HTMLElement>("[data-auto]")!;
+  const tasks: { key: string; games: GameKey[] }[] = JSON.parse(
+    root.dataset.tasks!,
+  );
+  const feed = root.querySelector<HTMLElement>("[data-feed]")!;
+  const painter = new Painter(root.querySelector("canvas")!, root);
+
+  // Show every task the selected game supports; the rest fold away.
+  function render(game: GameKey) {
+    applyVars(root, worldVars(WORLD[game]));
+    painter.set(game);
+    for (const task of tasks) {
+      const item = feed.querySelector<HTMLElement>(
+        `[data-item="${task.key}"]`,
+      )!;
+      const ok = task.games.includes(game);
+      item.classList.toggle("hide", !ok);
+      if (ok) showVariant(item.querySelector("[data-variants]")!, game);
+    }
+  }
+
+  onGame((g) => render(g ?? "genshin"));
+  render("genshin");
+</script>

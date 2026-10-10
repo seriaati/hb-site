@@ -1,0 +1,113 @@
+---
+// /check-in, recreated from hoyo_buddy/ui/hoyo/checkin.py and draw/funcs/hoyo/checkin.py (dark).
+import Message from "../discord/Message.astro";
+import Embed from "../discord/Embed.astro";
+import Glyph, { type GlyphName } from "../discord/Glyph.astro";
+import type { GameKey } from "../../data/worlds";
+import type { T } from "../../i18n";
+
+interface Props {
+  t: T;
+  game: GameKey;
+}
+
+const { t, game } = Astro.props;
+const authors: Record<GameKey, string> = {
+  genshin: "Traveler (81xxxxx78)",
+  hsr: "Trailblazer (80xxxxx12)",
+  zzz: "Proxy (15xxxxx90)",
+  honkai: "Captain (10xxxxx45)",
+  tot: "Attorney (50xxxxx27)",
+};
+// The three latest claims, a chevron, then the next reward.
+const tiles: {
+  icon: GlyphName;
+  amount: string;
+  day: number;
+  claimed: boolean;
+}[] = [
+  { icon: "gem", amount: "x20", day: 5, claimed: true },
+  { icon: "coin", amount: "x5000", day: 6, claimed: true },
+  { icon: "ore", amount: "x3", day: 7, claimed: true },
+  { icon: "book", amount: "x3", day: 8, claimed: false },
+];
+---
+
+<Message t={t} command="/check-in">
+  <Embed
+    author={authors[game]}
+    game={game}
+    title={t("bot.check_in.title")}
+    description={`${t("bot.check_in.summary", { day: 7 })}\n${t("bot.check_in.missed", { missed: 0 })}`}
+  >
+    <div class="mt-1 flex items-center gap-2 rounded-lg bg-[#1d1f27] p-3">
+      {tiles.map((x, i) => (
+        <>
+          {i === 3 && (
+            <svg
+              class="size-5 shrink-0 text-[#7881b7]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M9 5l7 7-7 7" />
+            </svg>
+          )}
+          <div
+            class:list={[
+              "min-w-0 flex-1 overflow-hidden rounded-md",
+              i < 2 && "opacity-60",
+            ]}
+          >
+            <div class="relative grid aspect-square place-items-center bg-[#282b3b] text-[#e8d9a8]">
+              <Glyph name={x.icon} class="size-[46%]" />
+              {x.claimed && (
+                <span class="absolute inset-0 grid place-items-center bg-black/40">
+                  <svg
+                    class="size-[55%] text-[#88f562]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12.5l4.5 4.5L19 7.5" />
+                  </svg>
+                </span>
+              )}
+            </div>
+            <div class="grid bg-[#1e1717] py-1.5 text-center leading-tight text-white">
+              <span class="text-[13px] font-medium tabular-nums">
+                {x.amount}
+              </span>
+              <span class="text-[10px] opacity-70">#{x.day}</span>
+            </div>
+          </div>
+        </>
+      ))}
+    </div>
+  </Embed>
+  <div class="flex flex-wrap gap-2">
+    <span class="rounded-[4px] bg-[#5865f2] px-4 py-1.5 text-[13px] font-medium text-white">
+      {t("bot.check_in.button")}
+    </span>
+    <span class="flex items-center gap-1.5 rounded-[4px] bg-[#4e5058] px-4 py-1.5 text-[13px] font-medium text-white">
+      {t("bot.check_in.make_up")}
+      <svg
+        class="size-3"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.4"
+        aria-hidden="true"
+      >
+        <path d="M7 17L17 7M9 7h8v8"></path>
+      </svg>
+    </span>
+  </div>
+</Message>
