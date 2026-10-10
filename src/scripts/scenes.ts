@@ -52,6 +52,11 @@ interface SceneState {
   bokeh?: Particle[];
   petals?: Particle[];
   bearing?: number;
+  hexes?: Map<number, Hex>; // HI3 shield cells touched by Honkai energy, by hexKey
+  nextBreach?: number; // seconds until a new breach
+  rift?: Rift | null;
+  nextRift?: number;
+  shards?: Particle[];
 }
 
 const many = (n: number, f: () => Particle) => Array.from({ length: n }, f);
@@ -98,6 +103,14 @@ function seed(game: GameKey, extras: boolean): SceneState {
   if (extras && game === "zzz") {
     st.pop = null;
     st.nextPop = 0;
+  }
+  if (game === "honkai") {
+    st.hexes = new Map();
+    st.nextBreach = R(1, 2.5);
+    if (extras) {
+      st.rift = null;
+      st.shards = [];
+    }
   }
   if (game === "genshin")
     st.p = many(90, () => ({
@@ -343,10 +356,12 @@ function draw(
     ctx.fillStyle = "rgba(255,255,255,.022)";
     for (let y = r.y; y < r.y + r.h; y += 3) ctx.fillRect(r.x, y, r.w, 1);
   } else if (st.game === "honkai") {
-    const rr = 26,
-      hw = Math.sqrt(3) * rr,
+    const rr = HEX_R,
+      hw = HEX_W,
       cx = r.x + r.w / 2,
       cy = r.y + r.h / 2;
+    if (st.extras) drawRift(ctx, st, r, t, dt);
+    if (dt) breaches(st, r, dt, m);
     ctx.lineWidth = 1;
     for (
       let row = 0, y = r.y - rr;
@@ -354,30 +369,56 @@ function draw(
       row++, y += rr * 1.5
     )
       for (
-        let x = r.x + ((row % 2) * hw) / 2 - hw;
+        let col = 0, x = r.x + ((row % 2) * hw) / 2 - hw;
         x < r.x + r.w + hw;
-        x += hw
+        col++, x += hw
       ) {
         const near = Math.max(0, 1 - Math.hypot(x - px, y - py) / 220);
         const wave =
           Math.max(0, Math.sin(Math.hypot(x - cx, y - cy) * 0.012 - t * 1.2)) *
           0.06;
-        ctx.beginPath();
-        for (let i = 0; i < 6; i++) {
-          const a = (Math.PI / 3) * i + Math.PI / 6;
-          const hx = x + rr * 0.94 * Math.cos(a),
-            hy = y + rr * 0.94 * Math.sin(a);
-          if (i) ctx.lineTo(hx, hy);
-          else ctx.moveTo(hx, hy);
-        }
-        ctx.closePath();
+        const h = st.hexes!.get(hexKey(row, col));
+        hexPath(ctx, x, y);
         if (near > 0) {
           ctx.fillStyle = `rgba(115,151,255,${near * 0.16})`;
           ctx.fill();
         }
-        ctx.strokeStyle = `rgba(160,185,240,${0.07 + near * 0.4 + wave})`;
+        if (!h) {
+          ctx.strokeStyle = `rgba(160,185,240,${0.07 + near * 0.4 + wave})`;
+          ctx.stroke();
+          continue;
+        }
+        if (h.c > 0) {
+          ctx.fillStyle = `rgba(196,62,170,${0.13 * h.c * (0.75 + 0.25 * Math.sin(t * 6 + h.ph))})`;
+          ctx.fill();
+        }
+        if (h.seal > 0) {
+          ctx.fillStyle = `rgba(140,175,255,${0.28 * h.seal})`;
+          ctx.fill();
+        }
+        ctx.strokeStyle =
+          h.c > 0.05
+            ? `rgba(240,110,190,${0.12 + 0.5 * h.c})`
+            : `rgba(160,185,240,${Math.min(1, 0.07 + near * 0.4 + wave + h.seal * 0.6)})`;
         ctx.stroke();
+        if (h.c > 0.05) {
+          ctx.beginPath();
+          for (const [ax, ay, bx, by, ex, ey] of h.cracks) {
+            ctx.moveTo(x + ax, y + ay);
+            ctx.lineTo(x + bx, y + by);
+            ctx.lineTo(x + ex, y + ey);
+          }
+          ctx.strokeStyle = `rgba(255,150,215,${0.6 * h.c * (0.6 + 0.4 * Math.sin(t * 9 + h.ph * 3))})`;
+          ctx.stroke();
+        }
+        if (h.heal > 0) {
+          // The repair rebuilds the cell from the middle out.
+          hexPath(ctx, x, y, 0.35 + 0.6 * (1 - h.heal));
+          ctx.strokeStyle = `rgba(200,220,255,${0.7 * h.heal})`;
+          ctx.stroke();
+        }
       }
+    if (st.extras) drawShards(ctx, st, r, dt, m);
   } else if (st.game === "tot") {
     const D = Math.hypot(r.w, r.h) * 0.5;
     for (const p of st.bokeh!) {
@@ -939,6 +980,418 @@ function drawBangboo(
  * Full-bleed painter that crossfades between worlds.
  * Runs only while its canvas is on screen and the tab is visible.
  */
+// Hyperion's hex shield. Honkai energy breaks through it: breaches crack a hex and creep to
+// its neighbors until they fade or the cursor repairs them. In the hero, a rift now and then
+// tears open, sheds crystal shards and seeds breaches, until the shield closes over it.
+const HEX_R = 26,
+  HEX_W = Math.sqrt(3) * HEX_R,
+  HEX_PTS = Array.from({ length: 6 }, (_, i) => {
+    const a = (Math.PI / 3) * i + Math.PI / 6;
+    return [HEX_R * 0.94 * Math.cos(a), HEX_R * 0.94 * Math.sin(a)];
+  }),
+  // Neighbor [col, row] offsets for even and odd rows (odd rows sit half a hex right).
+  HEX_NEAR = [
+    [
+      [-1, 0],
+      [1, 0],
+      [-1, -1],
+      [0, -1],
+      [-1, 1],
+      [0, 1],
+    ],
+    [
+      [-1, 0],
+      [1, 0],
+      [0, -1],
+      [1, -1],
+      [0, 1],
+      [1, 1],
+    ],
+  ];
+const hexKey = (row: number, col: number) => row * 4096 + col;
+const hexAt = (r: Rect, row: number, col: number): [number, number] => [
+  r.x + ((row % 2) * HEX_W) / 2 - HEX_W + col * HEX_W,
+  r.y - HEX_R + row * HEX_R * 1.5,
+];
+const hexNear = (r: Rect, x: number, y: number): [number, number] => {
+  const row = Math.max(0, Math.round((y - r.y + HEX_R) / (HEX_R * 1.5)));
+  return [
+    row,
+    Math.max(
+      0,
+      Math.round((x - r.x + HEX_W - ((row % 2) * HEX_W) / 2) / HEX_W),
+    ),
+  ];
+};
+
+function hexPath(ctx: CanvasRenderingContext2D, x: number, y: number, s = 1) {
+  ctx.beginPath();
+  HEX_PTS.forEach(([hx, hy], i) =>
+    i ? ctx.lineTo(x + hx * s, y + hy * s) : ctx.moveTo(x + hx * s, y + hy * s),
+  );
+  ctx.closePath();
+}
+
+interface Hex {
+  c: number; // corruption, 0 to 1
+  grow: boolean; // still spreading; off once it fades out or is repaired
+  age: number;
+  heal: number; // flash as the cursor repairs it
+  seal: number; // flash as the shield closes over a rift
+  ph: number;
+  cracks: number[][]; // [start, bend, vertex] points, from the hex's center
+}
+
+const hexOf = (st: SceneState, row: number, col: number) => {
+  const k = hexKey(row, col);
+  let h = st.hexes!.get(k);
+  if (!h) {
+    h = {
+      c: 0,
+      grow: false,
+      age: 0,
+      heal: 0,
+      seal: 0,
+      ph: R(0, TAU),
+      cracks: [],
+    };
+    st.hexes!.set(k, h);
+  }
+  return h;
+};
+
+// Breaches stay inside the canvas and off the page's content.
+function hexFree(st: SceneState, r: Rect, row: number, col: number) {
+  const [x, y] = hexAt(r, row, col);
+  if (x < r.x || x > r.x + r.w || y < r.y || y > r.y + r.h) return false;
+  if ((st.hexes!.get(hexKey(row, col))?.c ?? 0) > 0) return false;
+  return !(st.avoid?.() ?? []).some(
+    (c) =>
+      x > c.x - 30 && x < c.x + c.w + 30 && y > c.y - 30 && y < c.y + c.h + 30,
+  );
+}
+
+function corrupt(st: SceneState, row: number, col: number) {
+  const h = hexOf(st, row, col),
+    sx = R(-6, 6),
+    sy = R(-6, 6);
+  h.grow = true;
+  h.age = 0;
+  h.cracks = [0, 1, 2, 3, 4, 5]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 2 + Math.floor(R(0, 2)))
+    .map((v) => {
+      const [hx, hy] = HEX_PTS[v];
+      return [
+        sx,
+        sy,
+        (sx + hx) / 2 + R(-5, 5),
+        (sy + hy) / 2 + R(-5, 5),
+        hx,
+        hy,
+      ];
+    });
+}
+
+function breaches(st: SceneState, r: Rect, dt: number, m: Pointer) {
+  const hexes = st.hexes!,
+    cap = (r.w / HEX_W) * (r.h / (HEX_R * 1.5)) * 0.05;
+  let n = 0;
+  for (const h of hexes.values()) if (h.c > 0) n++;
+  st.nextBreach! -= dt;
+  if (st.nextBreach! <= 0) {
+    st.nextBreach = R(2.5, 5);
+    for (let i = 0; i < 12 && n < cap; i++) {
+      const [row, col] = hexNear(r, R(r.x, r.x + r.w), R(r.y, r.y + r.h));
+      if (hexFree(st, r, row, col)) {
+        corrupt(st, row, col);
+        n++;
+        break;
+      }
+    }
+  }
+  for (const [k, h] of hexes) {
+    const row = Math.floor(k / 4096),
+      col = k % 4096;
+    if (h.grow) {
+      h.age += dt;
+      h.c = Math.min(1, h.c + dt * 0.4);
+      if (h.c > 0.7 && h.age < 8 && n < cap && Math.random() < dt * 0.22) {
+        const [dc, dr] = HEX_NEAR[row % 2][Math.floor(R(0, 6))];
+        if (hexFree(st, r, row + dr, col + dc)) {
+          corrupt(st, row + dr, col + dc);
+          n++;
+        }
+      }
+      if (h.age > 16) h.grow = false;
+    } else if (h.c > 0) h.c = Math.max(0, h.c - dt * 0.12);
+    if (m.live && h.c > 0) {
+      const [x, y] = hexAt(r, row, col),
+        d = Math.hypot(x - m.x, y - m.y);
+      if (d < 120) {
+        h.grow = false;
+        h.c = Math.max(0, h.c - dt * 2.4 * (1.2 - d / 120));
+        h.heal = Math.min(1, h.heal + dt * 6);
+      }
+    }
+    h.heal = Math.max(0, h.heal - dt * 1.4);
+    h.seal = Math.max(0, h.seal - dt * 0.7);
+    if (!h.grow && !h.c && !h.heal && !h.seal) hexes.delete(k);
+  }
+}
+
+interface Rift {
+  x: number; // center
+  y: number;
+  len: number;
+  a: number; // angle
+  t0: number;
+  pts: Particle[]; // along the tear: s (0 to 1), j (sideways jitter), wu/wd (edge widths)
+  emit: number; // shards owed
+  seedAt: number; // when it next starts a breach nearby
+  sealed: Set<number>;
+}
+// Seconds into a rift's life: torn, wide open, starts sealing, sealed.
+const TORN = 1.1,
+  WIDE = 2.4,
+  HOLD = 6.6,
+  SEALED = 8.6;
+
+function openRift(st: SceneState, r: Rect, t: number) {
+  const clear = st.avoid?.() ?? [];
+  for (let i = 0; i < 30; i++) {
+    const len = R(150, 230),
+      x = R(r.x + len * 0.6, r.x + r.w - len * 0.6),
+      y = R(r.y + len * 0.5 + 40, r.y + r.h - len * 0.5);
+    const pad = len * 0.6;
+    if (
+      clear.some(
+        (c) =>
+          x > c.x - pad &&
+          x < c.x + c.w + pad &&
+          y > c.y - pad &&
+          y < c.y + c.h + pad,
+      )
+    )
+      continue;
+    st.rift = {
+      x,
+      y,
+      len,
+      a: R(-0.7, 0.7) + (Math.random() < 0.3 ? Math.PI / 2 : 0),
+      t0: t,
+      pts: Array.from({ length: 17 }, (_, i) => ({
+        s: i / 16,
+        j: R(-1, 1) * 9 * Math.sin((Math.PI * i) / 16),
+        wu: R(0.6, 1.15),
+        wd: R(0.6, 1.15),
+      })),
+      emit: 0,
+      seedAt: t + WIDE,
+      sealed: new Set(),
+    };
+    return;
+  }
+  st.nextRift = t + 4; // no room right now
+}
+
+function drawRift(
+  ctx: CanvasRenderingContext2D,
+  st: SceneState,
+  r: Rect,
+  t: number,
+  dt: number,
+) {
+  const rf = st.rift;
+  if (!rf) {
+    st.nextRift ??= t + R(3, 5);
+    if (dt && t >= st.nextRift) openRift(st, r, t);
+    return;
+  }
+  const e = t - rf.t0;
+  if (e > SEALED + 0.3) {
+    st.rift = null;
+    st.nextRift = t + R(10, 16);
+    return;
+  }
+  const ease = (k: number) => {
+      k = Math.max(0, Math.min(1, k));
+      return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+    },
+    dir = [Math.cos(rf.a), Math.sin(rf.a)],
+    nx = -dir[1],
+    ny = dir[0];
+
+  if (e > WIDE && e < HOLD) {
+    rf.emit += dt * 7;
+    for (; rf.emit >= 1; rf.emit--) {
+      const s = R(-0.35, 0.35),
+        side = Math.random() < 0.5 ? 1 : -1,
+        sp = R(12, 34);
+      st.shards!.push({
+        u: (rf.x + dir[0] * s * rf.len - r.x) / r.w,
+        v: (rf.y + dir[1] * s * rf.len - r.y) / r.h,
+        vx: nx * side * sp + R(-8, 8),
+        vy: ny * side * sp + R(-8, 8),
+        rot: R(0, TAU),
+        vr: R(-1.5, 1.5),
+        s: R(2.5, 6),
+        life: R(3.5, 6),
+        age: 0,
+      });
+    }
+    // The open rift spills breaches into the shield around it.
+    if (t >= rf.seedAt) {
+      rf.seedAt = t + 0.7;
+      const a = R(0, TAU),
+        d = R(0.2, 0.85) * rf.len;
+      const [row, col] = hexNear(
+        r,
+        rf.x + Math.cos(a) * d,
+        rf.y + Math.sin(a) * d,
+      );
+      if (hexFree(st, r, row, col)) corrupt(st, row, col);
+    }
+  }
+  if (e > HOLD) {
+    // The shield closes over the rift from the outside in.
+    const k = (e - HOLD) / (SEALED - HOLD),
+      reach = rf.len * 0.62 + HEX_R,
+      [r0, c0] = hexNear(r, rf.x - reach, rf.y - reach),
+      [r1, c1] = hexNear(r, rf.x + reach, rf.y + reach);
+    for (let row = r0; row <= r1; row++)
+      for (let col = c0 - 1; col <= c1 + 1; col++) {
+        const key = hexKey(row, col),
+          [x, y] = hexAt(r, row, col),
+          d = Math.hypot(x - rf.x, y - rf.y);
+        if (d > reach || rf.sealed.has(key) || k * 1.25 < 1 - d / reach)
+          continue;
+        rf.sealed.add(key);
+        const h = hexOf(st, row, col);
+        h.seal = 1;
+        h.c = 0;
+        h.grow = false;
+      }
+  }
+
+  const grow = 1 - Math.pow(1 - Math.min(1, e / TORN), 3);
+  let open = ease((e - TORN) / (WIDE - TORN));
+  if (e > HOLD) open *= 1 - ease(((e - HOLD) / (SEALED - HOLD)) * 1.15);
+  const breathe = 1 + 0.06 * Math.sin(t * 2.2),
+    mid: number[][] = [],
+    up: number[][] = [],
+    down: number[][] = [];
+  for (const p of rf.pts) {
+    const s = (p.s - 0.5) * grow,
+      bx = rf.x + dir[0] * s * rf.len + nx * p.j,
+      by = rf.y + dir[1] * s * rf.len + ny * p.j,
+      w =
+        rf.len * 0.1 * Math.pow(Math.sin(Math.PI * p.s), 0.9) * open * breathe;
+    mid.push([bx, by]);
+    up.push([bx + nx * w * p.wu, by + ny * w * p.wu]);
+    down.push([bx - nx * w * p.wd, by - ny * w * p.wd]);
+  }
+
+  ctx.save();
+  if (e > SEALED) ctx.globalAlpha *= Math.max(0, 1 - (e - SEALED) / 0.3);
+  const glow = rf.len * 0.75,
+    ga = 0.16 * Math.max(open, grow * 0.35),
+    bloom = ctx.createRadialGradient(rf.x, rf.y, 0, rf.x, rf.y, glow);
+  bloom.addColorStop(0, `rgba(224,90,184,${ga})`);
+  bloom.addColorStop(0.5, `rgba(150,70,210,${ga * 0.4})`);
+  bloom.addColorStop(1, "rgba(150,70,210,0)");
+  ctx.fillStyle = bloom;
+  ctx.fillRect(rf.x - glow, rf.y - glow, glow * 2, glow * 2);
+
+  if (open > 0.01) {
+    ctx.beginPath();
+    up.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+    for (let i = down.length - 1; i >= 0; i--)
+      ctx.lineTo(down[i][0], down[i][1]);
+    ctx.closePath();
+    const inside = ctx.createRadialGradient(
+      rf.x,
+      rf.y,
+      0,
+      rf.x,
+      rf.y,
+      rf.len * 0.5,
+    );
+    inside.addColorStop(0, "#28082e");
+    inside.addColorStop(0.6, "#0e0416");
+    inside.addColorStop(1, "#3c0e46");
+    ctx.fillStyle = inside;
+    ctx.fill();
+    // Motes drifting in the void behind the tear.
+    ctx.save();
+    ctx.clip();
+    for (let i = 0; i < 14; i++) {
+      const u = ((i * 0.618 + t * 0.03 * (1 + (i % 3))) % 1) - 0.5;
+      ctx.fillStyle = `rgba(255,170,230,${0.35 + 0.35 * Math.sin(t * 3 + i)})`;
+      ctx.fillRect(
+        rf.x + dir[0] * u * rf.len,
+        rf.y + dir[1] * u * rf.len + Math.sin(i * 3.1 + t) * 4,
+        1.5,
+        1.5,
+      );
+    }
+    ctx.restore();
+    ctx.shadowColor = "rgba(224,90,184,.9)";
+    ctx.shadowBlur = 16;
+    ctx.strokeStyle = `rgba(255,140,205,${0.55 + 0.35 * open})`;
+    ctx.lineWidth = 1.6;
+    ctx.stroke();
+  }
+  // The seam: the crack as it tears, then the rift's bright core.
+  ctx.beginPath();
+  mid.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+  ctx.strokeStyle = `rgba(255,200,235,${0.9 * (1 - open * 0.6)})`;
+  ctx.lineWidth = 1.2;
+  ctx.shadowColor = "rgba(224,90,184,1)";
+  ctx.shadowBlur = 12;
+  ctx.stroke();
+  ctx.restore();
+}
+
+// Crystal shards drift out of the rift; the cursor scatters them like the other worlds' motes.
+function drawShards(
+  ctx: CanvasRenderingContext2D,
+  st: SceneState,
+  r: Rect,
+  dt: number,
+  m: Pointer,
+) {
+  const drag = Math.exp(-dt * 0.15);
+  ctx.lineWidth = 0.8;
+  for (const p of st.shards!) {
+    p.vx *= drag;
+    p.vy *= drag;
+    p.u += (p.vx * dt) / r.w;
+    p.v += (p.vy * dt) / r.h;
+    const X = r.x + p.u * r.w,
+      Y = r.y + p.v * r.h;
+    shove(p, X, Y, m, r, dt, 100, 1.2);
+    p.rot += (p.vr + (p.kx ?? 0) / 80) * dt;
+    p.age += dt;
+    const a = Math.min(1, p.age / 0.3, p.life - p.age);
+    ctx.save();
+    ctx.translate(X, Y);
+    ctx.rotate(p.rot);
+    ctx.beginPath();
+    ctx.moveTo(p.s * 1.6, 0);
+    ctx.lineTo(0, p.s * 0.55);
+    ctx.lineTo(-p.s, 0);
+    ctx.lineTo(0, -p.s * 0.55);
+    ctx.closePath();
+    ctx.fillStyle = `rgba(214,100,200,${0.5 * a})`;
+    ctx.fill();
+    ctx.strokeStyle = `rgba(255,190,230,${0.7 * a})`;
+    ctx.stroke();
+    ctx.restore();
+  }
+  st.shards = st.shards!.filter((p) => p.age < p.life);
+}
+
 export class Painter {
   private ctx: CanvasRenderingContext2D;
   private scenes: Partial<Record<GameKey, SceneState>> = {};

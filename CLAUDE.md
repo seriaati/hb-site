@@ -24,7 +24,8 @@ bun run format    # prettier (astro + tailwind plugins)
 - Interactions are click-driven. Hover only previews.
 - **No layout shift**: content that changes per game or command is pre-rendered as variants stacked in one grid cell (`.stack` with `[data-v]` children, toggled by `showVariant`). The slot is always as tall as its tallest variant.
 - Canvas painters run only while on screen and respect `prefers-reduced-motion`.
-- The hero's painter also draws set pieces (`new Painter(canvas, host, true, avoid)`): a Seelie in Teyvat that leads the cursor to a chest, the Astral Express crossing Star Rail's sky, and bangboo silhouettes peeking into ZZZ's TVs. The Seelie and bangboos stay clear of the elements `avoid` returns.
+- HI3's hex shield gets Honkai breaches in every section: cracked magenta hexes that spread, fade, and are repaired under the cursor.
+- The hero's painter also draws set pieces (`new Painter(canvas, host, true, avoid)`): a Seelie in Teyvat that leads the cursor to a chest, the Astral Express crossing Star Rail's sky, bangboo silhouettes peeking into ZZZ's TVs, and Honkai rifts tearing through Hyperion's hex shield until it seals them. The Seelie, bangboos and rifts stay clear of the elements `avoid` returns.
 
 ## Structure
 
