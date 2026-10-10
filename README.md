@@ -1,7 +1,11 @@
 # hb-site
 
-This is the repo for [Hoyo Buddy](https://hb.seria.moe)'s official website.
+The official website for [Hoyo Buddy](https://hb.seria.moe), built with [Astro](https://astro.build) and Tailwind CSS.
 
-It was made using a free website template, but I cannot find anymore.
+```bash
+npm install
+npm run dev     # http://localhost:4321
+npm run build   # static output in dist/
+```
 
-It was later on modified to support features like language switching and easier translating.
+Translations live in `locales/*.yml` and are managed on Transifex. `locales/en.yml` is the source.

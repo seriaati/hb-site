@@ -4,67 +4,43 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a multilingual static website for Hoyo Buddy, a Discord bot for Hoyoverse gamers. The site is built with HTML, TailwindCSS, and JavaScript, featuring internationalization support for English, Vietnamese, and Traditional Chinese.
+The marketing site for Hoyo Buddy, a Discord app for Hoyoverse players. It is built with **Astro 7** and **Tailwind CSS v4**, renders one pre-built page per language, and is deployed on Cloudflare Pages (build `npm run build`, output `dist`).
 
-## Development Commands
+## Commands
 
-### Build CSS
 ```bash
-npm run build-css
+npm run dev       # dev server at http://localhost:4321
+npm run build     # static build into dist/
+npm run preview   # serve dist/
+npm run check     # astro check (TypeScript + templates)
+npm run format    # prettier (astro + tailwind plugins)
 ```
-This watches for changes and builds TailwindCSS from `src/tailwind.css` to `assets/css/tailwind.css`.
 
-### Code Formatting
-```bash
-npx prettier --write .
-```
-Uses Prettier with TailwindCSS plugin for consistent code formatting.
+## Design language ("Converge")
 
-## Architecture
+- The neutral page is light (or dark via `prefers-color-scheme`) and uses Funnel Display, Funnel Sans and Geist Mono. Tokens live in `src/styles/global.css` (`--bg`, `--fg`, `--mute`, `--accent`, `--line`, `--surface`). Tailwind exposes them as `bg-bg`, `text-mute`, and so on.
+- Each game has a **world** (`src/data/worlds.ts`): a palette, a typeface, a place name, and an ambient canvas motif (`src/scripts/scenes.ts`). An element becomes a world through `applyVars(el, worldVars(world))`.
+- The selected game is shared page-wide (`src/scripts/game.ts`: `setGame`/`onGame`). The hero emblems and every `GamePicker` stay in sync.
+- Interactions are click-driven. Hover only previews.
+- **No layout shift**: content that changes per game or command is pre-rendered as variants stacked in one grid cell (`.stack` with `[data-v]` children, toggled by `showVariant`). The slot is always as tall as its tallest variant.
+- Canvas painters run only while on screen and respect `prefers-reduced-motion`.
+- The hero's painter also draws set pieces (`new Painter(canvas, host, true, avoid)`): a Seelie in Teyvat that leads the cursor to a chest, the Astral Express crossing Star Rail's sky, and bangboo silhouettes peeking into ZZZ's TVs. The Seelie and bangboos stay clear of the elements `avoid` returns.
 
-### File Structure
-- `index.html` - Main landing page with internationalization attributes
-- `assets/js/` - JavaScript modules for functionality
-  - `main.js` - Core UI interactions (sticky header, navbar, theme switching)
-  - `localization.js` - I18n system with YAML parsing and DOM updates
-  - `language-selector.js` - Floating language selector component
-- `locales/` - Translation files (en.yml, vi.yml, zh-tw.yml)
-- `assets/css/` - Stylesheets including compiled TailwindCSS
-- `assets/images/` - Static assets organized by page sections
+## Structure
 
-### Internationalization System
-The site uses a custom i18n system:
-- Translation keys are stored in YAML files under `locales/`
-- DOM elements use `data-i18n` attributes for translation targets
-- Language preference is persisted in localStorage
-- Supports nested translation keys (e.g., `navbar.home`)
+- `src/pages/index.astro` (English) and `src/pages/[lang]/index.astro` (other locales) both render `src/components/Home.astro`.
+- The sections are, in order: `Hero` (Converge: emblems merge into the mark, then clicking one enters that world), `Commands` (pick a game and a command to see the real reply), `Reminders` (24-hour timeline of reminder DMs), `AutoTasks` (the overnight DMs from each auto task the game supports), `OpenSource`, `Faq`, and `Footer`.
+- `src/components/discord/` holds the Discord message and embed chrome. `src/components/replies/` holds the bot replies, recreated from the bot's source (hoyo_buddy/draw, ui, auto_tasks). Keep labels, layout and colors faithful to the bot.
+- `src/assets/cards/` holds the bot's default build-card template previews, optimized at build time by `astro:assets`.
+- `src/assets/notes/` holds real `/notes` images from the bot (GI, HSR, ZZZ); the embed text above each one matches its numbers.
+- Every image is stored locally (`src/assets/` for optimized images, `public/` for the favicon, team avatars and `og.png`). Don't hotlink.
+- `src/assets/games/` holds the game icons the bot uses (from hb-app). `src/assets/items/` holds the stamina and currency icons from the bot's `icons.py` and emojis.
+- `src/pages/sitemap.xml.ts` generates the sitemap. `public/_redirects` handles the Cloudflare redirects from the old `index-*.html` URLs.
 
-### JavaScript Architecture
-- No build system or bundler - vanilla JavaScript with ES6 classes
-- Modular design with separate concerns (UI, i18n, language selection)
-- Event-driven architecture with DOM event listeners
-- Theme-aware components that respond to dark/light mode changes
+## Internationalization
 
-### TailwindCSS Configuration
-- Custom color palette with dark theme support
-- Extended breakpoints and shadows
-- Content scanning includes HTML files and JavaScript assets
-- Uses PostCSS for processing
-
-## Development Notes
-
-### Adding New Languages
-1. Create new YAML file in `locales/` directory
-2. Add language option to `LanguageSelector` class in `language-selector.js`
-3. Update HTML lang attribute switching logic if needed
-
-### Styling Guidelines
-- Uses TailwindCSS utility classes exclusively
-- Custom colors defined in `tailwind.config.js`
-- Responsive design with custom breakpoints
-- Dark mode support via `dark:` prefixes
-
-### Image Assets
-- Logo variants for light/dark themes in `assets/images/logo/`
-- Section-specific images organized by purpose
-- Favicon and meta image assets included
+- `locales/*.yml` is the source of truth and is synced with Transifex (`transifex.yml`). `en.yml` is the source file. Edit only `en.yml` by hand; Transifex writes the other files.
+- `src/i18n/index.ts` loads the YAML at build time. `useTranslations(code)` returns `t(key, vars)`, and missing or empty keys fall back to English. `LOCALES` lists the URL code, `<html lang>` and picker label for each language.
+- To add a language: add its YAML file (via Transifex) and an entry in `LOCALES`.
+- Strings rendered by client scripts are passed in through `data-*` JSON attributes.
+- World place names and game titles are localized under the `worlds` dictionary in `locales/*.yml`.
