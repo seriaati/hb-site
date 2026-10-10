@@ -4,16 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-The marketing site for Hoyo Buddy, a Discord app for Hoyoverse players. It is built with **Astro 7** and **Tailwind CSS v4**, renders one pre-built page per language, and is deployed on Cloudflare Pages (build `npm run build`, output `dist`).
+The marketing site for Hoyo Buddy, a Discord app for Hoyoverse players. It is built with **Astro 7** and **Tailwind CSS v4**, renders one pre-built page per language, and is deployed on Cloudflare Pages (build `bun run build`, output `dist`).
 
 ## Commands
 
 ```bash
-npm run dev       # dev server at http://localhost:4321
-npm run build     # static build into dist/
-npm run preview   # serve dist/
-npm run check     # astro check (TypeScript + templates)
-npm run format    # prettier (astro + tailwind plugins)
+bun run dev       # dev server at http://localhost:4321
+bun run build     # static build into dist/
+bun run preview   # serve dist/
+bun run check     # astro check (TypeScript + templates)
+bun run format    # prettier (astro + tailwind plugins)
 ```
 
 ## Design language ("Converge")
