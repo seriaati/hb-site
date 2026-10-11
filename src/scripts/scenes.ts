@@ -16,7 +16,7 @@ export interface Pointer {
   y: number;
   vx: number; // px/s
   vy: number;
-  live: boolean; // a real mouse is over the canvas (not the idle wander)
+  live: boolean; // a real mouse is over the canvas, or a tap just landed (not the idle wander)
 }
 
 interface Rect {
@@ -1427,6 +1427,7 @@ export class Painter {
     live: false,
   };
   private moved = 0;
+  private tap: { x: number; y: number; until: number } | null = null;
   private raf = 0;
   private last = 0;
   private visible = false;
@@ -1440,6 +1441,7 @@ export class Painter {
   ) {
     this.ctx = canvas.getContext("2d")!;
     host.addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return;
       const r = canvas.getBoundingClientRect(),
         x = e.clientX - r.left,
         y = e.clientY - r.top,
@@ -1451,12 +1453,24 @@ export class Painter {
       }
       m.x = x;
       m.y = y;
-      m.live = e.pointerType === "mouse";
+      m.live = true;
+      this.tap = null;
       this.moved = e.timeStamp;
     });
-    host.addEventListener("pointerleave", () => {
+    host.addEventListener("pointerleave", (e) => {
+      if (e.pointerType !== "mouse") return;
       this.m.live = false;
       this.m.vx = this.m.vy = 0;
+    });
+    // On touch screens a tap stands in for the hovering mouse for a few seconds.
+    // A scroll ends in pointercancel, so it doesn't count.
+    host.addEventListener("pointerup", (e) => {
+      if (e.pointerType === "mouse") return;
+      const r = canvas.getBoundingClientRect(),
+        x = e.clientX - r.left,
+        y = e.clientY - r.top;
+      Object.assign(this.m, { x, y, vx: 0, vy: 0, live: true });
+      this.tap = { x, y, until: performance.now() + 3000 };
     });
     new ResizeObserver(() => {
       this.size();
@@ -1528,9 +1542,18 @@ export class Painter {
   private frame(now: number, dt: number) {
     const t = now / 1000,
       { ctx, w, h, m } = this;
+    const tap = this.tap;
+    if (tap && now > tap.until) m.live = false;
     if (!m.live) {
       m.x = w * (0.5 + 0.3 * Math.sin(t * 0.23));
       m.y = h * (0.5 + 0.28 * Math.sin(t * 0.31));
+      if (tap) {
+        // After a tap, the wander picks up from where the finger was.
+        const k = Math.min(1, (now - tap.until) / 1200);
+        m.x = tap.x + (m.x - tap.x) * k;
+        m.y = tap.y + (m.y - tap.y) * k;
+        if (k === 1) this.tap = null;
+      }
     }
     // The cursor's speed fades once it stops moving.
     const still = Math.exp(-dt * 14);
