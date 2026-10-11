@@ -62,6 +62,38 @@ interface SceneState {
 
 const many = (n: number, f: () => Particle) => Array.from({ length: n }, f);
 
+// How fast the device is turning, in screen axes (deg/s). Tilting an edge down slides the
+// particles toward it.
+const tilt = { x: 0, y: 0 };
+let tilting = false;
+
+// iOS asks for permission, which only a tap can request; elsewhere it starts right away.
+function listenTilt(tap: boolean) {
+  if (tilting || typeof DeviceMotionEvent === "undefined") return;
+  const motion = DeviceMotionEvent as unknown as {
+    requestPermission?: () => Promise<string>;
+  };
+  if (motion.requestPermission && !tap) return;
+  tilting = true;
+  const on = () =>
+    addEventListener("devicemotion", (e) => {
+      const rate = e.rotationRate,
+        a = ((screen.orientation?.angle ?? 0) * Math.PI) / 180,
+        // A hand's tremor doesn't count.
+        dz = (v: number | null | undefined) => (v && Math.abs(v) > 10 ? v : 0),
+        x = dz(rate?.gamma),
+        y = dz(rate?.beta);
+      tilt.x = x * Math.cos(a) + y * Math.sin(a);
+      tilt.y = y * Math.cos(a) - x * Math.sin(a);
+    });
+  if (motion.requestPermission)
+    motion
+      .requestPermission()
+      .then((s) => s === "granted" && on())
+      .catch(() => {});
+  else on();
+}
+
 // A moving cursor shoves particles the way it travels, like a hand through sand.
 // They keep the push and coast to a stop instead of springing back.
 function shove(
@@ -85,6 +117,12 @@ function shove(
       p.kx = (p.kx ?? 0) + (m.vx * 0.7 + (dx / n) * sp * 0.45) * f;
       p.ky = (p.ky ?? 0) + (m.vy * 0.7 + (dy / n) * sp * 0.45) * f;
     }
+  }
+  // Turning the device shoves every particle, lighter ones further.
+  if (tilt.x || tilt.y) {
+    const f = (dt * 6) / weight;
+    p.kx = (p.kx ?? 0) + tilt.x * f;
+    p.ky = (p.ky ?? 0) + tilt.y * f;
   }
   if (!p.kx && !p.ky) return;
   const k = Math.exp(-dt * 2.6);
@@ -1466,12 +1504,14 @@ export class Painter {
     // A scroll ends in pointercancel, so it doesn't count.
     host.addEventListener("pointerup", (e) => {
       if (e.pointerType === "mouse") return;
+      listenTilt(true);
       const r = canvas.getBoundingClientRect(),
         x = e.clientX - r.left,
         y = e.clientY - r.top;
       Object.assign(this.m, { x, y, vx: 0, vy: 0, live: true });
       this.tap = { x, y, until: performance.now() + 3000 };
     });
+    listenTilt(false);
     new ResizeObserver(() => {
       this.size();
       this.paintOnce();
