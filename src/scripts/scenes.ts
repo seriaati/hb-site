@@ -16,7 +16,7 @@ export interface Pointer {
   y: number;
   vx: number; // px/s
   vy: number;
-  live: boolean; // a real mouse is over the canvas, or a tap just landed (not the idle wander)
+  live: boolean; // a real mouse is over the canvas (not the idle wander)
 }
 
 interface Rect {
@@ -52,7 +52,6 @@ interface SceneState {
   bokeh?: Particle[];
   petals?: Particle[];
   bearing?: number;
-  ticks?: { r: number; d: number; img: HTMLCanvasElement };
   hexes?: Map<number, Hex>; // HI3 shield cells touched by Honkai energy, by hexKey
   nextBreach?: number; // seconds until a new breach
   rift?: Rift | null;
@@ -61,38 +60,6 @@ interface SceneState {
 }
 
 const many = (n: number, f: () => Particle) => Array.from({ length: n }, f);
-
-// How fast the device is turning, in screen axes (deg/s). Tilting an edge down slides the
-// particles toward it.
-const tilt = { x: 0, y: 0 };
-let tilting = false;
-
-// iOS asks for permission, which only a tap can request; elsewhere it starts right away.
-function listenTilt(tap: boolean) {
-  if (tilting || typeof DeviceMotionEvent === "undefined") return;
-  const motion = DeviceMotionEvent as unknown as {
-    requestPermission?: () => Promise<string>;
-  };
-  if (motion.requestPermission && !tap) return;
-  tilting = true;
-  const on = () =>
-    addEventListener("devicemotion", (e) => {
-      const rate = e.rotationRate,
-        a = ((screen.orientation?.angle ?? 0) * Math.PI) / 180,
-        // A hand's tremor doesn't count.
-        dz = (v: number | null | undefined) => (v && Math.abs(v) > 10 ? v : 0),
-        x = dz(rate?.gamma),
-        y = dz(rate?.beta);
-      tilt.x = x * Math.cos(a) + y * Math.sin(a);
-      tilt.y = y * Math.cos(a) - x * Math.sin(a);
-    });
-  if (motion.requestPermission)
-    motion
-      .requestPermission()
-      .then((s) => s === "granted" && on())
-      .catch(() => {});
-  else on();
-}
 
 // A moving cursor shoves particles the way it travels, like a hand through sand.
 // They keep the push and coast to a stop instead of springing back.
@@ -117,12 +84,6 @@ function shove(
       p.kx = (p.kx ?? 0) + (m.vx * 0.7 + (dx / n) * sp * 0.45) * f;
       p.ky = (p.ky ?? 0) + (m.vy * 0.7 + (dy / n) * sp * 0.45) * f;
     }
-  }
-  // Turning the device shoves every particle, lighter ones further.
-  if (tilt.x || tilt.y) {
-    const f = (dt * 6) / weight;
-    p.kx = (p.kx ?? 0) + tilt.x * f;
-    p.ky = (p.ky ?? 0) + tilt.y * f;
   }
   if (!p.kx && !p.ky) return;
   const k = Math.exp(-dt * 2.6);
@@ -261,13 +222,19 @@ function draw(
       ctx.arc(cx, cy, rr, 0, TAU);
       ctx.stroke();
     }
-    const ticks = tickRing(st, rings[1], ctx.getTransform().a),
-      half = ticks.width / ctx.getTransform().a / 2;
-    ctx.save();
-    ctx.translate(cx, cy);
-    ctx.rotate(t * 0.025);
-    ctx.drawImage(ticks, -half, -half, half * 2, half * 2);
-    ctx.restore();
+    const n = 120,
+      rot = t * 0.025;
+    ctx.strokeStyle = "rgba(227,194,126,.3)";
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const a = rot + (i / n) * TAU,
+        l = i % 10 ? 4 : 11,
+        c = Math.cos(a),
+        s = Math.sin(a);
+      ctx.moveTo(cx + c * rings[1], cy + s * rings[1]);
+      ctx.lineTo(cx + c * (rings[1] + l), cy + s * (rings[1] + l));
+    }
+    ctx.stroke();
     const target = Math.atan2(py - cy, px - cx);
     let diff = target - st.bearing!;
     diff = Math.atan2(Math.sin(diff), Math.cos(diff));
@@ -710,32 +677,6 @@ function drawSeelie(
 // left to right. The light is at the wheels: a few gold and violet sparks where they meet
 // the rail, a short glow left on the rail behind, and a faint plume from the stack.
 const SLOPE = -0.2; // radians; negative climbs to the right
-// The tick ring is drawn once to a bitmap and turned as an image. Firefox re-rasterises a
-// turning path every frame, which lagged the whole page on mobile.
-function tickRing(st: SceneState, rr: number, d: number) {
-  if (st.ticks?.r === rr && st.ticks.d === d) return st.ticks.img;
-  const n = 120,
-    px = Math.ceil((rr + 12) * 2 * d),
-    img = document.createElement("canvas");
-  img.width = img.height = px;
-  const c = img.getContext("2d")!;
-  c.setTransform(d, 0, 0, d, px / 2, px / 2);
-  c.lineWidth = 1;
-  c.strokeStyle = "rgba(227,194,126,.3)";
-  c.beginPath();
-  for (let i = 0; i < n; i++) {
-    const a = (i / n) * TAU,
-      l = i % 10 ? 4 : 11,
-      x = Math.cos(a),
-      y = Math.sin(a);
-    c.moveTo(x * rr, y * rr);
-    c.lineTo(x * (rr + l), y * (rr + l));
-  }
-  c.stroke();
-  st.ticks = { r: rr, d, img };
-  return img;
-}
-
 const SPARK = ["255,214,128", "255,186,92", "190,140,255", "226,128,255"];
 // Where sparks fly from under the train (local x), mostly beneath the locomotive.
 const WHEELS = [-62, -44, -26, -62, -44, -26, -4, -90, -112, -132];
@@ -1465,7 +1406,6 @@ export class Painter {
     live: false,
   };
   private moved = 0;
-  private tap: { x: number; y: number; until: number } | null = null;
   private raf = 0;
   private last = 0;
   private visible = false;
@@ -1479,7 +1419,6 @@ export class Painter {
   ) {
     this.ctx = canvas.getContext("2d")!;
     host.addEventListener("pointermove", (e) => {
-      if (e.pointerType !== "mouse") return;
       const r = canvas.getBoundingClientRect(),
         x = e.clientX - r.left,
         y = e.clientY - r.top,
@@ -1491,27 +1430,13 @@ export class Painter {
       }
       m.x = x;
       m.y = y;
-      m.live = true;
-      this.tap = null;
+      m.live = e.pointerType === "mouse";
       this.moved = e.timeStamp;
     });
-    host.addEventListener("pointerleave", (e) => {
-      if (e.pointerType !== "mouse") return;
+    host.addEventListener("pointerleave", () => {
       this.m.live = false;
       this.m.vx = this.m.vy = 0;
     });
-    // On touch screens a tap stands in for the hovering mouse for a few seconds.
-    // A scroll ends in pointercancel, so it doesn't count.
-    host.addEventListener("pointerup", (e) => {
-      if (e.pointerType === "mouse") return;
-      listenTilt(true);
-      const r = canvas.getBoundingClientRect(),
-        x = e.clientX - r.left,
-        y = e.clientY - r.top;
-      Object.assign(this.m, { x, y, vx: 0, vy: 0, live: true });
-      this.tap = { x, y, until: performance.now() + 3000 };
-    });
-    listenTilt(false);
     new ResizeObserver(() => {
       this.size();
       this.paintOnce();
@@ -1582,18 +1507,9 @@ export class Painter {
   private frame(now: number, dt: number) {
     const t = now / 1000,
       { ctx, w, h, m } = this;
-    const tap = this.tap;
-    if (tap && now > tap.until) m.live = false;
     if (!m.live) {
       m.x = w * (0.5 + 0.3 * Math.sin(t * 0.23));
       m.y = h * (0.5 + 0.28 * Math.sin(t * 0.31));
-      if (tap) {
-        // After a tap, the wander picks up from where the finger was.
-        const k = Math.min(1, (now - tap.until) / 1200);
-        m.x = tap.x + (m.x - tap.x) * k;
-        m.y = tap.y + (m.y - tap.y) * k;
-        if (k === 1) this.tap = null;
-      }
     }
     // The cursor's speed fades once it stops moving.
     const still = Math.exp(-dt * 14);
