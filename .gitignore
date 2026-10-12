@@ -144,3 +144,6 @@ dist/
 
 # Serena
 .serena/
+
+# Playwright MCP
+.playwright-mcp/
