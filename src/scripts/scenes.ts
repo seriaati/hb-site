@@ -844,7 +844,7 @@ function drift(ctx: CanvasRenderingContext2D, st: SceneState, dt: number) {
   }
   st.steam = st.steam!.filter((p) => p.life > 0);
   ctx.save();
-  ctx.globalCompositeOperation = "lighter";
+  // No "lighter" blending: Firefox drew a hundred-odd additive sparks a frame at ~8fps.
   ctx.lineCap = "round";
   ctx.lineWidth = 1;
   const drag = Math.exp(-dt * 1.6);
