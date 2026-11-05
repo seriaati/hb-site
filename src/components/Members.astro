@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import Mark from "./Mark.astro";
+import LanguagePicker from "./LanguagePicker.astro";
+import Footer from "./Footer.astro";
+import { getMembers, type Role } from "../data/members";
+import { localeOf, pathFor, useTranslations } from "../i18n";
+
+interface Props {
+  code: string;
+}
+
+const locale = localeOf(Astro.props.code);
+const t = useTranslations(locale.code);
+const path = "members/";
+const roles: Role[] = [
+  "team",
+  "designers",
+  "sponsors",
+  "contributors",
+  "translators",
+  "guide_writers",
+];
+const groups = await Promise.all(
+  roles.map(async (role) => ({ role, members: await getMembers(role) })),
+);
+---
+
+<Base locale={locale} path={path} title={t("members.meta_title")}>
+  <div class="section-wrap pt-5">
+    <header class="relative z-20 flex items-center justify-between gap-4">
+      <a
+        href={pathFor(locale.code)}
+        class="flex items-center gap-2.5 font-display text-[15px] font-semibold tracking-[-0.01em]"
+        aria-label={t("members.home")}
+      >
+        <Mark />
+        Hoyo Buddy
+      </a>
+      <LanguagePicker locale={locale} t={t} path={path} />
+    </header>
+  </div>
+
+  <main id="main" class="pt-20 pb-24 sm:pt-28 sm:pb-32">
+    <div class="section-wrap flex flex-col items-center gap-4 text-center">
+      <p class="eyebrow">{t("members.eyebrow")}</p>
+      <h1 class="section-title max-w-[18ch]">{t("members.title")}</h1>
+      <p class="lede max-w-[52ch]">{t("members.lede")}</p>
+    </div>
+
+    <div class="section-wrap mt-16 grid gap-14">
+      {groups.map(({ role, members }) => (
+        <section aria-labelledby={`role-${role}`}>
+          <h2
+            id={`role-${role}`}
+            class="flex items-baseline justify-between gap-4 border-b border-line pb-3 font-display text-xl font-semibold tracking-[-0.02em]"
+          >
+            {t(`members.roles.${role}`)}
+            <span class="font-mono text-xs font-normal text-mute">
+              {members.length}
+            </span>
+          </h2>
+          <ul class="mt-5 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-x-6 gap-y-4">
+            {members.map((m) => (
+              <li class="flex min-w-0 items-center gap-3">
+                <Image
+                  src={m.avatar_url}
+                  alt=""
+                  width={40}
+                  height={40}
+                  class="size-10 shrink-0 rounded-full object-cover"
+                />
+                <span class="grid min-w-0 text-sm leading-tight">
+                  <span class="truncate text-fg">{m.display_name}</span>
+                  <span class="truncate text-xs text-mute">@{m.username}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </main>
+
+  <Footer locale={locale} t={t} path={path} />
+</Base>

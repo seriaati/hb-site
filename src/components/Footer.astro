@@ -4,14 +4,15 @@ import Mark from "./Mark.astro";
 import LanguagePicker from "./LanguagePicker.astro";
 import { LINKS } from "../data/links";
 import { getMembers } from "../data/members";
-import type { Locale, T } from "../i18n";
+import { pathFor, type Locale, type T } from "../i18n";
 
 interface Props {
   locale: Locale;
   t: T;
+  path?: string;
 }
 
-const { locale, t } = Astro.props;
+const { locale, t, path = "" } = Astro.props;
 const links = [
   [LINKS.docs, t("nav.docs")],
   [LINKS.github, "GitHub"],
@@ -68,13 +69,19 @@ const team = await getMembers("team");
           </li>
         ))}
       </ul>
+      <a
+        href={pathFor(locale.code, "members/")}
+        class="text-xs text-mute underline decoration-line underline-offset-4 transition-colors hover:text-fg hover:decoration-fg"
+      >
+        {t("members.link")}
+      </a>
     </div>
   </div>
 
   <div class="section-wrap mt-12">
     <div class="flex flex-col-reverse items-center justify-between gap-4 border-t border-line pt-6 text-xs text-mute sm:flex-row">
       <p>{t("footer.rights", { year: new Date().getFullYear() })}</p>
-      <LanguagePicker locale={locale} t={t} up />
+      <LanguagePicker locale={locale} t={t} path={path} up />
     </div>
   </div>
 </footer>

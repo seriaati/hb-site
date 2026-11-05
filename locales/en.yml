@@ -8,6 +8,7 @@ nav:
   reminders: Reminders
   auto_tasks: Auto tasks
   faq: FAQ
+  members: Members
   docs: Docs
   language: Language
 
@@ -215,6 +216,21 @@ faq:
 
 team:
   title: Team Members
+
+members:
+  link: Everyone who helps
+  meta_title: Members | Hoyo Buddy
+  eyebrow: Members
+  title: The people behind Hoyo Buddy
+  lede: The team, plus the designers, sponsors, contributors, translators and guide writers from our Discord server.
+  home: Back to home
+  roles:
+    team: Team
+    designers: Designers
+    sponsors: Sponsors
+    contributors: Contributors
+    translators: Translators
+    guide_writers: Guide writers
 
 footer:
   description: All your Hoyoverse games, right inside Discord.

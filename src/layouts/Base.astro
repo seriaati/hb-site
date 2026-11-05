@@ -27,13 +27,15 @@ import { LOCALES, pathFor, useTranslations, type Locale } from "../i18n";
 
 interface Props {
   locale: Locale;
+  path?: string;
+  title?: string;
 }
 
-const { locale } = Astro.props;
+const { locale, path = "" } = Astro.props;
 const t = useTranslations(locale.code);
 const site = Astro.site!;
-const canonical = new URL(pathFor(locale.code), site).href;
-const title = t("meta.title");
+const canonical = new URL(pathFor(locale.code, path), site).href;
+const title = Astro.props.title ?? t("meta.title");
 const description = t("meta.description");
 const image = new URL("/og.png", site).href;
 const cjkFonts = (
@@ -49,7 +51,7 @@ const jsonLd = {
   applicationCategory: "GameApplication",
   operatingSystem: "Discord",
   description,
-  url: canonical,
+  url: new URL(pathFor(locale.code), site).href,
   image,
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
@@ -67,10 +69,14 @@ const jsonLd = {
       <link
         rel="alternate"
         hreflang={l.lang}
-        href={new URL(pathFor(l.code), site).href}
+        href={new URL(pathFor(l.code, path), site).href}
       />
     ))}
-    <link rel="alternate" hreflang="x-default" href={new URL("/", site).href} />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(pathFor("en", path), site).href}
+    />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

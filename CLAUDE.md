@@ -36,6 +36,7 @@ bun run format    # prettier (astro + tailwind plugins)
 - `src/assets/notes/` holds real `/notes` images from the bot (GI, HSR, ZZZ); the embed text above each one matches its numbers.
 - Every image is stored locally (`src/assets/` for optimized images, `public/` for the favicon and `og.png`; Discord avatars are fetched at build time). Don't hotlink.
 - `src/assets/games/` holds the game icons the bot uses (from hb-app). `src/assets/items/` holds the stamina and currency icons from the bot's `icons.py` and emojis.
+- `src/data/members.ts` fetches Discord role members from seria-api (`api.seria.moe/roles/{id}/members`) at build time. The footer shows the team role, and `src/components/Members.astro` (`/members/`, one per language) lists the team, designers, sponsors, contributors, translators and guide writers. Avatars are downloaded and optimized by `astro:assets` (`image.domains` in `astro.config.mjs`).
 - `src/pages/sitemap.xml.ts` generates the sitemap. `public/_redirects` handles the Cloudflare redirects from the old `index-*.html` URLs.
 
 ## Internationalization

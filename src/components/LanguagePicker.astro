@@ -5,9 +5,10 @@ interface Props {
   locale: Locale;
   t: T;
   up?: boolean;
+  path?: string;
 }
 
-const { locale, t, up = false } = Astro.props;
+const { locale, t, up = false, path = "" } = Astro.props;
 ---
 
 <details class="lang-picker relative">
@@ -37,7 +38,7 @@ const { locale, t, up = false } = Astro.props;
     {LOCALES.map((l) => (
       <li>
         <a
-          href={pathFor(l.code)}
+          href={pathFor(l.code, path)}
           hreflang={l.lang}
           lang={l.lang}
           aria-current={l.code === locale.code ? "page" : undefined}

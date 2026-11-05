@@ -2,7 +2,7 @@
 import Mark from "./Mark.astro";
 import LanguagePicker from "./LanguagePicker.astro";
 import { LINKS } from "../data/links";
-import type { Locale, T } from "../i18n";
+import { pathFor, type Locale, type T } from "../i18n";
 
 interface Props {
   locale: Locale;
@@ -38,6 +38,14 @@ const anchors = [
           </a>
         </li>
       ))}
+      <li>
+        <a
+          href={pathFor(locale.code, "members/")}
+          class="rounded-full px-3 py-2 text-mute transition-colors hover:text-fg"
+        >
+          {t("nav.members")}
+        </a>
+      </li>
       <li>
         <a
           href={LINKS.docs}
