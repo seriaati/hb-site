@@ -215,12 +215,6 @@ faq:
 
 team:
   title: Team Members
-  seria:
-    role: Programmer
-  ayasaku:
-    role: Designer
-  hydrogened:
-    role: PR
 
 footer:
   description: All your Hoyoverse games, right inside Discord.
