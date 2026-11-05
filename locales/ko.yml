@@ -8,6 +8,7 @@ nav:
   reminders: 알림
   auto_tasks: 자동 작업
   faq: 자주 묻는 질문
+  members: 멤버
   docs: 가이드 문서
   language: 언어
 
@@ -207,6 +208,21 @@ team:
     role: UI/UX 디자이너
   hydrogened:
     role: 홍보 & 커뮤니티
+
+members:
+  link: 도움을 주신 분들
+  meta_title: 멤버 | Hoyo Buddy
+  eyebrow: 멤버
+  title: Hoyo Buddy를 만드는 사람들
+  lede: 개발팀, 그리고 디스코드 서버에서 함께하는 디자이너, 후원자, 기여자, 번역가, 공략 작성자분들입니다.
+  home: 홈으로 돌아가기
+  roles:
+    team: 개발팀
+    designers: 디자이너
+    sponsors: 후원자
+    contributors: 기여자
+    translators: 번역가
+    guide_writers: 공략 작성자
 
 footer:
   description: 호요버스의 모든 게임을 디스코드에서 완벽하게.

@@ -8,6 +8,7 @@ nav:
   reminders: Meldingen
   auto_tasks: Automatisering
   faq: Veelgestelde vragen
+  members: Leden
   docs: Documentatie
   language: Taal
 
@@ -207,6 +208,21 @@ team:
     role: UI/UX-ontwerper
   hydrogened:
     role: Community & PR
+
+members:
+  link: Iedereen die meehelpt
+  meta_title: Leden | Hoyo Buddy
+  eyebrow: Leden
+  title: De mensen achter Hoyo Buddy
+  lede: Het kernteam, samen met de ontwerpers, sponsors, bijdragers, vertalers en gidsschrijvers van onze Discord-server.
+  home: Terug naar de startpagina
+  roles:
+    team: Kernteam
+    designers: Ontwerpers
+    sponsors: Sponsors
+    contributors: Bijdragers
+    translators: Vertalers
+    guide_writers: Gidsschrijvers
 
 footer:
   description: Al je HoYoverse-games, overzichtelijk verenigd in Discord.

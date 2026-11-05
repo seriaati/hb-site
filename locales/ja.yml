@@ -8,6 +8,7 @@ nav:
   reminders: リマインダー
   auto_tasks: 自動タスク
   faq: よくある質問
+  members: メンバー
   docs: ドキュメント
   language: 言語
 
@@ -207,6 +208,21 @@ team:
     role: UI/UXデザイナー
   hydrogened:
     role: 広報・コミュニティ
+
+members:
+  link: 協力者の皆さん
+  meta_title: メンバー | Hoyo Buddy
+  eyebrow: メンバー
+  title: Hoyo Buddyを支える人たち
+  lede: コアチームと、Discordサーバーで活動するデザイナー、スポンサー、コントリビューター、翻訳者、攻略ライターの皆さん。
+  home: ホームに戻る
+  roles:
+    team: コアチーム
+    designers: デザイナー
+    sponsors: スポンサー
+    contributors: コントリビューター
+    translators: 翻訳者
+    guide_writers: 攻略ライター
 
 footer:
   description: すべてのHoYoverseゲームを、Discord上でひとつに。

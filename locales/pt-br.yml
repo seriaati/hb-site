@@ -8,6 +8,7 @@ nav:
   reminders: Lembretes
   auto_tasks: Tarefas automáticas
   faq: Perguntas frequentes
+  members: Membros
   docs: Documentação
   language: Idioma
 
@@ -207,6 +208,21 @@ team:
     role: Designer UI/UX
   hydrogened:
     role: Relações públicas
+
+members:
+  link: Todos que ajudam
+  meta_title: Membros | Hoyo Buddy
+  eyebrow: Membros
+  title: As pessoas por trás do Hoyo Buddy
+  lede: A equipe principal, além dos designers, apoiadores, colaboradores, tradutores e autores de guias do nosso servidor do Discord.
+  home: Voltar ao início
+  roles:
+    team: Equipe principal
+    designers: Designers
+    sponsors: Apoiadores
+    contributors: Colaboradores
+    translators: Tradutores
+    guide_writers: Autores de guias
 
 footer:
   description: Todos os seus jogos da HoYoverse, reunidos no Discord.

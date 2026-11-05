@@ -8,6 +8,7 @@ nav:
   reminders: Nhắc nhở
   auto_tasks: Tự động hóa
   faq: Câu hỏi thường gặp
+  members: Thành viên
   docs: Tài liệu
   language: Ngôn ngữ
 
@@ -207,6 +208,21 @@ team:
     role: Thiết kế giao diện
   hydrogened:
     role: Truyền thông & Cộng đồng
+
+members:
+  link: Những người đã chung tay
+  meta_title: Thành viên | Hoyo Buddy
+  eyebrow: Thành viên
+  title: Những người đứng sau Hoyo Buddy
+  lede: Đội ngũ phát triển, cùng các nhà thiết kế, nhà tài trợ, người đóng góp, người dịch và người viết hướng dẫn từ máy chủ Discord của chúng tôi.
+  home: Về trang chủ
+  roles:
+    team: Đội ngũ phát triển
+    designers: Nhà thiết kế
+    sponsors: Nhà tài trợ
+    contributors: Người đóng góp
+    translators: Người dịch
+    guide_writers: Người viết hướng dẫn
 
 footer:
   description: Tất cả tựa game HoYoverse của bạn, hội tụ ngay trên Discord.

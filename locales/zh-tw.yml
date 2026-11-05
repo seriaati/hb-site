@@ -8,6 +8,7 @@ nav:
   reminders: 提醒
   auto_tasks: 自動任務
   faq: 常見問題
+  members: 成員
   docs: 說明文件
   language: 語言
 
@@ -207,6 +208,21 @@ team:
     role: 視覺設計
   hydrogened:
     role: 公關推廣
+
+members:
+  link: 所有幫忙的人
+  meta_title: 成員 | Hoyo Buddy
+  eyebrow: 成員
+  title: 打造 Hoyo Buddy 的人
+  lede: 核心團隊，以及 Discord 伺服器裡的設計師、贊助者、貢獻者、譯者和攻略作者。
+  home: 回到首頁
+  roles:
+    team: 核心團隊
+    designers: 設計師
+    sponsors: 贊助者
+    contributors: 貢獻者
+    translators: 譯者
+    guide_writers: 攻略作者
 
 footer:
   description: 讓你的所有米哈遊遊戲，在 Discord 融會貫通。
