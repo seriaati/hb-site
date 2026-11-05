@@ -4,7 +4,7 @@ meta:
 
 nav:
   label: 主导航
-  commands: 指令
+  commands: 命令
   reminders: 提醒
   auto_tasks: 自动任务
   faq: 常见问题
@@ -49,7 +49,7 @@ worlds:
     place: 未名市
 
 commands:
-  eyebrow: 指令
+  eyebrow: 命令
   title: 跨游戏统一的指令体验。
   description: 无需记忆不同机器人的繁琐指令。选择游戏与指令，立即预览真实回复效果。
   game: 游戏
@@ -68,7 +68,7 @@ reminders:
   tomorrow: 明天
   dm: 私信
   stamina: 体力
-  upcoming: 倒计时 {time} 送达
+  upcoming: "倒计时 {time} 送达"
   timeline: 未来 24 小时
 
 auto:
@@ -89,14 +89,14 @@ open:
     value: "14"
     label: 支持多种语言，由社区贡献者本地化翻译。
   servers:
-    value: 17,000+
+    value: "17,000+"
     label: 个活跃的 Discord 服务器信赖使用。
-  privacy: 请参阅我们的{privacy}与{security}，了解数据如何受到保护。
+  privacy: "请参阅我们的{privacy}与{security}，了解数据如何受到保护。"
   privacy_link: 隐私政策
-  security_link: 账号安全指南
+  security_link: 账号安全
 
 bot:
-  today_at: 今天 {time}
+  today_at: "今天 {time}"
   used: "{user} 使用了 {command}"
   app: 应用
   notes:
@@ -106,8 +106,8 @@ bot:
     trailblaze_power: 开拓力
     sticky_notes: 实时便笺
     battery: 电量
-    stamina: "体力: {cur}/{max}，{time} 后回满"
-    daily_bp: "每日使命: {cur}/{max}"
+    stamina: "体力: {cur}/{max}, 在 {time} 后溢出"
+    daily_bp: "每日历练值: {cur}/{max}"
     superstring: 超弦空间
     current_score: "当前积分: {score}"
     memorial_arena: 记忆战场
@@ -117,40 +117,40 @@ bot:
     elysian_score: "当前积分: {cur}/{max}"
   check_in:
     title: 每日签到
-    summary: 本月已签到 {day} 天
-    missed: 漏签 {missed} 天
+    summary: "本月已签到 {day} 天"
+    missed: "漏签 {missed} 天"
     button: 签到
     make_up: 补签
-    claimed: 已领取每日签到奖励
-    claimed_footer: 使用 /settings 设置通知
+    claimed: 已领取每日奖励
+    claimed_footer: 使用 /check-in 来管理通知
   redeem:
     title: 兑换结果
     success: 兑换成功
     claimed: 兑换码已被使用
-    auto_footer: 使用 /settings 关闭自动兑换
+    auto_footer: 使用/settings 关闭自动兑换功能。
   mimo:
     title: "旅行 Mimo: 自动完成任务并领取积分"
-    summary: Hoyo Buddy 已为你完成 {finish} 个任务并领取 {points} 积分
-    footer: 使用 /settings 设置自动任务与兑换奖励
+    summary: "Hoyo Buddy 已为你完成 {finish} 个任务并领取 {points} 积分"
+    footer: 使用 /settings 调整自动任务设置及购买奖励
     tasks:
       log_in: 登录游戏
       check_in: 完成每日签到
       community: 浏览社区
   reminder:
-    footer: 使用 /notes 设置提醒
-    threshold: 已达阈值（{value}）
+    footer: 使用 /note 调配提醒
+    threshold: "已达阈值（{value}）"
     resin: 树脂提醒
     realm: 洞天宝钱提醒
     expedition: 探索派遣提醒
     expedition_body: 一个或者多个派遣已经完成了
     transformer: 参量质变仪提醒
     transformer_body: 参量质变仪可以使用了！
-    daily: 每日委托提醒
+    daily: 每日任务提醒
     daily_body: 每日委托或冒险历练尚未全部完成
     tb_power: 开拓力
     daily_training: 每日实训
     daily_training_body: 每日实训尚未全部完成
-    weekly: 周本消耗折扣提醒
+    weekly: 周本消耗减半提醒
     weekly_body: 周本消耗折扣尚未使用完毕
     battery: 电量
     video_store: 录像店经营
@@ -162,7 +162,7 @@ bot:
     stamina: 体力提醒
 
 faq:
-  title: FAQ
+  title: 常见问题
   heading: 常见问题
   description: 还有其他疑问？欢迎加入我们的 Discord 服务器或查阅官方文档。
   free:
@@ -199,15 +199,8 @@ faq:
     question: 遇到问题去哪里获取帮助？
     answer: |
       请查看<a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">官方文档</a>中的配置教程与指令说明，或加入我们的 <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">Discord 服务器</a>向社区玩家与开发者寻求帮助。
-
 team:
-  title: 核心团队
-  seria:
-    role: 主程序开发
-  ayasaku:
-    role: 视觉设计
-  hydrogened:
-    role: 公关宣传
+  title: 团队成员
 
 members:
   link: 所有帮忙的人
@@ -227,14 +220,14 @@ members:
 footer:
   description: 让你所有的米哈游游戏，在 Discord 融会贯通。
   quick_links:
-    title: 快捷链接
-    github: GitHub 项目库
-    wiki: Wiki 指南
+    title: 链接
+    github: Github 项目界面
+    wiki: 维基
     invite: 邀请链接
   contact:
     title: 联系我们
     discord_server: Discord 服务器
-    dev_discord: 开发者 Discord
-    buy_me_a_coffee: 赞助支持
+    dev_discord: 开发者的 Discord
+    buy_me_a_coffee: 捐款
   sponsor: 赞助
-  rights: © {year} Seria Ati. 保留所有权利。
+  rights: "© {year} Seria Ati. 保留所有权利。"

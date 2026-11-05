@@ -68,7 +68,7 @@ reminders:
   tomorrow: 明日
   dm: ダイレクトメッセージ
   stamina: スタミナ
-  upcoming: あと {time} で通知
+  upcoming: "あと {time} で通知"
   timeline: 今後24時間のタイムライン
 
 auto:
@@ -89,14 +89,14 @@ open:
     value: "14"
     label: コミュニティ有志によって多言語にローカライズ。
   servers:
-    value: 17,000+
+    value: "17,000+"
     label: 以上のDiscordコミュニティで愛用されています。
-  privacy: データの取り扱いについては{privacy}および{security}をご覧ください。
+  privacy: "データの取り扱いについては{privacy}および{security}をご覧ください。"
   privacy_link: プライバシーポリシー
-  security_link: アカウントセキュリティガイド
+  security_link: アカウントセキュリティ
 
 bot:
-  today_at: 今日 {time}
+  today_at: "今日 {time}"
   used: "{user} が {command} を実行しました"
   app: アプリ
   notes:
@@ -106,46 +106,46 @@ bot:
     trailblaze_power: 開拓力
     sticky_notes: リアルタイムノート
     battery: バッテリー
-    stamina: "スタミナ: {cur}/{max}、{time} で満タン"
-    daily_bp: "デイリー任務: {cur}/{max}"
+    stamina: "スタミナ：{cur}/{max}、{time} で満タン"
+    daily_bp: "デイリー勲功：{cur}/{max}"
     superstring: 超弦空間
-    current_score: "現在のスコア: {score}"
+    current_score: "現在のスコア：{score}"
     memorial_arena: 記憶戦場
     arena_rewards: "挑戦報酬: {cur}/{max}"
     arena_sss: "SSS級報酬: {cur}/{max}"
     elysian_realm: 古の楽園
-    elysian_score: "現在のスコア: {cur}/{max}"
+    elysian_score: "現在のスコア：{cur}/{max}"
   check_in:
     title: デイリーチェックイン
-    summary: 今月は {day} 日チェックイン済み
-    missed: 未チェックイン {missed} 日
+    summary: "今月は {day} 日チェックイン済み"
+    missed: "未チェックイン {missed} 日"
     button: チェックイン
-    make_up: 補填
-    claimed: デイリーチェックイン報酬受取完了
-    claimed_footer: /settings で通知を設定
+    make_up: チェックインを補う
+    claimed: デイリーチェックイン報酬受け取り済み
+    claimed_footer: /check-in を使用して通知を設定します
   redeem:
-    title: シリアルコード交換結果
+    title: コード交換結果
     success: 交換成功
     claimed: ギフトコードは既に使用済みです
-    auto_footer: /settings で自動コード交換をオフに設定
+    auto_footer: 自動コード交換をオフにするには/settings を使用してください
   mimo:
     title: "Traveling Mimo: タスク自動完了＆ポイント受取"
-    summary: Hoyo Buddy が {finish} 個のタスクを完了し、{points} ポイントを獲得しました
-    footer: /settings で自動タスクの設定や報酬交換を管理
+    summary: "Hoyo Buddy が {finish} 個のタスクを完了し、{points} ポイントを獲得しました"
+    footer: /settings を使用して自動タスクと報酬購入を設定します
     tasks:
       log_in: ゲームにログイン
       check_in: デイリーチェックインを完了
       community: コミュニティを閲覧
   reminder:
-    footer: /notes でリマインダーを設定
-    threshold: しきい値（{value}）に到達しました
-    resin: 天然樹脂リマインダー
+    footer: /notes を使用してリマインダーを設定します
+    threshold: "しきい値（{value}）に到達しました"
+    resin: 樹脂リマインダー
     realm: 洞天宝銭リマインダー
     expedition: 探索派遣リマインダー
     expedition_body: 1つ以上の探索派遣が完了しました
-    transformer: 参量物質変化器リマインダー
+    transformer: 変転の塵リマインダー
     transformer_body: 参量物質変化器は使えるようになりました！
-    daily: デイリー依頼リマインダー
+    daily: デイリーリマインダー
     daily_body: デイリー依頼または修練ポイントがまだ完了していません
     tb_power: 開拓力
     daily_training: デイリー訓練
@@ -162,7 +162,7 @@ bot:
     stamina: スタミナリマインダー
 
 faq:
-  title: FAQ
+  title: よくある質問
   heading: よくある質問
   description: 疑問や気になる点があれば、公式Discordサーバーやドキュメントもぜひご覧ください。
   free:
@@ -199,15 +199,8 @@ faq:
     question: 使い方がわからない時はどうすればいいですか？
     answer: |
       <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">公式ドキュメント</a>に詳しい導入手順とコマンド一覧を掲載しています。解決しない場合は、公式<a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">Discordサーバー</a>にてお気軽にご質問ください。
-
 team:
-  title: コアチーム
-  seria:
-    role: リード開発者
-  ayasaku:
-    role: UI/UXデザイナー
-  hydrogened:
-    role: 広報・コミュニティ
+  title: チームメンバー
 
 members:
   link: 協力者の皆さん
@@ -227,14 +220,14 @@ members:
 footer:
   description: すべてのHoYoverseゲームを、Discord上でひとつに。
   quick_links:
-    title: リンク
-    github: GitHubリポジトリ
-    wiki: 公式Wiki
-    invite: ボットの招待
+    title: クイックリンク
+    github: GitHubプロジェクト
+    wiki: Wiki
+    invite: 招待リンク
   contact:
     title: お問い合わせ
-    discord_server: 公式Discordサーバー
-    dev_discord: 開発者Discord
-    buy_me_a_coffee: 開発者を支援
+    discord_server: Discordサーバー
+    dev_discord: 開発者のDiscord
+    buy_me_a_coffee: 寄付する
   sponsor: スポンサー
-  rights: © {year} Seria Ati. All rights reserved.
+  rights: "© {year} Seria Ati. All rights reserved."

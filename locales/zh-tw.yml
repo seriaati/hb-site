@@ -5,7 +5,7 @@ meta:
 nav:
   label: 主要導航
   commands: 指令
-  reminders: 提醒
+  reminders: 通知
   auto_tasks: 自動任務
   faq: 常見問題
   members: 成員
@@ -32,7 +32,7 @@ worlds:
     short: 原神
     place: 提瓦特
   hsr:
-    name: "崩壞：星穹鐵道"
+    name: "崩壞: 星穹鐵道"
     short: 星穹鐵道
     place: 星穹列車
   zzz:
@@ -40,11 +40,11 @@ worlds:
     short: 絕區零
     place: 新艾利都
   honkai:
-    name: 崩壞3rd
+    name: 崩壞 3rd
     short: 崩壞3rd
     place: 休伯利安
   tot:
-    name: 未定事件簿
+    name: 未知事件簿
     short: 未定事件簿
     place: 未名市
 
@@ -60,7 +60,7 @@ commands:
     profile: 根據你的遊戲內角色展櫃，即時生成精美且易於分享的角色數值卡片。
 
 reminders:
-  eyebrow: 提醒
+  eyebrow: 通知
   title: 在體力溢出前精準提醒。
   description: Hoyo Buddy 全天候關注你的即時便籤，在體力即將回滿、派遣完成或即將換日重置時主動傳送私訊。滑動時間軸查看 24 小時提醒節奏。
   caps: "{resource} 將於 {time} 回滿"
@@ -68,7 +68,7 @@ reminders:
   tomorrow: 明天
   dm: 私訊
   stamina: 體力
-  upcoming: 倒數 {time} 送達
+  upcoming: "倒數 {time} 送達"
   timeline: 未來 24 小時
 
 auto:
@@ -89,14 +89,14 @@ open:
     value: "14"
     label: 支援多種語言，由社群貢獻者在地化翻譯。
   servers:
-    value: 17,000+
+    value: "17,000+"
     label: 個活躍的 Discord 伺服器信賴採用。
-  privacy: 請參閱我們的{privacy}與{security}，了解資料如何受到保護。
+  privacy: "請參閱我們的{privacy}與{security}，了解資料如何受到保護。"
   privacy_link: 隱私權政策
-  security_link: 帳號安全指南
+  security_link: 帳號安全
 
 bot:
-  today_at: 今天 {time}
+  today_at: "今天 {time}"
   used: "{user} 使用了 {command}"
   app: 應用程式
   notes:
@@ -106,51 +106,51 @@ bot:
     trailblaze_power: 開拓力
     sticky_notes: 即時便籤
     battery: 電量
-    stamina: "體力: {cur}/{max}，{time} 後回滿"
-    daily_bp: "每日使命: {cur}/{max}"
+    stamina: "體力: {cur}/{max}, 在 {time} 後溢出"
+    daily_bp: "每日歷練值: {cur}/{max}"
     superstring: 超弦空間
     current_score: "目前積分: {score}"
     memorial_arena: 記憶戰場
     arena_rewards: "挑戰獎勵: {cur}/{max}"
     arena_sss: "SSS級獎勵: {cur}/{max}"
     elysian_realm: 往世樂土
-    elysian_score: "目前積分: {cur}/{max}"
+    elysian_score: "當前積分: {cur}/{max}"
   check_in:
     title: 每日簽到
-    summary: 本月已簽到 {day} 天
-    missed: 錯過簽到 {missed} 天
+    summary: "本月已簽到 {day} 天"
+    missed: "錯過簽到 {missed} 天"
     button: 簽到
     make_up: 補簽
     claimed: 已領取每日簽到獎勵
-    claimed_footer: 使用 /settings 設定通知
+    claimed_footer: 使用 /check-in 來調整通知
   redeem:
-    title: 兌換碼兌換結果
+    title: 兌換結果
     success: 兌換成功
     claimed: 禮物碼已被兌換過
-    auto_footer: 使用 /settings 關閉自動兌換
+    auto_footer: 使用/settings 關閉自動兌換兌換碼功能
   mimo:
     title: "旅行 Mimo: 自動完成任務並領取點數"
-    summary: Hoyo Buddy 已為你完成 {finish} 個任務並領取 {points} 點數
-    footer: 使用 /settings 設定自動任務與兌換獎勵
+    summary: "Hoyo Buddy 已為你完成 {finish} 個任務並領取 {points} 點數"
+    footer: 使用 /settings 調整自動任務設定及購買獎勵
     tasks:
       log_in: 登入遊戲
       check_in: 完成每日簽到
       community: 瀏覽社群
   reminder:
-    footer: 使用 /notes 設定提醒
-    threshold: 已達閥值 ({value})
-    resin: 樹脂提醒
-    realm: 洞天寶錢提醒
-    expedition: 探索派遣提醒
+    footer: 使用 /notes 來調整通知
+    threshold: "已達閥值 ({value})"
+    resin: 樹脂通知
+    realm: 洞天寶錢通知
+    expedition: 探索派遣通知
     expedition_body: 一或多個探索派遣已經完成了
-    transformer: 參量質變儀提醒
+    transformer: 質變儀通知
     transformer_body: 參量質變儀可以使用了!
-    daily: 每日委託提醒
+    daily: 每日任務通知
     daily_body: 每日委託或冒險歷練尚未全部完成
     tb_power: 開拓力
     daily_training: 每日實訓
     daily_training_body: 每日實訓尚未全部完成
-    weekly: 每週首領折扣提醒
+    weekly: 每週首領折扣通知
     weekly_body: 每週首領折扣尚未全部使用完畢
     battery: 電量
     video_store: 錄影帶店經營
@@ -162,7 +162,7 @@ bot:
     stamina: 體力提醒
 
 faq:
-  title: FAQ
+  title: 常見問題
   heading: 常見問題
   description: 還有其他疑問？歡迎加入我們的 Discord 伺服器或查閱官方文件。
   free:
@@ -199,15 +199,8 @@ faq:
     question: 遇到問題時該去哪裡尋求協助？
     answer: |
       請查閱<a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">官方說明文件</a>中的設定教學，或加入我們的 <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">Discord 伺服器</a>向社群成員與開發者尋求協助。
-
 team:
-  title: 核心團隊
-  seria:
-    role: 主程式開發
-  ayasaku:
-    role: 視覺設計
-  hydrogened:
-    role: 公關推廣
+  title: 團隊介紹
 
 members:
   link: 所有幫忙的人
@@ -227,14 +220,14 @@ members:
 footer:
   description: 讓你的所有米哈遊遊戲，在 Discord 融會貫通。
   quick_links:
-    title: 相關連結
-    github: GitHub 專案庫
-    wiki: 維基指南
+    title: 連結
+    github: GitHub 項目頁面
+    wiki: 維基
     invite: 邀請連結
   contact:
-    title: 聯絡我們
+    title: 聯繫我們
     discord_server: Discord 伺服器
-    dev_discord: 開發者 Discord
-    buy_me_a_coffee: 贊助支持
+    dev_discord: 開發者的 Discord
+    buy_me_a_coffee: 捐款
   sponsor: 贊助
-  rights: © {year} Seria Ati. 保留所有權利。
+  rights: "© {year} Seria Ati. 保留所有權利。"

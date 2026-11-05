@@ -1,13 +1,13 @@
 meta:
   title: Hoyo Buddy | El bot de Discord para jugadores de HoYoverse
-  description: Recordatorios de resina y energía, registro diario automático, canje instantáneo de códigos y elegantes tarjetas de personajes. Gestiona todos tus juegos y cuentas de HoYoverse desde Discord.
+  description: "Recordatorios de resina y energía, registro diario automático, canje instantáneo de códigos y elegantes tarjetas de personajes. Gestiona todos tus juegos y cuentas de HoYoverse desde Discord."
 
 nav:
   label: Principal
   commands: Comandos
   reminders: Recordatorios
   auto_tasks: Tareas automáticas
-  faq: Preguntas frecuentes
+  faq: FAQ
   members: Miembros
   docs: Documentación
   language: Idioma
@@ -20,10 +20,10 @@ hero:
   cta_note: Funciona en cualquier servidor y mensaje directo (DM).
   overview: Ver todos los juegos
   games:
-    genshin: No vuelvas a acumular resina al máximo, genera tarjetas de personajes de tu expositor, revisa resultados del Abismo y Teatro Fantasía, y consulta tu historial de gachapón.
-    hsr: Alertas de poder trazacaminos, tarjetas de personajes, estadísticas de Evocación del Caos y Pura Ficción, y registro completo de saltos.
-    zzz: Avisos de carga de batería, recordatorios de rasca y gana y videoclub, resultados de Defensa Shiyu y Asalto Letal, y registro de sintonías.
-    honkai: Recordatorios de resistencia, registro diario automático, seguimiento de puntuaciones en Dimensión Superstring y Arena Memorial, y lista completa de valquirias.
+    genshin: "No vuelvas a acumular resina al máximo, genera tarjetas de personajes de tu expositor, revisa resultados del Abismo y Teatro Fantasía, y consulta tu historial de gachapón."
+    hsr: "Alertas de poder trazacaminos, tarjetas de personajes, estadísticas de Evocación del Caos y Pura Ficción, y registro completo de saltos."
+    zzz: "Avisos de carga de batería, recordatorios de rasca y gana y videoclub, resultados de Defensa Shiyu y Asalto Letal, y registro de sintonías."
+    honkai: "Recordatorios de resistencia, registro diario automático, seguimiento de puntuaciones en Dimensión Superstring y Arena Memorial, y lista completa de valquirias."
     tot: Registro diario automatizado para no perder ni un solo S-Chip ni recompensa de inicio de sesión en ninguna de tus cuentas vinculadas.
 
 worlds:
@@ -52,23 +52,23 @@ commands:
   eyebrow: Comandos
   title: Los mismos comandos en cada juego.
   description: Olvídate de aprender sintaxis distintas para cada bot. Elige un juego y un comando a continuación para previsualizar la respuesta real generada por el bot.
-  game: Juego
+  game: juego
   list:
-    notes: Consulta de un vistazo la resina, energía y expediciones, con recordatorios personalizables por DM antes de que se llenen.
+    notes: "Consulta de un vistazo la resina, energía y expediciones, con recordatorios personalizables por DM antes de que se llenen."
     check_in: Reclama las recompensas diarias de HoYoLAB directamente en Discord con un solo clic y consulta tu racha del mes.
-    redeem: Canjea códigos de directos y promociones en todas tus cuentas vinculadas a la vez, sin tener que abrir la web.
+    redeem: "Canjea códigos de directos y promociones en todas tus cuentas vinculadas a la vez, sin tener que abrir la web."
     profile: Genera tarjetas de estadísticas limpias y listas para compartir a partir de tu expositor de personajes del juego.
 
 reminders:
   eyebrow: Recordatorios
   title: Entérate antes de que tu energía se llene.
-  description: Hoyo Buddy consulta tus notas en tiempo real en segundo plano y te envía un mensaje directo por Discord antes de que tu resina se desborde, finalicen tus expediciones o llegue el reinicio diario. Desplaza la barra temporal para ver cuándo se activan las alertas en 24 horas.
+  description: "Hoyo Buddy consulta tus notas en tiempo real en segundo plano y te envía un mensaje directo por Discord antes de que tu resina se desborde, finalicen tus expediciones o llegue el reinicio diario. Desplaza la barra temporal para ver cuándo se activan las alertas en 24 horas."
   caps: "{resource} se llenará a las {time}"
   now: ahora
   tomorrow: mañana
   dm: Mensaje directo
   stamina: Energía
-  upcoming: llega en {time}
+  upcoming: "llega en {time}"
   timeline: Tus próximas 24 horas
 
 auto:
@@ -81,140 +81,133 @@ open:
   title: Cada función es gratuita y cada línea de código es pública.
   free:
     value: Gratis
-    label: Sin anuncios, sin muros de pago y sin ventajas de pago.
+    label: "Sin anuncios, sin muros de pago y sin ventajas de pago."
   source:
     value: AGPL-3.0
     label: Código abierto. Inspecciona todo el repositorio en GitHub.
   languages:
     value: "14"
-    label: Idiomas disponibles, traducidos por la comunidad.
+    label: "Idiomas disponibles, traducidos por la comunidad."
   servers:
-    value: 17,000+
+    value: "17,000+"
     label: Comunidades de Discord confían en Hoyo Buddy.
-  privacy: Descubre cómo protegemos tus datos en la {privacy} y la {security}.
+  privacy: "Descubre cómo protegemos tus datos en la {privacy} y la {security}."
   privacy_link: Política de privacidad
-  security_link: Guía de seguridad de cuentas
+  security_link: Seguridad de la cuenta
 
 bot:
-  today_at: Hoy a las {time}
+  today_at: "Hoy a las {time}"
   used: "{user} ha usado {command}"
   app: APP
   notes:
     title: Notas en tiempo real
-    resin: Resina original
-    full_in: Se llena en {time}
+    resin: Resina
+    full_in: "Se llena en {time}"
     trailblaze_power: Poder trazacaminos
     sticky_notes: Notas en tiempo real
     battery: Carga de batería
-    stamina: "Resistencia: {cur}/{max}, se llena en {time}"
-    daily_bp: "PB diario: {cur}/{max}"
-    superstring: Dimensión Superstring
-    current_score: "Puntuación actual: {score}"
-    memorial_arena: Arena Memorial
+    stamina: "Stamina: {cur}/{max}, completa en {time}"
+    daily_bp: "Daily BP: {cur}/{max}"
+    superstring: Superstring Dimension
+    current_score: "Score actual: {score}"
+    memorial_arena: Memorial Arena
     arena_rewards: "Recompensas de desafío: {cur}/{max}"
     arena_sss: "Recompensas de rango SSS: {cur}/{max}"
-    elysian_realm: Reino Elysiano
-    elysian_score: "Puntuación actual: {cur}/{max}"
+    elysian_realm: Elysian Realm
+    elysian_score: "Score actual: {cur}/{max}"
   check_in:
-    title: Registro diario
-    summary: Registrado {day} día(s) este mes
-    missed: Registro perdido durante {missed} día(s)
-    button: Registrarse
-    make_up: Compensar registro
-    claimed: Recompensa de registro diario reclamada
-    claimed_footer: Usa /settings para configurar las notificaciones
+    title: Login diario
+    summary: "Registrado {day} día(s) este mes"
+    missed: "Registro perdido durante {missed} día(s)"
+    button: Registro
+    make_up: Recuperar login diario
+    claimed: Recompensa de login diario reclamada
+    claimed_footer: Usa /check-in para configurar las notificaciones
   redeem:
     title: Resultados del canje de códigos
     success: Canjeado con éxito
     claimed: El código de regalo ya ha sido reclamado
-    auto_footer: Desactiva el canje automático de códigos con /settings
+    auto_footer: Desactiva el canje automático de códigos con/settings
   mimo:
     title: "Traveling Mimo: Tareas automáticas y reclamo de puntos"
-    summary: Hoyo Buddy ha completado {finish} tareas y ha reclamado {points} puntos para ti
-    footer: Usa /settings para configurar tareas automáticas y canjear recompensas
+    summary: "Hoyo Buddy ha completado {finish} tareas y ha reclamado {points} puntos para ti"
+    footer: Usa /settings para configurar tareas automáticas y comprar recompensas
     tasks:
       log_in: Iniciar sesión en el juego
       check_in: Completar el registro diario
       community: Explorar la comunidad
   reminder:
     footer: Usa /notes para configurar recordatorios
-    threshold: Se ha alcanzado el límite ({value})
+    threshold: "Se ha alcanzado el límite ({value})"
     resin: Recordatorio de resina
-    realm: Recordatorio de intramora
+    realm: Recordatorio de Intramora
     expedition: Recordatorio de expedición
     expedition_body: Una (o más) expediciones han terminado
-    transformer: Recordatorio del transmutador paramétrico
-    transformer_body: ¡Transmutador paramétrico está listo para ser utilizado!
-    daily: Recordatorio de encargos diarios
+    transformer: Recordatorio de Transmutador Paramétrico
+    transformer_body: Transmutador paramétrico está listo para ser utilizado!
+    daily: Recordatorio diario
     daily_body: Los encargos diarios o encuentros de aventura aún no se han completado
     tb_power: Poder trazacaminos
     daily_training: Entrenamientos diarios
     daily_training_body: Los entrenamientos diarios aún no se han completado
-    weekly: Recordatorio de descuento de jefes semanales
+    weekly: Recordatorio de descuento de Jefes Semanales
     weekly_body: Los descuentos de jefes semanales aún no se han utilizado
     battery: Carga de batería
     video_store: Gestión del videoclub
     video_store_body: Los ingresos de la tienda del videoclub aún no han sido reclamados
     scratch: Rasca y gana
     scratch_body: Rasca y gana aún sin completar
-    engagement: Actividades del día
-    engagement_body: Las actividades de hoy aún no se han completado
-    stamina: Recordatorio de resistencia
+    engagement: Actividades
+    engagement_body: Las actividades de hoy aún no se ha completado
+    stamina: Recordatorio de Stamina
 
 faq:
   title: FAQ
   heading: Preguntas frecuentes
-  description: ¿Tienes dudas que no aparecen aquí? Entra a nuestro servidor de Discord o consulta la documentación.
+  description: "¿Tienes dudas que no aparecen aquí? Entra a nuestro servidor de Discord o consulta la documentación."
   free:
-    question: ¿Hoyo Buddy es gratuito?
+    question: "¿Hoyo Buddy es gratuito?"
     answer: |
       Sí. Todas las funciones son completamente gratuitas, sin anuncios, sin muros de pago y sin niveles de suscripción de pago.
       Si el bot te resulta útil, puedes <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">patrocinar el proyecto</a> para ayudar a cubrir los costes de los servidores y el desarrollo continuo.
   games:
-    question: ¿Con qué juegos y cuentas es compatible?
+    question: "¿Con qué juegos y cuentas es compatible?"
     answer: |
       Hoyo Buddy es compatible con Genshin Impact, Honkai: Star Rail, Zenless Zone Zero, Honkai Impact 3rd y Tears of Themis, tanto en servidores globales (HoYoLAB) como de China continental (Miyoushe). Puedes vincular todas las cuentas que desees y alternar entre ellas con total comodidad.
       Las funciones disponibles pueden variar según la API de cada juego; consulta la <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">documentación</a> para ver la lista completa.
   where:
-    question: ¿Es obligatorio invitarlo a un servidor para usarlo?
+    question: "¿Es obligatorio invitarlo a un servidor para usarlo?"
     answer: |
       No es necesario. Hoyo Buddy es compatible con las aplicaciones instalables de usuario (User Apps) de Discord, lo que significa que puedes instalarlo directamente en tu cuenta personal de Discord.
       Una vez instalado, los comandos de barra funcionan dondequiera que hables: en mensajes directos privados, grupos de chat o servidores donde el bot no esté presente. Además, los administradores de servidores pueden invitarlo al servidor para que toda la comunidad lo disfrute.
   add_account:
-    question: ¿Cómo vinculo mi cuenta del juego?
+    question: "¿Cómo vinculo mi cuenta del juego?"
     answer: |
       Ejecuta <code>/accounts</code> y selecciona «Añadir cuenta». La forma más rápida para cuentas globales es iniciar sesión con tu correo y contraseña de HoYoverse (los inicios de sesión de terceros como Google o Apple ID no son compatibles con la API web de HoYoLAB), lo que también permite el canje automático de códigos de regalo. También puedes iniciar sesión pegando las cookies de tu navegador.
       Las cuentas del servidor de China (Miyoushe) pueden iniciar sesión con código SMS o escaneando un código QR desde la app de Miyoushe.
   account_safe:
-    question: ¿Es segura mi cuenta?
+    question: "¿Es segura mi cuenta?"
     answer: |
       Tu contraseña nunca se guarda ni se almacena en nuestra base de datos. Al iniciar sesión con correo y contraseña, Hoyo Buddy solicita a HoYoLAB las cookies de autenticación de sesión e inmediatamente descarta tu contraseña de la memoria. Todas las cookies guardadas se cifran en reposo con el cifrado Fernet.
       Asimismo, las cookies web de HoYoLAB solo tienen permisos para leer datos públicos de la comunidad y notas diarias; no pueden entrar al cliente del juego, cambiar tu contraseña ni ver información sensible como tu correo o número de teléfono completos. Puedes desvincular tu cuenta y borrar todos tus datos en cualquier momento con <code>/accounts</code>. Lee más en la <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">guía de seguridad de cuentas</a> y la <a href="https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md" target="_blank" rel="noopener">política de privacidad</a>.
   ban:
-    question: ¿Me pueden sancionar (banear) en el juego por usarlo?
+    question: "¿Me pueden sancionar (banear) en el juego por usarlo?"
     answer: |
       No se ha reportado ni un solo caso de sanción en el juego por usar Hoyo Buddy. El bot interactúa exclusivamente con las API web públicas de HoYoLAB y Miyoushe, exactamente las mismas que visitas al consultar tus notas diarias en un navegador web o app móvil. En ningún momento modifica archivos del juego, no se inyecta en el proceso del juego ni lee la memoria de tu dispositivo.
       Aunque automatizar solicitudes web entra técnicamente en una zona gris de los términos de servicio de la web de HoYoLAB, cualquier hipotética sanción solo afectaría al acceso a la comunidad web de HoYoLAB, nunca a tus cuentas, personajes ni progreso dentro del juego. <a href="https://docs.hb.seria.moe/docs/Account-Security" target="_blank" rel="noopener">Lee más en nuestro análisis de seguridad</a>.
   help:
-    question: ¿Dónde puedo conseguir ayuda?
+    question: "¿Dónde puedo conseguir ayuda?"
     answer: |
       Consulta las guías de configuración y listas de comandos en la <a href="https://docs.hb.seria.moe" target="_blank" rel="noopener">documentación oficial</a>, o únete a nuestro <a href="https://dsc.gg/hoyo-buddy" target="_blank" rel="noopener">servidor de Discord</a> para resolver dudas con la comunidad y el desarrollador.
-
 team:
-  title: Equipo principal
-  seria:
-    role: Desarrollador principal
-  ayasaku:
-    role: Diseñador UI/UX
-  hydrogened:
-    role: Relaciones públicas
+  title: Miembros del equipo
 
 members:
   link: Todos los que ayudan
   meta_title: Miembros | Hoyo Buddy
   eyebrow: Miembros
   title: Quienes están detrás de Hoyo Buddy
-  lede: El equipo principal, junto con los diseñadores, patrocinadores, colaboradores, traductores y redactores de guías de nuestro servidor de Discord.
+  lede: "El equipo principal, junto con los diseñadores, patrocinadores, colaboradores, traductores y redactores de guías de nuestro servidor de Discord."
   home: Volver al inicio
   roles:
     team: Equipo principal
@@ -225,16 +218,16 @@ members:
     guide_writers: Redactores de guías
 
 footer:
-  description: Todos tus juegos de HoYoverse, reunidos en Discord.
+  description: "Todos tus juegos de HoYoverse, reunidos en Discord."
   quick_links:
     title: Enlaces rápidos
     github: Proyecto en GitHub
-    wiki: Wiki oficial
+    wiki: Wiki
     invite: Enlace de invitación
   contact:
     title: Contacto
     discord_server: Servidor de Discord
     dev_discord: Discord del desarrollador
-    buy_me_a_coffee: Donar al proyecto
+    buy_me_a_coffee: Donar
   sponsor: Patrocinar
-  rights: © {year} Seria Ati. Todos los derechos reservados.
+  rights: "© {year} Seria Ati. Todos los derechos reservados."
