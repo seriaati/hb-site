@@ -55,14 +55,14 @@ commands:
   game: trò-chơi
   list:
     notes: "Theo dõi thời gian hồi Nhựa, thể lực và thám hiểm trong nháy mắt, cài đặt thông báo gửi qua DM trước khi chạm mốc."
-    check_in: "Nhận quà điểm danh HoYoLAB mỗi ngày ngay trên Discord chỉ bằng một nút bấm, xem chuỗi ngày điểm danh trong tháng."
-    redeem: "Nhập mã quà tặng từ buổi phát sóng trực tiếp hoặc bản cập nhật cho tất cả tài khoản cùng lúc, không cần mở trình duyệt."
+    check_in: Bật điểm danh tự động và Hoyo Buddy sẽ nhận quà điểm danh HoYoLAB thay bạn mỗi ngày.
+    redeem: Hoyo Buddy tự động nhập mã quà tặng mới cho bạn. Bạn cũng có thể lấy toàn bộ mã đang còn hiệu lực và nhập tất cả chỉ với một nút bấm, không cần tự đi tìm.
     profile: Tạo thẻ chỉ số nhân vật đẹp mắt và tiện chia sẻ trực tiếp từ tủ trưng bày trong game của bạn.
 
 reminders:
   eyebrow: Lời nhắc
   title: Nhắc bạn kịp thời trước khi thể lực bị tràn.
-  description: "Hoyo Buddy liên tục theo dõi ghi chú thời gian thực trong nền và gửi tin nhắn DM trên Discord trước khi thể lực chạm trần, thám hiểm hoàn thành hoặc trước giờ làm mới ngày. Kéo thanh thời gian để xem các mốc thông báo trong 24 giờ."
+  description: "Hoyo Buddy liên tục theo dõi ghi chú thời gian thực trong nền và gửi tin nhắn DM trên Discord trước khi thể lực chạm trần, thám hiểm hoàn thành hoặc trước giờ làm mới ngày."
   caps: "{resource} sẽ đầy vào lúc {time}"
   now: Bây giờ
   tomorrow: Ngày mai
@@ -74,23 +74,23 @@ reminders:
 auto:
   eyebrow: Tự động hóa
   title: Tự động xử lý công việc hàng ngày.
-  description: "Bật những tác vụ bạn muốn: điểm danh mỗi ngày, tự đổi mã quà tặng mới ra mắt và làm nhiệm vụ Traveling Mimo. Mỗi buổi sáng, bot sẽ gửi tin nhắn DM tổng hợp kết quả của tất cả tài khoản."
+  description: "Bật những tác vụ bạn muốn: điểm danh mỗi ngày, tự đổi mã quà tặng mới ra mắt và làm nhiệm vụ Traveling Mimo. Hoyo Buddy sẽ tự xử lý chúng trong nền."
 
 open:
   eyebrow: Miễn phí & Mã nguồn mở
-  title: "Mọi tính năng đều miễn phí, từng dòng mã đều minh bạch."
+  title: Miễn phí sử dụng, mã nguồn mở.
   free:
     value: Miễn phí
-    label: "Không quảng cáo, không tường thu phí, không gói thành viên VIP."
+    label: Không quảng cáo. Nhà tài trợ được dùng thêm một vài tính năng.
   source:
     value: AGPL-3.0
-    label: Mã nguồn mở. Xem toàn bộ mã nguồn trên GitHub.
+    label: Mã nguồn mở.
   languages:
     value: "14"
     label: "Ngôn ngữ được hỗ trợ, dịch bởi cộng đồng game thủ."
-  servers:
-    value: "17,000+"
-    label: Máy chủ Discord đang tin tưởng sử dụng.
+  accounts:
+    value: "81,000+"
+    label: Tài khoản đang sử dụng dịch vụ.
   privacy: "Tìm hiểu cách bảo vệ thông tin của bạn trong {privacy} và {security}."
   privacy_link: Chính Sách Bảo Mật
   security_link: Bảo Mật Tài Khoản
@@ -168,8 +168,8 @@ faq:
   free:
     question: "Hoyo Buddy có miễn phí không?"
     answer: |
-      Có. Toàn bộ tính năng đều hoàn toàn miễn phí, không có quảng cáo, không tính phí và không có gói thành viên cao cấp.
-      Nếu bạn yêu thích dự án, bạn có thể <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">tài trợ dự án</a> để hỗ trợ chi phí máy chủ và duy trì phát triển.
+      Có. Tất cả tính năng chính đều miễn phí và không có quảng cáo.
+      Nếu bạn yêu thích dự án, bạn có thể <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">tài trợ dự án</a> để hỗ trợ chi phí máy chủ và duy trì phát triển. Nhà tài trợ sẽ được dùng thêm một vài tính năng.
   games:
     question: "Bot hỗ trợ những tựa game và tài khoản nào?"
     answer: |

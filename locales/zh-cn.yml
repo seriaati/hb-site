@@ -55,14 +55,14 @@ commands:
   game: 游戏
   list:
     notes: 一览树脂、体力与派遣剩余时间，并可自定义溢出前的私信提醒。
-    check_in: 在 Discord 内一键领取每日签到奖励，或查看本月签到天数与进度。
-    redeem: 一次为名下所有账号兑换最新前瞻直播与活动兑换码，不必反复打开网页。
+    check_in: 开启自动签到后，Hoyo Buddy 每天都会替你领取 HoYoLAB 签到奖励。
+    redeem: Hoyo Buddy 会自动为你兑换新发布的兑换码。也可以一键获取当前所有可用的兑换码并全部兑换，不用再四处搜索。
     profile: 根据你的游戏内角色展柜，即时生成精美且易于分享的角色数值卡片。
 
 reminders:
   eyebrow: 提醒
   title: 在体力溢出前精准提醒。
-  description: Hoyo Buddy 全天候关注你的实时便笺，在体力即将回满、派遣完成或即将迎来每日刷新时主动发送私信。滑动时间轴查看 24 小时提醒节奏。
+  description: Hoyo Buddy 全天候关注你的实时便笺，在体力即将回满、派遣完成或即将迎来每日刷新时主动发送私信。
   caps: "{resource} 将于 {time} 回满"
   now: 现在
   tomorrow: 明天
@@ -74,23 +74,23 @@ reminders:
 auto:
   eyebrow: 自动任务
   title: 让日常琐事全自动执行。
-  description: 自由开启所需任务：每日签到、自动兑换新发布的兑换码，以及自动完成旅行 Mimo 任务。每天早晨通过私信汇报所有账号的执行结果。
+  description: 自由开启所需任务：每日签到、自动兑换新发布的兑换码，以及自动完成旅行 Mimo 任务。Hoyo Buddy 会在后台处理一切。
 
 open:
   eyebrow: 免费且开源
-  title: 所有功能完全免费，每一行代码公开透明。
+  title: 免费使用，代码开源。
   free:
     value: 免费
-    label: 无广告、无付费墙、无高级会员限制。
+    label: 无广告，赞助者另享部分额外功能。
   source:
     value: AGPL-3.0
-    label: 开源项目。欢迎在 GitHub 查看全部源码。
+    label: 开源项目。
   languages:
     value: "14"
     label: 支持多种语言，由社区贡献者本地化翻译。
-  servers:
-    value: "17,000+"
-    label: 个活跃的 Discord 服务器信赖使用。
+  accounts:
+    value: "81,000+"
+    label: 个账号正在使用本服务。
   privacy: "请参阅我们的{privacy}与{security}，了解数据如何受到保护。"
   privacy_link: 隐私政策
   security_link: 账号安全
@@ -168,8 +168,8 @@ faq:
   free:
     question: Hoyo Buddy 是免费的吗？
     answer: |
-      是的。所有功能完全免费，没有广告、没有付费墙，也没有任何会员特权制度。
-      如果你觉得 Hoyo Buddy 对你有帮助，欢迎<a href="https://link.seria.moe/donate" target="_blank" rel="noopener">赞助本项目</a>，协助我们分担服务器托管与运维成本。
+      是的。所有主要功能均免费，且没有广告。
+      如果你觉得 Hoyo Buddy 对你有帮助，欢迎<a href="https://link.seria.moe/donate" target="_blank" rel="noopener">赞助本项目</a>，协助我们分担服务器托管与运维成本。赞助者可额外享有部分专属功能。
   games:
     question: 支持哪些游戏与账号？
     answer: |

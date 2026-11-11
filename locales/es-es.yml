@@ -55,14 +55,14 @@ commands:
   game: juego
   list:
     notes: "Consulta de un vistazo la resina, energía y expediciones, con recordatorios personalizables por DM antes de que se llenen."
-    check_in: Reclama las recompensas diarias de HoYoLAB directamente en Discord con un solo clic y consulta tu racha del mes.
-    redeem: "Canjea códigos de directos y promociones en todas tus cuentas vinculadas a la vez, sin tener que abrir la web."
+    check_in: Activa el registro automático y Hoyo Buddy reclamará tus recompensas diarias de HoYoLAB por ti, cada día.
+    redeem: Hoyo Buddy canjea automáticamente los nuevos códigos de regalo por ti. También puedes obtener todos los códigos activos y canjearlos con un solo clic, sin tener que buscarlos.
     profile: Genera tarjetas de estadísticas limpias y listas para compartir a partir de tu expositor de personajes del juego.
 
 reminders:
   eyebrow: Recordatorios
   title: Entérate antes de que tu energía se llene.
-  description: "Hoyo Buddy consulta tus notas en tiempo real en segundo plano y te envía un mensaje directo por Discord antes de que tu resina se desborde, finalicen tus expediciones o llegue el reinicio diario. Desplaza la barra temporal para ver cuándo se activan las alertas en 24 horas."
+  description: "Hoyo Buddy consulta tus notas en tiempo real en segundo plano y te envía un mensaje directo por Discord antes de que tu resina se desborde, finalicen tus expediciones o llegue el reinicio diario."
   caps: "{resource} se llenará a las {time}"
   now: ahora
   tomorrow: mañana
@@ -74,23 +74,23 @@ reminders:
 auto:
   eyebrow: Tareas automáticas
   title: Tus rutinas diarias en piloto automático.
-  description: "Activa las tareas que prefieras: registros diarios, canje automático de nuevos códigos de regalo y misiones de Traveling Mimo. Cada mañana recibirás un resumen por DM con todo lo gestionado en tus cuentas."
+  description: "Activa las tareas que prefieras: registros diarios, canje automático de nuevos códigos de regalo y misiones de Traveling Mimo. Hoyo Buddy se encarga de ellas en segundo plano."
 
 open:
   eyebrow: Gratuito y de código abierto
-  title: Cada función es gratuita y cada línea de código es pública.
+  title: Es gratis y su código es abierto.
   free:
     value: Gratis
-    label: "Sin anuncios, sin muros de pago y sin ventajas de pago."
+    label: Sin anuncios. Los patrocinadores reciben algunas funciones extra.
   source:
     value: AGPL-3.0
-    label: Código abierto. Inspecciona todo el repositorio en GitHub.
+    label: Código abierto.
   languages:
     value: "14"
     label: "Idiomas disponibles, traducidos por la comunidad."
-  servers:
-    value: "17,000+"
-    label: Comunidades de Discord confían en Hoyo Buddy.
+  accounts:
+    value: "81,000+"
+    label: Cuentas disfrutan del servicio.
   privacy: "Descubre cómo protegemos tus datos en la {privacy} y la {security}."
   privacy_link: Política de privacidad
   security_link: Seguridad de la cuenta
@@ -168,8 +168,8 @@ faq:
   free:
     question: "¿Hoyo Buddy es gratuito?"
     answer: |
-      Sí. Todas las funciones son completamente gratuitas, sin anuncios, sin muros de pago y sin niveles de suscripción de pago.
-      Si el bot te resulta útil, puedes <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">patrocinar el proyecto</a> para ayudar a cubrir los costes de los servidores y el desarrollo continuo.
+      Sí. Todas las funciones principales son gratuitas y no hay anuncios.
+      Si el bot te resulta útil, puedes <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">patrocinar el proyecto</a> para ayudar a cubrir los costes de los servidores y el desarrollo continuo. Como agradecimiento, los patrocinadores reciben algunas funciones extra.
   games:
     question: "¿Con qué juegos y cuentas es compatible?"
     answer: |

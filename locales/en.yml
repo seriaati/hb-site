@@ -55,14 +55,14 @@ commands:
   game: game
   list:
     notes: Live resin, stamina, and expedition timers at a glance, with custom DM reminders before they cap.
-    check_in: Claim your daily HoYoLAB rewards in Discord with a single click, or view your monthly check-in streak.
-    redeem: Redeem livestream and patch codes across all your linked accounts at once, without visiting external sites.
+    check_in: Turn on auto check-in and Hoyo Buddy claims your daily HoYoLAB rewards for you, every day.
+    redeem: Hoyo Buddy redeems new gift codes for you automatically. Or fetch every active code and redeem them all in one click, without searching for them.
     profile: Generate clean, shareable build cards directly from your in-game character showcase.
 
 reminders:
   eyebrow: Reminders
   title: Catch your timers before they cap.
-  description: Hoyo Buddy monitors your real-time notes in the background and sends a Discord DM before your stamina caps, expeditions return, or daily resets pass. Scrub the timeline to see when alerts trigger.
+  description: Hoyo Buddy monitors your real-time notes in the background and sends a Discord DM before your stamina caps, expeditions return, or daily resets pass.
   caps: "{resource} is full at {time}"
   now: now
   tomorrow: tomorrow
@@ -74,23 +74,23 @@ reminders:
 auto:
   eyebrow: Auto tasks
   title: Put your daily chores on autopilot.
-  description: Enable the tasks you want, including daily check-ins, new gift code redemptions, and Traveling Mimo missions. Hoyo Buddy handles them in the background and sends a morning DM summary across all your accounts.
+  description: Enable the tasks you want, including daily check-ins, new gift code redemptions, and Traveling Mimo missions. Hoyo Buddy handles them in the background.
 
 open:
   eyebrow: Free and open source
-  title: Every feature is free, and every line of code is public.
+  title: Free to use, and the code is open source.
   free:
     value: Free
-    label: No ads, no paywall, no premium tier.
+    label: No ads. Sponsors get a few extra features.
   source:
     value: AGPL-3.0
-    label: Open source. Read every line on GitHub.
+    label: Open source.
   languages:
     value: "14"
     label: Languages supported, translated by the community.
-  servers:
-    value: 17,000+
-    label: Active Discord communities.
+  accounts:
+    value: 81,000+
+    label: Accounts enjoying the service.
   privacy: Read how your data is handled in our {privacy} and {security} guide.
   privacy_link: Privacy Policy
   security_link: Account Security
@@ -168,9 +168,9 @@ faq:
   free:
     question: Is Hoyo Buddy free?
     answer: |
-      Yes. Every feature is completely free, with no ads, no paywalls, and no premium tiers.
+      Yes. All the main features are free, and there are no ads.
       If you enjoy using the bot, you can <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">sponsor the project</a>
-      to help support server hosting and development.
+      to help support server hosting and development. Sponsors get a few extra features in return.
   games:
     question: Which games and accounts does it work with?
     answer: |

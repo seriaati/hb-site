@@ -55,14 +55,14 @@ commands:
   game: ゲーム
   list:
     notes: 樹脂やスタミナ、派遣の残り時間をひと目で確認。溢れる前に個人DMで通知を受け取れます。
-    check_in: HoYoverseのデイリーチェックインをDiscordからワンクリックで受け取り。連続日数も確認可能。
-    redeem: 最新の公式生放送やアプデで配られたギフトコードを、連携中の全アカウントへ一括適用。
+    check_in: 自動チェックインをオンにすれば、HoYoLABのデイリー報酬をHoyo Buddyが毎日代わりに受け取ります。
+    redeem: 新しいギフトコードはHoyo Buddyが自動で交換。現在有効なコードをまとめて取得し、ワンクリックで一括交換することもできるので、コードを探し回る必要はありません。
     profile: ゲーム内のキャラクター展示枠から、見やすく美しいステータスカードを即座に生成。
 
 reminders:
   eyebrow: リマインダー
   title: スタミナが溢れる前にしっかり通知。
-  description: Hoyo Buddyがあなたのリアルタイムノートをバックグラウンドで確認し、スタミナが満タンになる前や探索派遣の完了、日課のリセット前にDiscord DMでお知らせします。タイムラインを動かして通知タイミングを確認できます。
+  description: Hoyo Buddyがあなたのリアルタイムノートをバックグラウンドで確認し、スタミナが満タンになる前や探索派遣の完了、日課のリセット前にDiscord DMでお知らせします。
   caps: "{resource} は {time} に満タンになります"
   now: 現在
   tomorrow: 明日
@@ -74,23 +74,23 @@ reminders:
 auto:
   eyebrow: 自動タスク
   title: 毎日の日課を完全自動化。
-  description: 毎日のチェックイン、新着コードの自動交換、Traveling Mimoのポイント回収など、任せたいタスクをオンにするだけ。毎朝のDMで、全アカウントの完了状況をお届けします。
+  description: 毎日のチェックイン、新着コードの自動交換、Traveling Mimoのポイント回収など、任せたいタスクをオンにするだけ。あとはHoyo Buddyがバックグラウンドで処理します。
 
 open:
   eyebrow: 無料＆オープンソース
-  title: すべての機能が完全無料。コードは1行残らず公開されています。
+  title: 無料で使えて、コードはオープンソース。
   free:
-    value: 完全無料
-    label: 広告なし、有料課金なし、プレミアム機能の制限なし。
+    value: 無料
+    label: 広告なし。スポンサー向けの追加機能もいくつかあります。
   source:
     value: AGPL-3.0
-    label: オープンソース。GitHubで全ソースコードを確認可能。
+    label: オープンソース。
   languages:
     value: "14"
     label: コミュニティ有志によって多言語にローカライズ。
-  servers:
-    value: "17,000+"
-    label: 以上のDiscordコミュニティで愛用されています。
+  accounts:
+    value: "81,000+"
+    label: 以上のアカウントで利用されています。
   privacy: "データの取り扱いについては{privacy}および{security}をご覧ください。"
   privacy_link: プライバシーポリシー
   security_link: アカウントセキュリティ
@@ -168,8 +168,8 @@ faq:
   free:
     question: Hoyo Buddy は本当に無料ですか？
     answer: |
-      はい、すべての機能を完全無料でご利用いただけます。広告や有料プラン、機能制限などは一切ありません。
-      もし気に入っていただけましたら、サーバー維持費や開発継続のための<a href="https://link.seria.moe/donate" target="_blank" rel="noopener">プロジェクト支援（寄付）</a>をご検討いただけると励みになります。
+      はい、主要な機能はすべて無料でご利用いただけます。広告もありません。
+      もし気に入っていただけましたら、サーバー維持費や開発継続のための<a href="https://link.seria.moe/donate" target="_blank" rel="noopener">プロジェクト支援（寄付）</a>をご検討いただけると励みになります。スポンサーの方には、いくつかの追加機能をご用意しています。
   games:
     question: どのゲームやアカウントに対応していますか？
     answer: |

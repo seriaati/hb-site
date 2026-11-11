@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { t } = Astro.props;
-const facts = ["free", "source", "languages", "servers"] as const;
+const facts = ["free", "source", "languages", "accounts"] as const;
 const link = (href: string, label: string) =>
   `<a href="${href}" target="_blank" rel="noopener">${label}</a>`;
 const privacy = t("open.privacy", {

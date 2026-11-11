@@ -55,14 +55,14 @@ commands:
   game: spel
   list:
     notes: "Zie in één oogopslag je resin, stamina en expedities, met instelbare DM-meldingen voordat ze vol raken."
-    check_in: Claim je dagelijkse HoYoLAB-beloningen met één klik in Discord en bekijk je maandelijkse inlogreeks.
-    redeem: "Wissel livestream- en updatecodes direct in voor al je gekoppelde accounts tegelijk, zonder browser."
+    check_in: Zet automatisch inchecken aan en Hoyo Buddy claimt je HoYoLAB-beloningen elke dag voor je.
+    redeem: Hoyo Buddy wisselt nieuwe cadeaucodes automatisch voor je in. Of haal alle actieve codes op en wissel ze met één klik in, zonder ze zelf te zoeken.
     profile: "Genereer overzichtelijke, deelbare build-kaarten rechtstreeks uit de in-game showcase van je personages."
 
 reminders:
   eyebrow: Herinneringen
   title: Krijg op tijd bericht voordat je stamina vol zit.
-  description: "Hoyo Buddy controleert je realtime-notities op de achtergrond en stuurt je een Discord-DM voordat je stamina overstroomt, expedities terugkeren of de dagelijkse reset plaatsvindt. Versleep de tijdlijn om te zien wanneer meldingen in 24 uur triggeren."
+  description: "Hoyo Buddy controleert je realtime-notities op de achtergrond en stuurt je een Discord-DM voordat je stamina overstroomt, expedities terugkeren of de dagelijkse reset plaatsvindt."
   caps: "{resource} is vol om {time}"
   now: nu
   tomorrow: morgen
@@ -74,23 +74,23 @@ reminders:
 auto:
   eyebrow: Automatisering
   title: Je dagelijkse taken op de automatische piloot.
-  description: "Schakel de taken in die je wilt uitbesteden, zoals dagelijkse check-ins, automatisch inwisselen van nieuwe cadeaucodes en Traveling Mimo-missies. Elke ochtend zie je via een DM precies wat er 's nachts voor elk account is gedaan."
+  description: "Schakel de taken in die je wilt uitbesteden, zoals dagelijkse check-ins, automatisch inwisselen van nieuwe cadeaucodes en Traveling Mimo-missies. Hoyo Buddy regelt ze op de achtergrond."
 
 open:
   eyebrow: Gratis & open source
-  title: Elke functie is gratis en elke regel code is openbaar.
+  title: Gratis te gebruiken, en de code is open source.
   free:
     value: Gratis
-    label: "Geen advertenties, geen betaalmuren, geen premium tier."
+    label: Geen advertenties. Sponsors krijgen een paar extra functies.
   source:
     value: AGPL-3.0
-    label: Open source. Bekijk elke regel code op GitHub.
+    label: Open source.
   languages:
     value: "14"
     label: "Beschikbare talen, vertaald door de community."
-  servers:
-    value: 17.000+
-    label: Discord-servers vertrouwen op Hoyo Buddy.
+  accounts:
+    value: 81.000+
+    label: Accounts genieten van de service.
   privacy: "Lees hoe we met je gegevens omgaan in ons {privacy} en de {security}."
   privacy_link: Privacybeleid
   security_link: Accountbeveiliging
@@ -168,8 +168,8 @@ faq:
   free:
     question: "Is Hoyo Buddy gratis?"
     answer: |
-      Ja. Elke functie is volledig gratis, zonder advertenties, zonder betaalmuren en zonder premium-abonnementen.
-      Als je de bot met plezier gebruikt, kun je <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">het project sponsoren</a> om serverkosten en verdere ontwikkeling te steunen.
+      Ja. Alle belangrijke functies zijn gratis en er zijn geen advertenties.
+      Als je de bot met plezier gebruikt, kun je <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">het project sponsoren</a> om serverkosten en verdere ontwikkeling te steunen. Sponsors krijgen er een paar extra functies voor terug.
   games:
     question: "Welke games en accounts worden ondersteund?"
     answer: |

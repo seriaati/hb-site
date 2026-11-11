@@ -55,14 +55,14 @@ commands:
   game: jogo
   list:
     notes: "Veja a resina, energia e expedições em tempo real, com lembretes customizados via DM antes de atingirem o limite."
-    check_in: Colete as recompensas diárias da HoYoLAB direto pelo Discord com um clique e confira seu histórico de dias consecutivos.
-    redeem: "Resgate códigos de transmissões ao vivo e versões em todas as suas contas vinculadas de uma só vez, sem abrir o navegador."
+    check_in: Ative o check-in automático e o Hoyo Buddy coleta as recompensas diárias da HoYoLAB por você, todos os dias.
+    redeem: O Hoyo Buddy resgata novos códigos de presente automaticamente. Ou carregue todos os códigos ativos e resgate-os de uma vez com um clique, sem precisar procurar por eles.
     profile: Crie cards limpos e elegantes com os atributos dos seus personagens a partir da vitrine do seu perfil no jogo.
 
 reminders:
   eyebrow: Lembretes
   title: Saiba antes da sua energia transbordar.
-  description: "O Hoyo Buddy monitora suas notas em tempo real em segundo plano e envia uma DM no Discord antes da sua resina lotar, das expedições terminarem ou do reset diário chegar. Arraste a linha do tempo para ver o ciclo de alertas em 24 horas."
+  description: "O Hoyo Buddy monitora suas notas em tempo real em segundo plano e envia uma DM no Discord antes da sua resina lotar, das expedições terminarem ou do reset diário chegar."
   caps: "{resource} encherá às {time}"
   now: agora
   tomorrow: amanhã
@@ -74,23 +74,23 @@ reminders:
 auto:
   eyebrow: Tarefas automáticas
   title: Suas rotinas diárias no piloto automático.
-  description: "Ative as tarefas que quiser: check-in diário, resgate automático de novos códigos de presente e missões do Traveling Mimo. Toda manhã sua DM recebe um resumo do que o bot resolveu em cada conta."
+  description: "Ative as tarefas que quiser: check-in diário, resgate automático de novos códigos de presente e missões do Traveling Mimo. O Hoyo Buddy cuida delas em segundo plano."
 
 open:
   eyebrow: Gratuito e de código aberto
-  title: Todos os recursos são gratuitos e cada linha de código é pública.
+  title: Grátis para usar, e o código é aberto.
   free:
     value: Grátis
-    label: "Sem anúncios, sem paywalls, sem planos premium."
+    label: Sem anúncios. Apoiadores ganham alguns recursos extras.
   source:
     value: AGPL-3.0
-    label: Código aberto. Inspecione todo o projeto no GitHub.
+    label: Código aberto.
   languages:
     value: "14"
     label: "Idiomas disponíveis, localizados pela comunidade."
-  servers:
-    value: 17.000+
-    label: Comunidades no Discord confiam no Hoyo Buddy.
+  accounts:
+    value: 81.000+
+    label: Contas já aproveitam o serviço.
   privacy: "Saiba como suas credenciais são protegidas na {privacy} e no {security}."
   privacy_link: Política de Privacidade
   security_link: Segurança da Conta
@@ -168,8 +168,8 @@ faq:
   free:
     question: "O Hoyo Buddy é gratuito?"
     answer: |
-      Sim. Todos os recursos são completamente gratuitos, sem anúncios, sem cobranças e sem assinaturas premium.
-      Se você gosta do bot, pode <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">apoiar o projeto</a> para ajudar com os custos de hospedagem e desenvolvimento contínuo.
+      Sim. Todos os recursos principais são gratuitos e não há anúncios.
+      Se você gosta do bot, pode <a href="https://link.seria.moe/donate" target="_blank" rel="noopener">apoiar o projeto</a> para ajudar com os custos de hospedagem e desenvolvimento contínuo. Apoiadores ganham alguns recursos extras em troca.
   games:
     question: "Com quais jogos e contas ele é compatível?"
     answer: |
