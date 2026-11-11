@@ -55,8 +55,8 @@ commands:
   game: jogo
   list:
     notes: "Veja a resina, energia e expedições em tempo real, com lembretes customizados via DM antes de atingirem o limite."
-    check_in: Ative o check-in automático e o Hoyo Buddy coleta as recompensas diárias da HoYoLAB por você, todos os dias.
-    redeem: O Hoyo Buddy resgata novos códigos de presente automaticamente. Ou carregue todos os códigos ativos e resgate-os de uma vez com um clique, sem precisar procurar por eles.
+    check_in: "Ative o check-in automático e o Hoyo Buddy coleta as recompensas diárias da HoYoLAB por você, todos os dias."
+    redeem: "O Hoyo Buddy resgata novos códigos de presente automaticamente. Ou carregue todos os códigos ativos e resgate-os de uma vez com um clique, sem precisar procurar por eles."
     profile: Crie cards limpos e elegantes com os atributos dos seus personagens a partir da vitrine do seu perfil no jogo.
 
 reminders:
@@ -78,7 +78,7 @@ auto:
 
 open:
   eyebrow: Gratuito e de código aberto
-  title: Grátis para usar, e o código é aberto.
+  title: "Grátis para usar, e o código é aberto."
   free:
     value: Grátis
     label: Sem anúncios. Apoiadores ganham alguns recursos extras.

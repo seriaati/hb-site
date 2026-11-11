@@ -56,7 +56,7 @@ commands:
   list:
     notes: "Theo dõi thời gian hồi Nhựa, thể lực và thám hiểm trong nháy mắt, cài đặt thông báo gửi qua DM trước khi chạm mốc."
     check_in: Bật điểm danh tự động và Hoyo Buddy sẽ nhận quà điểm danh HoYoLAB thay bạn mỗi ngày.
-    redeem: Hoyo Buddy tự động nhập mã quà tặng mới cho bạn. Bạn cũng có thể lấy toàn bộ mã đang còn hiệu lực và nhập tất cả chỉ với một nút bấm, không cần tự đi tìm.
+    redeem: "Hoyo Buddy tự động nhập mã quà tặng mới cho bạn. Bạn cũng có thể lấy toàn bộ mã đang còn hiệu lực và nhập tất cả chỉ với một nút bấm, không cần tự đi tìm."
     profile: Tạo thẻ chỉ số nhân vật đẹp mắt và tiện chia sẻ trực tiếp từ tủ trưng bày trong game của bạn.
 
 reminders:
@@ -78,7 +78,7 @@ auto:
 
 open:
   eyebrow: Miễn phí & Mã nguồn mở
-  title: Miễn phí sử dụng, mã nguồn mở.
+  title: "Miễn phí sử dụng, mã nguồn mở."
   free:
     value: Miễn phí
     label: Không quảng cáo. Nhà tài trợ được dùng thêm một vài tính năng.
