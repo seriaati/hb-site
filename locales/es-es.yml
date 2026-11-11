@@ -55,8 +55,8 @@ commands:
   game: juego
   list:
     notes: "Consulta de un vistazo la resina, energía y expediciones, con recordatorios personalizables por DM antes de que se llenen."
-    check_in: Activa el registro automático y Hoyo Buddy reclamará tus recompensas diarias de HoYoLAB por ti, cada día.
-    redeem: Hoyo Buddy canjea automáticamente los nuevos códigos de regalo por ti. También puedes obtener todos los códigos activos y canjearlos con un solo clic, sin tener que buscarlos.
+    check_in: "Activa el registro automático y Hoyo Buddy reclamará tus recompensas diarias de HoYoLAB por ti, cada día."
+    redeem: "Hoyo Buddy canjea automáticamente los nuevos códigos de regalo por ti. También puedes obtener todos los códigos activos y canjearlos con un solo clic, sin tener que buscarlos."
     profile: Genera tarjetas de estadísticas limpias y listas para compartir a partir de tu expositor de personajes del juego.
 
 reminders:
