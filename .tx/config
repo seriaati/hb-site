@@ -1,0 +1,12 @@
+[main]
+host = https://app.transifex.com
+
+[o:seria:p:hoyo-buddy:r:60788ae8de9773dfc1c3bfc32d3efacc]
+file_filter            = locales/<lang>.yml
+source_file            = locales/en.yml
+type                   = YAML_GENERIC
+minimum_perc           = 0
+resource_name          = Official Website
+replace_edited_strings = false
+keep_translations      = false
+lang_map = zh_TW: zh-tw, zh_CN: zh-cn, pt_BR: pt-br, es_ES: es-es
