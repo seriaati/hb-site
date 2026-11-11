@@ -56,7 +56,7 @@ commands:
   list:
     notes: "Zie in één oogopslag je resin, stamina en expedities, met instelbare DM-meldingen voordat ze vol raken."
     check_in: Zet automatisch inchecken aan en Hoyo Buddy claimt je HoYoLAB-beloningen elke dag voor je.
-    redeem: Hoyo Buddy wisselt nieuwe cadeaucodes automatisch voor je in. Of haal alle actieve codes op en wissel ze met één klik in, zonder ze zelf te zoeken.
+    redeem: "Hoyo Buddy wisselt nieuwe cadeaucodes automatisch voor je in. Of haal alle actieve codes op en wissel ze met één klik in, zonder ze zelf te zoeken."
     profile: "Genereer overzichtelijke, deelbare build-kaarten rechtstreeks uit de in-game showcase van je personages."
 
 reminders:
@@ -78,7 +78,7 @@ auto:
 
 open:
   eyebrow: Gratis & open source
-  title: Gratis te gebruiken, en de code is open source.
+  title: "Gratis te gebruiken, en de code is open source."
   free:
     value: Gratis
     label: Geen advertenties. Sponsors krijgen een paar extra functies.
