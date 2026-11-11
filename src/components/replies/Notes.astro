@@ -33,7 +33,7 @@ const card = cards[game];
 const cap = card && Math.round((400 * card.src.width) / card.src.height);
 ---
 
-<Message t={t} command="/notes">
+<Message t={t} game={game} command="/notes">
   {card && (
     <Embed
       author={card.author}

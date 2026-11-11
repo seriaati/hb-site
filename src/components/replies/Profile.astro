@@ -22,7 +22,7 @@ const cards: Partial<Record<GameKey, [ImageMetadata, string]>> = {
 const [src, alt] = cards[game] ?? cards.genshin!;
 ---
 
-<Message t={t} command="/profile">
+<Message t={t} game={game} command="/profile">
   <Image
     src={src}
     alt={alt}

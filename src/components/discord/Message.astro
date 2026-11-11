@@ -1,17 +1,26 @@
 ---
 // A Discord message from Hoyo Buddy, drawn in Discord's dark theme so replies read as real.
 import Mark from "../Mark.astro";
+import type { GameKey } from "../../data/worlds";
 import type { T } from "../../i18n";
 
 interface Props {
   t: T;
   command?: string; // shows the "used /command" line of a slash-command reply
+  game?: GameKey; // the player who used the command
   time?: string;
   class?: string;
 }
 
-const { t, command, time = "09:41", class: className } = Astro.props;
-const used = t("bot.used", { user: "Traveler" }).split("{command}");
+const { t, command, game = "genshin", time = "09:41", class: className } = Astro.props;
+const users: Record<GameKey, string> = {
+  genshin: "Traveler",
+  hsr: "Trailblazer",
+  zzz: "Proxy",
+  honkai: "Captain",
+  tot: "Attorney",
+};
+const used = t("bot.used", { user: users[game] }).split("{command}");
 ---
 
 <article
